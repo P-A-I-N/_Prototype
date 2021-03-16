@@ -2,7 +2,6 @@
 
 public class RayCast : MonoBehaviour
 {
-    public float distanse;
     public Vector3 pos;
     public GameObject[] Towers;
     public GameObject Tower;
