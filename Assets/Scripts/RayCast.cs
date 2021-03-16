@@ -12,10 +12,15 @@ public class RayCast : MonoBehaviour
 
     void Update()
     {
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(transform.position, ray.direction * distanse, Color.red);
-        RaycastHit hit;
+        Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (hit.collider != null)
+            {
+                Debug.Log(hit.collider.name);
+            }
+        }
 
 
         //if (Input.GetMouseButtonDown(0))
