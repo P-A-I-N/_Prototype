@@ -37,7 +37,7 @@ public class Tower : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collider)
     {
-        if(collider.gameObject.tag == "Enemy")
+        if(collider.gameObject.tag == "Enemy" || collider.gameObject.tag == "Boss")
         {
             target = true;
         }
@@ -45,7 +45,7 @@ public class Tower : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss")
         {
             target = false;
         }

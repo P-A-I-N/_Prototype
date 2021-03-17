@@ -3,21 +3,28 @@
 public class SpawnEnemy : MonoBehaviour
 {
     public GameObject enemy;
-    //public GameObject boos;
-    public int sum;
+    public int numberOfEnemies;
+    private int sum;
     public float spawnTime;
+    public bool endOfTheWave;
 
     void Start()
     {
         InvokeRepeating("CreateEnemy", spawnTime, spawnTime);
         InvokeRepeating("summ", spawnTime, spawnTime);
-        //InvokeRepeating("CrateBoss", 50f, 50f);
+    }
+    void Update()
+    {
+        if(sum == numberOfEnemies)
+        {
+            endOfTheWave = true;
+        }
     }
 
-    
+
     void summ()
     {
-        if (sum < 10)
+        if (sum < numberOfEnemies)
         {
             sum++;
         }
@@ -25,18 +32,9 @@ public class SpawnEnemy : MonoBehaviour
 
     void CreateEnemy()
     {
-        if (sum < 10)
+        if (sum < numberOfEnemies)
         {
             Instantiate(enemy, transform.position, transform.rotation);
         }
     }
-
-    //void CrateBoss()
-    //{
-    //    if (sum >= 10 && sum < 11)
-    //    {
-    //        sum++;
-    //        Instantiate(boos, transform.position, transform.rotation);
-    //    }
-    //}
 }
