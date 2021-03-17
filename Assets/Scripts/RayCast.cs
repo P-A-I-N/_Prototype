@@ -2,11 +2,11 @@
 
 public class RayCast : MonoBehaviour
 {
-    public Vector3 pos;
+    private Vector3 pos;
     public GameObject[] Towers;
-    public GameObject Tower;
-    public LayerMask LayerTower;
-    public LayerMask LayerPoint;
+    private GameObject Tower;
+    private LayerMask LayerTower = 1 << 8;
+    private LayerMask LayerPoint = 1 << 7;
 
 
 
