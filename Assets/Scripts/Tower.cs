@@ -10,6 +10,7 @@ public class Tower : MonoBehaviour
     public GameObject bullet;
     private bool damage;
     private bool target;
+    public int price;
 
     private void Start()
     {

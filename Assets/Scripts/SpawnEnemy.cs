@@ -7,6 +7,8 @@ public class SpawnEnemy : MonoBehaviour
     private int sum;
     public float spawnTime;
     public bool endOfTheWave;
+    GameObject e;
+    public Transform parent;
 
     void Start()
     {
@@ -34,7 +36,8 @@ public class SpawnEnemy : MonoBehaviour
     {
         if (sum < numberOfEnemies)
         {
-            Instantiate(enemy, transform.position, transform.rotation);
+            e = Instantiate(enemy, transform.position, transform.rotation);
+            e.transform.SetParent(parent);
         }
     }
 }

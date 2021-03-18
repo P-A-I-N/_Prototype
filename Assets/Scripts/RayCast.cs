@@ -7,8 +7,12 @@ public class RayCast : MonoBehaviour
     private GameObject tower;
     private LayerMask layerTower = 1 << 8;
     private LayerMask layerPoint = 1 << 7;
+    GameMap gm;
 
-
+    private void Awake()
+    {
+        gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
+    }
 
     void Update()
     {
@@ -23,8 +27,14 @@ public class RayCast : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && hitTower.collider == null && hitPoint.collider != null && tower != null)
         {
-            pos = hitPoint.collider.gameObject.transform.position;
-            Instantiate(tower, pos, tower.transform.rotation);
+
+                int price = tower.GetComponent<Tower>().price;
+                if (price <= gm.gold)
+                {
+                    pos = hitPoint.collider.gameObject.transform.position;
+                    Instantiate(tower, pos, tower.transform.rotation);
+                    gm.gold -= price;
+                }      
         }
 
     }

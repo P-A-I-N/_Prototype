@@ -126,6 +126,7 @@ MonoBehaviour:
   health: 10
   rateOfFire: 3
   bullet: {fileID: 769632974019366343, guid: 739c430830d73d34cb6ac32b9b1bca5e, type: 3}
+  price: 100
 --- !u!61 &1340345236
 BoxCollider2D:
   m_ObjectHideFlags: 0

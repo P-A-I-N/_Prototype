@@ -5,16 +5,20 @@ public class Enemy : MonoBehaviour
     public float speed;
     private float _speed;
     public float health = 10;
+    GameMap gm;
 
     private void Awake()
     {
         _speed = speed;
+        //gm = GetComponentInParent<GameMap>();
+        gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
     }
     void LateUpdate()
     {
         if(health <= 0)
         {
             Destroy(gameObject);
+            gm.gold += 50;
         }
         
         transform.Translate(Vector2.left * _speed * Time.deltaTime);

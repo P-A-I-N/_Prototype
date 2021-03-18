@@ -10,6 +10,7 @@ TagManager:
   - Boss
   - Point
   - Tower
+  - Map
   layers:
   - Default
   - TransparentFX
