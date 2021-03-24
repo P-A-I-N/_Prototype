@@ -11,6 +11,8 @@ public class RayCast : MonoBehaviour
     private LayerMask layerTower = 1 << 8;
     private LayerMask layerPoint = 1 << 7;
     GameMap gm;
+    GameObject levelUp;
+    bool towerUp;
 
     private void Awake()
     {
@@ -19,9 +21,20 @@ public class RayCast : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (target != null)
+        {
+            levelUp = target.GetComponent<Tower>().levelUp;
+            if (towerUp)
+            {
+                Destroy(target.gameObject);
+                Instantiate(levelUp, target.transform.position, target.transform.rotation);
+                towerUp = false;
+            }
+        }
+        if (Input.GetMouseButtonDown(1))
         {
             target = null;
+            delete = false;
         }
         Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hitTower = Physics2D.Raycast(worldPoint, Vector2.zero, 100f, layerTower);
@@ -58,10 +71,13 @@ public class RayCast : MonoBehaviour
     }
 
 
+    public void Tower_Up()
+    {
+        towerUp = true;
+    }
 
 
-
-    public void tower1()
+public void tower1()
     {
         tower = towers[0];
         infoTarget = towers[0];

@@ -12,28 +12,25 @@ public class TowerInfo : MonoBehaviour
     public GameObject panel;
     public GameObject button;
     public GameObject infoTarget;
-    GameObject target;
+    public GameObject target;
     int nowAmount;
     int nowHealth;
     int nowRate;
     int nowRange;
-    GameObject levelUp;
+    public GameObject levelUp;
     int upAmount;
     int upHealth;
     int upRate;
     int upRange;
-    // Start is called before the first frame update
-    void Start()
-    {
+    bool towerUp;
 
-    }
 
-    // Update is called once per frame
     void Update()
     {
         target = GetComponentInChildren<RayCast>().target;
         infoTarget = GetComponentInChildren<RayCast>().infoTarget;
-        if(Input.GetMouseButtonDown(0))
+
+        if (Input.GetMouseButtonDown(0))
         {
             now.gameObject.SetActive(false);
             descriptionNow.gameObject.SetActive(false);
@@ -41,10 +38,9 @@ public class TowerInfo : MonoBehaviour
             descriptionUp.gameObject.SetActive(false);
             panel.gameObject.SetActive(false);
             button.SetActive(false);
-
         }
-        
-        if(infoTarget != null)
+
+        if (infoTarget != null)
         {
             now.gameObject.SetActive(true);
             descriptionNow.gameObject.SetActive(true);
@@ -57,6 +53,7 @@ public class TowerInfo : MonoBehaviour
             nowRange = infoTarget.GetComponent<Tower>().range;
             descriptionNow.text = now.text + " can attack " + nowAmount + " enemy, has " + nowHealth + " health, shoots at a speed of 1 bullet in " + nowRate + " seconds and an attack radius of " + nowRange + " cells.";
         }
+
         if (target != null)
         {
             now.gameObject.SetActive(true);
@@ -72,7 +69,7 @@ public class TowerInfo : MonoBehaviour
             nowRate = target.GetComponent<Tower>().rateOfFire;
             nowRange = target.GetComponent<Tower>().range;
             descriptionNow.text = now.text + " can attack " + nowAmount + " enemy, has " + nowHealth + " health, shoots at a speed of 1 bullet in " + nowRate + " seconds and an attack radius of " + nowRange + " cells.";
-           
+
             levelUp = target.GetComponent<Tower>().levelUp;
             up.text = levelUp.GetComponent<Text>().text;
             upAmount = levelUp.GetComponent<Tower>().targetAmount;
@@ -80,11 +77,10 @@ public class TowerInfo : MonoBehaviour
             upRate = levelUp.GetComponent<Tower>().rateOfFire;
             upRange = levelUp.GetComponent<Tower>().range;
             descriptionUp.text = up.text + " can attack " + upAmount + " enemy, has " + upHealth + " health, shoots at a speed of 1 bullet in " + upRate + " seconds and an attack radius of " + upRange + " cells.";
-
-
         }
-        else if(infoTarget == null)
+        else if (infoTarget == null)
         {
+            levelUp = null;
             now.gameObject.SetActive(false);
             descriptionNow.gameObject.SetActive(false);
             up.gameObject.SetActive(false);
@@ -92,8 +88,5 @@ public class TowerInfo : MonoBehaviour
             panel.gameObject.SetActive(false);
             button.SetActive(false);
         }
-        
-
-
     }
 }
