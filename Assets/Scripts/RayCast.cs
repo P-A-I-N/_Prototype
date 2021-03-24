@@ -4,7 +4,10 @@ public class RayCast : MonoBehaviour
 {
     private Vector3 pos;
     public GameObject[] towers;
+    public GameObject target;
+    public GameObject infoTarget;
     private GameObject tower;
+    private bool delete;
     private LayerMask layerTower = 1 << 8;
     private LayerMask layerPoint = 1 << 7;
     GameMap gm;
@@ -16,16 +19,24 @@ public class RayCast : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            target = null;
+        }
         Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hitTower = Physics2D.Raycast(worldPoint, Vector2.zero, 100f, layerTower);
         RaycastHit2D hitPoint = Physics2D.Raycast(worldPoint, Vector2.zero, 100f, layerPoint);
 
-        if (Input.GetMouseButtonDown(0) && hitTower.collider != null && tower == null)
+        if (Input.GetMouseButtonDown(0) && hitTower.collider != null && delete)
         {
             Destroy(hitTower.collider.gameObject);
         }
+        if (Input.GetMouseButtonDown(0) && hitTower.collider != null)
+        {
+            target = hitTower.collider.gameObject;
+        }
 
-        if (Input.GetMouseButtonDown(0) && hitTower.collider == null && hitPoint.collider != null && tower != null)
+        if (Input.GetMouseButtonDown(0) && hitTower.collider == null && hitPoint.collider != null && tower != null && infoTarget != null)
         {
 
                 int price = tower.GetComponent<Tower>().price;
@@ -34,7 +45,14 @@ public class RayCast : MonoBehaviour
                     pos = hitPoint.collider.gameObject.transform.position;
                     Instantiate(tower, pos, tower.transform.rotation);
                     gm.gold -= price;
+                    tower = null;
                 }      
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            infoTarget = null;
+            delete = false;
         }
 
     }
@@ -46,10 +64,12 @@ public class RayCast : MonoBehaviour
     public void tower1()
     {
         tower = towers[0];
+        infoTarget = towers[0];
     }
     public void tower2()
     {
         tower = towers[1];
+        infoTarget = towers[1];
     }
     public void tower3()
     {
@@ -81,7 +101,7 @@ public class RayCast : MonoBehaviour
     }
     public void deleteTower()
     {
-        tower = null;
+        delete = true;
     }
 }
 
