@@ -2725,7 +2725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
   numberOfEnemies: 10
-  spawnTime: 5
+  spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
@@ -2776,7 +2776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
   numberOfEnemies: 10
-  spawnTime: 5
+  spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
@@ -3442,7 +3442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
   numberOfEnemies: 10
-  spawnTime: 5
+  spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
@@ -4610,7 +4610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
   numberOfEnemies: 10
-  spawnTime: 5
+  spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
@@ -7013,7 +7013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
   numberOfEnemies: 10
-  spawnTime: 5
+  spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}

@@ -7,7 +7,7 @@ public class MoveBullet : MonoBehaviour
     public float speed;
     void LateUpdate()
     {
-        transform.Translate(Vector2.down * speed * Time.deltaTime);
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
     

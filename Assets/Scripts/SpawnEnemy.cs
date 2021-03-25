@@ -4,15 +4,15 @@ public class SpawnEnemy : MonoBehaviour
 {
     public GameObject enemy;
     public int numberOfEnemies;
-    private int sum;
+    public int randomRangeSpawn;
+    public int randomRangeEnemies;
     public float spawnTime; 
     public float  spawnTimeRND;
     public bool endOfTheWave;
     float exit_time;
-    GameObject e;
     public Transform parent;
-    public int randomRangeSpawn;
-    public int randomRangeEnemies;
+    private int sum;
+    GameObject e;
 
     void Start()
     {
