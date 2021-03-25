@@ -2726,8 +2726,11 @@ MonoBehaviour:
   enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
   numberOfEnemies: 10
   spawnTime: 5
+  spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
+  randomRangeSpawn: 2
+  randomRangeEnemies: 3
 --- !u!1 &605737298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,8 +2777,11 @@ MonoBehaviour:
   enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
   numberOfEnemies: 10
   spawnTime: 5
+  spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
+  randomRangeSpawn: 2
+  randomRangeEnemies: 3
 --- !u!1 &658959783
 GameObject:
   m_ObjectHideFlags: 0
@@ -3437,8 +3443,11 @@ MonoBehaviour:
   enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
   numberOfEnemies: 10
   spawnTime: 5
+  spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
+  randomRangeSpawn: 2
+  randomRangeEnemies: 3
 --- !u!1 &836974181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4602,8 +4611,11 @@ MonoBehaviour:
   enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
   numberOfEnemies: 10
   spawnTime: 5
+  spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
+  randomRangeSpawn: 2
+  randomRangeEnemies: 3
 --- !u!1 &1111246595
 GameObject:
   m_ObjectHideFlags: 0
@@ -7002,8 +7014,11 @@ MonoBehaviour:
   enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
   numberOfEnemies: 10
   spawnTime: 5
+  spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
+  randomRangeSpawn: 2
+  randomRangeEnemies: 3
 --- !u!1 &1702143651
 GameObject:
   m_ObjectHideFlags: 0

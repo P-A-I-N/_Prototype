@@ -11,11 +11,15 @@ public class SpawnEnemy : MonoBehaviour
     float exit_time;
     GameObject e;
     public Transform parent;
+    public int randomRangeSpawn;
+    public int randomRangeEnemies;
 
     void Start()
     {
-        numberOfEnemies = Random.Range (numberOfEnemies - numberOfEnemies / 5, numberOfEnemies + numberOfEnemies / 5);
-        spawnTimeRND = Random.Range (spawnTime - spawnTime / 5, spawnTime + spawnTime / 5);
+        if (randomRangeEnemies < 1) randomRangeEnemies = 100;
+        if (randomRangeSpawn < 1) randomRangeSpawn = 100;
+        numberOfEnemies = Random.Range (numberOfEnemies - numberOfEnemies / randomRangeEnemies, numberOfEnemies + numberOfEnemies / randomRangeEnemies);
+        spawnTimeRND = Random.Range (spawnTime - spawnTime / randomRangeSpawn, spawnTime + spawnTime / randomRangeSpawn);
         exit_time = Time.time + spawnTimeRND;
         //InvokeRepeating("CreateEnemy", spawnTime, spawnTime);
         //InvokeRepeating("summ", spawnTime, spawnTime);
@@ -49,7 +53,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             e = Instantiate(enemy, transform.position, transform.rotation);
             e.transform.SetParent(parent);
-            spawnTimeRND = Random.Range (spawnTime - spawnTime / 5, spawnTime + spawnTime / 5);
+            spawnTimeRND = Random.Range (spawnTime - spawnTime / randomRangeSpawn, spawnTime + spawnTime / randomRangeSpawn);
             exit_time = Time.time + spawnTimeRND;
         }
     }
