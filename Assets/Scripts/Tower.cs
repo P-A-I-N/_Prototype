@@ -13,9 +13,10 @@ public class Tower : MonoBehaviour
     public GameObject levelUp;
     public Text nameTower;
     public int targetAmount;
-    private float _health;
+    public float _health;
     private bool damage;
     private bool target;
+    public int num_enemies = 0;
     private LayerMask layerEnemy = 1 << 6;
 
     private void Awake()
@@ -40,7 +41,7 @@ public class Tower : MonoBehaviour
     {
         if (damage)
         {
-            _health -= 0.02f;
+            _health -= 0.01f * num_enemies;
         }
 
         if (_health <= 0)
@@ -50,11 +51,13 @@ public class Tower : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        num_enemies++;
         damage = true;
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        damage = false;
+        num_enemies--;
+        if (num_enemies <= 0) damage = false;
     }
 
     private void criateBullet()
