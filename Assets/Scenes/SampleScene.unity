@@ -2238,12 +2238,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towers:
-  - {fileID: 8786433785286587580, guid: 2ba6893e849b6f24998952b0a32b0461, type: 3}
-  - {fileID: 3103463055640088768, guid: ceca89936485f294cac62a1912de839d, type: 3}
-  - {fileID: 2136235307771542160, guid: 2d0b2a905f7700d4cb736d1e98c997d7, type: 3}
-  - {fileID: 2769394938376482881, guid: 707483ad28624bd4bb76d80d5d284180, type: 3}
-  - {fileID: 2396603494822658566, guid: 774be866d43ff2c45adef9a865117ff2, type: 3}
-  - {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
+  - {fileID: 3091822445127741013, guid: 8e7ec31602edaba479e6b09ab24634d2, type: 3}
+  - {fileID: 2171621869778484781, guid: 102355e5ae1a4e54c92a12e1228d7214, type: 3}
+  - {fileID: 2986614373658165757, guid: 14dfdfb77218c634e9fef68a6e26cbb6, type: 3}
+  - {fileID: 75817332968836646, guid: 536524ca2b005054aa3bffee6aeba4e9, type: 3}
+  - {fileID: 3913156428894591619, guid: 956a2522b9d93cc4d81ee5cac284a32f, type: 3}
+  - {fileID: 7117819293085753521, guid: b7129313877139a47be9f9f3cf1c1bf5, type: 3}
   - {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
   - {fileID: 6250856000326230027, guid: c39ba196028ec5b47a4f9b180ac37866, type: 3}
   - {fileID: 5838607118407362590, guid: f3137c05c6af0da4db282cb5339c0239, type: 3}
@@ -2723,14 +2723,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba424d8cd86410540b46585d9d992af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
+  enemy: {fileID: 1515413737831354820, guid: a10c8cbcd6d5a124d9325a8dd4edc776, type: 3}
   numberOfEnemies: 10
+  randomRangeSpawn: 2
+  randomRangeEnemies: 3
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
-  randomRangeSpawn: 2
-  randomRangeEnemies: 3
 --- !u!1 &605737298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,14 +2774,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba424d8cd86410540b46585d9d992af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
+  enemy: {fileID: 3957342895764858181, guid: 942de6e296dc3eb448711787d9c436c2, type: 3}
   numberOfEnemies: 10
+  randomRangeSpawn: 2
+  randomRangeEnemies: 3
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
-  randomRangeSpawn: 2
-  randomRangeEnemies: 3
 --- !u!1 &658959783
 GameObject:
   m_ObjectHideFlags: 0
@@ -3440,14 +3440,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba424d8cd86410540b46585d9d992af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
+  enemy: {fileID: 377946998869243335, guid: 54357d23061252940a88632c8b3921d0, type: 3}
   numberOfEnemies: 10
+  randomRangeSpawn: 2
+  randomRangeEnemies: 3
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
-  randomRangeSpawn: 2
-  randomRangeEnemies: 3
 --- !u!1 &836974181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4608,14 +4608,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba424d8cd86410540b46585d9d992af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
+  enemy: {fileID: 1798383013457134003, guid: e59e60e190576b842a5e7c90b4ff7ee5, type: 3}
   numberOfEnemies: 10
+  randomRangeSpawn: 2
+  randomRangeEnemies: 3
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
-  randomRangeSpawn: 2
-  randomRangeEnemies: 3
 --- !u!1 &1111246595
 GameObject:
   m_ObjectHideFlags: 0
@@ -7011,14 +7011,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba424d8cd86410540b46585d9d992af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 4404925317187463905, guid: 4e6af3c8bfee87541ae0cc54bca236f4, type: 3}
+  enemy: {fileID: 8764735807233861961, guid: 9aad400664ce83f40a6ce9b804043736, type: 3}
   numberOfEnemies: 10
+  randomRangeSpawn: 2
+  randomRangeEnemies: 3
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   parent: {fileID: 563002988}
-  randomRangeSpawn: 2
-  randomRangeEnemies: 3
 --- !u!1 &1702143651
 GameObject:
   m_ObjectHideFlags: 0
