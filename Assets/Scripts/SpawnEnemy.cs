@@ -5,22 +5,32 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject enemy;
     public int numberOfEnemies;
     private int sum;
-    public float spawnTime;
+    public float spawnTime; 
+    public float  spawnTimeRND;
     public bool endOfTheWave;
+    float exit_time;
     GameObject e;
     public Transform parent;
 
     void Start()
     {
-        InvokeRepeating("CreateEnemy", spawnTime, spawnTime);
-        InvokeRepeating("summ", spawnTime, spawnTime);
+        numberOfEnemies = Random.Range (numberOfEnemies - numberOfEnemies / 5, numberOfEnemies + numberOfEnemies / 5);
+        spawnTimeRND = Random.Range (spawnTime - spawnTime / 5, spawnTime + spawnTime / 5);
+        exit_time = Time.time + spawnTimeRND;
+        //InvokeRepeating("CreateEnemy", spawnTime, spawnTime);
+        //InvokeRepeating("summ", spawnTime, spawnTime);
     }
     void Update()
     {
-        if(sum == numberOfEnemies)
+        if (Time.time >= exit_time && !endOfTheWave)
         {
-            endOfTheWave = true;
+            CreateEnemy();
+            summ();
         }
+        //if(sum == numberOfEnemies)
+        //{
+        //    endOfTheWave = true;
+        //}
     }
 
 
@@ -30,6 +40,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             sum++;
         }
+        else endOfTheWave = true;
     }
 
     void CreateEnemy()
@@ -38,6 +49,8 @@ public class SpawnEnemy : MonoBehaviour
         {
             e = Instantiate(enemy, transform.position, transform.rotation);
             e.transform.SetParent(parent);
+            spawnTimeRND = Random.Range (spawnTime - spawnTime / 5, spawnTime + spawnTime / 5);
+            exit_time = Time.time + spawnTimeRND;
         }
     }
 }
