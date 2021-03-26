@@ -87,46 +87,55 @@ public void tower1()
     {
         tower = towers[0];
         infoTarget = towers[0];
+        target = null;
     }
     public void tower2()
     {
         tower = towers[1];
         infoTarget = towers[1];
+        target = null;
     }
     public void tower3()
     {
         tower = towers[2];
         infoTarget = towers[2];
+        target = null;
     }
     public void tower4()
     {
         tower = towers[3];
         infoTarget = towers[3];
+        target = null;
     }
     public void tower5()
     {
         tower = towers[4];
         infoTarget = towers[4];
+        target = null;
     }
     public void tower6()
     {
         tower = towers[5];
         infoTarget = towers[5];
+        target = null;
     }
     public void tower7()
     {
         tower = towers[6];
         infoTarget = towers[6];
+        target = null;
     }
     public void tower8()
     {
         tower = towers[7];
         infoTarget = towers[7];
+        target = null;
     }
     public void tower9()
     {
         tower = towers[8];
         infoTarget = towers[8];
+        target = null;
     }
     public void deleteTower()
     {
