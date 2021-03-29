@@ -4,7 +4,7 @@ public class Enemy : MonoBehaviour
 {
     public float speed;
     private float _speed;
-    public float health = 10;
+    public float health;
     GameMap gm;
 
     private void Awake()
@@ -40,7 +40,11 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Bullet")
+        if ( collision.tag == "Bullet" && gameObject.tag == "Enemy")
+        {
+            health--;
+        }
+        if ( collision.tag == "BulletPVO" && gameObject.tag == "EnemyVO")
         {
             health--;
         }

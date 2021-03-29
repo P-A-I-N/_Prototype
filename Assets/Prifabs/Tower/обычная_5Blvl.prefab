@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7372543339194016605}
   - component: {fileID: 2375144565254793383}
   - component: {fileID: 309760098625038580}
+  - component: {fileID: 8406828124983971134}
   m_Layer: 8
   m_Name: "\u043E\u0431\u044B\u0447\u043D\u0430\u044F_5Blvl"
   m_TagString: Tower
@@ -134,11 +135,9 @@ MonoBehaviour:
   rateOfFire: 3
   price: 100
   bullet: {fileID: 9130870781651923518, guid: c58630d21bc7c43438436f709f462cf2, type: 3}
-  levelUp: {fileID: 7117819293085753521}
+  levelUp: {fileID: 5838607118407362590, guid: f3137c05c6af0da4db282cb5339c0239, type: 3}
   nameTower: {fileID: 309760098625038580}
   targetAmount: 1
-  _health: 0
-  num_enemies: 0
 --- !u!222 &2375144565254793383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -181,3 +180,24 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Tower 5B
+--- !u!50 &8406828124983971134
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117819293085753521}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

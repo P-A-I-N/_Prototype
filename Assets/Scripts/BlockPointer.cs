@@ -5,7 +5,6 @@ using UnityEngine;
 public class BlockPointer : MonoBehaviour
 {
     public GameObject target;
-    Collider2D col;
     private void Update()
     {
         if (target == null)
@@ -15,10 +14,11 @@ public class BlockPointer : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Tower")
+        if (collision.gameObject.tag == "Tower" || collision.gameObject.tag == "TowerPVO")
         {
+            Debug.Log(collision.tag);
             target = collision.gameObject;
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
         }
     }
 

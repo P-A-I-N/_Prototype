@@ -13,7 +13,11 @@ public class MoveBullet : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collision.tag == "Enemy" || collision.tag =="Boss")
+       if (gameObject.tag == "Bullet" && collision.tag != "EnemyPVO" && collision.tag == "Enemy" || collision.tag =="Boss")
+        {
+            Destroy(gameObject);
+        }
+        if (gameObject.tag == "BulletPVO" && collision.tag == "EnemyVO" && collision.tag != "Enemy" && collision.tag != "Boss")
         {
             Destroy(gameObject);
         }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 945321431755792388}
   - component: {fileID: 9185522370198609426}
   - component: {fileID: 4490618903245142999}
+  - component: {fileID: -4807611229501601211}
   m_Layer: 8
   m_Name: "\u043E\u0431\u044B\u0447\u043D\u0430\u044F_4lvl"
   m_TagString: Tower
@@ -137,8 +138,6 @@ MonoBehaviour:
   levelUp: {fileID: 3913156428894591619, guid: 956a2522b9d93cc4d81ee5cac284a32f, type: 3}
   nameTower: {fileID: 4490618903245142999}
   targetAmount: 1
-  _health: 0
-  num_enemies: 0
 --- !u!222 &9185522370198609426
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -181,3 +180,24 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Tower 4
+--- !u!50 &-4807611229501601211
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75817332968836646}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
