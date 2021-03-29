@@ -5,13 +5,31 @@ public class Enemy : MonoBehaviour
     public float speed;
     private float _speed;
     public float health;
+    public float coldTime;
+    public float decelerationIn;
     GameMap gm;
+    bool cold;
+    float timeCold;
+    bool stop;
 
     private void Awake()
     {
         _speed = speed;
         //gm = GetComponentInParent<GameMap>();
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
+    }
+    private void Update()
+    {
+        if(cold && _speed == speed)
+        {
+            _speed /= decelerationIn;
+            timeCold = Time.time + coldTime;
+            cold = false;
+        }
+        if(Time.time > timeCold && !stop)
+        {
+            _speed = speed;
+        }
     }
     void LateUpdate()
     {
@@ -30,11 +48,12 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        stop = true;
         _speed = 0;
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+        stop = false;
         _speed = speed;
     }
 
@@ -47,6 +66,11 @@ public class Enemy : MonoBehaviour
         if ( collision.tag == "BulletPVO" && gameObject.tag == "EnemyVO")
         {
             health--;
+        }
+        if (collision.tag == "BulletCold" && gameObject.tag == "Enemy")
+        {
+            health--;
+            cold = true;
         }
     }
 }

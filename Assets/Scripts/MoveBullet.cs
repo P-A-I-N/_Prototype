@@ -10,10 +10,10 @@ public class MoveBullet : MonoBehaviour
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if (gameObject.tag == "Bullet" && collision.tag != "EnemyPVO" && collision.tag == "Enemy" || collision.tag =="Boss")
+        if ((gameObject.tag == "BulletCold" || gameObject.tag == "Bullet") && collision.tag != "EnemyPVO" && (collision.tag == "Enemy" || collision.tag == "Boss"))
         {
             Destroy(gameObject);
         }

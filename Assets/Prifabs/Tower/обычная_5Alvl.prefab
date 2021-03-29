@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 29021231d7b0f97489c6bac3879045ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -138,6 +138,10 @@ MonoBehaviour:
   levelUp: {fileID: 7117819293085753521, guid: b7129313877139a47be9f9f3cf1c1bf5, type: 3}
   nameTower: {fileID: 8777175777170879656}
   targetAmount: 1
+  layerEnemy:
+    serializedVersion: 2
+    m_Bits: 0
+  parent: {fileID: 0}
 --- !u!222 &406964554760255985
 CanvasRenderer:
   m_ObjectHideFlags: 0

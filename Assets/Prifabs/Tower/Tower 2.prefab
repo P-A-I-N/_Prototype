@@ -137,6 +137,10 @@ MonoBehaviour:
   levelUp: {fileID: 8786433785286587580, guid: 2ba6893e849b6f24998952b0a32b0461, type: 3}
   nameTower: {fileID: 1258066488942281290}
   targetAmount: 1
+  layerEnemy:
+    serializedVersion: 2
+    m_Bits: 0
+  parent: {fileID: 0}
 --- !u!222 &6091922537169151442
 CanvasRenderer:
   m_ObjectHideFlags: 0

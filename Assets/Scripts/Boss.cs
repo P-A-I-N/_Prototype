@@ -8,11 +8,29 @@ public class Boss : MonoBehaviour
     public GameObject gameWin;
     private float _speed;
     public float health = 50;
+    public float coldTime;
+    public float decelerationIn;
+    bool cold;
+    float timeCold;
+    bool stop;
 
     private void Awake()
     {
         gameWin = GameObject.Find("Canvas");
         _speed = speed;
+    }
+    private void Update()
+    {
+        if (cold && _speed == speed)
+        {
+            _speed /= decelerationIn;
+            timeCold = Time.time + coldTime;
+            cold = false;
+        }
+        if (Time.time > timeCold && !stop)
+        {
+            _speed = speed;
+        }
     }
     void LateUpdate()
     {
@@ -33,11 +51,12 @@ public class Boss : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        stop = true;
         _speed = 0;
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+        stop = false;
         _speed = speed;
     }
 
@@ -46,6 +65,11 @@ public class Boss : MonoBehaviour
         if (collision.tag == "Bullet")
         {
             health--;
+        }
+        if (collision.tag == "BulletCold" && gameObject.tag == "Enemy")
+        {
+            health--;
+            cold = true;
         }
     }
 }

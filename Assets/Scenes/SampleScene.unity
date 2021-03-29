@@ -1847,7 +1847,7 @@ GameObject:
   - component: {fileID: 437543658}
   - component: {fileID: 437543657}
   m_Layer: 5
-  m_Name: Tower 9
+  m_Name: TowerPVO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5084,7 +5084,7 @@ GameObject:
   - component: {fileID: 1129657750}
   - component: {fileID: 1129657749}
   m_Layer: 5
-  m_Name: Tower 7
+  m_Name: "\u0421old Tower"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7425,7 +7425,7 @@ GameObject:
   - component: {fileID: 1702143654}
   - component: {fileID: 1702143653}
   m_Layer: 5
-  m_Name: Tower 8
+  m_Name: Splash Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8251,7 +8251,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower 7
+  m_Text: "\u0421old Tower"
 --- !u!222 &1833779138
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9507,7 +9507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower 8
+  m_Text: Splash Tower
 --- !u!222 &2100712407
 CanvasRenderer:
   m_ObjectHideFlags: 0

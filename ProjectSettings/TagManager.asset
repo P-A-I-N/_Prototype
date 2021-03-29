@@ -15,6 +15,7 @@ TagManager:
   - BulletPVO
   - EnemyVO
   - BulletSplash
+  - BulletCold
   layers:
   - Default
   - TransparentFX

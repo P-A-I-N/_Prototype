@@ -18,6 +18,7 @@ public class Tower : MonoBehaviour
     private bool target;
     private int num_enemies = 0;
     public LayerMask layerEnemy;
+    public Transform parent;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("criateBullet", 0, rateOfFire);
+        parent = gameObject.transform;
     }
 
     private void Update()
@@ -66,7 +68,7 @@ public class Tower : MonoBehaviour
     {
         if (target)
         {
-            Instantiate(bullet, transform.position, bullet.transform.rotation);
+            Instantiate(bullet, transform.position, bullet.transform.rotation, parent);
         }
     }
 }
