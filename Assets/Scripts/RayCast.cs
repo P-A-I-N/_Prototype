@@ -33,6 +33,7 @@ public class RayCast : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1))
         {
+            infoTarget = null;
             target = null;
             delete = false;
         }
