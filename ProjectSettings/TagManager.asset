@@ -11,6 +11,9 @@ TagManager:
   - Point
   - Tower
   - Map
+  - TowerPVO
+  - BulletPVO
+  - EnemyVO
   layers:
   - Default
   - TransparentFX

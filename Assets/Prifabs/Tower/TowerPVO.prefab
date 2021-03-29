@@ -159,7 +159,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Tower \u041F\u0412\u041E attacks flying enemies"
+  m_Text: Tower PVO, attacks flying enemies,
 --- !u!114 &-1337170095212797645
 MonoBehaviour:
   m_ObjectHideFlags: 0
