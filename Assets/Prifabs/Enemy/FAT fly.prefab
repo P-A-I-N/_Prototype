@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5013163119965288894}
   - component: {fileID: 7355902170317140391}
   - component: {fileID: 3434025404165784811}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: FAT fly
   m_TagString: EnemyVO
   m_Icon: {fileID: 0}

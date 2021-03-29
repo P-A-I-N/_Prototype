@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3577622017830061061}
   - component: {fileID: 4324035469654907448}
   - component: {fileID: 4094121401848907638}
-  - component: {fileID: -1337170095212797645}
   - component: {fileID: 4980985339187550002}
+  - component: {fileID: -232501202704768828}
   m_Layer: 8
   m_Name: TowerPVO
   m_TagString: TowerPVO
@@ -160,26 +160,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Tower PVO, attacks flying enemies,
---- !u!114 &-1337170095212797645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5838607118407362590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
-  range: 5
-  rateOfFire: 3
-  price: 1
-  bullet: {fileID: 6055780391979567866, guid: 67d9659dc3a13f34ebff502d7d5146d6, type: 3}
-  levelUp: {fileID: 5838607118407362590}
-  nameTower: {fileID: 4094121401848907638}
-  targetAmount: 1
 --- !u!50 &4980985339187550002
 Rigidbody2D:
   serializedVersion: 4
@@ -201,3 +181,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-232501202704768828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5838607118407362590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  range: 5
+  rateOfFire: 3
+  price: 100
+  bullet: {fileID: 6055780391979567866, guid: 67d9659dc3a13f34ebff502d7d5146d6, type: 3}
+  levelUp: {fileID: 5838607118407362590}
+  nameTower: {fileID: 4094121401848907638}
+  targetAmount: 1
+  layerEnemy:
+    serializedVersion: 2
+    m_Bits: 512

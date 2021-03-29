@@ -17,7 +17,7 @@ public class Tower : MonoBehaviour
     private bool damage;
     private bool target;
     private int num_enemies = 0;
-    private LayerMask layerEnemy = 1 << 6;
+    public LayerMask layerEnemy;
 
     private void Awake()
     {
@@ -30,27 +30,14 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
-        
-        RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, Vector2.right, range, layerEnemy);
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range, layerEnemy);
         Debug.DrawRay(transform.position, Vector2.right * range, Color.yellow);
-        for (int i = 0; i < hit.Length; i++)
+        if (hit.collider != null)
         {
-            if (hit[i].collider != null)
-            {
-                if (tag == "Tower" && hit[i].collider.tag == "Enemy" || hit[i].collider.tag == "Boss")
-                {
-                    target = true;
-                }
-                else if (tag == "TowerPVO" && hit[i].collider.tag == "EnemyVO")
-                {
-                    target = true;
-                }
-                else target = false;
-            }
+            target = true;
         }
-        //if (hit.collider != null && tag == "Tower" && hit.collider.tag == "Enemy" || hit.collider.tag == "Boss") target = true;
-        //else if (hit.collider != null && tag == "TowerPVO" &&  hit.collider.tag == "EnemyVO") target = true;
-        //else target = false;
+        else target = false;
     }
     void LateUpdate()
     {
@@ -82,5 +69,4 @@ public class Tower : MonoBehaviour
             Instantiate(bullet, transform.position, bullet.transform.rotation);
         }
     }
-
 }
