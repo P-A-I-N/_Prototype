@@ -133,7 +133,7 @@ MonoBehaviour:
   health: 10
   range: 5
   rateOfFire: 3
-  price: 1
+  price: 10
   bullet: {fileID: 4638881505785862822, guid: a070511c29b520044a7639130ec2ec69, type: 3}
   levelUp: {fileID: 6250856000326230027}
   nameTower: {fileID: 7738167142773398050}
@@ -142,6 +142,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   parent: {fileID: 0}
+  priceLVLUp: 50
 --- !u!222 &2049466873546149823
 CanvasRenderer:
   m_ObjectHideFlags: 0

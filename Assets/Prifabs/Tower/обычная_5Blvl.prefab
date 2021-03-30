@@ -142,6 +142,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   parent: {fileID: 0}
+  priceLVLUp: 100000000
 --- !u!222 &2375144565254793383
 CanvasRenderer:
   m_ObjectHideFlags: 0

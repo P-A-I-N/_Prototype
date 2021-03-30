@@ -23,13 +23,15 @@ public class RayCast : MonoBehaviour
     {
         if (target != null)
         {
-            levelUp = target.GetComponent<Tower>().levelUp;
-            if (towerUp)
+            Tower t = target.GetComponent<Tower>();
+            levelUp = t.levelUp;
+            if (towerUp && gm.gold >= t.priceLVLUp)
             {
                 Destroy(target.gameObject);
                 Instantiate(levelUp, target.transform.position, target.transform.rotation);
-                towerUp = false;
+                gm.gold -= t.priceLVLUp;
             }
+            towerUp = false;
         }
         if (Input.GetMouseButtonDown(1))
         {

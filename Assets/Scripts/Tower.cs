@@ -19,6 +19,7 @@ public class Tower : MonoBehaviour
     private int num_enemies = 0;
     public LayerMask layerEnemy;
     public Transform parent;
+    public int priceLVLUp = 0;
 
     private void Awake()
     {
