@@ -45,7 +45,7 @@ public class RayCast : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && hitTower.collider != null && delete)
         {
-            int price = hitTower.collider.GetComponent<Tower>().price;
+            int price = hitTower.collider.GetComponent<Tower>().fullprice;
             Destroy(hitTower.collider.gameObject);
             gm.gold += price / 2;
         }

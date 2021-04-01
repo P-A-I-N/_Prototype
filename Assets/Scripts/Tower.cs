@@ -9,6 +9,7 @@ public class Tower : MonoBehaviour
     public int range;
     public int rateOfFire;
     public int price;
+    public int fullprice = 0;
     public GameObject bullet;
     public GameObject levelUp;
     public Text nameTower;
@@ -27,6 +28,7 @@ public class Tower : MonoBehaviour
     }
     private void Start()
     {
+        if (fullprice <= 0) fullprice = price;
         InvokeRepeating("criateBullet", 0, rateOfFire);
         parent = gameObject.transform;
     }
