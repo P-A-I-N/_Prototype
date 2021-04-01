@@ -13,13 +13,19 @@ public class SpawnEnemy : MonoBehaviour
     public Transform parent;
     private int sum;
     GameObject e;
+    int saldo_enemies_start, saldo_enemies_end;
+    float saldo_spawn_start, saldo_spawn_end;
 
     void Start()
     {
         if (randomRangeEnemies < 1) randomRangeEnemies = 100;
         if (randomRangeSpawn < 1) randomRangeSpawn = 100;
-        numberOfEnemies = Random.Range (numberOfEnemies - numberOfEnemies / randomRangeEnemies, numberOfEnemies + numberOfEnemies / randomRangeEnemies);
-        spawnTimeRND = Random.Range (spawnTime - spawnTime / randomRangeSpawn, spawnTime + spawnTime / randomRangeSpawn);
+        saldo_enemies_start = numberOfEnemies - numberOfEnemies / randomRangeEnemies;
+        saldo_enemies_end = numberOfEnemies + numberOfEnemies / randomRangeEnemies;
+        saldo_spawn_start = spawnTime - spawnTime / randomRangeSpawn;
+        saldo_spawn_end = spawnTime + spawnTime / randomRangeSpawn;
+        numberOfEnemies = Random.Range (saldo_enemies_start, saldo_enemies_end);
+        spawnTimeRND = Random.Range (saldo_spawn_start, saldo_spawn_end);
         exit_time = Time.time + spawnTimeRND;
         //InvokeRepeating("CreateEnemy", spawnTime, spawnTime);
         //InvokeRepeating("summ", spawnTime, spawnTime);
@@ -53,7 +59,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             e = Instantiate(enemy, transform.position, transform.rotation);
             e.transform.SetParent(parent);
-            spawnTimeRND = Random.Range (spawnTime - spawnTime / randomRangeSpawn, spawnTime + spawnTime / randomRangeSpawn);
+            spawnTimeRND = Random.Range (saldo_spawn_start, saldo_spawn_end);
             exit_time = Time.time + spawnTimeRND;
         }
     }
