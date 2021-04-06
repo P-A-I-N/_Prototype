@@ -142,6 +142,12 @@ public void tower1()
         infoTarget = towers[8];
         target = null;
     }
+    public void tower10()
+    {
+        tower = towers[9];
+        infoTarget = towers[9];
+        target = null;
+    }
     public void deleteTower()
     {
         delete = true;

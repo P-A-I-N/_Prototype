@@ -14,15 +14,15 @@ public class Tower : MonoBehaviour
     public GameObject levelUp;
     public Text nameTower;
     public int targetAmount;
-    private float _health;
+    protected float _health;
     private bool damage;
     private bool target;
-    private int num_enemies = 0;
+    protected int num_enemies = 0;
     public LayerMask layerEnemy;
     public Transform parent;
     public int priceLVLUp = 0;
 
-    private void Awake()
+    protected void Awake()
     {
         _health = health;
     }
@@ -44,7 +44,7 @@ public class Tower : MonoBehaviour
         }
         else target = false;
     }
-    void LateUpdate()
+    protected void LateUpdate()
     {
         if (damage)
         {
@@ -56,12 +56,12 @@ public class Tower : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         num_enemies++;
         damage = true;
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    protected void OnCollisionExit2D(Collision2D collision)
     {
         num_enemies--;
         if (num_enemies <= 0) damage = false;
