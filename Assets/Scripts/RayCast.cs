@@ -35,7 +35,6 @@ public class RayCast : MonoBehaviour
         {
             infoTarget = null;
             target = null;
-            delete = false;
         }
         Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hitTower = Physics2D.Raycast(worldPoint, Vector2.zero, 100f, layerTower);
@@ -53,14 +52,14 @@ public class RayCast : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && hitTower.collider == null && hitPoint.collider != null && tower != null && infoTarget != null)
         {
 
-                int price = tower.GetComponent<Tower>().price;
-                if (price <= gm.gold)
-                {
-                    pos = hitPoint.collider.gameObject.transform.position;
-                    Instantiate(tower, pos, tower.transform.rotation);
-                    gm.gold -= price;
-                    tower = null;
-                }      
+            int price = tower.GetComponent<Tower>().price;
+            if (price <= gm.gold)
+            {
+                pos = hitPoint.collider.gameObject.transform.position;
+                Instantiate(tower, pos, tower.transform.rotation);
+                gm.gold -= price;
+                tower = null;
+            }
         }
         if (Input.GetMouseButtonDown(0) && hitTower.collider != null && hitPoint.collider != null && delete)
         {
@@ -69,10 +68,9 @@ public class RayCast : MonoBehaviour
             gm.gold += price / 2;
         }
 
-            if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             infoTarget = null;
-            delete = false;
         }
 
     }
@@ -82,9 +80,7 @@ public class RayCast : MonoBehaviour
     {
         towerUp = true;
     }
-
-
-public void tower1()
+    public void tower1()
     {
         tower = towers[0];
         infoTarget = towers[0];
@@ -140,7 +136,7 @@ public void tower1()
     }
     public void deleteTower()
     {
-        delete = true;
+        Destroy(target);
     }
 }
 

@@ -11,6 +11,7 @@ public class TowerInfo : MonoBehaviour
     public Text descriptionUp;
     public GameObject panel;
     public GameObject button;
+    public GameObject button2;
     public GameObject infoTarget;
     public GameObject target;
     int nowAmount;
@@ -37,6 +38,7 @@ public class TowerInfo : MonoBehaviour
             up.gameObject.SetActive(false);
             descriptionUp.gameObject.SetActive(false);
             button.SetActive(false);
+            button2.SetActive(false);
         }
 
         if (infoTarget != null)
@@ -59,6 +61,7 @@ public class TowerInfo : MonoBehaviour
             up.gameObject.SetActive(true);
             descriptionUp.gameObject.SetActive(true);
             button.SetActive(true);
+            button2.SetActive(true);
 
             now.text = target.GetComponent<Text>().text;
             nowAmount = target.GetComponent<Tower>().targetAmount;
@@ -83,12 +86,14 @@ public class TowerInfo : MonoBehaviour
             up.gameObject.SetActive(false);
             descriptionUp.gameObject.SetActive(false);
             button.SetActive(false);
+            button2.SetActive(false);
         }
         else if (target == null)
         {
             up.gameObject.SetActive(false);
             descriptionUp.gameObject.SetActive(false);
             button.SetActive(false);
+            button2.SetActive(false);
         }
     }
 }
