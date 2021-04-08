@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.3
-  health: 10
+  health: 100
   coldTime: 0
   decelerationIn: 0
 --- !u!50 &2091720509922073275
