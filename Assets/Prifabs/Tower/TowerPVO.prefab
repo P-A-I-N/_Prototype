@@ -205,4 +205,3 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   parent: {fileID: 0}
-  priceLVLUp: 150
