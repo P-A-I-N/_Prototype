@@ -23,12 +23,65 @@ public class RayCast : MonoBehaviour
     {
         if (target != null)
         {
-            levelUp = target.GetComponent<Tower>().levelUp;
-            if (towerUp)
+            if (target.tag == "Tower")
+            { 
+                levelUp = target.GetComponent<Tower>().levelUp;
+                if (towerUp)
+                {
+                    Destroy(target.gameObject);
+                    Instantiate(levelUp, target.transform.position, target.transform.rotation);
+                    towerUp = false;
+                }
+            }
+            if (target.tag == "TowerBuff")
             {
-                Destroy(target.gameObject);
-                Instantiate(levelUp, target.transform.position, target.transform.rotation);
-                towerUp = false;
+                levelUp = target.GetComponent<TowerBuff>().levelUp;
+                if (towerUp)
+                {
+                    Destroy(target.gameObject);
+                    Instantiate(levelUp, target.transform.position, target.transform.rotation);
+                    towerUp = false;
+                }
+            }
+            if (target.tag == "TowerFreeze")
+            {
+                levelUp = target.GetComponent<TowerFreeze>().levelUp;
+                if (towerUp)
+                {
+                    Destroy(target.gameObject);
+                    Instantiate(levelUp, target.transform.position, target.transform.rotation);
+                    towerUp = false;
+                }
+            }
+            if (target.tag == "TowerPVO")
+            {
+                levelUp = target.GetComponent<TowerPVO>().levelUp;
+                if (towerUp)
+                {
+                    Destroy(target.gameObject);
+                    Instantiate(levelUp, target.transform.position, target.transform.rotation);
+                    towerUp = false;
+                }
+            }
+            if (target.tag == "TowerSplash")
+            {
+                levelUp = target.GetComponent<TowerSplash>().levelUp;
+                if (towerUp)
+                {
+                    Destroy(target.gameObject);
+                    Instantiate(levelUp, target.transform.position, target.transform.rotation);
+                    towerUp = false;
+                }
+            }
+            if (target.tag == "TowerTank")
+            {
+                levelUp = target.GetComponent<TowerTank>().levelUp;
+                if (towerUp)
+                {
+                    Destroy(target.gameObject);
+                    Instantiate(levelUp, target.transform.position, target.transform.rotation);
+                    towerUp = false;
+                }
             }
         }
         if (Input.GetMouseButtonDown(1))
@@ -51,21 +104,72 @@ public class RayCast : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && hitTower.collider == null && hitPoint.collider != null && tower != null && infoTarget != null)
         {
-
-            int price = tower.GetComponent<Tower>().price;
-            if (price <= gm.gold)
+            if (infoTarget.tag == "Tower")
             {
-                pos = hitPoint.collider.gameObject.transform.position;
-                Instantiate(tower, pos, tower.transform.rotation);
-                gm.gold -= price;
-                tower = null;
+                int price = tower.GetComponent<Tower>().price;
+                if (price <= gm.gold)
+                {
+                    pos = hitPoint.collider.gameObject.transform.position;
+                    Instantiate(tower, pos, tower.transform.rotation);
+                    gm.gold -= price;
+                    tower = null;
+                }
             }
-        }
-        if (Input.GetMouseButtonDown(0) && hitTower.collider != null && hitPoint.collider != null && delete)
-        {
-            int price = hitTower.collider.GetComponent<Tower>().price;
-            Destroy(hitTower.collider);
-            gm.gold += price / 2;
+            if (infoTarget.tag == "TowerBuff")
+            {
+                int price = tower.GetComponent<TowerBuff>().price;
+                if (price <= gm.gold)
+                {
+                    pos = hitPoint.collider.gameObject.transform.position;
+                    Instantiate(tower, pos, tower.transform.rotation);
+                    gm.gold -= price;
+                    tower = null;
+                }
+            }
+            if (infoTarget.tag == "TowerFreeze")
+            {
+                int price = tower.GetComponent<TowerFreeze>().price;
+                if (price <= gm.gold)
+                {
+                    pos = hitPoint.collider.gameObject.transform.position;
+                    Instantiate(tower, pos, tower.transform.rotation);
+                    gm.gold -= price;
+                    tower = null;
+                }
+            }
+            if (infoTarget.tag == "TowerPVO")
+            {
+                int price = tower.GetComponent<TowerPVO>().price;
+                if (price <= gm.gold)
+                {
+                    pos = hitPoint.collider.gameObject.transform.position;
+                    Instantiate(tower, pos, tower.transform.rotation);
+                    gm.gold -= price;
+                    tower = null;
+                }
+            }
+            if (infoTarget.tag == "TowerSplash")
+            {
+                int price = tower.GetComponent<TowerSplash>().price;
+                if (price <= gm.gold)
+                {
+                    pos = hitPoint.collider.gameObject.transform.position;
+                    Instantiate(tower, pos, tower.transform.rotation);
+                    gm.gold -= price;
+                    tower = null;
+                }
+            }
+            if (infoTarget.tag == "TowerTank")
+            {
+                int price = tower.GetComponent<TowerTank>().price;
+                if (price <= gm.gold)
+                {
+                    pos = hitPoint.collider.gameObject.transform.position;
+                    Instantiate(tower, pos, tower.transform.rotation);
+                    gm.gold -= price;
+                    tower = null;
+                }
+            }
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -136,6 +240,36 @@ public class RayCast : MonoBehaviour
     }
     public void deleteTower()
     {
+        if (target.tag == "Tower")
+        {
+            int price = target.GetComponent<Tower>().price;
+            gm.gold += price / 2;
+        }
+        if (target.tag == "TowerBuff")
+        {
+            int price = target.GetComponent<TowerBuff>().price;
+            gm.gold += price / 2;
+        }
+        if (target.tag == "TowerFreeze")
+        {
+            int price = target.GetComponent<TowerFreeze>().price;
+            gm.gold += price / 2;
+        }
+        if (target.tag == "TowerPVO")
+        {
+            int price = target.GetComponent<TowerPVO>().price;
+            gm.gold += price / 2;
+        }
+        if (target.tag == "TowerSplash")
+        {
+            int price = target.GetComponent<TowerSplash>().price;
+            gm.gold += price / 2;
+        }
+        if (target.tag == "TowerTank")
+        {
+            int price = target.GetComponent<TowerTank>().price;
+            gm.gold += price / 2;
+        }
         Destroy(target);
     }
 }

@@ -136,7 +136,6 @@ MonoBehaviour:
   bullet: {fileID: 769632974019366343, guid: 739c430830d73d34cb6ac32b9b1bca5e, type: 3}
   levelUp: {fileID: 8786433785286587580, guid: 2ba6893e849b6f24998952b0a32b0461, type: 3}
   nameTower: {fileID: 1258066488942281290}
-  targetAmount: 1
   layerEnemy:
     serializedVersion: 2
     m_Bits: 0

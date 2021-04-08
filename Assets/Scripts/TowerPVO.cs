@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class Tower : MonoBehaviour
+public class TowerPVO : MonoBehaviour
 {
     public int health = 10;
     public int range;

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4583781615001532060
+--- !u!1 &5838607118407362590
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,27 +8,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6761003818108957000}
-  - component: {fileID: 8291543153064929145}
-  - component: {fileID: 2236815651346466784}
-  - component: {fileID: -7281875327996550979}
-  - component: {fileID: 2531247666404867770}
-  - component: {fileID: 9024678611350098224}
-  - component: {fileID: 1967732178381951021}
+  - component: {fileID: 2019301958133056358}
+  - component: {fileID: 1534706284752578963}
+  - component: {fileID: 3577622017830061061}
+  - component: {fileID: 4324035469654907448}
+  - component: {fileID: 4094121401848907638}
+  - component: {fileID: 4980985339187550002}
+  - component: {fileID: 2074891517192614046}
   m_Layer: 8
-  m_Name: "\u0421old Tower"
-  m_TagString: Tower
+  m_Name: PVO Tower
+  m_TagString: TowerPVO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &6761003818108957000
+--- !u!224 &2019301958133056358
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583781615001532060}
+  m_GameObject: {fileID: 5838607118407362590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
@@ -38,16 +38,16 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.505, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!212 &8291543153064929145
+--- !u!212 &1534706284752578963
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583781615001532060}
+  m_GameObject: {fileID: 5838607118407362590}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -92,13 +92,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2236815651346466784
+--- !u!61 &3577622017830061061
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583781615001532060}
+  m_GameObject: {fileID: 5838607118407362590}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -118,66 +118,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &-7281875327996550979
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583781615001532060}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &2531247666404867770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583781615001532060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  range: 6
-  rateOfFire: 3
-  price: 1
-  bullet: {fileID: 8811029717210337052, guid: 01db3acc7f5380346ad458ca7f6e9783, type: 3}
-  levelUp: {fileID: 4583781615001532060}
-  nameTower: {fileID: 1967732178381951021}
-  targetAmount: 1
-  layerEnemy:
-    serializedVersion: 2
-    m_Bits: 64
-  parent: {fileID: 0}
---- !u!222 &9024678611350098224
+--- !u!222 &4324035469654907448
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583781615001532060}
+  m_GameObject: {fileID: 5838607118407362590}
   m_CullTransparentMesh: 1
---- !u!114 &1967732178381951021
+--- !u!114 &4094121401848907638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583781615001532060}
+  m_GameObject: {fileID: 5838607118407362590}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -204,4 +159,48 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower of Cold, slows down enemies,
+  m_Text: PVO
+--- !u!50 &4980985339187550002
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5838607118407362590}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &2074891517192614046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5838607118407362590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e418a73645efa23489aff8d8d00e329a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  range: 5
+  rateOfFire: 3
+  price: 2
+  bullet: {fileID: 6055780391979567866, guid: 67d9659dc3a13f34ebff502d7d5146d6, type: 3}
+  levelUp: {fileID: 5838607118407362590}
+  nameTower: {fileID: 4094121401848907638}
+  layerEnemy:
+    serializedVersion: 2
+    m_Bits: 512
+  parent: {fileID: 0}

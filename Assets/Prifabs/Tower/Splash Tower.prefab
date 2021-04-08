@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 2437386013562572589}
   - component: {fileID: 1511515212843008447}
   - component: {fileID: 8494155952500477814}
-  - component: {fileID: 2836894925386795981}
   - component: {fileID: 2049466873546149823}
   - component: {fileID: 7738167142773398050}
   - component: {fileID: 2758389644045057940}
+  - component: {fileID: -6296560242562098538}
   m_Layer: 8
   m_Name: Splash Tower
-  m_TagString: Untagged
+  m_TagString: TowerSplash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,30 +118,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2836894925386795981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6250856000326230027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  range: 5
-  rateOfFire: 3
-  price: 1
-  bullet: {fileID: 4638881505785862822, guid: a070511c29b520044a7639130ec2ec69, type: 3}
-  levelUp: {fileID: 6250856000326230027}
-  nameTower: {fileID: 7738167142773398050}
-  targetAmount: 1
-  layerEnemy:
-    serializedVersion: 2
-    m_Bits: 64
-  parent: {fileID: 0}
 --- !u!222 &2049466873546149823
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -183,7 +159,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Splash Tower, attacks several enemies in its line, in the zone of its radius,
+  m_Text: Splash
 --- !u!50 &2758389644045057940
 Rigidbody2D:
   serializedVersion: 4
@@ -205,3 +181,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-6296560242562098538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250856000326230027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fafd5783bb43c4090ed8adac14965c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  range: 5
+  rateOfFire: 3
+  price: 2
+  bullet: {fileID: 4638881505785862822, guid: a070511c29b520044a7639130ec2ec69, type: 3}
+  levelUp: {fileID: 6250856000326230027}
+  nameTower: {fileID: 7738167142773398050}
+  layerEnemy:
+    serializedVersion: 2
+    m_Bits: 64
+  parent: {fileID: 0}
