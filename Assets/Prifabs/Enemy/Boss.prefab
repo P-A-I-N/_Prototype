@@ -154,3 +154,5 @@ MonoBehaviour:
   speed: 0.2
   gameWin: {fileID: 0}
   health: 100
+  coldTime: 3
+  decelerationIn: 2

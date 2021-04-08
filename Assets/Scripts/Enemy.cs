@@ -29,10 +29,8 @@ public class Enemy : MonoBehaviour
         if(Time.time > timeCold && !stop)
         {
             _speed = speed;
-        }
-    }
-    void LateUpdate()
-    {
+        }  
+        
         if(health <= 0)
         {
             Destroy(gameObject);

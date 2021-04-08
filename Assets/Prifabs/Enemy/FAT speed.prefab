@@ -115,8 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.3
   health: 100
-  coldTime: 0
-  decelerationIn: 0
+  coldTime: 3
+  decelerationIn: 2
 --- !u!50 &8778705203031240557
 Rigidbody2D:
   serializedVersion: 4
