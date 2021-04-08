@@ -116,4 +116,4 @@ MonoBehaviour:
   parent: {fileID: 0}
   pos: 0
   x: 0
-  range: 0
+  range: 5

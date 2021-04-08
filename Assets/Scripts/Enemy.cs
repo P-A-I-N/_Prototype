@@ -15,7 +15,6 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         _speed = speed;
-        //gm = GetComponentInParent<GameMap>();
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
     }
     private void Update()

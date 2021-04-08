@@ -9,7 +9,7 @@ public class BlockPointer : MonoBehaviour
     {
         if (target == null)
         {
-            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            gameObject.GetComponent<Collider2D>().enabled = true;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
