@@ -25,6 +25,7 @@ TagManager:
   - InvisibleBulletSplash
   - InvisibleBulletFreeze
   - EnemyInvisible
+  - TowerDebuff
   layers:
   - Default
   - TransparentFX

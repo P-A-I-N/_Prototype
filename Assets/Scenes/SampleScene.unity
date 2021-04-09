@@ -2409,7 +2409,7 @@ MonoBehaviour:
   - {fileID: 3091822445127741013, guid: 8e7ec31602edaba479e6b09ab24634d2, type: 3}
   - {fileID: 2171621869778484781, guid: 102355e5ae1a4e54c92a12e1228d7214, type: 3}
   - {fileID: 2986614373658165757, guid: 14dfdfb77218c634e9fef68a6e26cbb6, type: 3}
-  - {fileID: 75817332968836646, guid: 536524ca2b005054aa3bffee6aeba4e9, type: 3}
+  - {fileID: 4672662006099410413, guid: 9e59ba1981ee8774e8c026e0a65f0cc7, type: 3}
   - {fileID: 5356287445821558334, guid: 1ee8db99ce4e7384d9125b93a15fc4a4, type: 3}
   - {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
   - {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
@@ -2822,7 +2822,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower 4
+  m_Text: Debuff
 --- !u!222 &581098049
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7599,7 +7599,7 @@ GameObject:
   - component: {fileID: 1771785266}
   - component: {fileID: 1771785265}
   m_Layer: 5
-  m_Name: Tower 4
+  m_Name: Debuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
