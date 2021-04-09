@@ -121,6 +121,12 @@ public class RayCast : MonoBehaviour
                 price = tower.GetComponent<TowerDebuff>().price;
                 craeteTower();
             }
+            if (infoTarget.tag == "TowerGold")
+            {
+                price = tower.GetComponent<GoldTower>().price;
+                craeteTower();
+            }
+
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -207,6 +213,12 @@ public class RayCast : MonoBehaviour
     {
         tower = towers[8];
         infoTarget = towers[8];
+        target = null;
+    }
+    public void tower10()
+    {
+        tower = towers[9];
+        infoTarget = towers[9];
         target = null;
     }
     public void deleteTower()

@@ -26,6 +26,7 @@ TagManager:
   - InvisibleBulletFreeze
   - EnemyInvisible
   - TowerDebuff
+  - TowerGold
   layers:
   - Default
   - TransparentFX
