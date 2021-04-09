@@ -135,12 +135,13 @@ MonoBehaviour:
   rateOfFire: 3
   price: 100
   bullet: {fileID: 9130870781651923518, guid: c58630d21bc7c43438436f709f462cf2, type: 3}
+  invisibleBullet: {fileID: 5024834314885986411, guid: 66352b884ae81f447bb492aa9c5f91d7, type: 3}
   levelUp: {fileID: 3913156428894591619, guid: 956a2522b9d93cc4d81ee5cac284a32f, type: 3}
   nameTower: {fileID: 309760098625038580}
   layerEnemy:
     serializedVersion: 2
     m_Bits: 0
-  parent: {fileID: 0}
+  invisible: 0
 --- !u!222 &2375144565254793383
 CanvasRenderer:
   m_ObjectHideFlags: 0

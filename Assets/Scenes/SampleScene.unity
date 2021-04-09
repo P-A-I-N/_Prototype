@@ -1847,7 +1847,7 @@ GameObject:
   - component: {fileID: 437543658}
   - component: {fileID: 437543657}
   m_Layer: 5
-  m_Name: TowerPVO
+  m_Name: PVO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2410,8 +2410,8 @@ MonoBehaviour:
   - {fileID: 2171621869778484781, guid: 102355e5ae1a4e54c92a12e1228d7214, type: 3}
   - {fileID: 2986614373658165757, guid: 14dfdfb77218c634e9fef68a6e26cbb6, type: 3}
   - {fileID: 75817332968836646, guid: 536524ca2b005054aa3bffee6aeba4e9, type: 3}
-  - {fileID: 3913156428894591619, guid: 956a2522b9d93cc4d81ee5cac284a32f, type: 3}
-  - {fileID: 7117819293085753521, guid: b7129313877139a47be9f9f3cf1c1bf5, type: 3}
+  - {fileID: 5356287445821558334, guid: 1ee8db99ce4e7384d9125b93a15fc4a4, type: 3}
+  - {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
   - {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
   - {fileID: 6250856000326230027, guid: c39ba196028ec5b47a4f9b180ac37866, type: 3}
   - {fileID: 5838607118407362590, guid: f3137c05c6af0da4db282cb5339c0239, type: 3}
@@ -2472,7 +2472,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 50023384}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &529826983
 GameObject:
@@ -2492,7 +2492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &529826984
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2505,13 +2505,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 984803315}
-  m_Father: {fileID: 663343862}
-  m_RootOrder: 9
+  m_Father: {fileID: 50023384}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -94.23712, y: -451.1366}
-  m_SizeDelta: {x: 170.0359, y: 55.3937}
+  m_AnchoredPosition: {x: 475, y: -446}
+  m_SizeDelta: {x: 54.09, y: 48.791}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529826985
 MonoBehaviour:
@@ -2748,6 +2748,7 @@ MonoBehaviour:
   descriptionUp: {fileID: 1036774236}
   panel: {fileID: 539895177}
   button: {fileID: 921440946}
+  button2: {fileID: 529826983}
   infoTarget: {fileID: 0}
   target: {fileID: 0}
   levelUp: {fileID: 0}
@@ -3006,7 +3007,6 @@ RectTransform:
   - {fileID: 1129657748}
   - {fileID: 1702143652}
   - {fileID: 437543656}
-  - {fileID: 529826984}
   m_Father: {fileID: 447465359}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3015,87 +3015,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &680615433
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 680615434}
-  - component: {fileID: 680615436}
-  - component: {fileID: 680615435}
-  m_Layer: 5
-  m_Name: Level Up?
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &680615434
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680615433}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 921440947}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 65.204895}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &680615435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680615433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Level Up?
-
-'
---- !u!222 &680615436
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680615433}
-  m_CullTransparentMesh: 1
 --- !u!1 &686278524
 GameObject:
   m_ObjectHideFlags: 0
@@ -3983,13 +3902,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1123360022}
-  - {fileID: 680615434}
   m_Father: {fileID: 50023384}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 475, y: -413.2049}
+  m_AnchoredPosition: {x: 475, y: -370}
   m_SizeDelta: {x: 54.0916, y: 48.7902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &921440948
@@ -4243,8 +4161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0.00058365, y: 0.000026703}
+  m_SizeDelta: {x: 54.085, y: 55.394}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &984803316
 MonoBehaviour:
@@ -4268,10 +4186,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 6
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -5062,7 +4980,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Level Up
 --- !u!222 &1123360024
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5084,7 +5002,7 @@ GameObject:
   - component: {fileID: 1129657750}
   - component: {fileID: 1129657749}
   m_Layer: 5
-  m_Name: "\u0421old Tower"
+  m_Name: Freeze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5356,7 +5274,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower 6
+  m_Text: Tank
 --- !u!222 &1204014944
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5641,7 +5559,7 @@ RectTransform:
   - {fileID: 284622061}
   - {fileID: 692075815}
   m_Father: {fileID: 50023384}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5917,7 +5835,7 @@ GameObject:
   - component: {fileID: 1353392063}
   - component: {fileID: 1353392062}
   m_Layer: 5
-  m_Name: Tower 5
+  m_Name: Buff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6067,7 +5985,7 @@ RectTransform:
   - {fileID: 2133014509}
   - {fileID: 1036774235}
   m_Father: {fileID: 50023384}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6580,7 +6498,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower 5
+  m_Text: Buff
 --- !u!222 &1465985886
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7425,7 +7343,7 @@ GameObject:
   - component: {fileID: 1702143654}
   - component: {fileID: 1702143653}
   m_Layer: 5
-  m_Name: Splash Tower
+  m_Name: Splash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8251,7 +8169,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0421old Tower"
+  m_Text: Freeze
 --- !u!222 &1833779138
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9040,7 +8958,7 @@ GameObject:
   - component: {fileID: 2032189817}
   - component: {fileID: 2032189816}
   m_Layer: 5
-  m_Name: Tower 6
+  m_Name: Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9230,7 +9148,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TowerPVO
+  m_Text: PVO
 --- !u!222 &2037251449
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9507,7 +9425,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Splash Tower
+  m_Text: Splash
 --- !u!222 &2100712407
 CanvasRenderer:
   m_ObjectHideFlags: 0

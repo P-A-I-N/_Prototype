@@ -62,11 +62,11 @@ public class Boss : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Bullet")
+        if (((collision.tag == "Bullet" || collision.tag == "InvisibleBulletSplash") || collision.tag == "InvisibleBullet") || collision.tag == "BulletSplash")
         {
             health--;
         }
-        if (collision.tag == "BulletCold" && gameObject.tag == "Enemy")
+        if (collision.tag == "BulletCold" || collision.tag == "InvisibleBulletFreeze")
         {
             health--;
             cold = true;

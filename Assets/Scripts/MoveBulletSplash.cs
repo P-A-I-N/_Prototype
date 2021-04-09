@@ -27,11 +27,23 @@ public class MoveBulletSplash : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (parent == null)
+        if (collision.tag == "Enemy" && gameObject.tag == "BulletSplash")
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            parent = collision.transform;
-            speed *= 10;
+            if (parent == null)
+            {
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                parent = collision.transform;
+                speed *= 10;
+            }
+        }
+        if((collision.tag == "EnemyInvisible" || collision.tag == "Enemy") && gameObject.tag == "InvisibleBulletSplash")
+        {
+            if (parent == null)
+            {
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                parent = collision.transform;
+                speed *= 10;
+            }
         }
     }
 }

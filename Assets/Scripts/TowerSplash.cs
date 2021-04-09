@@ -8,10 +8,11 @@ public class TowerSplash : MonoBehaviour
     public int rateOfFire;
     public int price;
     public GameObject bullet;
+    public GameObject invisibleBullet;
     public GameObject levelUp;
     public Text nameTower;
-    public LayerMask layerEnemy;
-    public Transform parent;
+    private LayerMask layerMask;
+    private bool invisible;
     private float _health;
     private bool damage;
     private bool target;
@@ -24,13 +25,21 @@ public class TowerSplash : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("criateBullet", 0, rateOfFire);
-        parent = gameObject.transform;
     }
 
     private void Update()
     {
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range, layerEnemy);
+        int enemyLayer = LayerMask.NameToLayer("Enemy");
+        int enemyInvisibleLayer = LayerMask.NameToLayer("EnemyInvisible");
+        if (invisible)
+        {
+            layerMask = ((1 << enemyLayer) | (1 << enemyInvisibleLayer));
+        }
+        else
+        {
+            layerMask = (1 << enemyLayer);
+        }
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range, layerMask);
         Debug.DrawRay(transform.position, Vector2.right * range, Color.yellow);
         if (hit.collider != null)
         {
@@ -60,12 +69,29 @@ public class TowerSplash : MonoBehaviour
         num_enemies--;
         if (num_enemies <= 0) damage = false;
     }
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "TowerBuff")
+        {
+            invisible = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "TowerBuff")
+        {
+            invisible = false;
+        }
+    }
     private void criateBullet()
     {
-        if (target)
+        if (target && !invisible)
         {
-            Instantiate(bullet, transform.position, bullet.transform.rotation, parent);
+            Instantiate(bullet, transform.position, bullet.transform.rotation);
+        }
+        if (target && invisible)
+        {
+            Instantiate(invisibleBullet, transform.position, bullet.transform.rotation);
         }
     }
 }

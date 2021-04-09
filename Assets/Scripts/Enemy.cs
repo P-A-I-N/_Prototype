@@ -56,15 +56,24 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ( collision.tag == "Bullet" && gameObject.tag == "Enemy")
+        if ((((collision.tag == "Bullet" || collision.tag == "InvisibleBullet") || collision.tag == "InvisibleBulletSplash") || collision.tag == "BulletSplash") && gameObject.tag == "Enemy")
         {
             health--;
         }
-        if ( collision.tag == "BulletPVO" && gameObject.tag == "EnemyVO")
+        if ((collision.tag == "BulletPVO" || collision.tag == "InvisibleBulletPVO") && gameObject.tag == "EnemyVO")
         {
             health--;
         }
-        if (collision.tag == "BulletCold" && gameObject.tag == "Enemy")
+        if ((collision.tag == "BulletCold" || collision.tag == "InvisibleBulletFreeze") && gameObject.tag == "Enemy")
+        {
+            health--;
+            cold = true;
+        }
+        if ((collision.tag == "InvisibleBullet" || collision.tag == "InvisibleBulletSplash") && gameObject.tag == "EnemyInvisible")
+        {
+            health--;
+        }
+        if (collision.tag == "InvisibleBulletFreeze" && gameObject.tag == "EnemyInvisible")
         {
             health--;
             cold = true;

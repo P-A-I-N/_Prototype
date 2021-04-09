@@ -16,6 +16,15 @@ TagManager:
   - EnemyVO
   - BulletSplash
   - BulletCold
+  - TowerSplash
+  - TowerFreeze
+  - TowerBuff
+  - TowerTank
+  - InvisibleBullet
+  - InvisibleBulletPVO
+  - InvisibleBulletSplash
+  - InvisibleBulletFreeze
+  - EnemyInvisible
   layers:
   - Default
   - TransparentFX
@@ -27,7 +36,7 @@ TagManager:
   - Point
   - Tower
   - EnemyFly
-  - 
+  - EnemyInvisible
   - 
   - 
   - 
