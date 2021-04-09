@@ -117,6 +117,7 @@ MonoBehaviour:
   health: 100
   coldTime: 3
   decelerationIn: 2
+  debuffHp: 3
 --- !u!50 &4037586086869599063
 Rigidbody2D:
   serializedVersion: 4

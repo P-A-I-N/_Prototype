@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3963574731719013591}
   - component: {fileID: 2229949473758259416}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Range
-  m_TagString: Untagged
+  m_TagString: TowerBuff
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

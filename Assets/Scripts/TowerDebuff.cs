@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TowerBuff : MonoBehaviour
+public class TowerDebuff : MonoBehaviour
 {
     public int health = 10;
     public int price;
     public GameObject levelUp;
     public Text nameTower;
-    public float _health;
+    private float _health;
     private bool damage;
     private int num_enemies = 0;
 

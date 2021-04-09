@@ -156,3 +156,4 @@ MonoBehaviour:
   health: 100
   coldTime: 3
   decelerationIn: 2
+  debuffHp: 3

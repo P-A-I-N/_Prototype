@@ -13,6 +13,10 @@ public class RayCast : MonoBehaviour
     GameMap gm;
     GameObject levelUp;
     bool towerUp;
+    Vector2 worldPoint;
+    RaycastHit2D hitTower;
+    RaycastHit2D hitPoint;
+    int price;
 
     private void Awake()
     {
@@ -26,72 +30,49 @@ public class RayCast : MonoBehaviour
             if (target.tag == "Tower")
             { 
                 levelUp = target.GetComponent<Tower>().levelUp;
-                if (towerUp)
-                {
-                    Destroy(target.gameObject);
-                    Instantiate(levelUp, target.transform.position, target.transform.rotation);
-                    towerUp = false;
-                }
+                lvlUp();
             }
             if (target.tag == "TowerBuff")
             {
                 levelUp = target.GetComponent<TowerBuff>().levelUp;
-                if (towerUp)
-                {
-                    Destroy(target.gameObject);
-                    Instantiate(levelUp, target.transform.position, target.transform.rotation);
-                    towerUp = false;
-                }
+                lvlUp();
             }
             if (target.tag == "TowerFreeze")
             {
                 levelUp = target.GetComponent<TowerFreeze>().levelUp;
-                if (towerUp)
-                {
-                    Destroy(target.gameObject);
-                    Instantiate(levelUp, target.transform.position, target.transform.rotation);
-                    towerUp = false;
-                }
+                lvlUp();
             }
             if (target.tag == "TowerPVO")
             {
                 levelUp = target.GetComponent<TowerPVO>().levelUp;
-                if (towerUp)
-                {
-                    Destroy(target.gameObject);
-                    Instantiate(levelUp, target.transform.position, target.transform.rotation);
-                    towerUp = false;
-                }
+                lvlUp();
             }
             if (target.tag == "TowerSplash")
             {
                 levelUp = target.GetComponent<TowerSplash>().levelUp;
-                if (towerUp)
-                {
-                    Destroy(target.gameObject);
-                    Instantiate(levelUp, target.transform.position, target.transform.rotation);
-                    towerUp = false;
-                }
+                lvlUp();
             }
             if (target.tag == "TowerTank")
             {
                 levelUp = target.GetComponent<TowerTank>().levelUp;
-                if (towerUp)
-                {
-                    Destroy(target.gameObject);
-                    Instantiate(levelUp, target.transform.position, target.transform.rotation);
-                    towerUp = false;
-                }
+                lvlUp();
+            }
+            if (target.tag == "TowerDebuff")
+            {
+                levelUp = target.GetComponent<TowerDebuff>().levelUp;
+                lvlUp();
             }
         }
+
         if (Input.GetMouseButtonDown(1))
         {
             infoTarget = null;
             target = null;
         }
-        Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hitTower = Physics2D.Raycast(worldPoint, Vector2.zero, 100f, layerTower);
-        RaycastHit2D hitPoint = Physics2D.Raycast(worldPoint, Vector2.zero, 100f, layerPoint);
+
+        worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        hitTower = Physics2D.Raycast(worldPoint, Vector2.zero, 100f, layerTower);
+        hitPoint = Physics2D.Raycast(worldPoint, Vector2.zero, 100f, layerPoint);
 
         if (Input.GetMouseButtonDown(0) && hitTower.collider != null && delete)
         {
@@ -106,69 +87,39 @@ public class RayCast : MonoBehaviour
         {
             if (infoTarget.tag == "Tower")
             {
-                int price = tower.GetComponent<Tower>().price;
-                if (price <= gm.gold)
-                {
-                    pos = hitPoint.collider.gameObject.transform.position;
-                    Instantiate(tower, pos, tower.transform.rotation);
-                    gm.gold -= price;
-                    tower = null;
-                }
+                price = tower.GetComponent<Tower>().price;
+                craeteTower();
             }
             if (infoTarget.tag == "TowerBuff")
             {
-                int price = tower.GetComponent<TowerBuff>().price;
-                if (price <= gm.gold)
-                {
-                    pos = hitPoint.collider.gameObject.transform.position;
-                    Instantiate(tower, pos, tower.transform.rotation);
-                    gm.gold -= price;
-                    tower = null;
-                }
+                price = tower.GetComponent<TowerBuff>().price;
+                craeteTower();
             }
             if (infoTarget.tag == "TowerFreeze")
             {
-                int price = tower.GetComponent<TowerFreeze>().price;
-                if (price <= gm.gold)
-                {
-                    pos = hitPoint.collider.gameObject.transform.position;
-                    Instantiate(tower, pos, tower.transform.rotation);
-                    gm.gold -= price;
-                    tower = null;
-                }
+                price = tower.GetComponent<TowerFreeze>().price;
+                craeteTower();
             }
             if (infoTarget.tag == "TowerPVO")
             {
-                int price = tower.GetComponent<TowerPVO>().price;
-                if (price <= gm.gold)
-                {
-                    pos = hitPoint.collider.gameObject.transform.position;
-                    Instantiate(tower, pos, tower.transform.rotation);
-                    gm.gold -= price;
-                    tower = null;
-                }
+                price = tower.GetComponent<TowerPVO>().price;
+                craeteTower();
             }
             if (infoTarget.tag == "TowerSplash")
             {
-                int price = tower.GetComponent<TowerSplash>().price;
+                price = tower.GetComponent<TowerSplash>().price;
                 if (price <= gm.gold)
-                {
-                    pos = hitPoint.collider.gameObject.transform.position;
-                    Instantiate(tower, pos, tower.transform.rotation);
-                    gm.gold -= price;
-                    tower = null;
-                }
+                craeteTower();
             }
             if (infoTarget.tag == "TowerTank")
             {
-                int price = tower.GetComponent<TowerTank>().price;
-                if (price <= gm.gold)
-                {
-                    pos = hitPoint.collider.gameObject.transform.position;
-                    Instantiate(tower, pos, tower.transform.rotation);
-                    gm.gold -= price;
-                    tower = null;
-                }
+                price = tower.GetComponent<TowerTank>().price;
+                craeteTower();
+            }
+            if (infoTarget.tag == "TowerDebuff")
+            {
+                price = tower.GetComponent<TowerDebuff>().price;
+                craeteTower();
             }
         }
 
@@ -177,6 +128,26 @@ public class RayCast : MonoBehaviour
             infoTarget = null;
         }
 
+    }
+
+    public void lvlUp()
+    {
+        if (towerUp)
+        {
+            Destroy(target.gameObject);
+            Instantiate(levelUp, target.transform.position, target.transform.rotation);
+            towerUp = false;
+        }
+    }
+    public void craeteTower()
+    {
+        if (price <= gm.gold)
+        {
+            pos = hitPoint.collider.gameObject.transform.position;
+            Instantiate(tower, pos, tower.transform.rotation);
+            gm.gold -= price;
+            tower = null;
+        }
     }
 
 
@@ -268,6 +239,11 @@ public class RayCast : MonoBehaviour
         if (target.tag == "TowerTank")
         {
             int price = target.GetComponent<TowerTank>().price;
+            gm.gold += price / 2;
+        }
+        if(target.tag == "TowerDebuff")
+        {
+            int price = target.GetComponent<TowerDebuff>().price;
             gm.gold += price / 2;
         }
         Destroy(target);

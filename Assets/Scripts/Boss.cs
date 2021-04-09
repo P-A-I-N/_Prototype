@@ -10,9 +10,12 @@ public class Boss : MonoBehaviour
     public float health = 50;
     public float coldTime;
     public float decelerationIn;
+    public int debuffHp;
     bool cold;
     float timeCold;
     bool stop;
+    bool debuff;
+    bool _debuff;
 
     private void Awake()
     {
@@ -21,6 +24,16 @@ public class Boss : MonoBehaviour
     }
     private void Update()
     {
+        if (debuff && !_debuff)
+        {
+            health -= debuffHp;
+            _debuff = true;
+        }
+        if (!debuff && _debuff)
+        {
+            health += debuffHp;
+            _debuff = false;
+        }
         if (cold && _speed == speed)
         {
             _speed /= decelerationIn;
@@ -70,6 +83,17 @@ public class Boss : MonoBehaviour
         {
             health--;
             cold = true;
+        }
+        if (collision.tag == "TowerDebuff")
+        {
+            debuff = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "TowerDebuff")
+        {
+            debuff = false;
         }
     }
 }

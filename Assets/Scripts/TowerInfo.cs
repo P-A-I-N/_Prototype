@@ -66,6 +66,10 @@ public class TowerInfo : MonoBehaviour
             {
                 infoTowerSplash();
             }
+            else if (infoTarget.tag == "TowerDebuff")
+            {
+                infoTowerDebuff();
+            }
         }
         if (target != null)
         {
@@ -92,6 +96,10 @@ public class TowerInfo : MonoBehaviour
             else if (target.tag == "TowerSplash")
             {
                 TowerSplash();
+            }
+            else if (target.tag == "TowerDebuff")
+            {
+                TowerDebuff();
             }
         }
         else if (infoTarget == null)
@@ -169,12 +177,12 @@ public class TowerInfo : MonoBehaviour
 
         now.text = target.GetComponent<Text>().text;
         nowHealth = target.GetComponent<TowerBuff>().health;
-        descriptionNow.text = now.text + " does not attack, buffa towers in 3x3 cells, has " + nowHealth + " health.";
+        descriptionNow.text = now.text + " does not attack, buffs towers around itself 3x3 cells, has " + nowHealth + " health.";
 
         levelUp = target.GetComponent<TowerBuff>().levelUp;
         up.text = levelUp.GetComponent<Text>().text;
         upHealth = levelUp.GetComponent<TowerBuff>().health;
-        descriptionUp.text = up.text + " does not attack, buffa towers in 3x3 cells, has " + upHealth + " health.";
+        descriptionUp.text = up.text + " does not attack, buffs towers around itself 3x3 cells, has " + upHealth + " health.";
     }
     public void TowerPVO()
     {
@@ -238,6 +246,24 @@ public class TowerInfo : MonoBehaviour
         upRange = levelUp.GetComponent<TowerSplash>().range;
         descriptionUp.text = up.text + " attacks 1 enemy and touches several enemies behind him, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells.";
     }
+    public void TowerDebuff()
+    {
+        now.gameObject.SetActive(true);
+        descriptionNow.gameObject.SetActive(true);
+        up.gameObject.SetActive(true);
+        descriptionUp.gameObject.SetActive(true);
+        button.SetActive(true);
+        button2.SetActive(true);
+
+        now.text = target.GetComponent<Text>().text;
+        nowHealth = target.GetComponent<TowerDebuff>().health;
+        descriptionNow.text = now.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + nowHealth + " health.";
+
+        levelUp = target.GetComponent<TowerDebuff>().levelUp;
+        up.text = levelUp.GetComponent<Text>().text;
+        upHealth = levelUp.GetComponent<TowerDebuff>().health;
+        descriptionUp.text = up.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + upHealth + " health.";
+    }
     public void infoTower()
     {
         now.gameObject.SetActive(true);
@@ -267,7 +293,7 @@ public class TowerInfo : MonoBehaviour
 
         now.text = infoTarget.GetComponent<Text>().text;
         nowHealth = infoTarget.GetComponent<TowerBuff>().health;
-        descriptionNow.text = now.text + " does not attack, buffa towers in 3x3 cells, has " + nowHealth + " health.";
+        descriptionNow.text = now.text + " does not attack, buffs towers around itself 3x3 cells, has " + nowHealth + " health.";
     }
     public void infoTowerPVO()
     {
@@ -300,5 +326,15 @@ public class TowerInfo : MonoBehaviour
         nowRange = infoTarget.GetComponent<TowerSplash>().range;
         descriptionNow.text = now.text + " attacks 1 enemy and touches several enemies behind him, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells.";
     }
+    public void infoTowerDebuff()
+    {
+        now.gameObject.SetActive(true);
+        descriptionNow.gameObject.SetActive(true);
+
+        now.text = infoTarget.GetComponent<Text>().text;
+        nowHealth = infoTarget.GetComponent<TowerDebuff>().health;
+        descriptionNow.text = now.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + nowHealth + " health.";
+    }
 }
+
 
