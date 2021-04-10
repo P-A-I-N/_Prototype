@@ -1,33 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TowerPVO : MonoBehaviour
+public class TowerPVO : Tower
 {
-    public int health = 10;
-    public int range;
-    public int rateOfFire;
-    public int price;
-    public GameObject bullet;
-    public GameObject invisibleBullet;
-    public GameObject levelUp;
-    public Text nameTower;
-    private bool invisible;
-    private LayerMask layerMask;
-    private float _health;
-    private bool damage;
-    private bool target;
-    private int num_enemies = 0;
 
-    private void Awake()
-    {
-        _health = health;
-    }
-    private void Start()
-    {
-        InvokeRepeating("criateBullet", 0, rateOfFire);
-    }
-
-    private void Update()
+    private new void Update()
     {
         int enemyLayer = LayerMask.NameToLayer("EnemyFly");
         layerMask = (1 << enemyLayer);
@@ -40,52 +17,5 @@ public class TowerPVO : MonoBehaviour
         }
         else target = false;
     }
-    void LateUpdate()
-    {
-        if (damage)
-        {
-            _health -= 0.01f * num_enemies;
-        }
 
-        if (_health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        num_enemies++;
-        damage = true;
-
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        num_enemies--;
-        if (num_enemies <= 0) damage = false;
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "TowerBuff")
-        {
-            invisible = true;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "TowerBuff")
-        {
-            invisible = false;
-        }
-    }
-    private void criateBullet()
-    {
-        if (target && !invisible)
-        {
-            Instantiate(bullet, transform.position, bullet.transform.rotation);
-        }
-        if (target && invisible)
-        {
-            Instantiate(invisibleBullet, transform.position, bullet.transform.rotation);
-        }
-    }
 }

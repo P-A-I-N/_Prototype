@@ -11,24 +11,24 @@ public class Tower : MonoBehaviour
     public GameObject invisibleBullet;
     public GameObject levelUp;
     public Text nameTower;
-    private LayerMask layerMask;
-    private bool invisible;
-    private float _health;
-    private bool damage;
-    private bool target;
-    private int num_enemies = 0;
+    protected LayerMask layerMask;
+    protected bool invisible;
+    protected float _health;
+    protected bool damage;
+    protected bool target;
+    protected int num_enemies = 0;
 
 
-    private void Awake()
+    protected void Awake()
     {
         _health = health;
     }
-    private void Start()
+    protected void Start()
     {
         InvokeRepeating("criateBullet", 0, rateOfFire);
     }
 
-    private void Update()
+    protected void Update()
     {
         int enemyLayer = LayerMask.NameToLayer("Enemy");
         int enemyInvisibleLayer = LayerMask.NameToLayer("EnemyInvisible");
@@ -48,7 +48,7 @@ public class Tower : MonoBehaviour
         }
         else target = false;
     }
-    void LateUpdate()
+    protected void LateUpdate()
     {
         if (damage)
         {
@@ -60,31 +60,31 @@ public class Tower : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         num_enemies++;
         damage = true;
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    protected void OnCollisionExit2D(Collision2D collision)
     {
         num_enemies--;
         if (num_enemies <= 0) damage = false;
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    protected void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "TowerBuff")
         {
             invisible = true;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    protected void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "TowerBuff")
         {
             invisible = false;
         }
     }
-    private void criateBullet()
+    protected void criateBullet()
     {
         if (target && !invisible)
         {
