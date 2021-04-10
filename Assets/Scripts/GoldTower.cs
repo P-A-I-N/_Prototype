@@ -6,24 +6,18 @@ public class GoldTower : Tower
 {
     GameMap gm;
     public int goldGet, goldDelay;
-    float getGoldTime;
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
         if (fullprice <= 0) fullprice = price;
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
         if (goldGet <= 0) goldGet = 1;
         if (goldDelay <= 0) goldDelay = 10;
-        getGoldTime = Time.time + goldDelay;
+        InvokeRepeating("GetGold", goldDelay, goldDelay);
     }
-
     // Update is called once per frame
-    void Update()
+    void GetGold ()
     {
-        if (Time.time >= getGoldTime)
-        {
-            gm.gold += goldGet;
-            getGoldTime += goldDelay;
-        }
+        gm.gold += goldGet;
     }
 }
