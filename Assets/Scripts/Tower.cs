@@ -6,7 +6,8 @@ public class Tower : MonoBehaviour
     public int health = 10;
     public int range;
     public int rateOfFire;
-    public int price, fullprice;
+    public int price;
+        public int fullprice;
     public GameObject bullet;
     public GameObject invisibleBullet;
     public GameObject levelUp;

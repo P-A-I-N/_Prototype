@@ -25,22 +25,15 @@ public class TowerInfo : MonoBehaviour
     int nowGoldDelay;
     int upGoldGet;
     int upGoldDelay;
-
+    int nowPrice;
+    int upPrice;
 
     void Update()
     {
 
         target = GetComponentInChildren<RayCast>().target;
         infoTarget = GetComponentInChildren<RayCast>().infoTarget;
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    now.gameObject.SetActive(false);
-        //    descriptionNow.gameObject.SetActive(false);
-        //    up.gameObject.SetActive(false);
-        //    descriptionUp.gameObject.SetActive(false);
-        //    button.SetActive(false);
-        //    button2.SetActive(false);
-        //}
+
         if (infoTarget != null)
         {
             if (infoTarget.tag == "Tower")
@@ -131,7 +124,7 @@ public class TowerInfo : MonoBehaviour
         }
     }
 
-    public void Tower()
+    public void active()
     {
         now.gameObject.SetActive(true);
         descriptionNow.gameObject.SetActive(true);
@@ -139,243 +132,234 @@ public class TowerInfo : MonoBehaviour
         descriptionUp.gameObject.SetActive(true);
         button.SetActive(true);
         button2.SetActive(true);
+    }
+    public void infoActive()
+    {
+        now.gameObject.SetActive(true);
+        descriptionNow.gameObject.SetActive(true);
+    }
+
+    public void Tower()
+    {
+        active();
 
         now.text = target.GetComponent<Text>().text;
         nowHealth = target.GetComponent<Tower>().health;
         nowRate = target.GetComponent<Tower>().rateOfFire;
         nowRange = target.GetComponent<Tower>().range;
-        descriptionNow.text = now.text + " attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells.";
+        nowPrice = target.GetComponent<Tower>().price;
+        descriptionNow.text = now.text + " attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells. Price: " + nowPrice + " gold.";
 
         levelUp = target.GetComponent<Tower>().levelUp;
         up.text = levelUp.GetComponent<Text>().text;
         upHealth = levelUp.GetComponent<Tower>().health;
         upRate = levelUp.GetComponent<Tower>().rateOfFire;
         upRange = levelUp.GetComponent<Tower>().range;
-        descriptionUp.text = up.text + " attacks 1 enemy, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells.";
+        upPrice = levelUp.GetComponent<Tower>().price;
+        descriptionUp.text = up.text + " attacks 1 enemy, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells. Price: " + upPrice + " gold.";
     }
     public void TowerFreeze()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
-        up.gameObject.SetActive(true);
-        descriptionUp.gameObject.SetActive(true);
-        button.SetActive(true);
-        button2.SetActive(true);
+        active();
 
         now.text = target.GetComponent<Text>().text;
         nowHealth = target.GetComponent<TowerFreeze>().health;
         nowRate = target.GetComponent<TowerFreeze>().rateOfFire;
         nowRange = target.GetComponent<TowerFreeze>().range;
-        descriptionNow.text = now.text + " slows down enemies, attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells.";
+        nowPrice = target.GetComponent<TowerFreeze>().price;
+        descriptionNow.text = now.text + " slows down enemies, attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells. Price: " + nowPrice + " gold.";
 
         levelUp = target.GetComponent<TowerFreeze>().levelUp;
         up.text = levelUp.GetComponent<Text>().text;
         upHealth = levelUp.GetComponent<TowerFreeze>().health;
         upRate = levelUp.GetComponent<TowerFreeze>().rateOfFire;
         upRange = levelUp.GetComponent<TowerFreeze>().range;
-        descriptionUp.text = up.text + " slows down enemies, attacks 1 enemy, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells.";
+        upPrice = levelUp.GetComponent<TowerFreeze>().price;
+        descriptionUp.text = up.text + " slows down enemies, attacks 1 enemy, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells. Price: " + upPrice + " gold.";
     }
     public void TowerBuff()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
-        up.gameObject.SetActive(true);
-        descriptionUp.gameObject.SetActive(true);
-        button.SetActive(true);
-        button2.SetActive(true);
+        active();
 
         now.text = target.GetComponent<Text>().text;
         nowHealth = target.GetComponent<TowerBuff>().health;
-        descriptionNow.text = now.text + " does not attack, buffs towers around itself 3x3 cells, has " + nowHealth + " health.";
+        nowPrice = target.GetComponent<TowerBuff>().price;
+        descriptionNow.text = now.text + " does not attack, buffs towers around itself 3x3 cells, has " + nowHealth + " health. Price: " + nowPrice + " gold.";
 
         levelUp = target.GetComponent<TowerBuff>().levelUp;
         up.text = levelUp.GetComponent<Text>().text;
         upHealth = levelUp.GetComponent<TowerBuff>().health;
-        descriptionUp.text = up.text + " does not attack, buffs towers around itself 3x3 cells, has " + upHealth + " health.";
+        upPrice = levelUp.GetComponent<TowerBuff>().price;
+        descriptionUp.text = up.text + " does not attack, buffs towers around itself 3x3 cells, has " + upHealth + " health. Price: " + upPrice + " gold.";
     }
     public void TowerPVO()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
-        up.gameObject.SetActive(true);
-        descriptionUp.gameObject.SetActive(true);
-        button.SetActive(true);
-        button2.SetActive(true);
+        active();
 
         now.text = target.GetComponent<Text>().text;
         nowHealth = target.GetComponent<TowerPVO>().health;
         nowRate = target.GetComponent<TowerPVO>().rateOfFire;
         nowRange = target.GetComponent<TowerPVO>().range;
-        descriptionNow.text = now.text + " attacks only flying enemies, attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells.";
+        nowPrice = target.GetComponent<TowerPVO>().price;
+        descriptionNow.text = now.text + " attacks only flying enemies, attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells. Price: " + nowPrice + " gold.";
 
         levelUp = target.GetComponent<TowerPVO>().levelUp;
         up.text = levelUp.GetComponent<Text>().text;
         upHealth = levelUp.GetComponent<TowerPVO>().health;
         upRate = levelUp.GetComponent<TowerPVO>().rateOfFire;
         upRange = levelUp.GetComponent<TowerPVO>().range;
-        descriptionUp.text = up.text + " attacks only flying enemies, attacks 1 enemy, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells.";
+        upPrice = levelUp.GetComponent<TowerPVO>().price;
+        descriptionUp.text = up.text + " attacks only flying enemies, attacks 1 enemy, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells. Price: " + upPrice + " gold.";
     }
     public void TowerTank()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
-        up.gameObject.SetActive(true);
-        descriptionUp.gameObject.SetActive(true);
-        button.SetActive(true);
-        button2.SetActive(true);
+        active();
 
         now.text = target.GetComponent<Text>().text;
         nowHealth = target.GetComponent<TowerTank>().health;
-        descriptionNow.text = now.text + " does not attack, has " + nowHealth + " health.";
+        nowPrice = target.GetComponent<TowerTank>().price;
+        descriptionNow.text = now.text + " does not attack, has " + nowHealth + " health. Price: " + nowPrice + " gold.";
 
         levelUp = target.GetComponent<TowerTank>().levelUp;
         up.text = levelUp.GetComponent<Text>().text;
         upHealth = levelUp.GetComponent<TowerTank>().health;
-        descriptionUp.text = up.text + " does not attack, has " + upHealth + " health.";
+        upPrice = levelUp.GetComponent<TowerTank>().price;
+        descriptionUp.text = up.text + " does not attack, has " + upHealth + " health. Price: " + upPrice + " gold.";
     }
     public void TowerSplash()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
-        up.gameObject.SetActive(true);
-        descriptionUp.gameObject.SetActive(true);
-        button.SetActive(true);
-        button2.SetActive(true);
+        active();
 
         now.text = target.GetComponent<Text>().text;
         nowHealth = target.GetComponent<TowerSplash>().health;
         nowRate = target.GetComponent<TowerSplash>().rateOfFire;
         nowRange = target.GetComponent<TowerSplash>().range;
-        descriptionNow.text = now.text + " attacks 1 enemy and touches several enemies behind him, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells.";
+        nowPrice = target.GetComponent<TowerSplash>().price;
+        descriptionNow.text = now.text + " attacks 1 enemy and touches several enemies behind him, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells. Price: " + nowPrice + " gold.";
 
         levelUp = target.GetComponent<TowerSplash>().levelUp;
         up.text = levelUp.GetComponent<Text>().text;
         upHealth = levelUp.GetComponent<TowerSplash>().health;
         upRate = levelUp.GetComponent<TowerSplash>().rateOfFire;
         upRange = levelUp.GetComponent<TowerSplash>().range;
-        descriptionUp.text = up.text + " attacks 1 enemy and touches several enemies behind him, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells.";
+        upPrice = levelUp.GetComponent<TowerSplash>().price;
+        descriptionUp.text = up.text + " attacks 1 enemy and touches several enemies behind him, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells. Price: " + upPrice + " gold.";
     }
     public void TowerDebuff()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
-        up.gameObject.SetActive(true);
-        descriptionUp.gameObject.SetActive(true);
-        button.SetActive(true);
-        button2.SetActive(true);
+        active();
 
         now.text = target.GetComponent<Text>().text;
         nowHealth = target.GetComponent<TowerDebuff>().health;
-        descriptionNow.text = now.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + nowHealth + " health.";
+        nowPrice = target.GetComponent<TowerDebuff>().price;
+        descriptionNow.text = now.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + nowHealth + " health. Price: " + nowPrice + " gold.";
 
         levelUp = target.GetComponent<TowerDebuff>().levelUp;
         up.text = levelUp.GetComponent<Text>().text;
         upHealth = levelUp.GetComponent<TowerDebuff>().health;
-        descriptionUp.text = up.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + upHealth + " health.";
+        upPrice = levelUp.GetComponent<TowerDebuff>().price;
+        descriptionUp.text = up.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + upHealth + " health. Price: " + upPrice + " gold.";
     }
     public void TowerGold()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
-        up.gameObject.SetActive(true);
-        descriptionUp.gameObject.SetActive(true);
-        button.SetActive(true);
-        button2.SetActive(true);
+        active();
 
         now.text = target.GetComponent<Text>().text;
         nowHealth = target.GetComponent<TowerGold>().health;
         nowGoldGet = target.GetComponent<TowerGold>().goldGet;
         nowGoldDelay = target.GetComponent<TowerGold>().goldDelay;
-        descriptionNow.text = now.text + " adds " + nowGoldGet + " gold in " + nowGoldDelay + " second, does not attack, has " + nowHealth + " health.";
+        nowPrice = target.GetComponent<TowerGold>().price;
+        descriptionNow.text = now.text + " adds " + nowGoldGet + " gold in " + nowGoldDelay + " second, does not attack, has " + nowHealth + " health. Price: " + nowPrice + " gold.";
 
         levelUp = target.GetComponent<TowerGold>().levelUp;
         up.text = levelUp.GetComponent<Text>().text;
         upHealth = levelUp.GetComponent<TowerGold>().health;
         upGoldGet = levelUp.GetComponent<TowerGold>().goldGet;
         upGoldDelay = levelUp.GetComponent<TowerGold>().goldDelay;
-        descriptionUp.text = up.text + " adds " + upGoldGet + " gold in " + upGoldDelay + " second, does not attack, has " + upHealth + " health.";
+        upPrice = levelUp.GetComponent<TowerGold>().price;
+        descriptionUp.text = up.text + " adds " + upGoldGet + " gold in " + upGoldDelay + " second, does not attack, has " + upHealth + " health. Price: " + upPrice + " gold.";
     }
     public void infoTower()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
+        infoActive();
 
         now.text = infoTarget.GetComponent<Text>().text;
         nowHealth = infoTarget.GetComponent<Tower>().health;
         nowRate = infoTarget.GetComponent<Tower>().rateOfFire;
         nowRange = infoTarget.GetComponent<Tower>().range;
-        descriptionNow.text = now.text + " attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells.";
+        nowPrice = infoTarget.GetComponent<Tower>().price;
+        descriptionNow.text = now.text + " attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells. Price: " + nowPrice + " gold.";
     }
     public void infoTowerFreeze()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
+        infoActive();
 
         now.text = infoTarget.GetComponent<Text>().text;
         nowHealth = infoTarget.GetComponent<TowerFreeze>().health;
         nowRate = infoTarget.GetComponent<TowerFreeze>().rateOfFire;
         nowRange = infoTarget.GetComponent<TowerFreeze>().range;
-        descriptionNow.text = now.text + " slows down enemies, attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells.";
+        nowPrice = infoTarget.GetComponent<TowerFreeze>().price;
+        descriptionNow.text = now.text + " slows down enemies, attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells. Price: " + nowPrice + " gold. Price: " + nowPrice + " gold.";
     }
     public void infoTowerBuff()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
+        infoActive();
 
         now.text = infoTarget.GetComponent<Text>().text;
         nowHealth = infoTarget.GetComponent<TowerBuff>().health;
-        descriptionNow.text = now.text + " does not attack, buffs towers around itself 3x3 cells, has " + nowHealth + " health.";
+        nowPrice = infoTarget.GetComponent<TowerBuff>().price;
+        descriptionNow.text = now.text + " does not attack, buffs towers around itself 3x3 cells, has " + nowHealth + " health. Price: " + nowPrice + " gold. Price: " + nowPrice + " gold.";
     }
     public void infoTowerPVO()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
+        infoActive();
 
         now.text = infoTarget.GetComponent<Text>().text;
         nowHealth = infoTarget.GetComponent<TowerPVO>().health;
         nowRate = infoTarget.GetComponent<TowerPVO>().rateOfFire;
         nowRange = infoTarget.GetComponent<TowerPVO>().range;
-        descriptionNow.text = now.text + " attacks only flying enemies, attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells.";
+        nowPrice = infoTarget.GetComponent<TowerPVO>().price;
+        descriptionNow.text = now.text + " attacks only flying enemies, attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells. Price: " + nowPrice + " gold. Price: " + nowPrice + " gold.";
     }
     public void infoTowerTank()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
+        infoActive();
 
         now.text = infoTarget.GetComponent<Text>().text;
         nowHealth = infoTarget.GetComponent<TowerTank>().health;
-        descriptionNow.text = now.text + " does not attack, has " + nowHealth + " health.";
+        nowPrice = infoTarget.GetComponent<TowerTank>().price;
+        descriptionNow.text = now.text + " does not attack, has " + nowHealth + " health. Price: " + nowPrice + " gold.";
     }
     public void infoTowerSplash()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
+        infoActive();
 
         now.text = infoTarget.GetComponent<Text>().text;
         nowHealth = infoTarget.GetComponent<TowerSplash>().health;
         nowRate = infoTarget.GetComponent<TowerSplash>().rateOfFire;
         nowRange = infoTarget.GetComponent<TowerSplash>().range;
-        descriptionNow.text = now.text + " attacks 1 enemy and touches several enemies behind him, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells.";
+        nowPrice = infoTarget.GetComponent<TowerSplash>().price;
+        descriptionNow.text = now.text + " attacks 1 enemy and touches several enemies behind him, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells. Price: " + nowPrice + " gold.";
     }
     public void infoTowerDebuff()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
+        infoActive();
 
         now.text = infoTarget.GetComponent<Text>().text;
         nowHealth = infoTarget.GetComponent<TowerDebuff>().health;
-        descriptionNow.text = now.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + nowHealth + " health.";
+        nowPrice = infoTarget.GetComponent<TowerDebuff>().price;
+        descriptionNow.text = now.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + nowHealth + " health. Price: " + nowPrice + " gold.";
     }
     public void infoTowerGold()
     {
-        now.gameObject.SetActive(true);
-        descriptionNow.gameObject.SetActive(true);
+        infoActive();
 
         now.text = infoTarget.GetComponent<Text>().text;
         nowHealth = infoTarget.GetComponent<TowerGold>().health;
         nowGoldGet = infoTarget.GetComponent<TowerGold>().goldGet;
         nowGoldDelay = infoTarget.GetComponent<TowerGold>().goldDelay;
-        descriptionNow.text = now.text + " adds " + nowGoldGet + " gold in " + nowGoldDelay + " second, does not attack, has " + nowHealth + " health.";
+        nowPrice = infoTarget.GetComponent<TowerGold>().price;
+        descriptionNow.text = now.text + " adds " + nowGoldGet + " gold in " + nowGoldDelay + " second, does not attack, has " + nowHealth + " health. Price: " + nowPrice + " gold.";
     }
 }
 
