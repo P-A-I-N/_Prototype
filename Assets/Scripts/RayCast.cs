@@ -62,6 +62,11 @@ public class RayCast : MonoBehaviour
                 levelUp = target.GetComponent<TowerDebuff>().levelUp;
                 lvlUp();
             }
+            if (target.tag == "TowerGold")
+            {
+                levelUp = target.GetComponent<TowerGold>().levelUp;
+                lvlUp();
+            }
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -123,7 +128,7 @@ public class RayCast : MonoBehaviour
             }
             if (infoTarget.tag == "TowerGold")
             {
-                price = tower.GetComponent<GoldTower>().price;
+                price = tower.GetComponent<TowerGold>().price;
                 craeteTower();
             }
 
@@ -256,6 +261,11 @@ public class RayCast : MonoBehaviour
         if(target.tag == "TowerDebuff")
         {
             int price = target.GetComponent<TowerDebuff>().price;
+            gm.gold += price / 2;
+        }
+        if (target.tag == "TowerGold")
+        {
+            int price = target.GetComponent<TowerGold>().price;
             gm.gold += price / 2;
         }
         Destroy(target);

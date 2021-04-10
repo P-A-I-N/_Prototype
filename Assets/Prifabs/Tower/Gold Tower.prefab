@@ -136,9 +136,9 @@ MonoBehaviour:
   fullprice: 0
   bullet: {fileID: 0}
   invisibleBullet: {fileID: 0}
-  levelUp: {fileID: 0}
-  nameTower: {fileID: 0}
-  goldGet: 10000
+  levelUp: {fileID: 2509314456873090153}
+  nameTower: {fileID: 8749915973639064247}
+  goldGet: 100
   goldDelay: 1
 --- !u!222 &586647974545815915
 CanvasRenderer:
@@ -181,4 +181,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower 1
+  m_Text: Gold

@@ -14,16 +14,17 @@ public class TowerInfo : MonoBehaviour
     public GameObject button2;
     public GameObject infoTarget;
     public GameObject target;
-    int nowAmount;
+    public GameObject levelUp;
     int nowHealth;
     int nowRate;
     int nowRange;
-    public GameObject levelUp;
-    int upAmount;
     int upHealth;
     int upRate;
     int upRange;
-    bool towerUp;
+    int nowGoldGet;
+    int nowGoldDelay;
+    int upGoldGet;
+    int upGoldDelay;
 
 
     void Update()
@@ -70,6 +71,10 @@ public class TowerInfo : MonoBehaviour
             {
                 infoTowerDebuff();
             }
+            else if (infoTarget.tag == "TowerGold")
+            {
+                infoTowerGold();
+            }
         }
         if (target != null)
         {
@@ -100,6 +105,10 @@ public class TowerInfo : MonoBehaviour
             else if (target.tag == "TowerDebuff")
             {
                 TowerDebuff();
+            }
+            else if (target.tag == "TowerGold")
+            {
+                TowerGold();
             }
         }
         else if (infoTarget == null)
@@ -264,6 +273,28 @@ public class TowerInfo : MonoBehaviour
         upHealth = levelUp.GetComponent<TowerDebuff>().health;
         descriptionUp.text = up.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + upHealth + " health.";
     }
+    public void TowerGold()
+    {
+        now.gameObject.SetActive(true);
+        descriptionNow.gameObject.SetActive(true);
+        up.gameObject.SetActive(true);
+        descriptionUp.gameObject.SetActive(true);
+        button.SetActive(true);
+        button2.SetActive(true);
+
+        now.text = target.GetComponent<Text>().text;
+        nowHealth = target.GetComponent<TowerGold>().health;
+        nowGoldGet = target.GetComponent<TowerGold>().goldGet;
+        nowGoldDelay = target.GetComponent<TowerGold>().goldDelay;
+        descriptionNow.text = now.text + " adds " + nowGoldGet + " gold in " + nowGoldDelay + " second, does not attack, has " + nowHealth + " health.";
+
+        levelUp = target.GetComponent<TowerGold>().levelUp;
+        up.text = levelUp.GetComponent<Text>().text;
+        upHealth = levelUp.GetComponent<TowerGold>().health;
+        upGoldGet = levelUp.GetComponent<TowerGold>().goldGet;
+        upGoldDelay = levelUp.GetComponent<TowerGold>().goldDelay;
+        descriptionUp.text = up.text + " adds " + upGoldGet + " gold in " + upGoldDelay + " second, does not attack, has " + upHealth + " health.";
+    }
     public void infoTower()
     {
         now.gameObject.SetActive(true);
@@ -334,6 +365,17 @@ public class TowerInfo : MonoBehaviour
         now.text = infoTarget.GetComponent<Text>().text;
         nowHealth = infoTarget.GetComponent<TowerDebuff>().health;
         descriptionNow.text = now.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + nowHealth + " health.";
+    }
+    public void infoTowerGold()
+    {
+        now.gameObject.SetActive(true);
+        descriptionNow.gameObject.SetActive(true);
+
+        now.text = infoTarget.GetComponent<Text>().text;
+        nowHealth = infoTarget.GetComponent<TowerGold>().health;
+        nowGoldGet = infoTarget.GetComponent<TowerGold>().goldGet;
+        nowGoldDelay = infoTarget.GetComponent<TowerGold>().goldDelay;
+        descriptionNow.text = now.text + " adds " + nowGoldGet + " gold in " + nowGoldDelay + " second, does not attack, has " + nowHealth + " health.";
     }
 }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldTower : Tower
+public class TowerGold : Tower
 {
     GameMap gm;
     public int goldGet, goldDelay;
