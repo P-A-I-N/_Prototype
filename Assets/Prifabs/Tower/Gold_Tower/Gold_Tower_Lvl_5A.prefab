@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 586647974545815915}
   - component: {fileID: 8749915973639064247}
   m_Layer: 8
-  m_Name: Gold_Tower_Lvl_1
+  m_Name: Gold_Tower_Lvl_5A
   m_TagString: TowerGold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e214e2deb05a50045a48303697360f68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84ae822e3c9d7894fb0e56fbf20ab903, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,7 +108,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.43, y: 0.5}
+    oldSize: {x: 0.92, y: 1.11}
     newSize: {x: 0.43, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   fullprice: 0
   bullet: {fileID: 0}
   invisibleBullet: {fileID: 0}
-  levelUp: {fileID: 2509314456873090153}
+  levelUp: {fileID: 2509314456873090153, guid: 03cb947226a2dee4d8d0ff55c487fea8, type: 3}
   nameTower: {fileID: 8749915973639064247}
   goldGet: 100
   goldDelay: 1
@@ -181,4 +181,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gold
+  m_Text: Gold lvl 5A

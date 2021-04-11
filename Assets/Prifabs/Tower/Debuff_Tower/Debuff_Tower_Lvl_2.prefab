@@ -73,12 +73,11 @@ GameObject:
   - component: {fileID: 6485151733025304988}
   - component: {fileID: 5559526981392812252}
   - component: {fileID: 2395249376857036379}
-  - component: {fileID: 8603687153559762642}
   - component: {fileID: 439081225321297893}
   - component: {fileID: 2534721437045888650}
   - component: {fileID: 1493108367496941316}
   m_Layer: 8
-  m_Name: Debuff_Tower_Lvl_1
+  m_Name: Debuff_Tower_Lvl_2
   m_TagString: TowerDebuff
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,27 +180,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &8603687153559762642
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4672662006099410413}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!222 &439081225321297893
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -243,7 +221,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Debuff
+  m_Text: Debuff lvl 2
 --- !u!114 &1493108367496941316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,5 +241,5 @@ MonoBehaviour:
   fullprice: 0
   bullet: {fileID: 0}
   invisibleBullet: {fileID: 0}
-  levelUp: {fileID: 4672662006099410413}
+  levelUp: {fileID: 4672662006099410413, guid: f06cba3878a6af94d9668bb5294371b6, type: 3}
   nameTower: {fileID: 2534721437045888650}

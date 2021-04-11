@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 8300658543982441991}
   - component: {fileID: 7487612091864928071}
   - component: {fileID: 861204910389268928}
-  - component: {fileID: -2474639817546370743}
   - component: {fileID: 3231844967421358206}
   - component: {fileID: 712444382164881681}
   - component: {fileID: 6325936840737134588}
   m_Layer: 8
-  m_Name: Tank_Tower_Lvl_1
+  m_Name: Tank_Tower_Lvl_3
   m_TagString: TowerTank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,27 +117,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &-2474639817546370743
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7644471715059071606}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!222 &3231844967421358206
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -180,7 +158,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tank
+  m_Text: Tank lvl 3
 --- !u!114 &6325936840737134588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,5 +178,5 @@ MonoBehaviour:
   fullprice: 0
   bullet: {fileID: 0}
   invisibleBullet: {fileID: 0}
-  levelUp: {fileID: 7644471715059071606}
+  levelUp: {fileID: 7644471715059071606, guid: bb42f35c9753a0a4581c367da21869dc, type: 3}
   nameTower: {fileID: 712444382164881681}

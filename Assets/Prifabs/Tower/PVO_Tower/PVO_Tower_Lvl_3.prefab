@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 3577622017830061061}
   - component: {fileID: 4324035469654907448}
   - component: {fileID: 4094121401848907638}
-  - component: {fileID: 4980985339187550002}
   - component: {fileID: 2074891517192614046}
   m_Layer: 8
-  m_Name: PVO_Tower_Lvl_1
+  m_Name: PVO_Tower_Lvl_3
   m_TagString: TowerPVO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b9d1dab321f8284a99cd30dc03384c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,7 +108,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.59, y: 0.5}
+    oldSize: {x: 0.78, y: 0.78}
     newSize: {x: 0.5, y: 0.53}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -159,28 +158,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PVO
---- !u!50 &4980985339187550002
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5838607118407362590}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Text: PVO lvl 3
 --- !u!114 &2074891517192614046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +176,7 @@ MonoBehaviour:
   rateOfFire: 3
   price: 2
   fullprice: 0
-  bullet: {fileID: 6055780391979567866, guid: 67d9659dc3a13f34ebff502d7d5146d6, type: 3}
-  invisibleBullet: {fileID: 8055456500217538808, guid: bc77d8db445efa94bbaff2d30db71b3d, type: 3}
-  levelUp: {fileID: 5838607118407362590}
+  bullet: {fileID: 6055780391979567866, guid: 5311848967987ae42a6cbb45d882d93c, type: 3}
+  invisibleBullet: {fileID: 8055456500217538808, guid: 1594d4213f494f54e9b1bff6934262b1, type: 3}
+  levelUp: {fileID: 5838607118407362590, guid: 105ada76ee5acb84a9684b342be1e8b2, type: 3}
   nameTower: {fileID: 4094121401848907638}
