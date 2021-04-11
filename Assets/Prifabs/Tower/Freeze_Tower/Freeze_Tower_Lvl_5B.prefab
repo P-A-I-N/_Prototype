@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 6761003818108957000}
   - component: {fileID: 8291543153064929145}
   - component: {fileID: 2236815651346466784}
-  - component: {fileID: -7281875327996550979}
   - component: {fileID: 9024678611350098224}
   - component: {fileID: 1967732178381951021}
   - component: {fileID: -2610731711644353220}
   m_Layer: 8
-  m_Name: Freeze_Tower_Lvl_1
+  m_Name: Freeze_Tower_Lvl_5B
   m_TagString: TowerFreeze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 269d109da24369e4cbd7b6b1047109fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 28f3ff4ed263d7f488ce53c2545483c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,7 +108,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.53}
+    oldSize: {x: 0.97, y: 1.06}
     newSize: {x: 0.5, y: 0.53}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -118,27 +117,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &-7281875327996550979
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583781615001532060}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!222 &9024678611350098224
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -180,7 +158,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Freeze
+  m_Text: Freeze lvl 5B
 --- !u!114 &-2610731711644353220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +176,7 @@ MonoBehaviour:
   rateOfFire: 3
   price: 2
   fullprice: 0
-  bullet: {fileID: 8811029717210337052, guid: 01db3acc7f5380346ad458ca7f6e9783, type: 3}
-  invisibleBullet: {fileID: 6115813776678188055, guid: 07a3e319065b8664dbce99ccc21cba29, type: 3}
-  levelUp: {fileID: 4583781615001532060}
+  bullet: {fileID: 8811029717210337052, guid: 259024e58d104dd4f910dbce047ec785, type: 3}
+  invisibleBullet: {fileID: 6115813776678188055, guid: a006c1d166823244c9e8a7eb71c02e11, type: 3}
+  levelUp: {fileID: 4583781615001532060, guid: 0adf1a5c16f32794eaee3103e1196742, type: 3}
   nameTower: {fileID: 1967732178381951021}

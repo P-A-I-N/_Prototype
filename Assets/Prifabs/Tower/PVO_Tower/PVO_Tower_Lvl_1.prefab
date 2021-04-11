@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3577622017830061061}
   - component: {fileID: 4324035469654907448}
   - component: {fileID: 4094121401848907638}
-  - component: {fileID: 4980985339187550002}
   - component: {fileID: 2074891517192614046}
   m_Layer: 8
   m_Name: PVO_Tower_Lvl_1
@@ -159,28 +158,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PVO
---- !u!50 &4980985339187550002
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5838607118407362590}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Text: PVO lvl 1
 --- !u!114 &2074891517192614046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +176,7 @@ MonoBehaviour:
   rateOfFire: 3
   price: 2
   fullprice: 0
-  bullet: {fileID: 6055780391979567866, guid: 67d9659dc3a13f34ebff502d7d5146d6, type: 3}
-  invisibleBullet: {fileID: 8055456500217538808, guid: bc77d8db445efa94bbaff2d30db71b3d, type: 3}
-  levelUp: {fileID: 5838607118407362590}
+  bullet: {fileID: 6055780391979567866, guid: 46e0cb0a201c94e41b273c63b7eeed28, type: 3}
+  invisibleBullet: {fileID: 8055456500217538808, guid: 64f5d4b182a27bc4cadca7283119adcb, type: 3}
+  levelUp: {fileID: 5838607118407362590, guid: bd8e86f5881eb914d9f11e74e814fbde, type: 3}
   nameTower: {fileID: 4094121401848907638}

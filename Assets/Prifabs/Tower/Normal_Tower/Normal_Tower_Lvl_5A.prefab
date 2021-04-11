@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 1525262221154466205}
   - component: {fileID: 406964554760255985}
   - component: {fileID: 8777175777170879656}
-  - component: {fileID: -3896115917639693583}
   m_Layer: 8
-  m_Name: "\u043E\u0431\u044B\u0447\u043D\u0430\u044F_5Alvl"
+  m_Name: Normal_Tower_Lvl_5A
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,8 +134,8 @@ MonoBehaviour:
   rateOfFire: 3
   price: 100
   fullprice: 0
-  bullet: {fileID: 9130870781651923518, guid: c58630d21bc7c43438436f709f462cf2, type: 3}
-  invisibleBullet: {fileID: 5024834314885986411, guid: 66352b884ae81f447bb492aa9c5f91d7, type: 3}
+  bullet: {fileID: 9130870781651923518, guid: 7a860a0eaeb33f84d9472b7626218122, type: 3}
+  invisibleBullet: {fileID: 5024834314885986411, guid: ee3603e18dd631d4c90101871baec0e2, type: 3}
   levelUp: {fileID: 7117819293085753521, guid: b7129313877139a47be9f9f3cf1c1bf5, type: 3}
   nameTower: {fileID: 8777175777170879656}
 --- !u!222 &406964554760255985
@@ -180,25 +179,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower 5A
---- !u!50 &-3896115917639693583
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3913156428894591619}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Text: Normal lvl 5A

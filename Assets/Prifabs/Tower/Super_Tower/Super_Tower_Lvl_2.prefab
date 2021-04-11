@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 846857293582194589}
   - component: {fileID: 8239964178772873809}
   - component: {fileID: 7159838006695149554}
-  - component: {fileID: -7005402380562875958}
   m_Layer: 8
-  m_Name: "\u043E\u0431\u044B\u0447\u043D\u0430\u044F_2lvl"
+  m_Name: Super_Tower_Lvl_2
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 66f5b420dbbc6774aa9b426c314e4d01, type: 3}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,7 +108,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
+    oldSize: {x: 0.2, y: 0.2}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -135,9 +134,9 @@ MonoBehaviour:
   rateOfFire: 3
   price: 100
   fullprice: 0
-  bullet: {fileID: 1771361987962008552, guid: 7c4869df21a36a1489f58fb7ceab9a38, type: 3}
-  invisibleBullet: {fileID: 5024834314885986411, guid: 66352b884ae81f447bb492aa9c5f91d7, type: 3}
-  levelUp: {fileID: 2986614373658165757, guid: 14dfdfb77218c634e9fef68a6e26cbb6, type: 3}
+  bullet: {fileID: 1771361987962008552, guid: fdb2f5bda9ec79347be99fd500b1c9df, type: 3}
+  invisibleBullet: {fileID: 5024834314885986411, guid: 0ec03ae796dc6e64c9e6a01dbb697469, type: 3}
+  levelUp: {fileID: 2986614373658165757, guid: 5951848964beba14fbecbf77da469d54, type: 3}
   nameTower: {fileID: 7159838006695149554}
 --- !u!222 &8239964178772873809
 CanvasRenderer:
@@ -180,25 +179,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower 2
---- !u!50 &-7005402380562875958
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2171621869778484781}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Text: Super lvl 2
