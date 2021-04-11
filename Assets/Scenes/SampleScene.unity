@@ -6341,8 +6341,12 @@ PrefabInstance:
       value: Infobar
       objectReference: {fileID: 0}
     - target: {fileID: 8299075491338131708, guid: a2166498689cfd349bdb955392ea69ec, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299075491338131708, guid: a2166498689cfd349bdb955392ea69ec, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 221
+      value: 440
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2166498689cfd349bdb955392ea69ec, type: 3}
