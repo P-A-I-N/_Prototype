@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 29021231d7b0f97489c6bac3879045ad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f6c5954a3e409848ae5654ee3101edf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,14 +134,11 @@ MonoBehaviour:
   range: 10
   rateOfFire: 3
   price: 100
+  fullprice: 0
   bullet: {fileID: 9130870781651923518, guid: c58630d21bc7c43438436f709f462cf2, type: 3}
   invisibleBullet: {fileID: 5024834314885986411, guid: 66352b884ae81f447bb492aa9c5f91d7, type: 3}
   levelUp: {fileID: 7117819293085753521, guid: b7129313877139a47be9f9f3cf1c1bf5, type: 3}
   nameTower: {fileID: 8777175777170879656}
-  layerEnemy:
-    serializedVersion: 2
-    m_Bits: 0
-  invisible: 0
 --- !u!222 &406964554760255985
 CanvasRenderer:
   m_ObjectHideFlags: 0
