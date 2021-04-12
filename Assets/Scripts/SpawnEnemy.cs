@@ -2,13 +2,14 @@
 
 public class SpawnEnemy : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject[] enemy;
     public int numberOfEnemies;
     public int randomRangeSpawn;
     public int randomRangeEnemies;
     public float spawnTime; 
     public float  spawnTimeRND;
     public bool endOfTheWave;
+    public int lvlFat;
     float exit_time;
     public Transform parent;
     private int sum;
@@ -51,7 +52,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         if (sum < numberOfEnemies)
         {
-            e = Instantiate(enemy, transform.position, transform.rotation);
+            e = Instantiate(enemy[lvlFat], transform.position, transform.rotation);
             e.transform.SetParent(parent);
             spawnTimeRND = Random.Range (spawnTime - spawnTime / randomRangeSpawn, spawnTime + spawnTime / randomRangeSpawn);
             exit_time = Time.time + spawnTimeRND;
