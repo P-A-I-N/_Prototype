@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4261094416135583490}
   - component: {fileID: 4037586086869599063}
   m_Layer: 6
-  m_Name: fat usual
+  m_Name: Fat_Usual_Lvl_4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,11 +113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42437ad50aa4c54f907e305449a3820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
+  speed: 0.2
   health: 100
   coldTime: 3
   decelerationIn: 2
   debuffHp: 3
+  gold: 20
 --- !u!50 &4037586086869599063
 Rigidbody2D:
   serializedVersion: 4

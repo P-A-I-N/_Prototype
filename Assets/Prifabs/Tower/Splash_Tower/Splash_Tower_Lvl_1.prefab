@@ -174,9 +174,10 @@ MonoBehaviour:
   health: 100
   range: 5
   rateOfFire: 3
-  price: 2
+  price: 200
   fullprice: 0
   bullet: {fileID: 4638881505785862822, guid: 20e463b746073714e87739e9f4ecc026, type: 3}
   invisibleBullet: {fileID: 6303204925174716766, guid: 5846e62a15b27b847ad38668c0284a09, type: 3}
   levelUp: {fileID: 6250856000326230027, guid: 5e5c6fe4c679b0b40a7ef24cb4121967, type: 3}
   nameTower: {fileID: 7738167142773398050}
+  damage: 0

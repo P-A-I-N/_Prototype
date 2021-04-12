@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3580955354860530423}
   - component: {fileID: 8778705203031240557}
   m_Layer: 6
-  m_Name: FAT speed
+  m_Name: Fat_Speed_Lvl_5
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,6 +118,7 @@ MonoBehaviour:
   coldTime: 3
   decelerationIn: 2
   debuffHp: 3
+  gold: 20
 --- !u!50 &8778705203031240557
 Rigidbody2D:
   serializedVersion: 4

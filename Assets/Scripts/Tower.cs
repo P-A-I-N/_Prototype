@@ -7,15 +7,15 @@ public class Tower : MonoBehaviour
     public int range;
     public int rateOfFire;
     public int price;
-        public int fullprice;
+    public int fullprice;
     public GameObject bullet;
     public GameObject invisibleBullet;
     public GameObject levelUp;
     public Text nameTower;
     protected LayerMask layerMask;
     protected bool invisible;
-    protected float _health;
-    protected bool damage;
+    public float _health;
+    public bool damage;
     protected bool target;
     protected int num_enemies = 0;
 

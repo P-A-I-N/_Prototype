@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public float coldTime;
     public float decelerationIn;
     public int debuffHp;
+    public int gold;
     GameMap gm;
     bool cold;
     float timeCold;
@@ -46,7 +47,7 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
-            gm.gold += 50;
+            gm.gold += gold;
         }
         
         transform.Translate(Vector2.left * _speed * Time.deltaTime);
