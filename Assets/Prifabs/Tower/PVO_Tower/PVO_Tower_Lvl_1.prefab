@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d06f9eb8bba297f42b2cadd4330f54ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,7 +108,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.59, y: 0.5}
+    oldSize: {x: 0.51, y: 0.44}
     newSize: {x: 0.5, y: 0.53}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -180,4 +180,5 @@ MonoBehaviour:
   invisibleBullet: {fileID: 8055456500217538808, guid: 64f5d4b182a27bc4cadca7283119adcb, type: 3}
   levelUp: {fileID: 5838607118407362590, guid: bd8e86f5881eb914d9f11e74e814fbde, type: 3}
   nameTower: {fileID: 4094121401848907638}
+  _health: 0
   damage: 0
