@@ -2486,7 +2486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &487239033
 Transform:
   m_ObjectHideFlags: 0
@@ -3050,7 +3050,7 @@ MonoBehaviour:
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
-  lvlFat: 0
+  lvlFat: 2
   parent: {fileID: 563002988}
 --- !u!1 &605737298
 GameObject:
@@ -3107,7 +3107,7 @@ MonoBehaviour:
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
-  lvlFat: 0
+  lvlFat: 2
   parent: {fileID: 563002988}
 --- !u!1 &658959783
 GameObject:
@@ -3726,7 +3726,7 @@ MonoBehaviour:
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
-  lvlFat: 0
+  lvlFat: 2
   parent: {fileID: 563002988}
 --- !u!1 &836974181
 GameObject:
@@ -4969,7 +4969,7 @@ MonoBehaviour:
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
-  lvlFat: 0
+  lvlFat: 2
   parent: {fileID: 563002988}
 --- !u!1 &1111246595
 GameObject:
@@ -7526,7 +7526,7 @@ MonoBehaviour:
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
-  lvlFat: 0
+  lvlFat: 2
   parent: {fileID: 563002988}
 --- !u!1 &1702143651
 GameObject:

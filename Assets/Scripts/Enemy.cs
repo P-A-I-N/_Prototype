@@ -74,13 +74,19 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        stop = true;
-        _speed = 0;
+        if (gameObject.tag != "EnemyVO")
+        {
+            stop = true;
+            _speed = 0;
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        stop = false;
-        _speed = speed;
+        if (gameObject.tag != "EnemyVO")
+        {
+            stop = false;
+            _speed = speed;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
