@@ -26,45 +26,53 @@ public class RayCast : MonoBehaviour
 
     void Update()
     {
-        if (target != null)
+        if (target != null && towerUp)
         {
             if (target.tag == "Tower")
-            { 
+            {
+                price = target.GetComponent<Tower>().levelUp.GetComponent<Tower>().price;
                 levelUp = target.GetComponent<Tower>().levelUp;
                 lvlUp();
             }
             if (target.tag == "TowerBuff")
             {
+                price = target.GetComponent<Tower>().levelUp.GetComponent<Tower>().price;
                 levelUp = target.GetComponent<TowerBuff>().levelUp;
                 lvlUp();
             }
             if (target.tag == "TowerFreeze")
             {
+                price = target.GetComponent<Tower>().levelUp.GetComponent<Tower>().price;
                 levelUp = target.GetComponent<TowerFreeze>().levelUp;
                 lvlUp();
             }
             if (target.tag == "TowerPVO")
             {
+                price = target.GetComponent<Tower>().levelUp.GetComponent<Tower>().price;
                 levelUp = target.GetComponent<TowerPVO>().levelUp;
                 lvlUp();
             }
             if (target.tag == "TowerSplash")
             {
+                price = target.GetComponent<Tower>().levelUp.GetComponent<Tower>().price;
                 levelUp = target.GetComponent<TowerSplash>().levelUp;
                 lvlUp();
             }
             if (target.tag == "TowerTank")
             {
+                price = target.GetComponent<Tower>().levelUp.GetComponent<Tower>().price;
                 levelUp = target.GetComponent<TowerTank>().levelUp;
                 lvlUp();
             }
             if (target.tag == "TowerDebuff")
             {
+                price = target.GetComponent<Tower>().levelUp.GetComponent<Tower>().price;
                 levelUp = target.GetComponent<TowerDebuff>().levelUp;
                 lvlUp();
             }
             if (target.tag == "TowerGold")
             {
+                price = target.GetComponent<Tower>().levelUp.GetComponent<Tower>().price;
                 levelUp = target.GetComponent<TowerGold>().levelUp;
                 lvlUp();
             }
@@ -144,10 +152,11 @@ public class RayCast : MonoBehaviour
 
     public void lvlUp()
     {
-        if (towerUp)
+        if (towerUp && price <= gm.gold)
         {
             Destroy(target.gameObject);
             Instantiate(levelUp, target.transform.position, target.transform.rotation);
+            gm.gold -= price;
             towerUp = false;
         }
     }
@@ -234,56 +243,56 @@ public class RayCast : MonoBehaviour
         {
             price = target.GetComponent<Tower>().price;
             damage = target.GetComponent<Tower>().damage;
-            gm.gold += price / 2;
+            gm.gold += target.GetComponent<Tower>().fullprice / 2;
             Destroy(target);
         }
         if (target.tag == "TowerBuff")
         {
             price = target.GetComponent<TowerBuff>().price;
             damage = target.GetComponent<TowerBuff>().damage;
-            gm.gold += price / 2;
+            gm.gold += target.GetComponent<Tower>().fullprice / 2;
             Destroy(target);
         }
         if (target.tag == "TowerFreeze")
         {
             price = target.GetComponent<TowerFreeze>().price;
             damage = target.GetComponent<TowerFreeze>().damage;
-            gm.gold += price / 2;
+            gm.gold += target.GetComponent<Tower>().fullprice / 2;
             Destroy(target);
         }
         if (target.tag == "TowerPVO")
         {
             price = target.GetComponent<TowerPVO>().price;
             damage = target.GetComponent<TowerPVO>().damage;
-            gm.gold += price / 2;
+            gm.gold += target.GetComponent<Tower>().fullprice / 2;
             Destroy(target);
         }
         if (target.tag == "TowerSplash")
         {
             price = target.GetComponent<TowerSplash>().price;
             damage = target.GetComponent<TowerSplash>().damage;
-            gm.gold += price / 2;
+            gm.gold += target.GetComponent<Tower>().fullprice / 2;
             Destroy(target);
         }
         if (target.tag == "TowerTank")
         {
             price = target.GetComponent<TowerTank>().price;
             damage = target.GetComponent<TowerTank>().damage;
-            gm.gold += price / 2;
+            gm.gold += target.GetComponent<Tower>().fullprice / 2;
             Destroy(target);
         }
         if(target.tag == "TowerDebuff")
         {
             price = target.GetComponent<TowerDebuff>().price;
             damage = target.GetComponent<TowerDebuff>().damage;
-            gm.gold += price / 2;
+            gm.gold += target.GetComponent<Tower>().fullprice / 2;
             Destroy(target);
         }
         if (target.tag == "TowerGold")
         {
             price = target.GetComponent<TowerGold>().price;
             damage = target.GetComponent<TowerGold>().damage;
-            gm.gold += price / 2;
+            gm.gold += target.GetComponent<Tower>().fullprice / 2;
             Destroy(target);
         }
     }

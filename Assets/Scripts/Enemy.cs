@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
     public float speed;
     private float _speed;
     public float health;
+    public float max_health;
     public float coldTime;
     public float decelerationIn;
     public int debuffHp;
@@ -15,14 +16,28 @@ public class Enemy : MonoBehaviour
     bool stop;
     bool debuff;
     bool _debuff;
+    LineRenderer HPBar;
 
     private void Awake()
     {
+        if (max_health <= 0) max_health = health;
         _speed = speed;
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
+        GetComponent<SpriteRenderer>().sortingLayerName = "Enemy";
+        HPBar = GetComponent<LineRenderer>();
+        HPBar.useWorldSpace = false;
+        HPBar.startWidth = 0.1f;
+        HPBar.endWidth = 0.1f;
+        HPBar.SetPosition(0, new Vector3(-0.5f, 0.8f));
+        HPBar.SetPosition(1, new Vector3(0.5f, 0.8f));
+        HPBar.sortingLayerName = "Enemy";
+        HPBar.startColor = Color.red;
+        HPBar.endColor = Color.red;
+        HPBar.sortingOrder = 10;
     }
     private void Update()
     {
+        HPBar.SetPosition(1, new Vector3(-0.5f + health/max_health, 0.8f));
         if(debuff && !_debuff)
         {
             health -=debuffHp;

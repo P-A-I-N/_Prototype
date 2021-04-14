@@ -61,6 +61,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Bar
+    uniqueID: 1494937243
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

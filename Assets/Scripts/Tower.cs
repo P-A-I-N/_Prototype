@@ -26,6 +26,7 @@ public class Tower : MonoBehaviour
     }
     protected void Start()
     {
+        if (fullprice <= 0) fullprice = price;
         InvokeRepeating("criateBullet", 0, rateOfFire);
     }
 
