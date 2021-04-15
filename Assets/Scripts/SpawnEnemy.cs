@@ -52,7 +52,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         if (sum < numberOfEnemies)
         {
-            e = Instantiate(enemy[lvlFat], transform.position, transform.rotation);
+            e = Instantiate(enemy[Random.Range (0, enemy.Length)], transform.position, transform.rotation);
             e.transform.SetParent(parent);
             spawnTimeRND = Random.Range (spawnTime - spawnTime / randomRangeSpawn, spawnTime + spawnTime / randomRangeSpawn);
             exit_time = Time.time + spawnTimeRND;
