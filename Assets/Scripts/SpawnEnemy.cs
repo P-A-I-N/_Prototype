@@ -18,7 +18,8 @@ public class SpawnEnemy : MonoBehaviour
     int current_wave = 1;
     public TextAsset wavesTable;
     public UnityEngine.UI.Text WaveText;
-
+    bool waveTextPrint = false;
+    float timeTextPrint;
 
     void Start()
     {
@@ -28,6 +29,8 @@ public class SpawnEnemy : MonoBehaviour
         spawnTimeRND = Random.Range (spawnTime - spawnTime / randomRangeSpawn, spawnTime + spawnTime / randomRangeSpawn);
         exit_time = Time.time + spawnTimeRND;
         WaveText.text = "Wave " + current_wave;
+        waveTextPrint = true;
+        timeTextPrint = Time.time + 5;
         SettingWave();
         //InvokeRepeating("CreateEnemy", spawnTime, spawnTime);
         //InvokeRepeating("summ", spawnTime, spawnTime);
@@ -45,7 +48,12 @@ public class SpawnEnemy : MonoBehaviour
             endOfTheWave = false;
             SettingWave();
             WaveText.text = "Wave " + current_wave;
-            
+            waveTextPrint = true;
+            timeTextPrint = Time.time + 5;
+        }
+        if (waveTextPrint && Time.time > timeTextPrint)
+        {
+            WaveText.text = "";
         }
     }
 
