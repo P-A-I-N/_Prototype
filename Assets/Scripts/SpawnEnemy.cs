@@ -16,7 +16,9 @@ public class SpawnEnemy : MonoBehaviour
     GameObject e;
     int num_waves = 9;
     int current_wave = 1;
-    
+    public TextAsset wavesTable;
+    public UnityEngine.UI.Text WaveText;
+
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class SpawnEnemy : MonoBehaviour
         numberOfEnemies = Random.Range (numberOfEnemies - numberOfEnemies / randomRangeEnemies, numberOfEnemies + numberOfEnemies / randomRangeEnemies);
         spawnTimeRND = Random.Range (spawnTime - spawnTime / randomRangeSpawn, spawnTime + spawnTime / randomRangeSpawn);
         exit_time = Time.time + spawnTimeRND;
+        WaveText.text = "Wave " + current_wave;
         SettingWave();
         //InvokeRepeating("CreateEnemy", spawnTime, spawnTime);
         //InvokeRepeating("summ", spawnTime, spawnTime);
@@ -41,11 +44,9 @@ public class SpawnEnemy : MonoBehaviour
             current_wave++;
             endOfTheWave = false;
             SettingWave();
+            WaveText.text = "Wave " + current_wave;
+            
         }
-        //if(sum == numberOfEnemies)
-        //{
-        //    endOfTheWave = true;
-        //}
     }
 
     void SettingWave ()

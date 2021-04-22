@@ -15,15 +15,6 @@ public class WaveTextScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enabled && startEnabled)
-        {
-            timeHide = Time.time + 3;
-            startEnabled = false;
-        }
-        if (!startEnabled && Time.time > timeHide)
-        {
-            startEnabled = true;
-            enabled = false;
-        }
+
     }
 }

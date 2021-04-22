@@ -3269,6 +3269,8 @@ MonoBehaviour:
   endOfTheWave: 0
   lvlFat: 2
   parent: {fileID: 563002988}
+  wavesTable: {fileID: 0}
+  WaveText: {fileID: 853664514}
 --- !u!1 &605737298
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,6 +3328,8 @@ MonoBehaviour:
   endOfTheWave: 0
   lvlFat: 2
   parent: {fileID: 563002988}
+  wavesTable: {fileID: 0}
+  WaveText: {fileID: 853664514}
 --- !u!1 &658959783
 GameObject:
   m_ObjectHideFlags: 0
@@ -3945,6 +3949,8 @@ MonoBehaviour:
   endOfTheWave: 0
   lvlFat: 2
   parent: {fileID: 563002988}
+  wavesTable: {fileID: 0}
+  WaveText: {fileID: 853664514}
 --- !u!1 &836974181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4197,6 +4203,7 @@ GameObject:
   - component: {fileID: 853664513}
   - component: {fileID: 853664515}
   - component: {fileID: 853664514}
+  - component: {fileID: 853664516}
   m_Layer: 5
   m_Name: Wave
   m_TagString: Untagged
@@ -4266,6 +4273,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853664512}
   m_CullTransparentMesh: 1
+--- !u!114 &853664516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853664512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073d18069cb7f94458b0e9711a3f1bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &901923030
 GameObject:
   m_ObjectHideFlags: 0
@@ -5268,6 +5287,8 @@ MonoBehaviour:
   endOfTheWave: 0
   lvlFat: 2
   parent: {fileID: 563002988}
+  wavesTable: {fileID: 0}
+  WaveText: {fileID: 853664514}
 --- !u!1 &1111246595
 GameObject:
   m_ObjectHideFlags: 0
@@ -8033,6 +8054,8 @@ MonoBehaviour:
   endOfTheWave: 0
   lvlFat: 2
   parent: {fileID: 563002988}
+  wavesTable: {fileID: 0}
+  WaveText: {fileID: 853664514}
 --- !u!1 &1702143651
 GameObject:
   m_ObjectHideFlags: 0
