@@ -12,6 +12,8 @@ public class TowerInfo : MonoBehaviour
     public GameObject panel;
     public GameObject button;
     public GameObject button2;
+    public GameObject button3;
+    public GameObject button4;
     public GameObject infoTarget;
     public GameObject target;
     public GameObject levelUp;
@@ -103,8 +105,22 @@ public class TowerInfo : MonoBehaviour
             {
                 TowerGold();
             }
+
+
+            if (target.GetComponent<Lvl4>())
+            {
+                button3.SetActive(true);
+                button4.SetActive(true);
+            }
+            else
+            {
+                button3.SetActive(false);
+                button4.SetActive(false);
+
+            }
         }
-        else if (infoTarget == null)
+
+         else if (infoTarget == null)
         {
             levelUp = null;
             now.gameObject.SetActive(false);
@@ -115,12 +131,22 @@ public class TowerInfo : MonoBehaviour
             button2.SetActive(false);
             target = null;
         }
-        else if (target == null)
+        
+        if (target == null)
         {
             up.gameObject.SetActive(false);
             descriptionUp.gameObject.SetActive(false);
             button.SetActive(false);
             button2.SetActive(false);
+            button3.SetActive(false);
+            button4.SetActive(false);
+        }
+        
+        if (levelUp == null)
+        {
+            up.gameObject.SetActive(false);
+            descriptionUp.gameObject.SetActive(false);
+            button.SetActive(false);
         }
     }
 
@@ -128,10 +154,14 @@ public class TowerInfo : MonoBehaviour
     {
         now.gameObject.SetActive(true);
         descriptionNow.gameObject.SetActive(true);
-        up.gameObject.SetActive(true);
-        descriptionUp.gameObject.SetActive(true);
-        button.SetActive(true);
         button2.SetActive(true);
+
+        if (levelUp != null)
+        {
+            up.gameObject.SetActive(true);
+            descriptionUp.gameObject.SetActive(true);
+            button.SetActive(true);
+        }
     }
     public void infoActive()
     {
@@ -150,13 +180,16 @@ public class TowerInfo : MonoBehaviour
         nowPrice = target.GetComponent<Tower>().price;
         descriptionNow.text = now.text + " attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells. Price: " + nowPrice + " gold.";
 
-        levelUp = target.GetComponent<Tower>().levelUp;
-        up.text = levelUp.GetComponent<Text>().text;
-        upHealth = levelUp.GetComponent<Tower>().health;
-        upRate = levelUp.GetComponent<Tower>().rateOfFire;
-        upRange = levelUp.GetComponent<Tower>().range;
-        upPrice = levelUp.GetComponent<Tower>().price;
-        descriptionUp.text = up.text + " attacks 1 enemy, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells. Price: " + upPrice + " gold.";
+        if (target.GetComponent<Tower>().levelUp != null)
+        {
+            levelUp = target.GetComponent<Tower>().levelUp;
+            up.text = levelUp.GetComponent<Text>().text;
+            upHealth = levelUp.GetComponent<Tower>().health;
+            upRate = levelUp.GetComponent<Tower>().rateOfFire;
+            upRange = levelUp.GetComponent<Tower>().range;
+            upPrice = levelUp.GetComponent<Tower>().price;
+            descriptionUp.text = up.text + " attacks 1 enemy, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells. Price: " + upPrice + " gold.";
+        }
     }
     public void TowerFreeze()
     {
@@ -169,13 +202,16 @@ public class TowerInfo : MonoBehaviour
         nowPrice = target.GetComponent<TowerFreeze>().price;
         descriptionNow.text = now.text + " slows down enemies, attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells. Price: " + nowPrice + " gold.";
 
-        levelUp = target.GetComponent<TowerFreeze>().levelUp;
-        up.text = levelUp.GetComponent<Text>().text;
-        upHealth = levelUp.GetComponent<TowerFreeze>().health;
-        upRate = levelUp.GetComponent<TowerFreeze>().rateOfFire;
-        upRange = levelUp.GetComponent<TowerFreeze>().range;
-        upPrice = levelUp.GetComponent<TowerFreeze>().price;
-        descriptionUp.text = up.text + " slows down enemies, attacks 1 enemy, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells. Price: " + upPrice + " gold.";
+        if (target.GetComponent<TowerFreeze>().levelUp != null)
+        {
+            levelUp = target.GetComponent<TowerFreeze>().levelUp;
+            up.text = levelUp.GetComponent<Text>().text;
+            upHealth = levelUp.GetComponent<TowerFreeze>().health;
+            upRate = levelUp.GetComponent<TowerFreeze>().rateOfFire;
+            upRange = levelUp.GetComponent<TowerFreeze>().range;
+            upPrice = levelUp.GetComponent<TowerFreeze>().price;
+            descriptionUp.text = up.text + " slows down enemies, attacks 1 enemy, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells. Price: " + upPrice + " gold.";
+        }
     }
     public void TowerBuff()
     {
@@ -186,11 +222,14 @@ public class TowerInfo : MonoBehaviour
         nowPrice = target.GetComponent<TowerBuff>().price;
         descriptionNow.text = now.text + " does not attack, buffs towers around itself 3x3 cells, has " + nowHealth + " health. Price: " + nowPrice + " gold.";
 
-        levelUp = target.GetComponent<TowerBuff>().levelUp;
-        up.text = levelUp.GetComponent<Text>().text;
-        upHealth = levelUp.GetComponent<TowerBuff>().health;
-        upPrice = levelUp.GetComponent<TowerBuff>().price;
-        descriptionUp.text = up.text + " does not attack, buffs towers around itself 3x3 cells, has " + upHealth + " health. Price: " + upPrice + " gold.";
+        if (target.GetComponent<TowerBuff>().levelUp != null)
+        {
+            levelUp = target.GetComponent<TowerBuff>().levelUp;
+            up.text = levelUp.GetComponent<Text>().text;
+            upHealth = levelUp.GetComponent<TowerBuff>().health;
+            upPrice = levelUp.GetComponent<TowerBuff>().price;
+            descriptionUp.text = up.text + " does not attack, buffs towers around itself 3x3 cells, has " + upHealth + " health. Price: " + upPrice + " gold.";
+        }
     }
     public void TowerPVO()
     {
@@ -203,13 +242,16 @@ public class TowerInfo : MonoBehaviour
         nowPrice = target.GetComponent<TowerPVO>().price;
         descriptionNow.text = now.text + " attacks only flying enemies, attacks 1 enemy, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells. Price: " + nowPrice + " gold.";
 
-        levelUp = target.GetComponent<TowerPVO>().levelUp;
-        up.text = levelUp.GetComponent<Text>().text;
-        upHealth = levelUp.GetComponent<TowerPVO>().health;
-        upRate = levelUp.GetComponent<TowerPVO>().rateOfFire;
-        upRange = levelUp.GetComponent<TowerPVO>().range;
-        upPrice = levelUp.GetComponent<TowerPVO>().price;
-        descriptionUp.text = up.text + " attacks only flying enemies, attacks 1 enemy, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells. Price: " + upPrice + " gold.";
+        if (target.GetComponent<TowerPVO>().levelUp != null)
+        {
+            levelUp = target.GetComponent<TowerPVO>().levelUp;
+            up.text = levelUp.GetComponent<Text>().text;
+            upHealth = levelUp.GetComponent<TowerPVO>().health;
+            upRate = levelUp.GetComponent<TowerPVO>().rateOfFire;
+            upRange = levelUp.GetComponent<TowerPVO>().range;
+            upPrice = levelUp.GetComponent<TowerPVO>().price;
+            descriptionUp.text = up.text + " attacks only flying enemies, attacks 1 enemy, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells. Price: " + upPrice + " gold.";
+        }
     }
     public void TowerTank()
     {
@@ -220,11 +262,14 @@ public class TowerInfo : MonoBehaviour
         nowPrice = target.GetComponent<TowerTank>().price;
         descriptionNow.text = now.text + " does not attack, has " + nowHealth + " health. Price: " + nowPrice + " gold.";
 
-        levelUp = target.GetComponent<TowerTank>().levelUp;
-        up.text = levelUp.GetComponent<Text>().text;
-        upHealth = levelUp.GetComponent<TowerTank>().health;
-        upPrice = levelUp.GetComponent<TowerTank>().price;
-        descriptionUp.text = up.text + " does not attack, has " + upHealth + " health. Price: " + upPrice + " gold.";
+        if (target.GetComponent<TowerTank>().levelUp != null)
+        {
+            levelUp = target.GetComponent<TowerTank>().levelUp;
+            up.text = levelUp.GetComponent<Text>().text;
+            upHealth = levelUp.GetComponent<TowerTank>().health;
+            upPrice = levelUp.GetComponent<TowerTank>().price;
+            descriptionUp.text = up.text + " does not attack, has " + upHealth + " health. Price: " + upPrice + " gold.";
+        }
     }
     public void TowerSplash()
     {
@@ -237,13 +282,16 @@ public class TowerInfo : MonoBehaviour
         nowPrice = target.GetComponent<TowerSplash>().price;
         descriptionNow.text = now.text + " attacks 1 enemy and touches several enemies behind him, has " + nowHealth + " health, shoots 1 bullet in " + nowRate + " seconds, attack range " + nowRange + " cells. Price: " + nowPrice + " gold.";
 
-        levelUp = target.GetComponent<TowerSplash>().levelUp;
-        up.text = levelUp.GetComponent<Text>().text;
-        upHealth = levelUp.GetComponent<TowerSplash>().health;
-        upRate = levelUp.GetComponent<TowerSplash>().rateOfFire;
-        upRange = levelUp.GetComponent<TowerSplash>().range;
-        upPrice = levelUp.GetComponent<TowerSplash>().price;
-        descriptionUp.text = up.text + " attacks 1 enemy and touches several enemies behind him, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells. Price: " + upPrice + " gold.";
+        if (target.GetComponent<TowerSplash>().levelUp != null)
+        {
+            levelUp = target.GetComponent<TowerSplash>().levelUp;
+            up.text = levelUp.GetComponent<Text>().text;
+            upHealth = levelUp.GetComponent<TowerSplash>().health;
+            upRate = levelUp.GetComponent<TowerSplash>().rateOfFire;
+            upRange = levelUp.GetComponent<TowerSplash>().range;
+            upPrice = levelUp.GetComponent<TowerSplash>().price;
+            descriptionUp.text = up.text + " attacks 1 enemy and touches several enemies behind him, has " + upHealth + " health, shoots 1 bullet in " + upRate + " seconds, attack range " + upRange + " cells. Price: " + upPrice + " gold.";
+        }
     }
     public void TowerDebuff()
     {
@@ -254,11 +302,14 @@ public class TowerInfo : MonoBehaviour
         nowPrice = target.GetComponent<TowerDebuff>().price;
         descriptionNow.text = now.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + nowHealth + " health. Price: " + nowPrice + " gold.";
 
-        levelUp = target.GetComponent<TowerDebuff>().levelUp;
-        up.text = levelUp.GetComponent<Text>().text;
-        upHealth = levelUp.GetComponent<TowerDebuff>().health;
-        upPrice = levelUp.GetComponent<TowerDebuff>().price;
-        descriptionUp.text = up.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + upHealth + " health. Price: " + upPrice + " gold.";
+        if (target.GetComponent<TowerDebuff>().levelUp != null)
+        {
+            levelUp = target.GetComponent<TowerDebuff>().levelUp;
+            up.text = levelUp.GetComponent<Text>().text;
+            upHealth = levelUp.GetComponent<TowerDebuff>().health;
+            upPrice = levelUp.GetComponent<TowerDebuff>().price;
+            descriptionUp.text = up.text + " does not attack, debuffs enemies 3x3 cells in front of him, has " + upHealth + " health. Price: " + upPrice + " gold.";
+        }
     }
     public void TowerGold()
     {
@@ -271,13 +322,16 @@ public class TowerInfo : MonoBehaviour
         nowPrice = target.GetComponent<TowerGold>().price;
         descriptionNow.text = now.text + " adds " + nowGoldGet + " gold in " + nowGoldDelay + " second, does not attack, has " + nowHealth + " health. Price: " + nowPrice + " gold.";
 
-        levelUp = target.GetComponent<TowerGold>().levelUp;
-        up.text = levelUp.GetComponent<Text>().text;
-        upHealth = levelUp.GetComponent<TowerGold>().health;
-        upGoldGet = levelUp.GetComponent<TowerGold>().goldGet;
-        upGoldDelay = levelUp.GetComponent<TowerGold>().goldDelay;
-        upPrice = levelUp.GetComponent<TowerGold>().price;
-        descriptionUp.text = up.text + " adds " + upGoldGet + " gold in " + upGoldDelay + " second, does not attack, has " + upHealth + " health. Price: " + upPrice + " gold.";
+        if (target.GetComponent<TowerGold>().levelUp != null)
+        {
+            levelUp = target.GetComponent<TowerGold>().levelUp;
+            up.text = levelUp.GetComponent<Text>().text;
+            upHealth = levelUp.GetComponent<TowerGold>().health;
+            upGoldGet = levelUp.GetComponent<TowerGold>().goldGet;
+            upGoldDelay = levelUp.GetComponent<TowerGold>().goldDelay;
+            upPrice = levelUp.GetComponent<TowerGold>().price;
+            descriptionUp.text = up.text + " adds " + upGoldGet + " gold in " + upGoldDelay + " second, does not attack, has " + upHealth + " health. Price: " + upPrice + " gold.";
+        }
     }
     public void infoTower()
     {

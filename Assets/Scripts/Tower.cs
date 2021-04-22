@@ -19,6 +19,10 @@ public class Tower : MonoBehaviour
     protected bool target;
     protected int num_enemies = 0;
 
+    public bool lvl4;
+    public GameObject lvl5a;
+    public GameObject lvl5b;
+
 
     protected void Awake()
     {
@@ -97,4 +101,15 @@ public class Tower : MonoBehaviour
             Instantiate(invisibleBullet, transform.position, bullet.transform.rotation);
         }
     }
+
+    public void lvl5A()
+    {
+        levelUp = lvl5a;
+    }
+
+    public void lvl5B()
+    {
+        levelUp = lvl5b;
+    }
 }
+

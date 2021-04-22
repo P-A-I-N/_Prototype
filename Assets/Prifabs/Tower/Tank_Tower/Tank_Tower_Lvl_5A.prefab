@@ -178,5 +178,7 @@ MonoBehaviour:
   fullprice: 0
   bullet: {fileID: 0}
   invisibleBullet: {fileID: 0}
-  levelUp: {fileID: 7644471715059071606, guid: 2809025b15fd4864c8337038ceffacec, type: 3}
+  levelUp: []
   nameTower: {fileID: 712444382164881681}
+  _health: 0
+  damage: 0

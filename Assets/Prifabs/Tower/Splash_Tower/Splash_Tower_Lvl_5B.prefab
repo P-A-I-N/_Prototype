@@ -178,7 +178,10 @@ MonoBehaviour:
   fullprice: 0
   bullet: {fileID: 4638881505785862822, guid: 66d782c475771d946963ce762016b14f, type: 3}
   invisibleBullet: {fileID: 6303204925174716766, guid: 3d4a9b9774821f64da1e1beea2acbc13, type: 3}
-  levelUp: {fileID: 6250856000326230027, guid: 37e964a597bdd6e409d7108c292cfa97, type: 3}
+  levelUp: {fileID: 0}
   nameTower: {fileID: 7738167142773398050}
   _health: 0
   damage: 0
+  lvl4: 0
+  lvl5a: {fileID: 0}
+  lvl5b: {fileID: 0}
