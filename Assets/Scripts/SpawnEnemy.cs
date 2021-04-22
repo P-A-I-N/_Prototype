@@ -55,6 +55,7 @@ public class SpawnEnemy : MonoBehaviour
         if (waveTextPrint && Time.time > timeTextPrint)
         {
             WaveText.text = "";
+            waveTextPrint = false;
         }
     }
 
