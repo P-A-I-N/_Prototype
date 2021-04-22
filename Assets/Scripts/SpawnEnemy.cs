@@ -14,6 +14,7 @@ public class SpawnEnemy : MonoBehaviour
     public Transform parent;
     private int sum;
     GameObject e;
+    int num_waves = 9;
 
     void Start()
     {
