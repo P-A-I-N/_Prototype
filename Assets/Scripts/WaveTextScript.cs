@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class WaveTextScript : MonoBehaviour
 {
-    bool startEnabled = true;
-    float timeHide;
     // Start is called before the first frame update
     void Start()
     {
