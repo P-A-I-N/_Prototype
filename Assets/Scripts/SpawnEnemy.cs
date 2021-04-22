@@ -47,6 +47,7 @@ public class SpawnEnemy : MonoBehaviour
             current_wave++;
             endOfTheWave = false;
             SettingWave();
+            sum = 0;
             WaveText.text = "Wave " + current_wave;
             waveTextPrint = true;
             timeTextPrint = Time.time + 5;
