@@ -27,6 +27,8 @@ TagManager:
   - EnemyInvisible
   - TowerDebuff
   - TowerGold
+  - BulletNormalLvl5A
+  - InvisibleBulletNormalLvl5A
   layers:
   - Default
   - TransparentFX
