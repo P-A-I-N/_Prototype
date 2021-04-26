@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7569352353955904591}
   - component: {fileID: 8480192971450950645}
   - component: {fileID: 7982771313302222117}
-  - component: {fileID: 918070275326093540}
   - component: {fileID: 3876431729964971551}
   - component: {fileID: 2729532451177159709}
+  - component: {fileID: -2597358034536094493}
   m_Layer: 8
   m_Name: Normal_Tower_Lvl_1
   m_TagString: Tower
@@ -117,37 +117,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.41, y: 0.36}
   m_EdgeRadius: 0
---- !u!114 &918070275326093540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3091822445127741013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  range: 10
-  rateOfFire: 3
-  price: 100
-  fullprice: 0
-  bullet: {fileID: 8275965266506968804, guid: 86fa3d0fe1f927547858e7d1fed0f0a2, type: 3}
-  invisibleBullet: {fileID: 5024834314885986411, guid: 518524bc76b9b81478ad582404fd7b86, type: 3}
-  levelUp: {fileID: 2171621869778484781, guid: 102355e5ae1a4e54c92a12e1228d7214, type: 3}
-  nameTower: {fileID: 2729532451177159709}
-  _health: 0
-  damage: 0
-  lvl4: 0
-  lvl5a: {fileID: 0}
-  lvl5b: {fileID: 0}
-  goldTower: 0
-  goldGet: 0
-  goldDelay: 0
-  PVO: 0
-  PNO: 1
 --- !u!222 &3876431729964971551
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -190,3 +159,34 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Normal lvl 1
+--- !u!114 &-2597358034536094493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3091822445127741013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  range: 10
+  rateOfFire: 3
+  price: 100
+  fullprice: 0
+  bullet: {fileID: 8275965266506968804, guid: 86fa3d0fe1f927547858e7d1fed0f0a2, type: 3}
+  invisibleBullet: {fileID: 5024834314885986411, guid: 518524bc76b9b81478ad582404fd7b86, type: 3}
+  levelUp: {fileID: 2171621869778484781, guid: 102355e5ae1a4e54c92a12e1228d7214, type: 3}
+  nameTower: {fileID: 2729532451177159709}
+  _health: 0
+  damage: 0
+  lvl4: 0
+  lvl5a: {fileID: 0}
+  lvl5b: {fileID: 0}
+  goldTower: 0
+  goldGet: 0
+  goldDelay: 0
+  PVO: 0
+  PNO: 1

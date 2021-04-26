@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 2395249376857036379}
   - component: {fileID: 439081225321297893}
   - component: {fileID: 2534721437045888650}
-  - component: {fileID: 1493108367496941316}
+  - component: {fileID: 9110462738322862024}
   m_Layer: 8
   m_Name: Debuff_Tower_Lvl_5B
   m_TagString: TowerDebuff
@@ -222,7 +222,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Debuff lvl 5B
---- !u!114 &1493108367496941316
+--- !u!114 &9110462738322862024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4672662006099410413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af7cda215f58cf43ba96c96f14790be, type: 3}
+  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
@@ -248,3 +248,8 @@ MonoBehaviour:
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
+  goldTower: 0
+  goldGet: 0
+  goldDelay: 0
+  PVO: 0
+  PNO: 0

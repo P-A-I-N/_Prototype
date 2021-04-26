@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4027298114569279728}
   - component: {fileID: 2509314456873090167}
   - component: {fileID: 2509314456873090166}
-  - component: {fileID: -1879169927661407214}
   - component: {fileID: 586647974545815915}
   - component: {fileID: 8749915973639064247}
+  - component: {fileID: -7053013994925928855}
   m_Layer: 8
   m_Name: Gold_Tower_Lvl_3
   m_TagString: TowerGold
@@ -117,37 +117,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-1879169927661407214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2509314456873090153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2809f4bff57017845b7f9f0653733b83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  range: 0
-  rateOfFire: 0
-  price: 500
-  fullprice: 0
-  bullet: {fileID: 0}
-  invisibleBullet: {fileID: 0}
-  levelUp: {fileID: 2509314456873090153, guid: e56012c6f4c176846a98dba56e52e9b1, type: 3}
-  nameTower: {fileID: 8749915973639064247}
-  _health: 0
-  damage: 0
-  lvl4: 0
-  lvl5a: {fileID: 0}
-  lvl5b: {fileID: 0}
-  goldTower: 1
-  goldGet: 100
-  goldDelay: 1
-  PVO: 0
-  PNO: 0
 --- !u!222 &586647974545815915
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -190,3 +159,34 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Gold lvl 3
+--- !u!114 &-7053013994925928855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509314456873090153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  range: 0
+  rateOfFire: 0
+  price: 100
+  fullprice: 0
+  bullet: {fileID: 0}
+  invisibleBullet: {fileID: 0}
+  levelUp: {fileID: 2509314456873090153, guid: e56012c6f4c176846a98dba56e52e9b1, type: 3}
+  nameTower: {fileID: 8749915973639064247}
+  _health: 0
+  damage: 0
+  lvl4: 0
+  lvl5a: {fileID: 0}
+  lvl5b: {fileID: 0}
+  goldTower: 1
+  goldGet: 100
+  goldDelay: 1
+  PVO: 0
+  PNO: 0

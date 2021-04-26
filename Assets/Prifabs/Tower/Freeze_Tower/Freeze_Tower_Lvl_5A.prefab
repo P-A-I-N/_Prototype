@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2236815651346466784}
   - component: {fileID: 9024678611350098224}
   - component: {fileID: 1967732178381951021}
-  - component: {fileID: -2610731711644353220}
+  - component: {fileID: -4342318960493291241}
   m_Layer: 8
   m_Name: Freeze_Tower_Lvl_5A
   m_TagString: TowerFreeze
@@ -159,7 +159,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Freeze lvl 5A
---- !u!114 &-2610731711644353220
+--- !u!114 &-4342318960493291241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,13 +168,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4583781615001532060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88da83e538f698a42bbb69a9c96f62e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
   range: 5
   rateOfFire: 3
-  price: 2
+  price: 100
   fullprice: 0
   bullet: {fileID: 8811029717210337052, guid: 0f63e3466f92c774899a80f820e892b4, type: 3}
   invisibleBullet: {fileID: 6115813776678188055, guid: 530de6a8dfee48a42a19bd97507d896a, type: 3}
@@ -185,7 +185,6 @@ MonoBehaviour:
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
-  attackTower: 1
   goldTower: 0
   goldGet: 0
   goldDelay: 0

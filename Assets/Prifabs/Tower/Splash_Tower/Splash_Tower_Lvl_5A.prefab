@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8494155952500477814}
   - component: {fileID: 2049466873546149823}
   - component: {fileID: 7738167142773398050}
-  - component: {fileID: -6296560242562098538}
+  - component: {fileID: -1287334475220987213}
   m_Layer: 8
   m_Name: Splash_Tower_Lvl_5A
   m_TagString: TowerSplash
@@ -159,7 +159,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Splash lvl 5A
---- !u!114 &-6296560242562098538
+--- !u!114 &-1287334475220987213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,13 +168,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6250856000326230027}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8fafd5783bb43c4090ed8adac14965c, type: 3}
+  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
   range: 5
   rateOfFire: 3
-  price: 2
+  price: 100
   fullprice: 0
   bullet: {fileID: 4638881505785862822, guid: f21395c88ddecd941a4083965eac275c, type: 3}
   invisibleBullet: {fileID: 6303204925174716766, guid: 9e9151b8c76b5db418218be0133f32fd, type: 3}

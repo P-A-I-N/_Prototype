@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 861204910389268928}
   - component: {fileID: 3231844967421358206}
   - component: {fileID: 712444382164881681}
-  - component: {fileID: 6325936840737134588}
   - component: {fileID: -5335374167872078277}
+  - component: {fileID: 7038783914209997429}
   m_Layer: 8
   m_Name: Tank_Tower_Lvl_4
   m_TagString: TowerTank
@@ -160,7 +160,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Tank lvl 4
---- !u!114 &6325936840737134588
+--- !u!114 &-5335374167872078277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +169,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7644471715059071606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67133a0fbdda68b42be0160c0780b0b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6eedab584245c114b81baeacb75d69e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7038783914209997429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644471715059071606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
@@ -186,15 +198,8 @@ MonoBehaviour:
   lvl4: 1
   lvl5a: {fileID: 7644471715059071606, guid: 7722da51b5d8d7c49befdbc621d56617, type: 3}
   lvl5b: {fileID: 7644471715059071606, guid: 2809025b15fd4864c8337038ceffacec, type: 3}
---- !u!114 &-5335374167872078277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7644471715059071606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eedab584245c114b81baeacb75d69e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  goldTower: 0
+  goldGet: 0
+  goldDelay: 0
+  PVO: 0
+  PNO: 0

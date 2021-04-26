@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3577622017830061061}
   - component: {fileID: 4324035469654907448}
   - component: {fileID: 4094121401848907638}
-  - component: {fileID: 2074891517192614046}
+  - component: {fileID: 5799960936155000638}
   m_Layer: 8
   m_Name: PVO_Tower_Lvl_1
   m_TagString: TowerPVO
@@ -159,7 +159,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: PVO lvl 1
---- !u!114 &2074891517192614046
+--- !u!114 &5799960936155000638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,13 +168,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5838607118407362590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e418a73645efa23489aff8d8d00e329a, type: 3}
+  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
   range: 5
   rateOfFire: 3
-  price: 150
+  price: 100
   fullprice: 0
   bullet: {fileID: 6055780391979567866, guid: 46e0cb0a201c94e41b273c63b7eeed28, type: 3}
   invisibleBullet: {fileID: 8055456500217538808, guid: 64f5d4b182a27bc4cadca7283119adcb, type: 3}

@@ -75,8 +75,8 @@ GameObject:
   - component: {fileID: 2395249376857036379}
   - component: {fileID: 439081225321297893}
   - component: {fileID: 2534721437045888650}
-  - component: {fileID: 1493108367496941316}
   - component: {fileID: -184006997990161017}
+  - component: {fileID: 3726704126577238253}
   m_Layer: 8
   m_Name: Debuff_Tower_Lvl_4
   m_TagString: TowerDebuff
@@ -223,7 +223,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Debuff lvl 4
---- !u!114 &1493108367496941316
+--- !u!114 &-184006997990161017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,7 +232,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4672662006099410413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af7cda215f58cf43ba96c96f14790be, type: 3}
+  m_Script: {fileID: 11500000, guid: 6eedab584245c114b81baeacb75d69e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3726704126577238253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4672662006099410413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
@@ -249,15 +261,8 @@ MonoBehaviour:
   lvl4: 1
   lvl5a: {fileID: 4672662006099410413, guid: 7b0ef74d1a080d64a87f227d1eb57a7d, type: 3}
   lvl5b: {fileID: 4672662006099410413, guid: 0fb5d2f37f55e914da24d868e3d05b3a, type: 3}
---- !u!114 &-184006997990161017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4672662006099410413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eedab584245c114b81baeacb75d69e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  goldTower: 0
+  goldGet: 0
+  goldDelay: 0
+  PVO: 0
+  PNO: 0
