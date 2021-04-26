@@ -185,3 +185,9 @@ MonoBehaviour:
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
+  attackTower: 1
+  goldTower: 0
+  goldGet: 0
+  goldDelay: 0
+  PVO: 0
+  PNO: 1

@@ -23,6 +23,13 @@ public class Tower : MonoBehaviour
     public GameObject lvl5a;
     public GameObject lvl5b;
 
+    public bool goldTower;
+
+    GameMap gm;
+    public int goldGet, goldDelay;
+
+    public bool PVO;
+    public bool PNO;
 
     protected void Awake()
     {
@@ -31,28 +38,50 @@ public class Tower : MonoBehaviour
     protected void Start()
     {
         if (fullprice <= 0) fullprice = price;
-        InvokeRepeating("criateBullet", 0, rateOfFire);
+        if(PNO || PVO) InvokeRepeating("criateBullet", 0, rateOfFire);
+
+        gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
+        if (goldGet <= 0) goldGet = 1;
+        if (goldDelay <= 0) goldDelay = 10;
+        if (goldTower) InvokeRepeating("GetGold", goldDelay, goldDelay);
     }
 
     protected void Update()
     {
-        int enemyLayer = LayerMask.NameToLayer("Enemy");
-        int enemyInvisibleLayer = LayerMask.NameToLayer("EnemyInvisible");
-        if (invisible)
+        if (PNO)
         {
-            layerMask = ((1 << enemyLayer) | (1 << enemyInvisibleLayer));
+            int enemyLayer = LayerMask.NameToLayer("Enemy");
+            int enemyInvisibleLayer = LayerMask.NameToLayer("EnemyInvisible");
+            if (invisible)
+            {
+                layerMask = ((1 << enemyLayer) | (1 << enemyInvisibleLayer));
+            }
+            else
+            {
+                layerMask = (1 << enemyLayer);
+            }
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range, layerMask);
+            Debug.DrawRay(transform.position, Vector2.right * range, Color.yellow);
+            if (hit.collider != null)
+            {
+                target = true;
+            }
+            else target = false;
         }
-        else
+
+        if (PVO)
         {
+            int enemyLayer = LayerMask.NameToLayer("EnemyFly");
             layerMask = (1 << enemyLayer);
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range, layerMask);
+            Debug.DrawRay(transform.position, Vector2.right * range, Color.yellow);
+            if (hit.collider != null)
+            {
+                target = true;
+            }
+            else target = false;
         }
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range, layerMask);
-        Debug.DrawRay(transform.position, Vector2.right * range, Color.yellow);
-        if (hit.collider != null)
-        {
-            target = true;
-        }
-        else target = false;
     }
     protected void LateUpdate()
     {
@@ -110,6 +139,10 @@ public class Tower : MonoBehaviour
     public void lvl5B()
     {
         levelUp = lvl5b;
+    }
+    void GetGold()
+    {
+        gm.gold += goldGet;
     }
 }
 

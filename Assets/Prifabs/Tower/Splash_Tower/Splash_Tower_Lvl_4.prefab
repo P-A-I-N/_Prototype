@@ -186,6 +186,11 @@ MonoBehaviour:
   lvl4: 1
   lvl5a: {fileID: 6250856000326230027, guid: 37e964a597bdd6e409d7108c292cfa97, type: 3}
   lvl5b: {fileID: 6250856000326230027, guid: 6ffaa69d6055a3442ac59df6455ed8d3, type: 3}
+  goldTower: 0
+  goldGet: 0
+  goldDelay: 0
+  PVO: 0
+  PNO: 1
 --- !u!114 &-1313385045494291753
 MonoBehaviour:
   m_ObjectHideFlags: 0

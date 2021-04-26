@@ -76,6 +76,7 @@ public class RayCast : MonoBehaviour
                 levelUp = target.GetComponent<TowerGold>().levelUp;
                 lvlUp();
             }
+            towerUp = false;
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -157,7 +158,6 @@ public class RayCast : MonoBehaviour
             Destroy(target.gameObject);
             Instantiate(levelUp, target.transform.position, target.transform.rotation);
             gm.gold -= price;
-            towerUp = false;
         }
     }
     public void craeteTower()

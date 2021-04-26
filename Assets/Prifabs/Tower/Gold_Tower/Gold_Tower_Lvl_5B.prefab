@@ -143,8 +143,11 @@ MonoBehaviour:
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
+  goldTower: 1
   goldGet: 100
   goldDelay: 1
+  PVO: 0
+  PNO: 0
 --- !u!222 &586647974545815915
 CanvasRenderer:
   m_ObjectHideFlags: 0
