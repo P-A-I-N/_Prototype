@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     bool _debuff;
     LineRenderer HPBar;
 
+    public bool strong;
+
     private void Awake()
     {
         if (max_health <= 0) max_health = health;
@@ -91,27 +93,41 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((((((collision.tag == "Bullet" || collision.tag == "InvisibleBullet") || collision.tag == "InvisibleBulletSplash") || collision.tag == "BulletSplash") || collision.tag == "BulletNormalLvl5A") || collision.tag == "InvisibleBulletNormalLvl5A") && gameObject.tag == "Enemy")
+        if (((((((collision.tag == "Bullet" || collision.tag == "InvisibleBullet") || collision.tag == "InvisibleBulletSplash") || collision.tag == "BulletSplash") || collision.tag == "BulletNormalLvl5A") || collision.tag == "InvisibleBulletNormalLvl5A") && gameObject.tag == "Enemy") && !strong)
         {
             health--;
         }
-        if ((((collision.tag == "BulletPVO" || collision.tag == "InvisibleBulletPVO") || collision.tag == "BulletNormalLvl5A") || collision.tag == "InvisibleBulletNormalLvl5A") && gameObject.tag == "EnemyVO")
+        if (((((collision.tag == "BulletPVO" || collision.tag == "InvisibleBulletPVO") || collision.tag == "BulletNormalLvl5A") || collision.tag == "InvisibleBulletNormalLvl5A") && gameObject.tag == "EnemyVO") && !strong)
         {
             health--;
         }
         if ((collision.tag == "BulletCold" || collision.tag == "InvisibleBulletFreeze") && gameObject.tag == "Enemy")
         {
-            health--;
-            cold = true;
+            if (!strong)
+            {
+                health--;
+                cold = true;
+            }
+            else
+            {
+                cold = true;
+            }
         }
-        if (((collision.tag == "InvisibleBullet" || collision.tag == "InvisibleBulletSplash") || collision.tag == "InvisibleBulletNormalLvl5A") && gameObject.tag == "EnemyInvisible")
+        if ((((collision.tag == "InvisibleBullet" || collision.tag == "InvisibleBulletSplash") || collision.tag == "InvisibleBulletNormalLvl5A") && gameObject.tag == "EnemyInvisible") && !strong)
         {
             health--;
         }
         if (collision.tag == "InvisibleBulletFreeze" && gameObject.tag == "EnemyInvisible")
         {
-            health--;
-            cold = true;
+            if (!strong)
+            {
+                health--;
+                cold = true;
+            }
+            else
+            {
+                cold = true;
+            }
         }
         if(collision.tag == "TowerDebuff")
         {

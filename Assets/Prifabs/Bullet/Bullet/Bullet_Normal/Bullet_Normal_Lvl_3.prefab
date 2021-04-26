@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1385095396128693008}
   - component: {fileID: 1663513758560698102}
   m_Layer: 0
-  m_Name: "\u0441\u043D\u0430\u0440\u044F\u0434_3lvl"
+  m_Name: Bullet_Normal_Lvl_3
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

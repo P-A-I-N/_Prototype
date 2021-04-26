@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3025278546197100431}
   - component: {fileID: 6531749251266037113}
   m_Layer: 0
-  m_Name: BulletSplash
+  m_Name: Bullet_Splash_Lvl_3
   m_TagString: BulletSplash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7e44f5f479c474b8f14d44577d3a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
   parent: {fileID: 0}
   pos: 0
   x: 0

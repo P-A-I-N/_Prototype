@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1431155334586917429}
   - component: {fileID: -5698587654353760595}
   m_Layer: 0
-  m_Name: BulletFreeze
+  m_Name: Bullet_Freeze_Lvl_5A
   m_TagString: BulletCold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,4 +112,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c81641d28da8b4886f25f85c75c3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5

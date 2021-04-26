@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4436354353237403603}
   - component: {fileID: 2021782349331774552}
   m_Layer: 0
-  m_Name: BulletPVO
+  m_Name: Bullet_PVO_Lvl_5B
   m_TagString: BulletPVO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
