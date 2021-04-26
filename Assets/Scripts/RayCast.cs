@@ -50,7 +50,6 @@ public class RayCast : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) && hitTower.collider != null)
         {
-            target = null;
             target = hitTower.collider.gameObject;
         }
 

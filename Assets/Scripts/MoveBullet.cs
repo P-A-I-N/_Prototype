@@ -13,15 +13,15 @@ public class MoveBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((gameObject.tag == "BulletCold" || gameObject.tag == "Bullet") && (collision.tag == "Enemy" || collision.tag == "Boss"))
+        if (((gameObject.tag == "BulletCold" || gameObject.tag == "Bullet") || gameObject.tag == "BulletNormalLvl5A") && (collision.tag == "Enemy" || collision.tag == "Boss"))
         {
             Destroy(gameObject);
         }
-        if ((gameObject.tag == "BulletPVO" || gameObject.tag == "InvisibleBulletPVO") && collision.tag == "EnemyVO")
+        if ((((gameObject.tag == "BulletPVO" || gameObject.tag == "InvisibleBulletPVO") || gameObject.tag == "BulletNormalLvl5A") || gameObject.tag == "InvisibleBulletNormalLvl5A") && collision.tag == "EnemyVO")
         {
             Destroy(gameObject);
         }
-        if ((gameObject.tag == "InvisibleBullet" || gameObject.tag == "InvisibleBulletFreeze") && ((collision.tag == "Enemy" || collision.tag == "Boss") || collision.tag == "EnemyInvisible"))
+        if ((((gameObject.tag == "InvisibleBullet" || gameObject.tag == "InvisibleBulletFreeze") || gameObject.tag == "BulletNormalLvl5A") || gameObject.tag == "InvisibleBulletNormalLvl5A") && ((collision.tag == "Enemy" || collision.tag == "Boss") || collision.tag == "EnemyInvisible"))
         {
             Destroy(gameObject);
         }

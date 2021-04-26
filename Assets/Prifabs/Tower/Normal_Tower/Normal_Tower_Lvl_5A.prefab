@@ -188,5 +188,5 @@ MonoBehaviour:
   goldTower: 0
   goldGet: 0
   goldDelay: 0
-  PVO: 0
+  PVO: 1
   PNO: 1

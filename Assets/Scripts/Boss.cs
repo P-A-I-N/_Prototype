@@ -75,7 +75,7 @@ public class Boss : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (((collision.tag == "Bullet" || collision.tag == "InvisibleBulletSplash") || collision.tag == "InvisibleBullet") || collision.tag == "BulletSplash")
+        if (((((collision.tag == "Bullet" || collision.tag == "InvisibleBulletSplash") || collision.tag == "InvisibleBullet") || collision.tag == "BulletSplash") || collision.tag == "BulletNormalLvl5A") || collision.tag == "InvisibleBulletNormalLvl5A")
         {
             health--;
         }

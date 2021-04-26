@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3255497802730395886}
   - component: {fileID: 3179718110231270722}
   m_Layer: 0
-  m_Name: InvisibleBullet
-  m_TagString: InvisibleBullet
+  m_Name: Bullet_Invisible_Normal_Lvl_5A
+  m_TagString: InvisibleBulletNormalLvl5A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

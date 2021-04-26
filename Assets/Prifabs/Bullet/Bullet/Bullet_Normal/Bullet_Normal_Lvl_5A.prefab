@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6032150565254758673}
   - component: {fileID: 2974354464807013803}
   m_Layer: 0
-  m_Name: "\u0441\u043D\u0430\u0440\u044F\u0434_4_5lvl"
-  m_TagString: Bullet
+  m_Name: Bullet_Normal_Lvl_5A
+  m_TagString: BulletNormalLvl5A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

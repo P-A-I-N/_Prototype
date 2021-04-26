@@ -82,6 +82,28 @@ public class Tower : MonoBehaviour
             }
             else target = false;
         }
+
+        if(PVO && PNO)
+        {
+            int enemyLayer = LayerMask.NameToLayer("Enemy");
+            int enemyInvisibleLayer = LayerMask.NameToLayer("EnemyInvisible");
+            int enemyFlyLayer = LayerMask.NameToLayer("EnemyFly");
+            if (invisible)
+            {
+                layerMask = ((1 << enemyLayer | 1 << enemyInvisibleLayer) | 1 << enemyFlyLayer);
+            }
+            else
+            {
+                layerMask = (1 << enemyLayer | 1 << enemyFlyLayer);
+            }
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range, layerMask);
+            Debug.DrawRay(transform.position, Vector2.right * range, Color.yellow);
+            if (hit.collider != null)
+            {
+                target = true;
+            }
+            else target = false;
+        }
     }
     protected void LateUpdate()
     {
