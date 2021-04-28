@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4839096182430529511}
   - component: {fileID: 478237881500284595}
   - component: {fileID: 4531210091864978551}
-  - component: {fileID: 5601503817588016769}
-  m_Layer: 0
-  m_Name: InvisibleBulletSplash
+  - component: {fileID: -3063676099394408297}
+  m_Layer: 3
+  m_Name: Bullet_Invisible_Splash_Lvl_5A
   m_TagString: InvisibleBulletSplash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6303204925174716766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.03, y: -0.08, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ff2cda28d3159fe419a648391abf7833, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 78dd3fc2f8ea902409975bbb4eb790fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58027bb7d760a7f4293835bf99f54a89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,9 +98,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.0000002, y: 2.0000005}
+  m_Size: {x: 0.44, y: 0.0001}
   m_Direction: 0
---- !u!114 &5601503817588016769
+--- !u!114 &-3063676099394408297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,11 +109,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6303204925174716766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7e44f5f479c474b8f14d44577d3a49, type: 3}
+  m_Script: {fileID: 11500000, guid: 46c81641d28da8b4886f25f85c75c3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
   parent: {fileID: 0}
+  parentPos: 30
   pos: 0
   x: 0
-  range: 5
+  range: 4
+  Splash: 1
+  Freeze: 0
+  Invisible: 1
+  PVO: 0
+  Strong: 0
+  Normal: 0

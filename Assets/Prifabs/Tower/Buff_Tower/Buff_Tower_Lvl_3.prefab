@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 908060641460306998}
   - component: {fileID: 2999636960632431961}
   - component: {fileID: -5855846027773630047}
+  - component: {fileID: 9031917111519054848}
   m_Layer: 8
   m_Name: Buff_Tower_Lvl_3
   m_TagString: TowerBuff
@@ -243,6 +244,7 @@ MonoBehaviour:
   invisibleBullet: {fileID: 0}
   levelUp: {fileID: 5356287445821558334, guid: 515b471c2426a7d4aafc5dd99b99d89a, type: 3}
   nameTower: {fileID: 2999636960632431961}
+  invisible: 0
   _health: 0
   damage: 0
   lvl4: 0
@@ -253,3 +255,24 @@ MonoBehaviour:
   goldDelay: 0
   PVO: 0
   PNO: 0
+--- !u!50 &9031917111519054848
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5356287445821558334}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

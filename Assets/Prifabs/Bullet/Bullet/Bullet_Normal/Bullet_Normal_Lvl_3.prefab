@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1442044136862830440}
   - component: {fileID: 1385095396128693008}
   - component: {fileID: 1663513758560698102}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bullet_Normal_Lvl_3
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -97,6 +97,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  parent: {fileID: 0}
+  pos: 0
+  x: 0
+  range: 0
+  Splash: 0
+  Freeze: 0
+  Invisible: 0
+  PVO: 0
+  Strong: 0
+  Normal: 1
 --- !u!70 &1663513758560698102
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -111,5 +121,5 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.3, y: 0.03}
+  m_Size: {x: 0.29, y: 0.0001}
   m_Direction: 0

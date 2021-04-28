@@ -13,7 +13,7 @@ public class Tower : MonoBehaviour
     public GameObject levelUp;
     public Text nameTower;
     protected LayerMask layerMask;
-    protected bool invisible;
+    public bool invisible;
     public float _health;
     public bool damage;
     protected bool target;
@@ -61,7 +61,7 @@ public class Tower : MonoBehaviour
                 layerMask = (1 << enemyLayer);
             }
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range, layerMask);
-            Debug.DrawRay(transform.position, Vector2.right * range, Color.yellow);
+            Debug.DrawRay(transform.position, Vector2.right * range, Color.white);
             if (hit.collider != null)
             {
                 target = true;
@@ -75,7 +75,7 @@ public class Tower : MonoBehaviour
             layerMask = (1 << enemyLayer);
 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range, layerMask);
-            Debug.DrawRay(transform.position, Vector2.right * range, Color.yellow);
+            Debug.DrawRay(transform.position, Vector2.right * range, Color.white);
             if (hit.collider != null)
             {
                 target = true;
@@ -97,7 +97,7 @@ public class Tower : MonoBehaviour
                 layerMask = (1 << enemyLayer | 1 << enemyFlyLayer);
             }
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range, layerMask);
-            Debug.DrawRay(transform.position, Vector2.right * range, Color.yellow);
+            Debug.DrawRay(transform.position, Vector2.right * range, Color.white);
             if (hit.collider != null)
             {
                 target = true;

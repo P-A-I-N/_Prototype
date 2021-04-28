@@ -5,7 +5,32 @@ using UnityEngine;
 public class MoveBullet : MonoBehaviour
 {
     public float speed;
-    void LateUpdate()
+    public Transform parent;
+    public float parentPos = 30;
+    public float pos;
+    public float x;
+    public float range;
+
+    public bool Splash;
+    public bool Freeze;
+    public bool Invisible;
+    public bool PVO;
+    public bool Strong;
+    public bool Normal;
+
+    private void Update()
+    {
+        if (Splash)
+        {
+            x = parentPos + range;
+            pos = transform.position.x;
+            if (pos > x)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+        void LateUpdate()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
@@ -13,17 +38,53 @@ public class MoveBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (((gameObject.tag == "BulletCold" || gameObject.tag == "Bullet") || gameObject.tag == "BulletNormalLvl5A") && (collision.tag == "Enemy" || collision.tag == "Boss"))
+        bool enemyStrong = collision.gameObject.GetComponent<Enemy>().enemyStrong;
+        bool enemyPVO = collision.gameObject.GetComponent<Enemy>().enemyPVO;
+        bool enemyInvisible = collision.gameObject.GetComponent<Enemy>().enemyInvisible;
+
+
+        if ((!PVO || (Normal && PVO)) && !Splash && !enemyPVO && !enemyInvisible)
         {
             Destroy(gameObject);
         }
-        if ((((gameObject.tag == "BulletPVO" || gameObject.tag == "InvisibleBulletPVO") || gameObject.tag == "BulletNormalLvl5A") || gameObject.tag == "InvisibleBulletNormalLvl5A") && collision.tag == "EnemyVO")
+        if (PVO && enemyPVO)
         {
             Destroy(gameObject);
         }
-        if ((((gameObject.tag == "InvisibleBullet" || gameObject.tag == "InvisibleBulletFreeze") || gameObject.tag == "BulletNormalLvl5A") || gameObject.tag == "InvisibleBulletNormalLvl5A") && ((collision.tag == "Enemy" || collision.tag == "Boss") || collision.tag == "EnemyInvisible"))
+        if (Invisible && !Splash && (!PVO || (Normal && PVO)) && !enemyPVO)
         {
             Destroy(gameObject);
+        }
+        if (Splash)
+        {
+            if (!enemyPVO && !enemyInvisible && !Invisible)
+            {
+                if(enemyStrong)
+                {
+                    Destroy(gameObject);
+                }
+                else if (parent == null)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    parent = collision.transform;
+                    parentPos = parent.position.x;
+                    speed *= 10;
+                }
+            }
+            if (!enemyPVO && Invisible)
+            {
+                if (enemyStrong)
+                {
+                    Destroy(gameObject);
+                }
+                else if(parent == null)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    parent = collision.transform;
+                    parentPos = parent.position.x;
+                    speed *= 10;
+                }
+            }
         }
     }
 }

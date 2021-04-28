@@ -18,7 +18,9 @@ public class Enemy : MonoBehaviour
     bool _debuff;
     LineRenderer HPBar;
 
-    public bool strong;
+    public bool enemyStrong;
+    public bool enemyPVO;
+    public bool enemyInvisible;
 
     private void Awake()
     {
@@ -39,10 +41,10 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        HPBar.SetPosition(1, new Vector3(-0.5f + health/max_health, 0.8f));
-        if(debuff && !_debuff)
+        HPBar.SetPosition(1, new Vector3(-0.5f + health / max_health, 0.8f));
+        if (debuff && !_debuff)
         {
-            health -=debuffHp;
+            health -= debuffHp;
             _debuff = true;
         }
         if (!debuff && _debuff)
@@ -56,27 +58,27 @@ public class Enemy : MonoBehaviour
             timeCold = Time.time + coldTime;
             cold = false;
         }
-        if(Time.time > timeCold && !stop)
+        if (Time.time > timeCold && !stop)
         {
             _speed = speed;
-        }  
-        
-        if(health <= 0)
+        }
+
+        if (health <= 0)
         {
             Destroy(gameObject);
             gm.gold += gold;
         }
-        
+
         transform.Translate(Vector2.left * _speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Castle")
+        if (collision.gameObject.tag == "Castle")
         {
             Destroy(gameObject);
         }
-        if (gameObject.tag != "EnemyVO")
+        if (!enemyPVO)
         {
             stop = true;
             _speed = 0;
@@ -84,7 +86,7 @@ public class Enemy : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (gameObject.tag != "EnemyVO")
+        if (!enemyPVO)
         {
             stop = false;
             _speed = speed;
@@ -93,17 +95,26 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (((((((collision.tag == "Bullet" || collision.tag == "InvisibleBullet") || collision.tag == "InvisibleBulletSplash") || collision.tag == "BulletSplash") || collision.tag == "BulletNormalLvl5A") || collision.tag == "InvisibleBulletNormalLvl5A") && gameObject.tag == "Enemy") && !strong)
+        bool Freeze = collision.gameObject.GetComponent<MoveBullet>().Freeze;
+        bool Invisible = collision.gameObject.GetComponent<MoveBullet>().Invisible;
+        bool PVO = collision.gameObject.GetComponent<MoveBullet>().PVO;
+        bool Strong = collision.gameObject.GetComponent<MoveBullet>().Strong;
+        bool Normal = collision.gameObject.GetComponent<MoveBullet>().Normal;
+        bool Splash = collision.gameObject.GetComponent<MoveBullet>().Splash;
+
+
+
+        if ((Normal || Splash) && !Invisible && !enemyPVO && !enemyStrong && !enemyInvisible)
         {
             health--;
         }
-        if (((((collision.tag == "BulletPVO" || collision.tag == "InvisibleBulletPVO") || collision.tag == "BulletNormalLvl5A") || collision.tag == "InvisibleBulletNormalLvl5A") && gameObject.tag == "EnemyVO") && !strong)
+        if ((PVO) && enemyPVO && !enemyStrong && !enemyInvisible)
         {
             health--;
         }
-        if ((collision.tag == "BulletCold" || collision.tag == "InvisibleBulletFreeze") && gameObject.tag == "Enemy")
+        if (!Invisible && Freeze && !enemyPVO && !enemyInvisible)
         {
-            if (!strong)
+            if (!enemyStrong)
             {
                 health--;
                 cold = true;
@@ -113,13 +124,13 @@ public class Enemy : MonoBehaviour
                 cold = true;
             }
         }
-        if ((((collision.tag == "InvisibleBullet" || collision.tag == "InvisibleBulletSplash") || collision.tag == "InvisibleBulletNormalLvl5A") && gameObject.tag == "EnemyInvisible") && !strong)
+        if (Invisible && !Freeze && (!PVO || (PVO && Normal)) && !enemyStrong && !enemyPVO)
         {
             health--;
         }
-        if (collision.tag == "InvisibleBulletFreeze" && gameObject.tag == "EnemyInvisible")
+        if (Invisible && Freeze && !enemyPVO)
         {
-            if (!strong)
+            if (!enemyStrong)
             {
                 health--;
                 cold = true;
@@ -129,7 +140,7 @@ public class Enemy : MonoBehaviour
                 cold = true;
             }
         }
-        if(collision.tag == "TowerDebuff")
+        if (collision.tag == "TowerDebuff")
         {
             debuff = true;
         }

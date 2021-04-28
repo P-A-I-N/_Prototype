@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 586647974545815915}
   - component: {fileID: 8749915973639064247}
   - component: {fileID: 4034117484535652611}
+  - component: {fileID: -7745518944181219874}
   m_Layer: 8
   m_Name: Gold_Tower_Lvl_1
   m_TagString: TowerGold
@@ -180,6 +181,7 @@ MonoBehaviour:
   invisibleBullet: {fileID: 0}
   levelUp: {fileID: 2509314456873090153, guid: 918e6a567656dbe4b8e2893efd5d5230, type: 3}
   nameTower: {fileID: 8749915973639064247}
+  invisible: 0
   _health: 0
   damage: 0
   lvl4: 0
@@ -190,3 +192,24 @@ MonoBehaviour:
   goldDelay: 1
   PVO: 0
   PNO: 0
+--- !u!50 &-7745518944181219874
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509314456873090153}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

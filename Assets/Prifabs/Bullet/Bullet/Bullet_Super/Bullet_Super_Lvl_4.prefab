@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6971019083183234055}
   - component: {fileID: 6032150565254758673}
   - component: {fileID: 2974354464807013803}
-  m_Layer: 0
-  m_Name: "\u0441\u043D\u0430\u0440\u044F\u0434_4_5lvl"
+  m_Layer: 3
+  m_Name: Bullet_Super_Lvl_4
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,6 +97,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  parent: {fileID: 0}
+  pos: 0
+  x: 0
+  range: 0
+  Splash: 0
+  Freeze: 0
+  Invisible: 0
+  PVO: 0
+  Strong: 0
+  Normal: 1
 --- !u!70 &2974354464807013803
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -111,5 +121,5 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.43, y: 0.11}
+  m_Size: {x: 0.44, y: 0.0001}
   m_Direction: 0

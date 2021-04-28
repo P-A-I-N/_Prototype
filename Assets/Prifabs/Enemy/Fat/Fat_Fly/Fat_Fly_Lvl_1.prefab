@@ -121,6 +121,9 @@ MonoBehaviour:
   decelerationIn: 2
   debuffHp: 3
   gold: 20
+  enemyStrong: 0
+  enemyPVO: 1
+  enemyInvisible: 0
 --- !u!50 &3434025404165784811
 Rigidbody2D:
   serializedVersion: 4
