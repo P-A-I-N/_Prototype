@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
+using System.Xml.Linq;
+using System.IO;
+using System.Globalization;
 
 public class Enemy : MonoBehaviour
 {
     public float speed;
-    private float _speed;
     public float health;
-    public float max_health;
-    public float coldTime;
+    public float freezeTime;
     public float decelerationIn;
     public int debuffHp;
     public int gold;
+    [HideInInspector]
+    public float max_health;
+    private float _speed;
     GameMap gm;
     bool cold;
     float timeCold;
@@ -22,8 +26,25 @@ public class Enemy : MonoBehaviour
     public bool enemyPVO;
     public bool enemyInvisible;
 
+    
+    private string path;
+    public string tipe;
+    public string lvl;
+
     private void Awake()
     {
+        path = "D:\\_Prototype\\Assets\\Resources\\config.xml";
+        XElement enemyNormal = XDocument.Parse(File.ReadAllText(path)).Element("root").Element("Enemy").Element(tipe);
+        foreach (XElement lvl in enemyNormal.Elements("Lvl" + lvl))
+        {
+            health = int.Parse(lvl.Attribute("Health").Value);
+            speed = float.Parse(lvl.Attribute("Speed").Value, CultureInfo.InvariantCulture);
+            debuffHp = int.Parse(lvl.Attribute("DebuffHp").Value);
+            gold = int.Parse(lvl.Attribute("Gold").Value);
+            freezeTime = float.Parse(lvl.Attribute("FreezeTime").Value, CultureInfo.InvariantCulture);
+            decelerationIn = float.Parse(lvl.Attribute("DecelerationIn").Value, CultureInfo.InvariantCulture);
+        }
+
         if (max_health <= 0) max_health = health;
         _speed = speed;
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
@@ -55,20 +76,18 @@ public class Enemy : MonoBehaviour
         if (cold && _speed == speed)
         {
             _speed /= decelerationIn;
-            timeCold = Time.time + coldTime;
+            timeCold = Time.time + freezeTime;
             cold = false;
         }
         if (Time.time > timeCold && !stop)
         {
             _speed = speed;
         }
-
         if (health <= 0)
         {
             Destroy(gameObject);
             gm.gold += gold;
         }
-
         transform.Translate(Vector2.left * _speed * Time.deltaTime);
     }
 

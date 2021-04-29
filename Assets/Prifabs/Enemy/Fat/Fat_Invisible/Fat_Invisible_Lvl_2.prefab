@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -793739305911422774}
   m_Layer: 10
   m_Name: Fat_Invisible_Lvl_2
-  m_TagString: EnemyInvisible
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,14 +116,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.2
   health: 10
-  max_health: 0
-  coldTime: 3
+  freezeTime: 3
   decelerationIn: 2
   debuffHp: 3
   gold: 20
+  max_health: 0
   enemyStrong: 0
   enemyPVO: 0
   enemyInvisible: 1
+  tipe: Invisible
+  lvl: 2
 --- !u!50 &2091720509922073275
 Rigidbody2D:
   serializedVersion: 4

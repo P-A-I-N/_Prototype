@@ -29,7 +29,7 @@ public class TowerInfo : MonoBehaviour
     int upGoldDelay;
     int nowPrice;
     int upPrice;
-
+    //[SerializeField][HideInInspector][NonSerialized]
     void Update()
     {
 

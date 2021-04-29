@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Xml.Linq;
 using UnityEngine;
 
 public class MoveBullet : MonoBehaviour
 {
     public float speed;
     public Transform parent;
-    public float parentPos = 30;
+    public float parentPos;
     public float pos;
     public float x;
-    public float range;
+    public float rangeSplash;
 
     public bool Splash;
     public bool Freeze;
@@ -18,11 +21,29 @@ public class MoveBullet : MonoBehaviour
     public bool Strong;
     public bool Normal;
 
+    private string path;
+    public string tipe;
+    public string lvl;
+    public void Awake()
+    {
+        path = "D:\\_Prototype\\Assets\\Resources\\config.xml";
+        XElement enemyNormal = XDocument.Parse(File.ReadAllText(path)).Element("root").Element("Tower").Element(tipe);
+        foreach (XElement lvl in enemyNormal.Elements("Lvl" + lvl))
+        {
+            
+            speed = float.Parse(lvl.Attribute("SpeedBullet").Value, CultureInfo.InvariantCulture);
+
+            if (lvl.Attribute("RangeSplash") == null)
+            {
+                rangeSplash = float.Parse(lvl.Attribute("RangeSplash").Value, CultureInfo.InvariantCulture);
+            }
+        }
+    }
     private void Update()
     {
         if (Splash)
         {
-            x = parentPos + range;
+            x = parentPos + rangeSplash;
             pos = transform.position.x;
             if (pos > x)
             {

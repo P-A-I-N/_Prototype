@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  range: 10
+  range: 5
   rateOfFire: 3
   price: 100
   fullprice: 0
@@ -194,9 +194,6 @@ MonoBehaviour:
   invisibleBullet: {fileID: 5024834314885986411, guid: 84bda81272ace6a45a77f46e72c6f39b, type: 3}
   levelUp: {fileID: 0}
   nameTower: {fileID: 4490618903245142999}
-  invisible: 0
-  _health: 0
-  damage: 0
   lvl4: 1
   lvl5a: {fileID: 3913156428894591619, guid: 956a2522b9d93cc4d81ee5cac284a32f, type: 3}
   lvl5b: {fileID: 7117819293085753521, guid: b7129313877139a47be9f9f3cf1c1bf5, type: 3}
@@ -205,6 +202,8 @@ MonoBehaviour:
   goldDelay: 0
   PVO: 0
   PNO: 1
+  tipe: Normal
+  lvl: 4
 --- !u!50 &7615698778626269987
 Rigidbody2D:
   serializedVersion: 4

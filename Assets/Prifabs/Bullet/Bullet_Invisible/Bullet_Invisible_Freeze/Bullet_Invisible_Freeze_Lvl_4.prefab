@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2193851543096997286}
   m_Layer: 3
   m_Name: Bullet_Invisible_Freeze_Lvl_4
-  m_TagString: InvisibleBulletFreeze
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,12 +114,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   parent: {fileID: 0}
+  parentPos: 0
   pos: 0
   x: 0
-  range: 0
+  rangeSplash: 0
   Splash: 0
   Freeze: 1
   Invisible: 1
   PVO: 0
   Strong: 0
   Normal: 0
+  tipe: Freeze
+  lvl: 4

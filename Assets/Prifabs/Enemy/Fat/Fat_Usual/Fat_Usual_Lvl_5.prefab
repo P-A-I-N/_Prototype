@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -768137430200159275}
   m_Layer: 6
   m_Name: Fat_Usual_Lvl_5
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,11 +116,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.2
   health: 10
-  max_health: 0
-  coldTime: 3
+  freezeTime: 3
   decelerationIn: 2
   debuffHp: 3
   gold: 20
+  max_health: 0
+  enemyStrong: 0
+  enemyPVO: 0
+  enemyInvisible: 0
+  tipe: Normal
+  lvl: 5
 --- !u!50 &4037586086869599063
 Rigidbody2D:
   serializedVersion: 4

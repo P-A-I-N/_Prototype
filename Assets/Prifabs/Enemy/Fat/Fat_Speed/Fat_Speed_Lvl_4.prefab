@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -498306878669558592}
   m_Layer: 6
   m_Name: Fat_Speed_Lvl_4
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,11 +116,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.3
   health: 10
-  max_health: 0
-  coldTime: 3
+  freezeTime: 3
   decelerationIn: 2
   debuffHp: 3
   gold: 20
+  max_health: 0
+  enemyStrong: 0
+  enemyPVO: 0
+  enemyInvisible: 0
+  tipe: Speed
+  lvl: 4
 --- !u!50 &8778705203031240557
 Rigidbody2D:
   serializedVersion: 4

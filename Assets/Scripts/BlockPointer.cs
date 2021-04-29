@@ -14,9 +14,8 @@ public class BlockPointer : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Tower" || collision.gameObject.tag == "TowerPVO")
+        if (collision.gameObject.GetComponent<Tower>())
         {
-            Debug.Log(collision.tag);
             target = collision.gameObject;
             gameObject.GetComponent<Collider2D>().enabled = false;
         }

@@ -17,7 +17,6 @@ public class RayCast : MonoBehaviour
     RaycastHit2D hitTower;
     RaycastHit2D hitPoint;
     int price;
-    bool damage;
 
     private void Awake()
     {
@@ -154,7 +153,6 @@ public class RayCast : MonoBehaviour
     public void deleteTower()
     {
         price = target.GetComponent<Tower>().price;
-        damage = target.GetComponent<Tower>().damage;
         gm.gold += target.GetComponent<Tower>().fullprice / 2;
         Destroy(target);
     }

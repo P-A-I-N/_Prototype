@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3001771242220753724}
   m_Layer: 9
   m_Name: Fat_Fly_Lvl_4
-  m_TagString: EnemyVO
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,14 +116,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.2
   health: 10
-  max_health: 0
-  coldTime: 3
+  freezeTime: 3
   decelerationIn: 2
   debuffHp: 3
   gold: 20
+  max_health: 0
   enemyStrong: 0
   enemyPVO: 1
   enemyInvisible: 0
+  tipe: Fiy
+  lvl: 4
 --- !u!50 &3434025404165784811
 Rigidbody2D:
   serializedVersion: 4

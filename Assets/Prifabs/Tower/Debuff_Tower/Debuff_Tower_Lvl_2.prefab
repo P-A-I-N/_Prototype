@@ -244,9 +244,6 @@ MonoBehaviour:
   invisibleBullet: {fileID: 0}
   levelUp: {fileID: 4672662006099410413, guid: f06cba3878a6af94d9668bb5294371b6, type: 3}
   nameTower: {fileID: 2534721437045888650}
-  invisible: 0
-  _health: 0
-  damage: 0
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
@@ -255,6 +252,8 @@ MonoBehaviour:
   goldDelay: 0
   PVO: 0
   PNO: 0
+  tipe: Debuff
+  lvl: 2
 --- !u!50 &-3023990515034335922
 Rigidbody2D:
   serializedVersion: 4

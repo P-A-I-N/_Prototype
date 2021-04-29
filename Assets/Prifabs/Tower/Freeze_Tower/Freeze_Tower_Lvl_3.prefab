@@ -181,9 +181,6 @@ MonoBehaviour:
   invisibleBullet: {fileID: 6115813776678188055, guid: 2f7d64448a5e2a344b00f5f917367bd6, type: 3}
   levelUp: {fileID: 4583781615001532060, guid: 25ff62137a4fc3a45868538774ec4c1b, type: 3}
   nameTower: {fileID: 1967732178381951021}
-  invisible: 0
-  _health: 0
-  damage: 0
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
@@ -192,6 +189,8 @@ MonoBehaviour:
   goldDelay: 0
   PVO: 0
   PNO: 1
+  tipe: Freeze
+  lvl: 3
 --- !u!50 &2720980192288189623
 Rigidbody2D:
   serializedVersion: 4

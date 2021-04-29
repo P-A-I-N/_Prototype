@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Tower>
+		<Normal>
+			<Lvl1
+				Health = "10000"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl1>
+
+			<Lvl2
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl2>
+
+			<Lvl3
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl3>
+
+			<Lvl4
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl4>
+
+			<Lvl5A
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl5A>
+
+			<Lvl5B
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl5B>
+		</Normal>
+
+		<Freeze>
+			<Lvl1
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl1>
+
+			<Lvl2
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl2>
+
+			<Lvl3
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl3>
+
+			<Lvl4
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl4>
+
+			<Lvl5A
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl5A>
+
+			<Lvl5B
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl5B>
+		</Freeze>
+
+		<Buff>
+			<Lvl1
+				Health = "100"
+				Price = "10">
+			</Lvl1>
+
+			<Lvl2
+				Health = "100"
+				Price = "10">
+			</Lvl2>
+
+			<Lvl3
+				Health = "100"
+				Price = "10">
+			</Lvl3>
+
+			<Lvl4
+				Health = "100"
+				Price = "10">
+			</Lvl4>
+
+			<Lvl5A
+				Health = "100"
+				Price = "10">
+			</Lvl5A>
+
+			<Lvl5B
+				Health = "100"
+				Price = "10">
+			</Lvl5B>
+		</Buff>
+
+		<Debuff>
+			<Lvl1
+				Health = "100"
+				Price = "10">
+			</Lvl1>
+
+			<Lvl2
+				Health = "100"
+				Price = "10">
+			</Lvl2>
+
+			<Lvl3
+				Health = "100"
+				Price = "10">
+			</Lvl3>
+
+			<Lvl4
+				Health = "100"
+				Price = "10">
+			</Lvl4>
+
+			<Lvl5A
+				Health = "100"
+				Price = "10">
+			</Lvl5A>
+
+			<Lvl5B
+				Health = "100"
+				Price = "10">
+			</Lvl5B>
+		</Debuff>
+
+		<Super>
+			<Lvl1
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl1>
+
+			<Lvl2
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl2>
+
+			<Lvl3
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl3>
+
+			<Lvl4
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl4>
+
+			<Lvl5A
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl5A>
+
+			<Lvl5B
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl5B>
+		</Super>
+
+		<Splash>
+			<Lvl1
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				RangeSplash = "4"
+				SpeedBullet = "5">
+			</Lvl1>
+
+			<Lvl2
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				RangeSplash = "4"
+				SpeedBullet = "5">
+			</Lvl2>
+
+			<Lvl3
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				RangeSplash = "4"
+				SpeedBullet = "5">
+			</Lvl3>
+
+			<Lvl4
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				RangeSplash = "4"
+				SpeedBullet = "5">
+			</Lvl4>
+
+			<Lvl5A
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				RangeSplash = "4"
+				SpeedBullet = "5">
+			</Lvl5A>
+
+			<Lvl5B
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				RangeSplash = "4"
+				SpeedBullet = "5">
+			</Lvl5B>
+		</Splash>
+
+		<Gold>
+			<Lvl1
+				Health = "100"
+				Price = "10">
+			</Lvl1>
+
+			<Lvl2
+				Health = "100"
+				Price = "10">
+			</Lvl2>
+
+			<Lvl3
+				Health = "100"
+				Price = "10">
+			</Lvl3>
+
+			<Lvl4
+				Health = "100"
+				Price = "10">
+			</Lvl4>
+
+			<Lvl5A
+				Health = "100"
+				Price = "10">
+			</Lvl5A>
+
+			<Lvl5B
+				Health = "100"
+				Price = "10">
+			</Lvl5B>
+		</Gold>
+
+		<PVO>
+			<Lvl1
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl1>
+
+			<Lvl2
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl2>
+
+			<Lvl3
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl3>
+
+			<Lvl4
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl4>
+
+			<Lvl5A
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl5A>
+
+			<Lvl5B
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				SpeedBullet = "5">
+			</Lvl5B>
+		</PVO>
+
+		<Tank>
+			<Lvl1
+				Health = "100"
+				Price = "10">
+			</Lvl1>
+
+			<Lvl2
+				Health = "100"
+				Price = "10">
+			</Lvl2>
+
+			<Lvl3
+				Health = "100"
+				Price = "10">
+			</Lvl3>
+
+			<Lvl4
+				Health = "100"
+				Price = "10">
+			</Lvl4>
+
+			<Lvl5A
+				Health = "100"
+				Price = "10">
+			</Lvl5A>
+
+			<Lvl5B
+				Health = "100"
+				Price = "10">
+			</Lvl5B>
+		</Tank>
+	</Tower>
+
+	<Enemy>
+		<Normal>
+			<Lvl1
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl1>
+
+			<Lvl2
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl2>
+
+			<Lvl3
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl3>
+
+			<Lvl4
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl4>
+
+			<Lvl5
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl5>
+		</Normal>
+
+		<Fly>
+			<Lvl1
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl1>
+
+			<Lvl2
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl2>
+
+			<Lvl3
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl3>
+
+			<Lvl4
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl4>
+
+			<Lvl5
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl5>
+		</Fly>
+
+		<Speed>
+			<Lvl1
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl1>
+
+			<Lvl2
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl2>
+
+			<Lvl3
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl3>
+
+			<Lvl4
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl4>
+
+			<Lvl5
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl5>
+		</Speed>
+
+		<Strong>
+			<Lvl1
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl1>
+
+			<Lvl2
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl2>
+
+			<Lvl3
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl3>
+
+			<Lvl4
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl4>
+
+			<Lvl5
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl5>
+		</Strong>
+
+		<Invisible>
+			<Lvl1
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl1>
+
+			<Lvl2
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl2>
+
+			<Lvl3
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl3>
+
+			<Lvl4
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl4>
+
+			<Lvl5
+				Health = "10"
+				Speed = "0.2"
+				DebuffHp = "3"
+				Gold = "50"
+				FreezeTime = "3"
+				DecelerationIn = "2">
+			</Lvl5>
+		</Invisible>
+	</Enemy>
+</root>

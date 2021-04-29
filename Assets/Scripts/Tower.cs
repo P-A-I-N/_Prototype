@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using System.Xml.Linq;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Tower : MonoBehaviour
@@ -7,17 +9,18 @@ public class Tower : MonoBehaviour
     public int range;
     public int rateOfFire;
     public int price;
+    [HideInInspector]
     public int fullprice;
     public GameObject bullet;
     public GameObject invisibleBullet;
     public GameObject levelUp;
     public Text nameTower;
-    protected LayerMask layerMask;
-    public bool invisible;
-    public float _health;
-    public bool damage;
-    protected bool target;
-    protected int num_enemies = 0;
+    private LayerMask layerMask;
+    private bool invisible;
+    private float _health;
+    private bool damage;
+    private bool target;
+    private int num_enemies = 0;
 
     public bool lvl4;
     public GameObject lvl5a;
@@ -31,14 +34,35 @@ public class Tower : MonoBehaviour
     public bool PVO;
     public bool PNO;
 
+    private string path;
+    public string tipe;
+    public string lvl;
+
     protected void Awake()
     {
+        path = "D:\\_Prototype\\Assets\\Resources\\config.xml";
+        XElement enemyNormal = XDocument.Parse(File.ReadAllText(path)).Element("root").Element("Tower").Element(tipe);
+        foreach (XElement lvl in enemyNormal.Elements("Lvl" + lvl))
+        {
+            
+            health = int.Parse(lvl.Attribute("Health").Value);
+            price = int.Parse(lvl.Attribute("Price").Value);
+
+            if (lvl.Attribute("Range") == null)
+            {
+                range = int.Parse(lvl.Attribute("Range").Value);
+            }
+            if (lvl.Attribute("RateOfFire") == null)
+            {
+                rateOfFire = int.Parse(lvl.Attribute("RateOfFire").Value);
+            }
+        }
         _health = health;
     }
     protected void Start()
     {
         if (fullprice <= 0) fullprice = price;
-        if(PNO || PVO) InvokeRepeating("criateBullet", 0, rateOfFire);
+        if (PNO || PVO) InvokeRepeating("criateBullet", 0, rateOfFire);
 
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
         if (goldGet <= 0) goldGet = 1;
@@ -83,7 +107,7 @@ public class Tower : MonoBehaviour
             else target = false;
         }
 
-        if(PVO && PNO)
+        if (PVO && PNO)
         {
             int enemyLayer = LayerMask.NameToLayer("Enemy");
             int enemyInvisibleLayer = LayerMask.NameToLayer("EnemyInvisible");
