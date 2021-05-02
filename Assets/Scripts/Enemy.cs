@@ -127,10 +127,12 @@ public class Enemy : MonoBehaviour
         {
             health--;
         }
-        if ((PVO) && enemyPVO && !enemyStrong && !enemyInvisible)
+        if (PVO && enemyPVO && !enemyInvisible)
         {
-            health--;
+            if (!enemyStrong) health--;
+            if (Strong && enemyStrong) health--;
         }
+        if(PVO && Strong && enemyPVO && enemyStrong)
         if (!Invisible && Freeze && !enemyPVO && !enemyInvisible)
         {
             if (!enemyStrong)
