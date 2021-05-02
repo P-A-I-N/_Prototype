@@ -34,8 +34,8 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         path = "D:\\_Prototype\\Assets\\Resources\\config.xml";
-        XElement enemyNormal = XDocument.Parse(File.ReadAllText(path)).Element("root").Element("Enemy").Element(tipe);
-        foreach (XElement lvl in enemyNormal.Elements("Lvl" + lvl))
+        XElement enemy = XDocument.Parse(File.ReadAllText(path)).Element("root").Element("Enemy").Element(tipe);
+        foreach (XElement lvl in enemy.Elements("Lvl" + lvl))
         {
             health = int.Parse(lvl.Attribute("Health").Value);
             speed = float.Parse(lvl.Attribute("Speed").Value, CultureInfo.InvariantCulture);

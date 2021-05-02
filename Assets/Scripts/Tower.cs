@@ -9,7 +9,6 @@ public class Tower : MonoBehaviour
     public int range;
     public int rateOfFire;
     public int price;
-    [HideInInspector]
     public int fullprice;
     public GameObject bullet;
     public GameObject invisibleBullet;
@@ -41,22 +40,24 @@ public class Tower : MonoBehaviour
     protected void Awake()
     {
         path = "D:\\_Prototype\\Assets\\Resources\\config.xml";
-        XElement enemyNormal = XDocument.Parse(File.ReadAllText(path)).Element("root").Element("Tower").Element(tipe);
-        foreach (XElement lvl in enemyNormal.Elements("Lvl" + lvl))
+        XElement tower = XDocument.Parse(File.ReadAllText(path)).Element("root").Element("Tower").Element(tipe);
+        foreach (XElement lvl in tower.Elements("Lvl" + lvl))
         {
-            
+
             health = int.Parse(lvl.Attribute("Health").Value);
             price = int.Parse(lvl.Attribute("Price").Value);
 
-            if (lvl.Attribute("Range") == null)
+            if (PNO || PVO)
             {
                 range = int.Parse(lvl.Attribute("Range").Value);
             }
-            if (lvl.Attribute("RateOfFire") == null)
+            if (PNO || PVO)
             {
                 rateOfFire = int.Parse(lvl.Attribute("RateOfFire").Value);
             }
+
         }
+
         _health = health;
     }
     protected void Start()

@@ -27,13 +27,13 @@ public class MoveBullet : MonoBehaviour
     public void Awake()
     {
         path = "D:\\_Prototype\\Assets\\Resources\\config.xml";
-        XElement enemyNormal = XDocument.Parse(File.ReadAllText(path)).Element("root").Element("Tower").Element(tipe);
-        foreach (XElement lvl in enemyNormal.Elements("Lvl" + lvl))
+        XElement bullet = XDocument.Parse(File.ReadAllText(path)).Element("root").Element("Tower").Element(tipe);
+        foreach (XElement lvl in bullet.Elements("Lvl" + lvl))
         {
-            
+
             speed = float.Parse(lvl.Attribute("SpeedBullet").Value, CultureInfo.InvariantCulture);
 
-            if (lvl.Attribute("RangeSplash") == null)
+            if (Splash)
             {
                 rangeSplash = float.Parse(lvl.Attribute("RangeSplash").Value, CultureInfo.InvariantCulture);
             }
