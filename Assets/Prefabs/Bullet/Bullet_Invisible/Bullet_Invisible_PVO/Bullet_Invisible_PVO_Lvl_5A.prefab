@@ -114,15 +114,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   parent: {fileID: 0}
-  parentPos: 0
+  parentPos: 30
   pos: 0
   x: 0
-  rangeSplash: 0
-  Splash: 0
+  rangeSplash: 3
+  Splash: 1
   Freeze: 0
   Invisible: 1
   PVO: 1
-  Strong: 0
+  Strong: 1
   Normal: 0
   tipe: PVO
   lvl: 5A

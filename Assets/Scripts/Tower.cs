@@ -1,11 +1,12 @@
 ﻿using System.IO;
+using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Tower : MonoBehaviour
 {
-    public int health = 10;
+    public int health;
     public int range;
     public int rateOfFire;
     public int price;
@@ -16,7 +17,8 @@ public class Tower : MonoBehaviour
     public Text nameTower;
     private LayerMask layerMask;
     private bool invisible;
-    private float _health;
+    public int hpTankBuff;
+    public float _health;
     private bool damage;
     private bool target;
     private int num_enemies = 0;
@@ -33,35 +35,36 @@ public class Tower : MonoBehaviour
     public bool PVO;
     public bool PNO;
 
-    private string path;
     public string tipe;
     public string lvl;
 
-    protected void Awake()
-    {
-        path = "D:\\_Prototype\\Assets\\Resources\\config.xml";
-        XElement tower = XDocument.Parse(File.ReadAllText(path)).Element("root").Element("Tower").Element(tipe);
-        foreach (XElement lvl in tower.Elements("Lvl" + lvl))
-        {
-
-            health = int.Parse(lvl.Attribute("Health").Value);
-            price = int.Parse(lvl.Attribute("Price").Value);
-
-            if (PNO || PVO)
-            {
-                range = int.Parse(lvl.Attribute("Range").Value);
-            }
-            if (PNO || PVO)
-            {
-                rateOfFire = int.Parse(lvl.Attribute("RateOfFire").Value);
-            }
-
-        }
-
-        _health = health;
-    }
     protected void Start()
     {
+        TextAsset xmlAsset = (TextAsset)Resources.Load("config");
+        Debug.Log(xmlAsset);
+
+        XmlDocument xmlDoc = new XmlDocument();
+        if (xmlAsset) xmlDoc.LoadXml(xmlAsset.text);
+        Debug.Log("root/Tower/" + tipe + "/Lvl" + lvl);
+        foreach (XmlNode Tower in xmlDoc.SelectNodes("root/Tower/" + tipe + "/Lvl" + lvl))
+        {
+            Debug.Log("root/Tower/" + tipe + "/Lvl" + lvl);
+
+            health = int.Parse(Tower.Attributes.GetNamedItem("Health").Value);
+            Debug.Log(health);
+            _health = health;
+            price = int.Parse(Tower.Attributes.GetNamedItem("Price").Value);
+            Debug.Log(price);
+            if (PNO || PVO)
+            {
+                range = int.Parse(Tower.Attributes.GetNamedItem("Range").Value);
+                Debug.Log(range);
+                rateOfFire = int.Parse(Tower.Attributes.GetNamedItem("RateOfFire").Value);
+                Debug.Log(rateOfFire); ;
+            }
+        }
+
+
         if (fullprice <= 0) fullprice = price;
         if (PNO || PVO) InvokeRepeating("criateBullet", 0, rateOfFire);
 
@@ -73,6 +76,7 @@ public class Tower : MonoBehaviour
 
     protected void Update()
     {
+        
         if (PNO)
         {
             int enemyLayer = LayerMask.NameToLayer("Enemy");
@@ -147,6 +151,13 @@ public class Tower : MonoBehaviour
         num_enemies++;
         damage = true;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "TankBuff")
+        {
+            _health += hpTankBuff;
+        }
+    }
     protected void OnCollisionExit2D(Collision2D collision)
     {
         num_enemies--;
@@ -164,6 +175,10 @@ public class Tower : MonoBehaviour
         if (collision.tag == "TowerBuff")
         {
             invisible = false;
+        }
+        if (collision.tag == "TankBuff")
+        {
+            if(_health >= hpTankBuff) _health -= hpTankBuff;
         }
     }
     protected void criateBullet()

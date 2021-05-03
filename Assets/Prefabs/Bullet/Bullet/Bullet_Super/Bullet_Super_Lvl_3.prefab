@@ -106,7 +106,7 @@ MonoBehaviour:
   Freeze: 0
   Invisible: 0
   PVO: 0
-  Strong: 0
+  Strong: 1
   Normal: 1
   tipe: Super
   lvl: 3

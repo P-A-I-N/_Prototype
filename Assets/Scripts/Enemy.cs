@@ -2,6 +2,7 @@
 using System.Xml.Linq;
 using System.IO;
 using System.Globalization;
+using System.Xml;
 
 public class Enemy : MonoBehaviour
 {
@@ -33,18 +34,6 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        path = "D:\\_Prototype\\Assets\\Resources\\config.xml";
-        XElement enemy = XDocument.Parse(File.ReadAllText(path)).Element("root").Element("Enemy").Element(tipe);
-        foreach (XElement lvl in enemy.Elements("Lvl" + lvl))
-        {
-            health = int.Parse(lvl.Attribute("Health").Value);
-            speed = float.Parse(lvl.Attribute("Speed").Value, CultureInfo.InvariantCulture);
-            debuffHp = int.Parse(lvl.Attribute("DebuffHp").Value);
-            gold = int.Parse(lvl.Attribute("Gold").Value);
-            freezeTime = float.Parse(lvl.Attribute("FreezeTime").Value, CultureInfo.InvariantCulture);
-            decelerationIn = float.Parse(lvl.Attribute("DecelerationIn").Value, CultureInfo.InvariantCulture);
-        }
-
         if (max_health <= 0) max_health = health;
         _speed = speed;
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
@@ -59,6 +48,33 @@ public class Enemy : MonoBehaviour
         HPBar.startColor = Color.red;
         HPBar.endColor = Color.red;
         HPBar.sortingOrder = 10;
+    }
+    private void Start()
+    {
+        TextAsset xmlAsset = (TextAsset)Resources.Load("config");
+        Debug.Log(xmlAsset);
+
+        XmlDocument xmlDoc = new XmlDocument();
+        if (xmlAsset) xmlDoc.LoadXml(xmlAsset.text);
+        Debug.Log("root/Enemy/" + tipe + "/Lvl" + lvl);
+        foreach (XmlNode Enemy in xmlDoc.SelectNodes("root/Enemy/" + tipe + "/Lvl" + lvl))
+        {
+            Debug.Log("root/Enemy/" + tipe + "/Lvl" + lvl);
+
+            health = float.Parse(Enemy.Attributes.GetNamedItem("Health").Value);
+            Debug.Log(health);
+            speed = float.Parse(Enemy.Attributes.GetNamedItem("Speed").Value);
+            Debug.Log(speed);
+            _speed = speed;
+            debuffHp = int.Parse(Enemy.Attributes.GetNamedItem("DebuffHp").Value);
+            Debug.Log(debuffHp);
+            gold = int.Parse(Enemy.Attributes.GetNamedItem("Gold").Value);
+            Debug.Log(gold); ;
+            freezeTime = float.Parse(Enemy.Attributes.GetNamedItem("FreezeTime").Value);
+            Debug.Log(freezeTime); ;
+            decelerationIn = float.Parse(Enemy.Attributes.GetNamedItem("DecelerationIn").Value);
+            Debug.Log(decelerationIn); ;
+        }
     }
     private void Update()
     {
@@ -88,6 +104,10 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             gm.gold += gold;
         }
+        
+    }
+    private void LateUpdate()
+    {
         transform.Translate(Vector2.left * _speed * Time.deltaTime);
     }
 
@@ -120,30 +140,28 @@ public class Enemy : MonoBehaviour
         bool Strong = collision.gameObject.GetComponent<MoveBullet>().Strong;
         bool Normal = collision.gameObject.GetComponent<MoveBullet>().Normal;
         bool Splash = collision.gameObject.GetComponent<MoveBullet>().Splash;
+        bool SplashFreeze = collision.gameObject.GetComponent<MoveBullet>().SplashFreeze;
 
 
 
-        if ((Normal || Splash) && !Invisible && !enemyPVO && !enemyStrong && !enemyInvisible)
+        if (!Invisible && !Freeze && !enemyPVO && !enemyInvisible)
         {
-            health--;
+            if(!enemyStrong && (Normal || (Splash && !PVO)))  health--;
+            else if (Normal && Strong) health--;
         }
         if (PVO && enemyPVO && !enemyInvisible)
         {
             if (!enemyStrong) health--;
-            if (Strong && enemyStrong) health--;
+            else if (Strong && enemyStrong) health--;
         }
-        if(PVO && Strong && enemyPVO && enemyStrong)
-        if (!Invisible && Freeze && !enemyPVO && !enemyInvisible)
+        if(!Invisible && Freeze && !enemyPVO && !enemyInvisible)
         {
-            if (!enemyStrong)
+            if (!enemyStrong && !SplashFreeze)
             {
                 health--;
                 cold = true;
             }
-            else
-            {
-                cold = true;
-            }
+            else cold = true;
         }
         if (Invisible && !Freeze && (!PVO || (PVO && Normal)) && !enemyStrong && !enemyPVO)
         {
@@ -151,15 +169,12 @@ public class Enemy : MonoBehaviour
         }
         if (Invisible && Freeze && !enemyPVO)
         {
-            if (!enemyStrong)
+            if (!enemyStrong && !SplashFreeze)
             {
                 health--;
                 cold = true;
             }
-            else
-            {
-                cold = true;
-            }
+            else cold = true;
         }
         if (collision.tag == "TowerDebuff")
         {

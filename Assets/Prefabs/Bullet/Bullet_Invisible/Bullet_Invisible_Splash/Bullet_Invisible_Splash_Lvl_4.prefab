@@ -117,7 +117,7 @@ MonoBehaviour:
   parentPos: 30
   pos: 0
   x: 0
-  rangeSplash: 4
+  rangeSplash: 1
   Splash: 1
   Freeze: 0
   Invisible: 1

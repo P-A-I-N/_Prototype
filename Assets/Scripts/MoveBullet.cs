@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
 
@@ -12,8 +14,9 @@ public class MoveBullet : MonoBehaviour
     public float parentPos;
     public float pos;
     public float x;
-    public float rangeSplash;
+    public int rangeSplash;
 
+    public bool SplashFreeze;
     public bool Splash;
     public bool Freeze;
     public bool Invisible;
@@ -21,21 +24,27 @@ public class MoveBullet : MonoBehaviour
     public bool Strong;
     public bool Normal;
 
-    private string path;
     public string tipe;
     public string lvl;
-    public void Awake()
+
+    private void Start()
     {
-        path = "D:\\_Prototype\\Assets\\Resources\\config.xml";
-        XElement bullet = XDocument.Parse(File.ReadAllText(path)).Element("root").Element("Tower").Element(tipe);
-        foreach (XElement lvl in bullet.Elements("Lvl" + lvl))
+        TextAsset xmlAsset = (TextAsset)Resources.Load("config");
+        Debug.Log(xmlAsset);
+
+        XmlDocument xmlDoc = new XmlDocument();
+        if (xmlAsset) xmlDoc.LoadXml(xmlAsset.text);
+        Debug.Log("root/Tower/" + tipe + "/Lvl" + lvl);
+        foreach (XmlNode Tower in xmlDoc.SelectNodes("root/Tower/" + tipe + "/Lvl" + lvl))
         {
+            Debug.Log("root/Tower/" + tipe + "/Lvl" + lvl);
 
-            speed = float.Parse(lvl.Attribute("SpeedBullet").Value, CultureInfo.InvariantCulture);
-
-            if (Splash)
+            speed = float.Parse(Tower.Attributes.GetNamedItem("SpeedBullet").Value);
+            Debug.Log(speed);
+            if(Splash)
             {
-                rangeSplash = float.Parse(lvl.Attribute("RangeSplash").Value, CultureInfo.InvariantCulture);
+                rangeSplash = int.Parse(Tower.Attributes.GetNamedItem("RangeSplash").Value);
+                Debug.Log(rangeSplash);
             }
         }
     }
@@ -51,7 +60,7 @@ public class MoveBullet : MonoBehaviour
             }
         }
     }
-        void LateUpdate()
+    void LateUpdate()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
@@ -64,11 +73,12 @@ public class MoveBullet : MonoBehaviour
         bool enemyInvisible = collision.gameObject.GetComponent<Enemy>().enemyInvisible;
 
 
+
         if ((!PVO || (Normal && PVO)) && !Splash && !enemyPVO && !enemyInvisible)
         {
             Destroy(gameObject);
         }
-        if (PVO && enemyPVO)
+        if (PVO && enemyPVO && !Splash)
         {
             Destroy(gameObject);
         }
@@ -78,9 +88,38 @@ public class MoveBullet : MonoBehaviour
         }
         if (Splash)
         {
-            if (!enemyPVO && !enemyInvisible && !Invisible)
+            if(Freeze)
             {
-                if(enemyStrong)
+                if (enemyStrong)
+                {
+                    Destroy(gameObject);
+                }
+                else if (parent == null)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    parent = collision.transform;
+                    parentPos = parent.position.x;
+                    speed *= 10;
+                    SplashFreeze = true;
+                }
+            }
+            if(enemyPVO && PVO)
+            {
+                if(!enemyPVO)
+                {
+                    Destroy(gameObject);
+                }
+                else if(parent == null)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    parent = collision.transform;
+                    parentPos = parent.position.x;
+                    speed *= 10;
+                }
+            }
+            if (!enemyPVO && !enemyInvisible && !Invisible && !Freeze)
+            {
+                if (enemyStrong)
                 {
                     Destroy(gameObject);
                 }
@@ -98,7 +137,7 @@ public class MoveBullet : MonoBehaviour
                 {
                     Destroy(gameObject);
                 }
-                else if(parent == null)
+                else if (parent == null)
                 {
                     gameObject.GetComponent<SpriteRenderer>().enabled = false;
                     parent = collision.transform;

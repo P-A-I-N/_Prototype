@@ -97,6 +97,7 @@
 				Range = "5"
 				RateOfFire = "3"
 				Price = "10"
+				RangeSplash = "4"
 				SpeedBullet = "5">
 			</Lvl5B>
 		</Freeze>
@@ -341,6 +342,7 @@
 				Range = "5"
 				RateOfFire = "3"
 				Price = "10"
+				RangeSplash = "4"
 				SpeedBullet = "5">
 			</Lvl5A>
 
@@ -355,7 +357,7 @@
 
 		<Tank>
 			<Lvl1
-				Health = "100"
+				Health = "10000"
 				Price = "10">
 			</Lvl1>
 

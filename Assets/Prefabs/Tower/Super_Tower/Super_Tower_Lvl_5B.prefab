@@ -181,13 +181,14 @@ MonoBehaviour:
   invisibleBullet: {fileID: 5024834314885986411, guid: 1015b3c671dec6240afdf06a7bc6d66c, type: 3}
   levelUp: {fileID: 0}
   nameTower: {fileID: 309760098625038580}
+  _health: 0
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
   goldTower: 0
   goldGet: 0
   goldDelay: 0
-  PVO: 0
+  PVO: 1
   PNO: 1
   tipe: Super
   lvl: 5B

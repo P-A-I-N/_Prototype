@@ -105,8 +105,8 @@ MonoBehaviour:
   Splash: 0
   Freeze: 0
   Invisible: 1
-  PVO: 0
-  Strong: 0
+  PVO: 1
+  Strong: 1
   Normal: 1
   tipe: Super
   lvl: 5B

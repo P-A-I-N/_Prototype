@@ -114,11 +114,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   parent: {fileID: 0}
-  parentPos: 0
+  parentPos: 30
   pos: 0
   x: 0
-  rangeSplash: 0
-  Splash: 0
+  rangeSplash: 5
+  SplashFreeze: 0
+  Splash: 1
   Freeze: 1
   Invisible: 1
   PVO: 0

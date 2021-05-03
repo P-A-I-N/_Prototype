@@ -6,29 +6,17 @@ TagManager:
   tags:
   - Castle
   - Enemy
-  - Bullet
   - Boss
   - Point
   - Tower
   - Map
   - TowerPVO
-  - BulletPVO
-  - EnemyVO
-  - BulletSplash
-  - BulletCold
   - TowerSplash
   - TowerFreeze
   - TowerBuff
   - TowerTank
-  - InvisibleBullet
-  - InvisibleBulletPVO
-  - InvisibleBulletSplash
-  - InvisibleBulletFreeze
-  - EnemyInvisible
   - TowerDebuff
   - TowerGold
-  - BulletNormalLvl5A
-  - InvisibleBulletNormalLvl5A
   layers:
   - Default
   - TransparentFX
