@@ -27,10 +27,16 @@ public class Enemy : MonoBehaviour
     public bool enemyPVO;
     public bool enemyInvisible;
 
-    
-    private string path;
     public string tipe;
     public string lvl;
+
+    
+    public float fireDamage;
+    public float timeFire;
+    public float damageRetryTime;
+    private float xtime;
+
+    private bool Fire;
 
     private void Awake()
     {
@@ -75,6 +81,8 @@ public class Enemy : MonoBehaviour
             decelerationIn = float.Parse(Enemy.Attributes.GetNamedItem("DecelerationIn").Value);
             Debug.Log(decelerationIn); ;
         }
+
+        InvokeRepeating("fire",0, damageRetryTime);
     }
     private void Update()
     {
@@ -103,6 +111,14 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             gm.gold += gold;
+        }
+        if(Fire)
+        {
+            if (xtime < Time.time)
+            {
+                Fire = false;
+                
+            }
         }
         
     }
@@ -141,6 +157,11 @@ public class Enemy : MonoBehaviour
         bool Normal = collision.gameObject.GetComponent<MoveBullet>().Normal;
         bool Splash = collision.gameObject.GetComponent<MoveBullet>().Splash;
         bool SplashFreeze = collision.gameObject.GetComponent<MoveBullet>().SplashFreeze;
+        if (collision.tag == "Fire")
+        {
+            Fire = true;
+                xtime = Time.time + timeFire;
+        }
 
 
 
@@ -186,6 +207,13 @@ public class Enemy : MonoBehaviour
         if (collision.tag == "TowerDebuff")
         {
             debuff = false;
+        }
+    }
+    private void fire()
+    {
+        if(Fire)
+        {
+            health -= fireDamage;
         }
     }
 }

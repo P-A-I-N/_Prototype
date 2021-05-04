@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1927270748185497280}
   m_Layer: 3
   m_Name: Bullet_Invisible_Splash_Lvl_5B
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +118,7 @@ MonoBehaviour:
   pos: 0
   x: 0
   rangeSplash: 5
+  Fire: 1
   SplashFreeze: 0
   Splash: 1
   Freeze: 0
