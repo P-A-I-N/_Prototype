@@ -30,13 +30,15 @@ public class Tower : MonoBehaviour
     public bool goldTower;
 
     GameMap gm;
-    public int goldGet, goldDelay;
+    public float goldGet, goldDelay;
 
     public bool PVO;
     public bool PNO;
 
     public string tipe;
     public string lvl;
+
+    public int percentOfGold;
 
     protected void Start()
     {
@@ -72,12 +74,23 @@ public class Tower : MonoBehaviour
         if (goldGet <= 0) goldGet = 1;
         if (goldDelay <= 0) goldDelay = 10;
         if (goldTower) InvokeRepeating("GetGold", goldDelay, goldDelay);
+        if (tipe == "Gold" && lvl == "5B")
+        {
+            gm.gold5B ++;
+        }
     }
 
     protected void Update()
     {
-        
-        if (PNO)
+        if (tipe == "Gold" && lvl == "5A")
+        {
+            float nowGold = gm.gold;
+            goldGet = (nowGold / 100) * percentOfGold;
+            return;
+        }
+            
+
+            if (PNO)
         {
             int enemyLayer = LayerMask.NameToLayer("Enemy");
             int enemyInvisibleLayer = LayerMask.NameToLayer("EnemyInvisible");
@@ -143,6 +156,10 @@ public class Tower : MonoBehaviour
 
         if (_health <= 0)
         {
+            if (tipe == "Gold" && lvl == "5B")
+            {
+                gm.gold5B--;
+            }
             Destroy(gameObject);
         }
     }
