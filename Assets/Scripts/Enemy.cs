@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public float freezeTime;
     public float decelerationIn;
     public int debuffHp;
-    public int gold;
+    public float gold;
     [HideInInspector]
     public float max_health;
     private float _speed;
@@ -27,10 +27,19 @@ public class Enemy : MonoBehaviour
     public bool enemyPVO;
     public bool enemyInvisible;
 
-    
-    private string path;
     public string tipe;
     public string lvl;
+
+    
+    public float fireDamage;
+    public float timeFire;
+    public float damageRetryTime;
+    private float xtime;
+
+    private bool Fire;
+
+  
+    public int percentOfEnemy;
 
     private void Awake()
     {
@@ -62,22 +71,19 @@ public class Enemy : MonoBehaviour
             Debug.Log("root/Enemy/" + tipe + "/Lvl" + lvl);
 
             health = float.Parse(Enemy.Attributes.GetNamedItem("Health").Value);
-            Debug.Log(health);
             speed = float.Parse(Enemy.Attributes.GetNamedItem("Speed").Value);
-            Debug.Log(speed);
             _speed = speed;
             debuffHp = int.Parse(Enemy.Attributes.GetNamedItem("DebuffHp").Value);
-            Debug.Log(debuffHp);
             gold = int.Parse(Enemy.Attributes.GetNamedItem("Gold").Value);
-            Debug.Log(gold); ;
             freezeTime = float.Parse(Enemy.Attributes.GetNamedItem("FreezeTime").Value);
-            Debug.Log(freezeTime); ;
             decelerationIn = float.Parse(Enemy.Attributes.GetNamedItem("DecelerationIn").Value);
-            Debug.Log(decelerationIn); ;
         }
+
+        InvokeRepeating("fire",0, damageRetryTime);
     }
     private void Update()
     {
+
         HPBar.SetPosition(1, new Vector3(-0.5f + health / max_health, 0.8f));
         if (debuff && !_debuff)
         {
@@ -101,8 +107,26 @@ public class Enemy : MonoBehaviour
         }
         if (health <= 0)
         {
+            if (gm.gold5B > 0)
+            {
+                gold = gold + ((gold / 100) * (percentOfEnemy * gm.gold5B));
+                Debug.Log(gold);
+                gm.gold += gold;
+            }
+            else
+            {
+                gm.gold += gold;
+            }
+
             Destroy(gameObject);
-            gm.gold += gold;
+        }
+        if(Fire)
+        {
+            if (xtime < Time.time)
+            {
+                Fire = false;
+                
+            }
         }
         
     }
@@ -141,6 +165,11 @@ public class Enemy : MonoBehaviour
         bool Normal = collision.gameObject.GetComponent<MoveBullet>().Normal;
         bool Splash = collision.gameObject.GetComponent<MoveBullet>().Splash;
         bool SplashFreeze = collision.gameObject.GetComponent<MoveBullet>().SplashFreeze;
+        if (collision.tag == "Fire")
+        {
+            Fire = true;
+                xtime = Time.time + timeFire;
+        }
 
 
 
@@ -186,6 +215,13 @@ public class Enemy : MonoBehaviour
         if (collision.tag == "TowerDebuff")
         {
             debuff = false;
+        }
+    }
+    private void fire()
+    {
+        if(Fire)
+        {
+            health -= fireDamage;
         }
     }
 }

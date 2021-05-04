@@ -16,6 +16,7 @@ public class MoveBullet : MonoBehaviour
     public float x;
     public int rangeSplash;
 
+    public bool Fire;
     public bool SplashFreeze;
     public bool Splash;
     public bool Freeze;

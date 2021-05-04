@@ -17,6 +17,8 @@ TagManager:
   - TowerTank
   - TowerDebuff
   - TowerGold
+  - TankBuff
+  - Fire
   layers:
   - Default
   - TransparentFX
