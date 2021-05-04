@@ -4,14 +4,14 @@ using System;
 public class SpawnEnemy : MonoBehaviour
 {
     public GameObject[] enemy;
-    public int numberOfEnemies;
-    public int randomRangeEnemies;
+    int numberOfEnemies;
+    //public int randomRangeEnemies;
     int minTimeSpawn = 10;
     int maxTimeSpawn = 10;
-    public float spawnTime; 
-    public float  spawnTimeRND;
+    //float spawnTime; 
+    float spawnTimeRND;
     public bool endOfTheWave;
-    public int lvlFat;
+    //int lvlFat;
     float exit_time;
     public Transform parent;
     private int sum;
@@ -28,10 +28,10 @@ public class SpawnEnemy : MonoBehaviour
 
     void Start()
     {
-        if (randomRangeEnemies < 1) randomRangeEnemies = 100;
-        numberOfEnemies = UnityEngine.Random.Range (numberOfEnemies - numberOfEnemies / randomRangeEnemies, numberOfEnemies + numberOfEnemies / randomRangeEnemies);
-        spawnTimeRND = UnityEngine.Random.Range (minTimeSpawn, maxTimeSpawn);
-        exit_time = Time.time + spawnTimeRND;
+        //if (randomRangeEnemies < 1) randomRangeEnemies = 100;
+        //numberOfEnemies = UnityEngine.Random.Range (numberOfEnemies - numberOfEnemies / randomRangeEnemies, numberOfEnemies + numberOfEnemies / randomRangeEnemies);
+        //spawnTimeRND = UnityEngine.Random.Range (minTimeSpawn, maxTimeSpawn);
+        //exit_time = Time.time + spawnTimeRND;
         WaveText.text = "Wave " + current_wave;
         waveTextPrint = true;
         timeTextPrint = Time.time + 5; 
