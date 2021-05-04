@@ -25,21 +25,17 @@ public class SpawnEnemy : MonoBehaviour
     float[] timeWaves = new float[26] {100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
     float endWaveTime;
     bool waveIsActive = true;
+    public GameObject waveScreen;
 
     void Start()
     {
-        //if (randomRangeEnemies < 1) randomRangeEnemies = 100;
-        //numberOfEnemies = UnityEngine.Random.Range (numberOfEnemies - numberOfEnemies / randomRangeEnemies, numberOfEnemies + numberOfEnemies / randomRangeEnemies);
-        //spawnTimeRND = UnityEngine.Random.Range (minTimeSpawn, maxTimeSpawn);
-        //exit_time = Time.time + spawnTimeRND;
+        waveScreen.SetActive(true);
         WaveText.text = "Wave " + current_wave;
         waveTextPrint = true;
         timeTextPrint = Time.time + 5; 
         endWaveTime = Time.time + timeWaves[0];
         string [] waves = wavesTable.text.Split ('\n');
         SettingWave(waves [0]);
-        //InvokeRepeating("CreateEnemy", spawnTime, spawnTime);
-        //InvokeRepeating("summ", spawnTime, spawnTime);
     }
     void Update()
     {
@@ -59,10 +55,11 @@ public class SpawnEnemy : MonoBehaviour
             WaveText.text = "Wave " + current_wave;
             waveTextPrint = true;
             timeTextPrint = Time.time + 5;
+            waveScreen.SetActive(true);
         }
         if (waveTextPrint && Time.time > timeTextPrint)
         {
-            WaveText.text = "";
+            waveScreen.SetActive(false);
             waveTextPrint = false;
         }
         if (Time.time > endWaveTime)
