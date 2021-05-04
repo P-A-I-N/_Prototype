@@ -8357,14 +8357,13 @@ MonoBehaviour:
   - {fileID: 1798383013457134003, guid: 89e707dcd16f719499001a6e372bcc03, type: 3}
   - {fileID: 1515413737831354820, guid: ee69bf91639cab14ebaab58c0079f87d, type: 3}
   numberOfEnemies: 5
-  randomRangeSpawn: 2
   randomRangeEnemies: 3
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   lvlFat: 2
   parent: {fileID: 563002988}
-  wavesTable: {fileID: 0}
+  wavesTable: {fileID: 4900000, guid: d65bece13137817428fde597586f27fd, type: 3}
   WaveText: {fileID: 853664514}
 --- !u!1 &605737298
 GameObject:
@@ -8416,14 +8415,13 @@ MonoBehaviour:
   - {fileID: 1798383013457134003, guid: 89e707dcd16f719499001a6e372bcc03, type: 3}
   - {fileID: 1515413737831354820, guid: ee69bf91639cab14ebaab58c0079f87d, type: 3}
   numberOfEnemies: 5
-  randomRangeSpawn: 2
   randomRangeEnemies: 3
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   lvlFat: 2
   parent: {fileID: 563002988}
-  wavesTable: {fileID: 0}
+  wavesTable: {fileID: 4900000, guid: fcd44aa075bae96429c091534f4304d3, type: 3}
   WaveText: {fileID: 853664514}
 --- !u!1001 &606013255
 PrefabInstance:
@@ -10949,14 +10947,13 @@ MonoBehaviour:
   - {fileID: 1798383013457134003, guid: 89e707dcd16f719499001a6e372bcc03, type: 3}
   - {fileID: 1515413737831354820, guid: ee69bf91639cab14ebaab58c0079f87d, type: 3}
   numberOfEnemies: 5
-  randomRangeSpawn: 2
   randomRangeEnemies: 3
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   lvlFat: 2
   parent: {fileID: 563002988}
-  wavesTable: {fileID: 0}
+  wavesTable: {fileID: 4900000, guid: dd86c0bcd27aee842a1f827e47739b6b, type: 3}
   WaveText: {fileID: 853664514}
 --- !u!4 &820969585 stripped
 Transform:
@@ -14404,14 +14401,13 @@ MonoBehaviour:
   - {fileID: 1798383013457134003, guid: 89e707dcd16f719499001a6e372bcc03, type: 3}
   - {fileID: 1515413737831354820, guid: ee69bf91639cab14ebaab58c0079f87d, type: 3}
   numberOfEnemies: 5
-  randomRangeSpawn: 2
   randomRangeEnemies: 3
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   lvlFat: 2
   parent: {fileID: 563002988}
-  wavesTable: {fileID: 0}
+  wavesTable: {fileID: 4900000, guid: c41559853171f76458c0e19bcc19a195, type: 3}
   WaveText: {fileID: 853664514}
 --- !u!4 &1079765293 stripped
 Transform:
@@ -23265,14 +23261,13 @@ MonoBehaviour:
   - {fileID: 1798383013457134003, guid: 89e707dcd16f719499001a6e372bcc03, type: 3}
   - {fileID: 1515413737831354820, guid: ee69bf91639cab14ebaab58c0079f87d, type: 3}
   numberOfEnemies: 5
-  randomRangeSpawn: 2
   randomRangeEnemies: 3
   spawnTime: 20
   spawnTimeRND: 0
   endOfTheWave: 0
   lvlFat: 2
   parent: {fileID: 563002988}
-  wavesTable: {fileID: 0}
+  wavesTable: {fileID: 4900000, guid: 6f59657f824958244842fce5e41b6429, type: 3}
   WaveText: {fileID: 853664514}
 --- !u!1001 &1698767379
 PrefabInstance:
