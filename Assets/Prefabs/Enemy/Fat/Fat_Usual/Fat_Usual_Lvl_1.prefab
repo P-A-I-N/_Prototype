@@ -127,6 +127,10 @@ MonoBehaviour:
   enemyInvisible: 0
   tipe: Normal
   lvl: 1
+  fireDamage: 0
+  timeFire: 0
+  damageRetryTime: 0
+  percentOfEnemy: 10
 --- !u!50 &4037586086869599063
 Rigidbody2D:
   serializedVersion: 4

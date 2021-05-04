@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GameMap : MonoBehaviour
 {
-    public int gold = 1000;
+    public float gold = 1000;
     public UnityEngine.UI.Text InfoBar;
+    public int gold5B;
     DamageCastle dc;
     // Start is called before the first frame update
     void Start()
