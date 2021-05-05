@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 58027bb7d760a7f4293835bf99f54a89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 80be8e54605091c4fb856a8925de93ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,6 +102,9 @@ MonoBehaviour:
   pos: 0
   x: 0
   rangeSplash: 0
+  damageTower: 0
+  Fire: 0
+  SplashFreeze: 0
   Splash: 0
   Freeze: 0
   Invisible: 1
@@ -110,6 +113,7 @@ MonoBehaviour:
   Normal: 1
   tipe: Super
   lvl: 4
+  numSplashFreeze: 0
 --- !u!70 &3179718110231270722
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

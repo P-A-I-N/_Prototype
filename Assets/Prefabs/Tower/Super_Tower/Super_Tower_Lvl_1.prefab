@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 8bba03e5f5d4d4b44a6a9d4f3c54e052, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,7 +109,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 0.88, y: 0.59}
     newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -181,6 +181,9 @@ MonoBehaviour:
   invisibleBullet: {fileID: 5024834314885986411, guid: 90f4da4f6cfdf344580ae2fa66ffcefc, type: 3}
   levelUp: {fileID: 2171621869778484781, guid: 1648c55572801a44b84ba603d149d800, type: 3}
   nameTower: {fileID: 2729532451177159709}
+  hpTankBuff: 0
+  _health: 0
+  damageEnemy: 0
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
@@ -191,6 +194,7 @@ MonoBehaviour:
   PNO: 1
   tipe: Super
   lvl: 1
+  percentOfGold: 0
 --- !u!50 &-2690365643123864449
 Rigidbody2D:
   serializedVersion: 4

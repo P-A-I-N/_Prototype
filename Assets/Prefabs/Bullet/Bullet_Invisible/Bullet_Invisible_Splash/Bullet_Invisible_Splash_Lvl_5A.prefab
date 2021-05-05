@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 58027bb7d760a7f4293835bf99f54a89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52da409e030210c4283d0e1dc6b21c07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,6 +118,9 @@ MonoBehaviour:
   pos: 0
   x: 0
   rangeSplash: 1
+  damageTower: 0
+  Fire: 0
+  SplashFreeze: 0
   Splash: 1
   Freeze: 0
   Invisible: 1
@@ -126,3 +129,4 @@ MonoBehaviour:
   Normal: 0
   tipe: Splash
   lvl: 5A
+  numSplashFreeze: 0

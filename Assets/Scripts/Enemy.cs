@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
     public float decelerationIn;
     public int debuffHp;
     public float gold;
-    [HideInInspector]
     public float max_health;
     private float _speed;
     GameMap gm;
@@ -22,6 +21,8 @@ public class Enemy : MonoBehaviour
     bool debuff;
     bool _debuff;
     LineRenderer HPBar;
+    public float damageTower;
+    public float damageEnemy;
 
     public bool enemyStrong;
     public bool enemyPVO;
@@ -37,8 +38,10 @@ public class Enemy : MonoBehaviour
     private float xtime;
 
     private bool Fire;
+    XmlDocument xmlDoc;
 
-  
+
+
     public int percentOfEnemy;
 
     private void Awake()
@@ -61,23 +64,30 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         TextAsset xmlAsset = (TextAsset)Resources.Load("config");
-        Debug.Log(xmlAsset);
-
-        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc = new XmlDocument();
         if (xmlAsset) xmlDoc.LoadXml(xmlAsset.text);
-        Debug.Log("root/Enemy/" + tipe + "/Lvl" + lvl);
         foreach (XmlNode Enemy in xmlDoc.SelectNodes("root/Enemy/" + tipe + "/Lvl" + lvl))
         {
-            Debug.Log("root/Enemy/" + tipe + "/Lvl" + lvl);
-
             health = float.Parse(Enemy.Attributes.GetNamedItem("Health").Value);
             speed = float.Parse(Enemy.Attributes.GetNamedItem("Speed").Value);
             _speed = speed;
-            debuffHp = int.Parse(Enemy.Attributes.GetNamedItem("DebuffHp").Value);
             gold = int.Parse(Enemy.Attributes.GetNamedItem("Gold").Value);
-            freezeTime = float.Parse(Enemy.Attributes.GetNamedItem("FreezeTime").Value);
-            decelerationIn = float.Parse(Enemy.Attributes.GetNamedItem("DecelerationIn").Value);
+            if(tipe == "Gold" && lvl == "5B")
+            {
+                percentOfEnemy = int.Parse(Enemy.Attributes.GetNamedItem("PercentOfEnemy").Value);
+            }
         }
+        foreach (XmlNode Golg in xmlDoc.SelectNodes("root/Tower/Gold/Lvl5B"))
+        {
+                percentOfEnemy = int.Parse(Golg.Attributes.GetNamedItem("PercentOfEnemy").Value);
+        }
+        foreach (XmlNode SpashFire in xmlDoc.SelectNodes("root/Tower/Splash/Lvl5B"))
+        {
+            fireDamage = float.Parse(SpashFire.Attributes.GetNamedItem("FireDamage").Value);
+            timeFire = float.Parse(SpashFire.Attributes.GetNamedItem("TimeFire").Value);
+            damageRetryTime = float.Parse(SpashFire.Attributes.GetNamedItem("DamageRetryTime").Value);
+        }
+
 
         InvokeRepeating("fire",0, damageRetryTime);
     }
@@ -110,7 +120,6 @@ public class Enemy : MonoBehaviour
             if (gm.gold5B > 0)
             {
                 gold = gold + ((gold / 100) * (percentOfEnemy * gm.gold5B));
-                Debug.Log(gold);
                 gm.gold += gold;
             }
             else
@@ -165,42 +174,59 @@ public class Enemy : MonoBehaviour
         bool Normal = collision.gameObject.GetComponent<MoveBullet>().Normal;
         bool Splash = collision.gameObject.GetComponent<MoveBullet>().Splash;
         bool SplashFreeze = collision.gameObject.GetComponent<MoveBullet>().SplashFreeze;
-        if (collision.tag == "Fire")
-        {
-            Fire = true;
+        damageTower = collision.gameObject.GetComponent<MoveBullet>().damageTower;
+        
+
+
+            if (collision.tag == "Fire")
+            {
+                Fire = true;
                 xtime = Time.time + timeFire;
+            }
+
+        foreach (XmlNode Tower in xmlDoc.SelectNodes("root/Tower/" + collision.gameObject.GetComponent<MoveBullet>().tipe + "/Lvl" + collision.gameObject.GetComponent<MoveBullet>().lvl))
+        {
+            if (Freeze)
+            {
+                freezeTime = float.Parse(Tower.Attributes.GetNamedItem("FreezeTime").Value);
+                decelerationIn = float.Parse(Tower.Attributes.GetNamedItem("DecelerationIn").Value);
+            }
+            if (collision.tag == "TowerDebuff")
+            {
+                debuffHp = int.Parse(Tower.Attributes.GetNamedItem("DebuffHp").Value);
+            }
         }
 
 
 
         if (!Invisible && !Freeze && !enemyPVO && !enemyInvisible)
         {
-            if(!enemyStrong && (Normal || (Splash && !PVO)))  health--;
-            else if (Normal && Strong) health--;
+            if(!enemyStrong && (Normal || (Splash && !PVO)))  health -= damageTower;
+            else if (Normal && Strong) health -= damageTower;
         }
         if (PVO && enemyPVO && !enemyInvisible)
         {
-            if (!enemyStrong) health--;
-            else if (Strong && enemyStrong) health--;
+            if (!enemyStrong) health -= damageTower;
+            else if (Strong && enemyStrong) health -= damageTower;
         }
         if(!Invisible && Freeze && !enemyPVO && !enemyInvisible)
         {
             if (!enemyStrong && !SplashFreeze)
             {
-                health--;
+                health -= damageTower;
                 cold = true;
             }
             else cold = true;
         }
         if (Invisible && !Freeze && (!PVO || (PVO && Normal)) && !enemyStrong && !enemyPVO)
         {
-            health--;
+            health -= damageTower;
         }
         if (Invisible && Freeze && !enemyPVO)
         {
             if (!enemyStrong && !SplashFreeze)
             {
-                health--;
+                health -= damageTower;
                 cold = true;
             }
             else cold = true;

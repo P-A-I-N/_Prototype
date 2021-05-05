@@ -21,7 +21,7 @@ public class Tower : MonoBehaviour
     public float _health;
     private bool damage;
     private bool target;
-    private int num_enemies = 0;
+    public float damageEnemy = 0;
 
     public bool lvl4;
     public GameObject lvl5a;
@@ -40,29 +40,31 @@ public class Tower : MonoBehaviour
 
     public int percentOfGold;
 
+    XmlDocument xmlDoc;
+
     protected void Start()
     {
         TextAsset xmlAsset = (TextAsset)Resources.Load("config");
-        Debug.Log(xmlAsset);
-
-        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc = new XmlDocument();
         if (xmlAsset) xmlDoc.LoadXml(xmlAsset.text);
-        Debug.Log("root/Tower/" + tipe + "/Lvl" + lvl);
         foreach (XmlNode Tower in xmlDoc.SelectNodes("root/Tower/" + tipe + "/Lvl" + lvl))
         {
-            Debug.Log("root/Tower/" + tipe + "/Lvl" + lvl);
-
             health = int.Parse(Tower.Attributes.GetNamedItem("Health").Value);
-            Debug.Log(health);
             _health = health;
             price = int.Parse(Tower.Attributes.GetNamedItem("Price").Value);
-            Debug.Log(price);
             if (PNO || PVO)
             {
                 range = int.Parse(Tower.Attributes.GetNamedItem("Range").Value);
-                Debug.Log(range);
                 rateOfFire = int.Parse(Tower.Attributes.GetNamedItem("RateOfFire").Value);
-                Debug.Log(rateOfFire); ;
+            }
+            if (tipe == "Gold")
+            {
+                goldGet = float.Parse(Tower.Attributes.GetNamedItem("GoldGet").Value);
+                goldDelay = float.Parse(Tower.Attributes.GetNamedItem("GoldDelay").Value);
+                if(lvl == "Lvl5A")
+                {
+                    percentOfGold = int.Parse(Tower.Attributes.GetNamedItem("PercentOfGold").Value);
+                }
             }
         }
 
@@ -71,12 +73,10 @@ public class Tower : MonoBehaviour
         if (PNO || PVO) InvokeRepeating("criateBullet", 0, rateOfFire);
 
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
-        if (goldGet <= 0) goldGet = 1;
-        if (goldDelay <= 0) goldDelay = 10;
-        if (goldTower) InvokeRepeating("GetGold", goldDelay, goldDelay);
+        if (goldTower) InvokeRepeating("GetGold", 0, goldDelay);
         if (tipe == "Gold" && lvl == "5B")
         {
-            gm.gold5B ++;
+            gm.gold5B++;
         }
     }
 
@@ -86,11 +86,10 @@ public class Tower : MonoBehaviour
         {
             float nowGold = gm.gold;
             goldGet = (nowGold / 100) * percentOfGold;
-            return;
         }
-            
 
-            if (PNO)
+
+        if (PNO)
         {
             int enemyLayer = LayerMask.NameToLayer("Enemy");
             int enemyInvisibleLayer = LayerMask.NameToLayer("EnemyInvisible");
@@ -151,7 +150,7 @@ public class Tower : MonoBehaviour
     {
         if (damage)
         {
-            _health -= 0.01f * num_enemies;
+            _health -= damageEnemy;
         }
 
         if (_health <= 0)
@@ -165,20 +164,24 @@ public class Tower : MonoBehaviour
     }
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-        num_enemies++;
+        damageEnemy += collision.gameObject.GetComponent<Enemy>().damageEnemy;
         damage = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "TankBuff")
         {
-            _health += hpTankBuff;
+            foreach (XmlNode TankBuff in xmlDoc.SelectNodes("root/Tower/Tank/Lvl5B"))
+            {
+                hpTankBuff = int.Parse(TankBuff.Attributes.GetNamedItem("HpTankBuff").Value);
+                _health += hpTankBuff;
+            }
         }
     }
     protected void OnCollisionExit2D(Collision2D collision)
     {
-        num_enemies--;
-        if (num_enemies <= 0) damage = false;
+        damageEnemy -= collision.gameObject.GetComponent<Enemy>().damageEnemy;
+        if (damageEnemy <= 0) damage = false;
     }
     protected void OnTriggerStay2D(Collider2D collision)
     {
@@ -195,7 +198,7 @@ public class Tower : MonoBehaviour
         }
         if (collision.tag == "TankBuff")
         {
-            if(_health >= hpTankBuff) _health -= hpTankBuff;
+            if (_health >= hpTankBuff) _health -= hpTankBuff;
         }
     }
     protected void criateBullet()

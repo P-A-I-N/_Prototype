@@ -15,6 +15,7 @@ public class MoveBullet : MonoBehaviour
     public float pos;
     public float x;
     public int rangeSplash;
+    public float damageTower;
 
     public bool Fire;
     public bool SplashFreeze;
@@ -28,24 +29,20 @@ public class MoveBullet : MonoBehaviour
     public string tipe;
     public string lvl;
 
+    public int numSplashFreeze;
+
     private void Start()
     {
         TextAsset xmlAsset = (TextAsset)Resources.Load("config");
-        Debug.Log(xmlAsset);
-
         XmlDocument xmlDoc = new XmlDocument();
         if (xmlAsset) xmlDoc.LoadXml(xmlAsset.text);
-        Debug.Log("root/Tower/" + tipe + "/Lvl" + lvl);
         foreach (XmlNode Tower in xmlDoc.SelectNodes("root/Tower/" + tipe + "/Lvl" + lvl))
         {
-            Debug.Log("root/Tower/" + tipe + "/Lvl" + lvl);
-
             speed = float.Parse(Tower.Attributes.GetNamedItem("SpeedBullet").Value);
-            Debug.Log(speed);
-            if(Splash)
+            damageTower = float.Parse(Tower.Attributes.GetNamedItem("Damage").Value);
+            if (Splash)
             {
                 rangeSplash = int.Parse(Tower.Attributes.GetNamedItem("RangeSplash").Value);
-                Debug.Log(rangeSplash);
             }
         }
     }
@@ -58,6 +55,10 @@ public class MoveBullet : MonoBehaviour
             if (pos > x)
             {
                 Destroy(gameObject);
+            }
+            if (Freeze && parent != null)
+            {
+                SplashFreeze = true;
             }
         }
     }
@@ -100,8 +101,7 @@ public class MoveBullet : MonoBehaviour
                     gameObject.GetComponent<SpriteRenderer>().enabled = false;
                     parent = collision.transform;
                     parentPos = parent.position.x;
-                    speed *= 10;
-                    SplashFreeze = true;
+                    speed *= 10; 
                 }
             }
             if(enemyPVO && PVO)
