@@ -322,14 +322,14 @@
 				Health = "100"
 				Price = "10"
 				GoldGet = "1"
-				GoldDelay = "10">
+				GoldDelay = "1">
 			</Lvl1>
 
 			<Lvl2
 				Health = "100"
 				Price = "10"
 				GoldGet = "10"
-				GoldDelay = "10">
+				GoldDelay = "1">
 			</Lvl2>
 
 			<Lvl3
@@ -343,7 +343,7 @@
 				Health = "100"
 				Price = "10"
 				GoldGet = "1"
-				GoldDelay = "10">
+				GoldDelay = "1">
 			</Lvl4>
 
 			<Lvl5A
@@ -359,7 +359,7 @@
 				Price = "10"
 				GoldGet = "1"
 				PercentOfEnemy ="10"
-				GoldDelay = "10">
+				GoldDelay = "1">
 			</Lvl5B>
 		</Gold>
 
