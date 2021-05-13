@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Xml;
-using System.Xml.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveBullet : MonoBehaviour
 {
@@ -31,21 +24,10 @@ public class MoveBullet : MonoBehaviour
 
     public int numSplashFreeze;
 
-    private void Start()
-    {
-        TextAsset xmlAsset = (TextAsset)Resources.Load("config");
-        XmlDocument xmlDoc = new XmlDocument();
-        if (xmlAsset) xmlDoc.LoadXml(xmlAsset.text);
-        foreach (XmlNode Tower in xmlDoc.SelectNodes("root/Tower/" + tipe + "/Lvl" + lvl))
-        {
-            speed = float.Parse(Tower.Attributes.GetNamedItem("SpeedBullet").Value);
-            damageTower = float.Parse(Tower.Attributes.GetNamedItem("Damage").Value);
-            if (Splash)
-            {
-                rangeSplash = int.Parse(Tower.Attributes.GetNamedItem("RangeSplash").Value);
-            }
-        }
-    }
+    public float freezeTime;
+    public float decelerationIn;
+
+
     private void Update()
     {
         if (Splash)
@@ -90,7 +72,7 @@ public class MoveBullet : MonoBehaviour
         }
         if (Splash)
         {
-            if(Freeze)
+            if (Freeze)
             {
                 if (enemyStrong)
                 {
@@ -101,16 +83,16 @@ public class MoveBullet : MonoBehaviour
                     gameObject.GetComponent<SpriteRenderer>().enabled = false;
                     parent = collision.transform;
                     parentPos = parent.position.x;
-                    speed *= 10; 
+                    speed *= 10;
                 }
             }
-            if(enemyPVO && PVO)
+            if (enemyPVO && PVO)
             {
-                if(!enemyPVO)
+                if (!enemyPVO)
                 {
                     Destroy(gameObject);
                 }
-                else if(parent == null)
+                else if (parent == null)
                 {
                     gameObject.GetComponent<SpriteRenderer>().enabled = false;
                     parent = collision.transform;

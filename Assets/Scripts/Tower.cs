@@ -1,7 +1,4 @@
-﻿using System.IO;
-using System.Xml;
-using System.Xml.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Tower : MonoBehaviour
@@ -40,8 +37,7 @@ public class Tower : MonoBehaviour
 
     public int percentOfGold;
 
-    XmlDocument xmlDoc;
-
+    public int debuffHp;
 
     protected void Start()
     {
@@ -149,11 +145,7 @@ public class Tower : MonoBehaviour
     {
         if (collision.tag == "TankBuff")
         {
-            foreach (XmlNode TankBuff in xmlDoc.SelectNodes("root/Tower/Tank/Lvl5B"))
-            {
-                hpTankBuff = int.Parse(TankBuff.Attributes.GetNamedItem("HpTankBuff").Value);
                 _health += hpTankBuff;
-            }
         }
     }
     protected void OnCollisionExit2D(Collision2D collision)

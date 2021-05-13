@@ -1,13 +1,10 @@
 ﻿using UnityEngine;
-using System.Xml.Linq;
-using System.IO;
-using System.Globalization;
-using System.Xml;
 
 public class Enemy : MonoBehaviour
 {
     public float speed;
     public float health;
+    private float _health;
     public float freezeTime;
     public float decelerationIn;
     public int debuffHp;
@@ -31,14 +28,13 @@ public class Enemy : MonoBehaviour
     public string tipe;
     public string lvl;
 
-    
+
     public float fireDamage;
     public float timeFire;
     public float damageRetryTime;
     private float xtime;
 
     private bool Fire;
-    XmlDocument xmlDoc;
 
 
 
@@ -63,46 +59,25 @@ public class Enemy : MonoBehaviour
     }
     private void Start()
     {
-        TextAsset xmlAsset = (TextAsset)Resources.Load("config");
-        xmlDoc = new XmlDocument();
-        if (xmlAsset) xmlDoc.LoadXml(xmlAsset.text);
-        foreach (XmlNode Enemy in xmlDoc.SelectNodes("root/Enemy/" + tipe + "/Lvl" + lvl))
-        {
-            health = float.Parse(Enemy.Attributes.GetNamedItem("Health").Value);
-            speed = float.Parse(Enemy.Attributes.GetNamedItem("Speed").Value);
-            _speed = speed;
-            gold = int.Parse(Enemy.Attributes.GetNamedItem("Gold").Value);
-            if(tipe == "Gold" && lvl == "5B")
-            {
-                percentOfEnemy = int.Parse(Enemy.Attributes.GetNamedItem("PercentOfEnemy").Value);
-            }
-        }
-        foreach (XmlNode Golg in xmlDoc.SelectNodes("root/Tower/Gold/Lvl5B"))
-        {
-                percentOfEnemy = int.Parse(Golg.Attributes.GetNamedItem("PercentOfEnemy").Value);
-        }
-        foreach (XmlNode SpashFire in xmlDoc.SelectNodes("root/Tower/Splash/Lvl5B"))
-        {
-            fireDamage = float.Parse(SpashFire.Attributes.GetNamedItem("FireDamage").Value);
-            timeFire = float.Parse(SpashFire.Attributes.GetNamedItem("TimeFire").Value);
-            damageRetryTime = float.Parse(SpashFire.Attributes.GetNamedItem("DamageRetryTime").Value);
-        }
+        _health = health;
 
+        _speed = speed;
 
-        InvokeRepeating("fire",0, damageRetryTime);
+        InvokeRepeating("fire", 0, damageRetryTime);
     }
     private void Update()
     {
-
         HPBar.SetPosition(1, new Vector3(-0.5f + health / max_health, 0.8f));
         if (debuff && !_debuff)
         {
-            health -= debuffHp;
+            if (debuffHp < health) health -= debuffHp;
+            else health = 1;
             _debuff = true;
         }
         if (!debuff && _debuff)
         {
-            health += debuffHp;
+            if ((health + debuffHp) <= _health) health += debuffHp;
+            else health = _health;
             _debuff = false;
         }
         if (cold && _speed == speed)
@@ -117,27 +92,19 @@ public class Enemy : MonoBehaviour
         }
         if (health <= 0)
         {
-            if (gm.gold5B > 0)
-            {
-                gold = gold + ((gold / 100) * (percentOfEnemy * gm.gold5B));
-                gm.gold += gold;
-            }
-            else
-            {
-                gm.gold += gold;
-            }
-
+            gold = gold + ((gold / 100) * (percentOfEnemy * gm.gold5B));
+            gm.gold += gold;
             Destroy(gameObject);
         }
-        if(Fire)
+        if (Fire)
         {
             if (xtime < Time.time)
             {
                 Fire = false;
-                
+
             }
         }
-        
+
     }
     private void LateUpdate()
     {
@@ -175,33 +142,26 @@ public class Enemy : MonoBehaviour
         bool Splash = collision.gameObject.GetComponent<MoveBullet>().Splash;
         bool SplashFreeze = collision.gameObject.GetComponent<MoveBullet>().SplashFreeze;
         damageTower = collision.gameObject.GetComponent<MoveBullet>().damageTower;
-        
 
 
-            if (collision.tag == "Fire")
-            {
-                Fire = true;
-                xtime = Time.time + timeFire;
-            }
 
-        foreach (XmlNode Tower in xmlDoc.SelectNodes("root/Tower/" + collision.gameObject.GetComponent<MoveBullet>().tipe + "/Lvl" + collision.gameObject.GetComponent<MoveBullet>().lvl))
+        if (collision.tag == "Fire")
         {
-            if (Freeze)
-            {
-                freezeTime = float.Parse(Tower.Attributes.GetNamedItem("FreezeTime").Value);
-                decelerationIn = float.Parse(Tower.Attributes.GetNamedItem("DecelerationIn").Value);
-            }
-            if (collision.tag == "TowerDebuff")
-            {
-                debuffHp = int.Parse(Tower.Attributes.GetNamedItem("DebuffHp").Value);
-            }
+            Fire = true;
+            xtime = Time.time + timeFire;
+        }
+
+        if (Freeze)
+        {
+            freezeTime = collision.gameObject.GetComponent<MoveBullet>().freezeTime;
+            decelerationIn = collision.gameObject.GetComponent<MoveBullet>().decelerationIn;
         }
 
 
 
         if (!Invisible && !Freeze && !enemyPVO && !enemyInvisible)
         {
-            if(!enemyStrong && (Normal || (Splash && !PVO)))  health -= damageTower;
+            if (!enemyStrong && (Normal || (Splash && !PVO))) health -= damageTower;
             else if (Normal && Strong) health -= damageTower;
         }
         if (PVO && enemyPVO && !enemyInvisible)
@@ -209,7 +169,7 @@ public class Enemy : MonoBehaviour
             if (!enemyStrong) health -= damageTower;
             else if (Strong && enemyStrong) health -= damageTower;
         }
-        if(!Invisible && Freeze && !enemyPVO && !enemyInvisible)
+        if (!Invisible && Freeze && !enemyPVO && !enemyInvisible)
         {
             if (!enemyStrong && !SplashFreeze)
             {
@@ -233,6 +193,7 @@ public class Enemy : MonoBehaviour
         }
         if (collision.tag == "TowerDebuff")
         {
+            debuffHp = collision.gameObject.GetComponent<Tower>().debuffHp;
             debuff = true;
         }
     }
@@ -245,7 +206,7 @@ public class Enemy : MonoBehaviour
     }
     private void fire()
     {
-        if(Fire)
+        if (Fire)
         {
             health -= fireDamage;
         }
