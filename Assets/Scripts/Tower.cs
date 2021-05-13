@@ -42,32 +42,10 @@ public class Tower : MonoBehaviour
 
     XmlDocument xmlDoc;
 
+
     protected void Start()
     {
-        TextAsset xmlAsset = (TextAsset)Resources.Load("config");
-        xmlDoc = new XmlDocument();
-        if (xmlAsset) xmlDoc.LoadXml(xmlAsset.text);
-        foreach (XmlNode Tower in xmlDoc.SelectNodes("root/Tower/" + tipe + "/Lvl" + lvl))
-        {
-            health = int.Parse(Tower.Attributes.GetNamedItem("Health").Value);
-            _health = health;
-            price = int.Parse(Tower.Attributes.GetNamedItem("Price").Value);
-            if (PNO || PVO)
-            {
-                range = int.Parse(Tower.Attributes.GetNamedItem("Range").Value);
-                rateOfFire = int.Parse(Tower.Attributes.GetNamedItem("RateOfFire").Value);
-            }
-            if (tipe == "Gold")
-            {
-                goldGet = float.Parse(Tower.Attributes.GetNamedItem("GoldGet").Value);
-                goldDelay = float.Parse(Tower.Attributes.GetNamedItem("GoldDelay").Value);
-                if(lvl == "Lvl5A")
-                {
-                    percentOfGold = int.Parse(Tower.Attributes.GetNamedItem("PercentOfGold").Value);
-                }
-            }
-        }
-
+        _health = health;
 
         if (fullprice <= 0) fullprice = price;
         if (PNO || PVO) InvokeRepeating("criateBullet", 0, rateOfFire);

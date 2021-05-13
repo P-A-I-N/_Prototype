@@ -188,7 +188,7 @@ MonoBehaviour:
   health: 100
   range: 5
   rateOfFire: 3
-  price: 100
+  price: 1000
   fullprice: 0
   bullet: {fileID: 9130870781651923518, guid: 186b689257ac9d048a04d7fa92a5ec5d, type: 3}
   invisibleBullet: {fileID: 5024834314885986411, guid: 846c15015cc4ee4408e6ce831e0f04a7, type: 3}
@@ -206,7 +206,7 @@ MonoBehaviour:
   PVO: 1
   PNO: 1
   tipe: Super
-  lvl: 1
+  lvl: 4
   percentOfGold: 0
 --- !u!50 &-2419302883254468432
 Rigidbody2D:
