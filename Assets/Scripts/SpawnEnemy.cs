@@ -5,13 +5,10 @@ public class SpawnEnemy : MonoBehaviour
 {
     public GameObject[] enemy;
     int numberOfEnemies;
-    //public int randomRangeEnemies;
     int minTimeSpawn = 10;
     int maxTimeSpawn = 10;
-    //float spawnTime; 
     float spawnTimeRND;
     public bool endOfTheWave;
-    //int lvlFat;
     float exit_time;
     public Transform parent;
     private int sum;
@@ -26,6 +23,7 @@ public class SpawnEnemy : MonoBehaviour
     float endWaveTime;
     bool waveIsActive = true;
     public GameObject waveScreen;
+    int[] enemiesCount = new int[5] { 2,2,2,2,2 };
 
     void Start()
     {
@@ -77,16 +75,41 @@ public class SpawnEnemy : MonoBehaviour
         }
         else waveIsActive = true;
         string[] parametrs = wave.Split(' ');
-        numberOfEnemies = Convert.ToInt32 (parametrs[0]);
-        minTimeSpawn = Convert.ToInt32 (parametrs[1]);
-        maxTimeSpawn = Convert.ToInt32 (parametrs[2]);
+        enemiesCount[0] = Convert.ToInt32 (parametrs[0]);
+        enemiesCount[1] = Convert.ToInt32 (parametrs[1]);
+        enemiesCount[2] = Convert.ToInt32 (parametrs[2]);
+        enemiesCount[3] = Convert.ToInt32 (parametrs[3]);
+        enemiesCount[4] = Convert.ToInt32 (parametrs[4]);
+        numberOfEnemies = Convert.ToInt32 (parametrs[5]);
+        minTimeSpawn = Convert.ToInt32 (parametrs[6]);
+        maxTimeSpawn = Convert.ToInt32 (parametrs[7]);
     }
 
     void CreateEnemy()
     {
+        int tryIndex, enemyIndex;
         if (sum < numberOfEnemies)
         {
-            e = Instantiate(enemy[UnityEngine.Random.Range (0, enemy.Length)], transform.position, transform.rotation);
+            //print(enemiesCount[0] + enemiesCount[1] + enemiesCount[2] + enemiesCount[3] + enemiesCount[4]);
+            if (enemiesCount[0] + enemiesCount[1] + enemiesCount[2] + enemiesCount[3] + enemiesCount[4] > 0)
+            {
+                while (true)
+                {
+                    tryIndex = UnityEngine.Random.Range(0, enemy.Length);
+                    if (enemiesCount[tryIndex] > 0)
+                    {
+                        enemyIndex = tryIndex;
+                        enemiesCount[enemyIndex]--;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                waveIsActive = false;
+                return; 
+            }
+            e = Instantiate(enemy[enemyIndex], transform.position, transform.rotation);
             e.transform.SetParent(parent);
             spawnTimeRND = UnityEngine.Random.Range (minTimeSpawn, maxTimeSpawn);
             exit_time = Time.time + spawnTimeRND;
