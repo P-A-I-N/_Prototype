@@ -187,13 +187,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   range: 5
-  rateOfFire: 3
-  price: 100
+  rateOfFire: 1
+  price: 10
   fullprice: 0
   bullet: {fileID: 4638881505785862822, guid: cb27013a777e18f45955395803026ee3, type: 3}
   invisibleBullet: {fileID: 6303204925174716766, guid: ff00e47123f20964fa6ef07409279639, type: 3}
   levelUp: {fileID: 0}
   nameTower: {fileID: 7738167142773398050}
+  hpTankBuff: 1000
+  _health: 0
+  damageEnemy: 0
   lvl4: 1
   lvl5a: {fileID: 6250856000326230027, guid: 37e964a597bdd6e409d7108c292cfa97, type: 3}
   lvl5b: {fileID: 6250856000326230027, guid: 6ffaa69d6055a3442ac59df6455ed8d3, type: 3}
@@ -203,7 +206,9 @@ MonoBehaviour:
   PVO: 0
   PNO: 1
   tipe: Splash
-  lvl: 1
+  lvl: 4
+  percentOfGold: 0
+  debuffHp: 0
 --- !u!50 &-5802597313739096109
 Rigidbody2D:
   serializedVersion: 4
