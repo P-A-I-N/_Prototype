@@ -3,7 +3,7 @@
 	<Tower>
 		<Normal>
 			<Lvl1
-				Health = "10000"
+				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
 				Price = "10"
@@ -15,8 +15,8 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				Price = "20"
+				Damage = "2"
 				SpeedBullet = "5">
 			</Lvl2>
 
@@ -24,8 +24,8 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				Price = "50"
+				Damage = "5"
 				SpeedBullet = "5">
 			</Lvl3>
 
@@ -33,8 +33,8 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				Price = "100"
+				Damage = "10"
 				SpeedBullet = "5">
 			</Lvl4>
 
@@ -42,17 +42,17 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				Price = "200"
+				Damage = "10"
 				SpeedBullet = "5">
 			</Lvl5A>
 
 			<Lvl5B
 				Health = "100"
-				Range = "5"
+				Range = "15"
 				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				Price = "200"
+				Damage = "10"
 				SpeedBullet = "5">
 			</Lvl5B>
 		</Normal>
@@ -73,10 +73,10 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
+				Price = "20"
 				Damage = "1"
-				FreezeTime = "1"
-				DecelerationIn = "2"
+				FreezeTime = "2"
+				DecelerationIn = "4"
 				SpeedBullet = "5">
 			</Lvl2>
 
@@ -84,10 +84,10 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
+				Price = "50"
 				Damage = "1"
-				FreezeTime = "1"
-				DecelerationIn = "2"
+				FreezeTime = "3"
+				DecelerationIn = "6"
 				SpeedBullet = "5">
 			</Lvl3>
 
@@ -95,21 +95,21 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
+				Price = "100"
 				Damage = "1"
-				FreezeTime = "1"
-				DecelerationIn = "2"
+				FreezeTime = "4"
+				DecelerationIn = "8"
 				SpeedBullet = "5">
 			</Lvl4>
 
 			<Lvl5A
 				Health = "100"
-				Range = "5"
+				Range = "20"
 				RateOfFire = "3"
-				Price = "10"
+				Price = "200"
 				Damage = "1"
-				FreezeTime = "1"
-				DecelerationIn = "2"
+				FreezeTime = "5"
+				DecelerationIn = "10"
 				SpeedBullet = "5">
 			</Lvl5A>
 
@@ -117,10 +117,10 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
+				Price = "200"
 				Damage = "1"
-				FreezeTime = "1"
-				DecelerationIn = "2"
+				FreezeTime = "5"
+				DecelerationIn = "10"
 				RangeSplash = "4"
 				SpeedBullet = "5">
 			</Lvl5B>
@@ -129,70 +129,70 @@
 		<Buff>
 			<Lvl1
 				Health = "100"
-				Price = "10">
+				Price = "100">
 			</Lvl1>
 
 			<Lvl2
 				Health = "100"
-				Price = "10">
+				Price = "200">
 			</Lvl2>
 
 			<Lvl3
 				Health = "100"
-				Price = "10">
+				Price = "500">
 			</Lvl3>
 
 			<Lvl4
 				Health = "100"
-				Price = "10">
+				Price = "1000">
 			</Lvl4>
 
 			<Lvl5A
 				Health = "100"
-				Price = "10">
+				Price = "2000">
 			</Lvl5A>
 
 			<Lvl5B
 				Health = "100"
-				Price = "10">
+				Price = "2000">
 			</Lvl5B>
 		</Buff>
 
 		<Debuff>
 			<Lvl1
 				Health = "100"
-				Price = "10"
+				Price = "100"
 				DebuffHp = "3">
 			</Lvl1>
 
 			<Lvl2
 				Health = "100"
-				Price = "10"
-				DebuffHp = "3">
+				Price = "200"
+				DebuffHp = "10">
 			</Lvl2>
 
 			<Lvl3
 				Health = "100"
-				Price = "10"
-				DebuffHp = "3">
+				Price = "500"
+				DebuffHp = "50">
 			</Lvl3>
 
 			<Lvl4
 				Health = "100"
-				Price = "10"
-				DebuffHp = "3">
+				Price = "1000"
+				DebuffHp = "200">
 			</Lvl4>
 
 			<Lvl5A
 				Health = "100"
-				Price = "10"
-				DebuffHp = "3">
+				Price = "2000"
+				DebuffHp = "500">
 			</Lvl5A>
 
 			<Lvl5B
 				Health = "100"
-				Price = "10"
-				DebuffHp = "3">
+				Price = "2000"
+				DebuffHp = "1000">
 			</Lvl5B>
 		</Debuff>
 
@@ -201,53 +201,54 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				Price = "1000"
+				Damage = "500"
 				SpeedBullet = "5">
 			</Lvl1>
 
 			<Lvl2
 				Health = "100"
 				Range = "5"
-				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				RateOfFire = "10"
+				Price = "2000"
+				Damage = "500"
 				SpeedBullet = "5">
 			</Lvl2>
 
 			<Lvl3
 				Health = "100"
 				Range = "5"
-				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				RateOfFire = "10"
+				Price = "5000"
+				Damage = "2000"
 				SpeedBullet = "5">
 			</Lvl3>
 
 			<Lvl4
 				Health = "100"
-				Range = "5"
-				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				Range = "20"
+				RateOfFire = "10"
+				Price = "10000"
+				Damage = "2000"
 				SpeedBullet = "5">
 			</Lvl4>
 
 			<Lvl5A
 				Health = "100"
-				Range = "5"
-				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				Range = "20"
+				RateOfFire = "10"
+				Price = "100000"
+				RangeSplash = "4"
+				Damage = "20000"
 				SpeedBullet = "5">
 			</Lvl5A>
 
 			<Lvl5B
-				Health = "100"
-				Range = "5"
-				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				Health = "10000"
+				Range = "20"
+				RateOfFire = "100"
+				Price = "50000"
+				Damage = "2000"
 				SpeedBullet = "5">
 			</Lvl5B>
 		</Super>
@@ -256,9 +257,9 @@
 			<Lvl1
 				Health = "100"
 				Range = "5"
-				RateOfFire = "3"
+				RateOfFire = "1"
 				Price = "10"
-				Damage = "1"
+				Damage = "3"
 				RangeSplash = "4"
 				SpeedBullet = "5">
 			</Lvl1>
@@ -266,9 +267,9 @@
 			<Lvl2
 				Health = "100"
 				Range = "5"
-				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				RateOfFire = "1"
+				Price = "20"
+				Damage = "6"
 				RangeSplash = "4"
 				SpeedBullet = "5">
 			</Lvl2>
@@ -277,8 +278,8 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				Price = "50"
+				Damage = "6"
 				RangeSplash = "4"
 				SpeedBullet = "5">
 			</Lvl3>
@@ -287,9 +288,9 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
-				RangeSplash = "4"
+				Price = "100"
+				Damage = "6"
+				RangeSplash = "10"
 				SpeedBullet = "5">
 			</Lvl4>
 
@@ -297,9 +298,9 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
-				RangeSplash = "4"
+				Price = "200"
+				Damage = "30"
+				RangeSplash = "10"
 				SpeedBullet = "5">
 			</Lvl5A>
 
@@ -307,57 +308,57 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
-				RangeSplash = "4"
+				Price = "200"
+				Damage = "6"
+				RangeSplash = "10"
 				SpeedBullet = "5"
-				FireDamage = "1"
-				TimeFire = "1"
-				DamageRetryTime = "1">
+				FireDamage = "10"
+				TimeFire = "2"
+				DamageRetryTime = "2">
 			</Lvl5B>
 		</Splash>
 
 		<Gold>
 			<Lvl1
 				Health = "100"
-				Price = "10"
+				Price = "100"
 				GoldGet = "1"
 				GoldDelay = "1">
 			</Lvl1>
 
 			<Lvl2
 				Health = "100"
-				Price = "10"
-				GoldGet = "10"
+				Price = "200"
+				GoldGet = "2"
 				GoldDelay = "1">
 			</Lvl2>
 
 			<Lvl3
 				Health = "100"
-				Price = "10"
-				GoldGet = "1"
-				GoldDelay = "10">
+				Price = "500"
+				GoldGet = "5"
+				GoldDelay = "1">
 			</Lvl3>
 
 			<Lvl4
 				Health = "100"
-				Price = "10"
-				GoldGet = "1"
+				Price = "1000"
+				GoldGet = "10"
 				GoldDelay = "1">
 			</Lvl4>
 
 			<Lvl5A
 				Health = "100"
-				Price = "10"
-				GoldGet = "1"
+				Price = "10000"
+				GoldGet = "10"
 				PercentOfGold ="10"
 				GoldDelay = "1">
 			</Lvl5A>
 
 			<Lvl5B
 				Health = "100"
-				Price = "10"
-				GoldGet = "1"
+				Price = "5000"
+				GoldGet = "10"
 				PercentOfEnemy ="10"
 				GoldDelay = "1">
 			</Lvl5B>
@@ -369,7 +370,7 @@
 				Range = "5"
 				RateOfFire = "3"
 				Price = "10"
-				Damage = "1"
+				Damage = "2"
 				SpeedBullet = "5">
 			</Lvl1>
 
@@ -377,17 +378,17 @@
 				Health = "100"
 				Range = "5"
 				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				Price = "20"
+				Damage = "5"
 				SpeedBullet = "5">
 			</Lvl2>
 
 			<Lvl3
 				Health = "100"
 				Range = "5"
-				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				RateOfFire = "7"
+				Price = "50"
+				Damage = "5"
 				RangeSplash = "4"
 				SpeedBullet = "5">
 			</Lvl3>
@@ -395,62 +396,62 @@
 			<Lvl4
 				Health = "100"
 				Range = "5"
-				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				RateOfFire = "15"
+				Price = "100"
+				Damage = "5"
 				SpeedBullet = "5">
 			</Lvl4>
 
 			<Lvl5A
 				Health = "100"
 				Range = "5"
-				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
+				RateOfFire = "15"
+				Price = "200"
+				Damage = "5"
 				RangeSplash = "4"
 				SpeedBullet = "5">
 			</Lvl5A>
 
 			<Lvl5B
 				Health = "100"
-				Range = "5"
-				RateOfFire = "3"
-				Price = "10"
-				Damage = "1"
-				SpeedBullet = "5">
+				Range = "20"
+				RateOfFire = "15"
+				Price = "200"
+				Damage = "10"
+				SpeedBullet = "10">
 			</Lvl5B>
 		</PVO>
 
 		<Tank>
 			<Lvl1
-				Health = "10000"
+				Health = "500"
 				Price = "10">
 			</Lvl1>
 
 			<Lvl2
-				Health = "100"
-				Price = "10">
+				Health = "1000"
+				Price = "20">
 			</Lvl2>
 
 			<Lvl3
-				Health = "100"
-				Price = "10">
+				Health = "5000"
+				Price = "50">
 			</Lvl3>
 
 			<Lvl4
-				Health = "100"
-				Price = "10">
+				Health = "10000"
+				Price = "100">
 			</Lvl4>
 
 			<Lvl5A
-				Health = "100"
-				Price = "10">
+				Health = "50000"
+				Price = "500">
 			</Lvl5A>
 
 			<Lvl5B
-				Health = "100"
-				Price = "10"
-				HpTankBuff ="10">
+				Health = "10000"
+				Price = "1000"
+				HpTankBuff ="1000">
 			</Lvl5B>
 		</Tank>
 	</Tower>
