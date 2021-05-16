@@ -173,8 +173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  range: 5
-  rateOfFire: 3
   price: 10
   fullprice: 0
   bullet: {fileID: 8275965266506968804, guid: 86fa3d0fe1f927547858e7d1fed0f0a2, type: 3}
@@ -184,6 +182,11 @@ MonoBehaviour:
   hpTankBuff: 0
   _health: 0
   damageEnemy: 0
+  invisible: 0
+  strongBuff: 0
+  range: 5
+  rateOfFire: 3
+  damageTower: 0
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
@@ -195,6 +198,12 @@ MonoBehaviour:
   tipe: Normal
   lvl: 1
   percentOfGold: 0
+  debuffHp: 0
+  multiplyRange: 5
+  multiplyRangeLvl5: 25
+  multiplyDamage: 10
+  multiplySpeedBullet: 7
+  parent: {fileID: 0}
 --- !u!50 &-9121172158504004063
 Rigidbody2D:
   serializedVersion: 4

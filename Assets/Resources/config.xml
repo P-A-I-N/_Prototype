@@ -8,8 +8,15 @@
 				RateOfFire = "3"
 				Price = "10"
 				Damage = "1"
-				SpeedBullet = "5">
-			</Lvl1>
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
+			</Lvl1> 
 
 			<Lvl2
 				Health = "100"
@@ -17,7 +24,14 @@
 				RateOfFire = "3"
 				Price = "20"
 				Damage = "2"
-				SpeedBullet = "5">
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
 			</Lvl2>
 
 			<Lvl3
@@ -26,7 +40,14 @@
 				RateOfFire = "3"
 				Price = "50"
 				Damage = "5"
-				SpeedBullet = "5">
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
 			</Lvl3>
 
 			<Lvl4
@@ -35,7 +56,14 @@
 				RateOfFire = "3"
 				Price = "100"
 				Damage = "10"
-				SpeedBullet = "5">
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
 			</Lvl4>
 
 			<Lvl5A
@@ -44,7 +72,14 @@
 				RateOfFire = "3"
 				Price = "200"
 				Damage = "10"
-				SpeedBullet = "5">
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "true"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "true"
+				Splash = "false"
+				Fire = "false">
 			</Lvl5A>
 
 			<Lvl5B
@@ -53,7 +88,14 @@
 				RateOfFire = "3"
 				Price = "200"
 				Damage = "10"
-				SpeedBullet = "5">
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
 			</Lvl5B>
 		</Normal>
 
@@ -66,7 +108,14 @@
 				Damage = "1"
 				FreezeTime = "1"
 				DecelerationIn = "2"
-				SpeedBullet = "5">
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "true"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
 			</Lvl1>
 
 			<Lvl2
@@ -77,7 +126,14 @@
 				Damage = "1"
 				FreezeTime = "2"
 				DecelerationIn = "4"
-				SpeedBullet = "5">
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "true"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
 			</Lvl2>
 
 			<Lvl3
@@ -88,7 +144,14 @@
 				Damage = "1"
 				FreezeTime = "3"
 				DecelerationIn = "6"
-				SpeedBullet = "5">
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "true"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
 			</Lvl3>
 
 			<Lvl4
@@ -99,7 +162,14 @@
 				Damage = "1"
 				FreezeTime = "4"
 				DecelerationIn = "8"
-				SpeedBullet = "5">
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "true"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
 			</Lvl4>
 
 			<Lvl5A
@@ -110,7 +180,14 @@
 				Damage = "1"
 				FreezeTime = "5"
 				DecelerationIn = "10"
-				SpeedBullet = "5">
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "true"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
 			</Lvl5A>
 
 			<Lvl5B
@@ -122,9 +199,322 @@
 				FreezeTime = "5"
 				DecelerationIn = "10"
 				RangeSplash = "4"
-				SpeedBullet = "5">
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "true"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "true"
+				Fire = "false">
 			</Lvl5B>
 		</Freeze>
+
+		<Super>
+			<Lvl1
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "1000"
+				Damage = "500"
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
+			</Lvl1>
+
+			<Lvl2
+				Health = "100"
+				Range = "5"
+				RateOfFire = "10"
+				Price = "2000"
+				Damage = "500"
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "true"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
+			</Lvl2>
+
+			<Lvl3
+				Health = "100"
+				Range = "5"
+				RateOfFire = "10"
+				Price = "5000"
+				Damage = "2000"
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "true"
+				PVOEnemy = "false"
+				Splash = "false"
+				Fire = "false">
+			</Lvl3>
+
+			<Lvl4
+				Health = "100"
+				Range = "20"
+				RateOfFire = "10"
+				Price = "10000"
+				Damage = "2000"
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "true"
+				Freeze = "false"
+				Strong = "true"
+				PVOEnemy = "true"
+				Splash = "false"
+				Fire = "false">
+			</Lvl4>
+
+			<Lvl5A
+				Health = "100"
+				Range = "20"
+				RateOfFire = "10"
+				Price = "100000"
+				RangeSplash = "4"
+				Damage = "20000"
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "true"
+				Freeze = "false"
+				Strong = "true"
+				PVOEnemy = "true"
+				Splash = "false"
+				Fire = "false">
+			</Lvl5A>
+
+			<Lvl5B
+				Health = "10000"
+				Range = "20"
+				RateOfFire = "100"
+				Price = "50000"
+				Damage = "2000"
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "true"
+				Freeze = "false"
+				Strong = "true"
+				PVOEnemy = "true"
+				Splash = "false"
+				Fire = "false">
+			</Lvl5B>
+		</Super>
+
+		<Splash>
+			<Lvl1
+				Health = "100"
+				Range = "5"
+				RateOfFire = "1"
+				Price = "10"
+				Damage = "3"
+				RangeSplash = "4"
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "true"
+				Fire = "false">
+			</Lvl1>
+
+			<Lvl2
+				Health = "100"
+				Range = "5"
+				RateOfFire = "1"
+				Price = "20"
+				Damage = "6"
+				RangeSplash = "4"
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "true"
+				Fire = "false">
+			</Lvl2>
+
+			<Lvl3
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "50"
+				Damage = "6"
+				RangeSplash = "4"
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "true"
+				Fire = "false">
+			</Lvl3>
+
+			<Lvl4
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "100"
+				Damage = "6"
+				RangeSplash = "10"
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "true"
+				Fire = "false">
+			</Lvl4>
+
+			<Lvl5A
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "200"
+				Damage = "30"
+				RangeSplash = "10"
+				SpeedBullet = "5"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "true"
+				Fire = "false">
+			</Lvl5A>
+
+			<Lvl5B
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "200"
+				Damage = "6"
+				RangeSplash = "10"
+				SpeedBullet = "5"
+				FireDamage = "10"
+				TimeFire = "2"
+				DamageRetryTime = "2"
+				PNO = "true"
+				PVO = "false"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "false"
+				Splash = "true"
+				Fire = "true">
+			</Lvl5B>
+		</Splash>
+
+		<PVO>
+			<Lvl1
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "10"
+				Damage = "2"
+				SpeedBullet = "5"
+				PNO = "false"
+				PVO = "true"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "true"
+				Splash = "false"
+				Fire = "false">
+			</Lvl1>
+
+			<Lvl2
+				Health = "100"
+				Range = "5"
+				RateOfFire = "3"
+				Price = "20"
+				Damage = "5"
+				SpeedBullet = "5"
+				PNO = "false"
+				PVO = "true"
+				Freeze = "false"
+				Strong = "false"
+				PVOEnemy = "true"
+				Splash = "false"
+				Fire = "false">
+			</Lvl2>
+
+			<Lvl3
+				Health = "100"
+				Range = "5"
+				RateOfFire = "7"
+				Price = "50"
+				Damage = "5"
+				RangeSplash = "4"
+				SpeedBullet = "5"
+				PNO = "false"
+				PVO = "true"
+				Freeze = "false"
+				Strong = "true"
+				PVOEnemy = "true"
+				Splash = "false"
+				Fire = "false">
+			</Lvl3>
+
+			<Lvl4
+				Health = "100"
+				Range = "5"
+				RateOfFire = "15"
+				Price = "100"
+				Damage = "5"
+				SpeedBullet = "5"
+				PNO = "false"
+				PVO = "true"
+				Freeze = "false"
+				Strong = "true"
+				PVOEnemy = "true"
+				Splash = "false"
+				Fire = "false">
+			</Lvl4>
+
+			<Lvl5A
+				Health = "100"
+				Range = "5"
+				RateOfFire = "15"
+				Price = "200"
+				Damage = "5"
+				RangeSplash = "4"
+				SpeedBullet = "5"
+				PNO = "false"
+				PVO = "true"
+				Freeze = "false"
+				Strong = "true"
+				PVOEnemy = "true"
+				Splash = "true"
+				Fire = "false">
+			</Lvl5A>
+
+			<Lvl5B
+				Health = "100"
+				Range = "20"
+				RateOfFire = "15"
+				Price = "200"
+				Damage = "10"
+				SpeedBullet = "10"
+				PNO = "false"
+				PVO = "true"
+				Freeze = "false"
+				Strong = "true"
+				PVOEnemy = "true"
+				Splash = "false"
+				Fire = "false">
+			</Lvl5B>
+		</PVO>
 
 		<Buff>
 			<Lvl1
@@ -134,27 +524,44 @@
 
 			<Lvl2
 				Health = "100"
-				Price = "200">
+				Price = "200"
+				MultiplyRange = "2">
 			</Lvl2>
 
 			<Lvl3
 				Health = "100"
-				Price = "500">
+				Price = "500"
+				Invisible = "true"
+				MultiplyRange = "3"
+				MultiplyDamage = "3">
 			</Lvl3>
 
 			<Lvl4
 				Health = "100"
-				Price = "1000">
+				Price = "1000"
+				Invisible = "true"
+				MultiplyRange = "4"
+				MultiplyDamage = "4"
+				Strong = "true">
 			</Lvl4>
 
 			<Lvl5A
 				Health = "100"
-				Price = "2000">
+				Price = "2000"
+				Invisible = "true"
+				MultiplyRange = "5"
+				MultiplyDamage = "5"
+				Strong = "true"
+				MultiplySpeed = "5">
 			</Lvl5A>
 
 			<Lvl5B
 				Health = "100"
-				Price = "2000">
+				Price = "2000"
+				Invisible = "true"
+				MultiplyRange = "6"
+				MultiplyDamage = "6"
+				Strong = "true">
 			</Lvl5B>
 		</Buff>
 
@@ -195,128 +602,6 @@
 				DebuffHp = "1000">
 			</Lvl5B>
 		</Debuff>
-
-		<Super>
-			<Lvl1
-				Health = "100"
-				Range = "5"
-				RateOfFire = "3"
-				Price = "1000"
-				Damage = "500"
-				SpeedBullet = "5">
-			</Lvl1>
-
-			<Lvl2
-				Health = "100"
-				Range = "5"
-				RateOfFire = "10"
-				Price = "2000"
-				Damage = "500"
-				SpeedBullet = "5">
-			</Lvl2>
-
-			<Lvl3
-				Health = "100"
-				Range = "5"
-				RateOfFire = "10"
-				Price = "5000"
-				Damage = "2000"
-				SpeedBullet = "5">
-			</Lvl3>
-
-			<Lvl4
-				Health = "100"
-				Range = "20"
-				RateOfFire = "10"
-				Price = "10000"
-				Damage = "2000"
-				SpeedBullet = "5">
-			</Lvl4>
-
-			<Lvl5A
-				Health = "100"
-				Range = "20"
-				RateOfFire = "10"
-				Price = "100000"
-				RangeSplash = "4"
-				Damage = "20000"
-				SpeedBullet = "5">
-			</Lvl5A>
-
-			<Lvl5B
-				Health = "10000"
-				Range = "20"
-				RateOfFire = "100"
-				Price = "50000"
-				Damage = "2000"
-				SpeedBullet = "5">
-			</Lvl5B>
-		</Super>
-
-		<Splash>
-			<Lvl1
-				Health = "100"
-				Range = "5"
-				RateOfFire = "1"
-				Price = "10"
-				Damage = "3"
-				RangeSplash = "4"
-				SpeedBullet = "5">
-			</Lvl1>
-
-			<Lvl2
-				Health = "100"
-				Range = "5"
-				RateOfFire = "1"
-				Price = "20"
-				Damage = "6"
-				RangeSplash = "4"
-				SpeedBullet = "5">
-			</Lvl2>
-
-			<Lvl3
-				Health = "100"
-				Range = "5"
-				RateOfFire = "3"
-				Price = "50"
-				Damage = "6"
-				RangeSplash = "4"
-				SpeedBullet = "5">
-			</Lvl3>
-
-			<Lvl4
-				Health = "100"
-				Range = "5"
-				RateOfFire = "3"
-				Price = "100"
-				Damage = "6"
-				RangeSplash = "10"
-				SpeedBullet = "5">
-			</Lvl4>
-
-			<Lvl5A
-				Health = "100"
-				Range = "5"
-				RateOfFire = "3"
-				Price = "200"
-				Damage = "30"
-				RangeSplash = "10"
-				SpeedBullet = "5">
-			</Lvl5A>
-
-			<Lvl5B
-				Health = "100"
-				Range = "5"
-				RateOfFire = "3"
-				Price = "200"
-				Damage = "6"
-				RangeSplash = "10"
-				SpeedBullet = "5"
-				FireDamage = "10"
-				TimeFire = "2"
-				DamageRetryTime = "2">
-			</Lvl5B>
-		</Splash>
 
 		<Gold>
 			<Lvl1
@@ -363,64 +648,6 @@
 				GoldDelay = "1">
 			</Lvl5B>
 		</Gold>
-
-		<PVO>
-			<Lvl1
-				Health = "100"
-				Range = "5"
-				RateOfFire = "3"
-				Price = "10"
-				Damage = "2"
-				SpeedBullet = "5">
-			</Lvl1>
-
-			<Lvl2
-				Health = "100"
-				Range = "5"
-				RateOfFire = "3"
-				Price = "20"
-				Damage = "5"
-				SpeedBullet = "5">
-			</Lvl2>
-
-			<Lvl3
-				Health = "100"
-				Range = "5"
-				RateOfFire = "7"
-				Price = "50"
-				Damage = "5"
-				RangeSplash = "4"
-				SpeedBullet = "5">
-			</Lvl3>
-
-			<Lvl4
-				Health = "100"
-				Range = "5"
-				RateOfFire = "15"
-				Price = "100"
-				Damage = "5"
-				SpeedBullet = "5">
-			</Lvl4>
-
-			<Lvl5A
-				Health = "100"
-				Range = "5"
-				RateOfFire = "15"
-				Price = "200"
-				Damage = "5"
-				RangeSplash = "4"
-				SpeedBullet = "5">
-			</Lvl5A>
-
-			<Lvl5B
-				Health = "100"
-				Range = "20"
-				RateOfFire = "15"
-				Price = "200"
-				Damage = "10"
-				SpeedBullet = "10">
-			</Lvl5B>
-		</PVO>
 
 		<Tank>
 			<Lvl1

@@ -4,8 +4,6 @@ using UnityEngine.UI;
 public class Tower : MonoBehaviour
 {
     public int health;
-    public int range;
-    public int rateOfFire;
     public int price;
     public int fullprice;
     public GameObject bullet;
@@ -13,12 +11,20 @@ public class Tower : MonoBehaviour
     public GameObject levelUp;
     public Text nameTower;
     private LayerMask layerMask;
-    private bool invisible;
     public int hpTankBuff;
     public float _health;
     private bool damage;
     private bool target;
     public float damageEnemy = 0;
+
+
+    public bool invisible;
+    public bool strongBuff;
+    public int range;
+    public int rateOfFire;
+    public float damageTower;
+
+    private int _range;
 
     public bool lvl4;
     public GameObject lvl5a;
@@ -39,9 +45,24 @@ public class Tower : MonoBehaviour
 
     public int debuffHp;
 
+    public int multiplyRange;
+    public int multiplyRangeLvl5;
+    public float multiplyDamage;
+    public int multiplySpeed;
+    public Transform parent;
+
+    int B1;
+    int B2;
+    int B3;
+    int B4;
+    int B5A;
+    int B5B;
     protected void Start()
     {
+        parent = gameObject.transform;
         _health = health;
+
+        _range = range;
 
         if (fullprice <= 0) fullprice = price;
         if (PNO || PVO) InvokeRepeating("criateBullet", 0, rateOfFire);
@@ -120,6 +141,7 @@ public class Tower : MonoBehaviour
             else target = false;
         }
     }
+
     protected void LateUpdate()
     {
         if (damage)
@@ -141,45 +163,124 @@ public class Tower : MonoBehaviour
         damageEnemy += collision.gameObject.GetComponent<Enemy>().damageEnemy;
         damage = true;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "TankBuff")
-        {
-                _health += hpTankBuff;
-        }
-    }
     protected void OnCollisionExit2D(Collision2D collision)
     {
         damageEnemy -= collision.gameObject.GetComponent<Enemy>().damageEnemy;
         if (damageEnemy <= 0) damage = false;
     }
-    protected void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "TowerBuff")
+        if (collision.tag == "TankBuff")
+        {
+            _health += hpTankBuff;
+        }
+        if (collision.tag == "Buff 1")
         {
             invisible = true;
+            B1++;
+        }
+        if (collision.tag == "Buff 2")
+        {
+            if (B2 + B3 + B4 + B5B + B5A == 0) range += multiplyRange;
+            invisible = true;
+            B2++;
+        }
+        if (collision.tag == "Buff 3")
+        {
+            if (B2 + B3 + B4 + B5B + B5A == 0) range += multiplyRange;
+            if (B3 + B4 + B5B + B5A == 0) damageTower += multiplyDamage;
+            invisible = true;
+            B3++;
+        }
+        if (collision.tag == "Buff 4")
+        {
+            if (B2 + B3 + B4 + B5B + B5A == 0) range += multiplyRange;
+            if (B3 + B4 + B5B + B5A == 0) damageTower += multiplyDamage;
+            if (B4 + B5B + B5A == 0) strongBuff = true;
+            invisible = true;
+            B4++;
+        }
+        if (collision.tag == "Buff 5A")
+        {
+            if (B2 + B3 + B4 + B5B + B5A == 0) range += multiplyRange;
+            if (B3 + B4 + B5B + B5A == 0) damageTower += multiplyDamage;
+            if (B4 + B5B + B5A == 0) strongBuff = true;
+            if (B5A == 0) rateOfFire += multiplySpeed;
+            invisible = true;
+            strongBuff = true;
+            B5A++;
+        }
+        if (collision.tag == "Buff 5B")
+        {
+            if (B3 + B4 + B5B + B5A == 0) damageTower += multiplyDamage;
+            if (B4 + B5B + B5A == 0) strongBuff = true;
+            if (B5B == 0 && range == _range + multiplyRange) range = range + multiplyRangeLvl5 - multiplyRange;
+            else if (B5B == 0) range = range + multiplyRangeLvl5;
+            invisible = true;
+            strongBuff = true;
+            B5B++;
         }
     }
     protected void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "TowerBuff")
-        {
-            invisible = false;
-        }
         if (collision.tag == "TankBuff")
         {
-            if (_health >= hpTankBuff) _health -= hpTankBuff;
+            if (_health > hpTankBuff) _health -= hpTankBuff;
+        }
+        if (collision.tag == "Buff 1")
+        {
+            B1--;
+            if (B1 + B2 + B3 + B4 + B5A + B5B == 0) invisible = false;
+        }
+        if (collision.tag == "Buff 2")
+        {
+            B2--;
+            if (B1 + B2 + B3 + B4 + B5A + B5B == 0) invisible = false;
+            if (B2 + B3 + B4 + B5B + B5A == 0) range -= multiplyRange;
+        }
+        if (collision.tag == "Buff 3")
+        {
+            B3--;
+            if (B1 + B2 + B3 + B4 + B5A + B5B == 0) invisible = false;
+            if (B2 + B3 + B4 + B5B + B5A == 0) range -= multiplyRange;
+            if (B3 + B4 + B5B + B5A == 0) damageTower -= multiplyDamage;
+        }
+        if (collision.tag == "Buff 4")
+        {
+            B4--;
+            if (B1 + B2 + B3 + B4 + B5A + B5B == 0) invisible = false;
+            if (B2 + B3 + B4 + B5B + B5A == 0) range -= multiplyRange;
+            if (B3 + B4 + B5B + B5A == 0) damageTower -= multiplyDamage;
+            if (B4 + B5B + B5A == 0) strongBuff = false;
+        }
+        if (collision.tag == "Buff 5A")
+        {
+            B5A--;
+            if (B1 + B2 + B3 + B4 + B5A + B5B == 0) invisible = false;
+            if (B2 + B3 + B4 + B5B + B5A == 0) range -= multiplyRange;
+            if (B3 + B4 + B5B + B5A == 0) damageTower -= multiplyDamage;
+            if (B4 + B5B + B5A == 0) strongBuff = false;
+            if (B5A == 0) rateOfFire -= multiplySpeed;
+        }
+        if (collision.tag == "Buff 5B")
+        {
+            B5B--;
+            if (B1 + B2 + B3 + B4 + B5A + B5B == 0) invisible = false;
+            if (B3 + B4 + B5B + B5A == 0) damageTower -= multiplyDamage;
+            if (B4 + B5B + B5A == 0) strongBuff = false;
+            if (B5B == 0 && B2 + B3 + B4 + B5A > 0) range = range - multiplyRangeLvl5 + multiplyRange;
+            else if (B2 + B3 + B4 + B5A + B5B == 0) range -= multiplyRangeLvl5;
         }
     }
     protected void criateBullet()
     {
         if (target && !invisible)
         {
-            Instantiate(bullet, transform.position, bullet.transform.rotation);
+            Instantiate(bullet, transform.position, bullet.transform.rotation, parent);
         }
         if (target && invisible)
         {
-            Instantiate(invisibleBullet, transform.position, bullet.transform.rotation);
+            Instantiate(invisibleBullet, transform.position, bullet.transform.rotation, parent);
         }
     }
 

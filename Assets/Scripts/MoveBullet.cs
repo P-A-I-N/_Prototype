@@ -28,6 +28,10 @@ public class MoveBullet : MonoBehaviour
     public float decelerationIn;
 
 
+    private void Start()
+    {
+        damageTower += GetComponentInParent<Tower>().damageTower;
+    }
     private void Update()
     {
         if (Splash)

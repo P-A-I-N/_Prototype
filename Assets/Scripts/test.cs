@@ -6,7 +6,7 @@ using UnityEngine;
 public class test : MonoBehaviour
 {
     public GameObject[] tower;
-    public GameObject[] bullet; 
+    public GameObject[] bullet;
     public GameObject[] enemy;
     public string[] tipe;
     public string[] tipeEnemy;
@@ -29,6 +29,25 @@ public class test : MonoBehaviour
             {
                 for (int e = 0; e < lvl.Length; e++)
                 {
+                    foreach (XmlNode TankBuff in xmlDoc.SelectNodes("root/Tower/Buff/Lvl" + lvl[e]))
+                    {
+                        if (lvl[e] == "2")
+                        {
+                            tower[i].GetComponent<Tower>().multiplyRange = int.Parse(TankBuff.Attributes.GetNamedItem("MultiplyRange").Value);
+                        }
+                        if (lvl[e] == "3")
+                        {
+                            tower[i].GetComponent<Tower>().multiplyDamage = int.Parse(TankBuff.Attributes.GetNamedItem("MultiplyDamage").Value);
+                        }
+                        if (lvl[e] == "5A")
+                        {
+                            tower[i].GetComponent<Tower>().multiplySpeed = int.Parse(TankBuff.Attributes.GetNamedItem("MultiplySpeed").Value);
+                        }
+                        if (lvl[e] == "5B")
+                        {
+                            tower[i].GetComponent<Tower>().multiplyRangeLvl5 = int.Parse(TankBuff.Attributes.GetNamedItem("MultiplyRange").Value);
+                        }
+                    }
                     foreach (XmlNode Tower in xmlDoc.SelectNodes("root/Tower/" + tipe[k] + "/Lvl" + lvl[e]))
                     {
                         if (tower[i].GetComponent<Tower>().tipe == tipe[k] && tower[i].GetComponent<Tower>().lvl == lvl[e])
@@ -59,6 +78,14 @@ public class test : MonoBehaviour
                             {
                                 tower[i].GetComponent<Tower>().debuffHp = int.Parse(Tower.Attributes.GetNamedItem("DebuffHp").Value);
                             }
+                            if (Tower.Attributes.GetNamedItem("PVO") != null)
+                            {
+                                tower[i].GetComponent<Tower>().PVO = bool.Parse(Tower.Attributes.GetNamedItem("PVO").Value);
+                            }
+                            if (Tower.Attributes.GetNamedItem("PNO") != null)
+                            {
+                                tower[i].GetComponent<Tower>().PNO = bool.Parse(Tower.Attributes.GetNamedItem("PNO").Value);
+                            }
                         }
                     }
                 }
@@ -87,6 +114,26 @@ public class test : MonoBehaviour
                             if (MoveBullet.Attributes.GetNamedItem("DecelerationIn") != null)
                             {
                                 bullet[i].GetComponent<MoveBullet>().decelerationIn = float.Parse(MoveBullet.Attributes.GetNamedItem("DecelerationIn").Value);
+                            }
+                            if (MoveBullet.Attributes.GetNamedItem("Freeze") != null)
+                            {
+                                bullet[i].GetComponent<MoveBullet>().Freeze = bool.Parse(MoveBullet.Attributes.GetNamedItem("Freeze").Value);
+                            }
+                            if (MoveBullet.Attributes.GetNamedItem("Strong") != null)
+                            {
+                                bullet[i].GetComponent<MoveBullet>().Strong = bool.Parse(MoveBullet.Attributes.GetNamedItem("Strong").Value);
+                            }
+                            if (MoveBullet.Attributes.GetNamedItem("PVOEnemy") != null)
+                            {
+                                bullet[i].GetComponent<MoveBullet>().PVO = bool.Parse(MoveBullet.Attributes.GetNamedItem("PVOEnemy").Value);
+                            }
+                            if (MoveBullet.Attributes.GetNamedItem("Splash") != null)
+                            {
+                                bullet[i].GetComponent<MoveBullet>().Splash = bool.Parse(MoveBullet.Attributes.GetNamedItem("Splash").Value);
+                            }
+                            if (MoveBullet.Attributes.GetNamedItem("Fire") != null)
+                            {
+                                bullet[i].GetComponent<MoveBullet>().Fire = bool.Parse(MoveBullet.Attributes.GetNamedItem("Fire").Value);
                             }
                         }
                     }

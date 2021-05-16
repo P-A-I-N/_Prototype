@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2229949473758259416}
   m_Layer: 2
   m_Name: Range
-  m_TagString: TowerBuff
+  m_TagString: Buff 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12, y: 10}
+  m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
 --- !u!1 &5356287445821558334
 GameObject:
@@ -258,6 +258,13 @@ MonoBehaviour:
   tipe: Buff
   lvl: 1
   percentOfGold: 0
+  debuffHp: 0
+  lvlBuff: 000000000000
+  invisibleBuff: 0
+  multiplyRange: 0
+  multiplyDamage: 0
+  multiplySpeedBullet: 0
+  strongBuff: 0
 --- !u!50 &-8335282193494516080
 Rigidbody2D:
   serializedVersion: 4
