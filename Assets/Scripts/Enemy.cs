@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     LineRenderer HPBar;
     public float damageTower;
     public float damageEnemy;
+    public float _damageEnemy;
 
     public bool enemyStrong;
     public bool enemyPVO;
@@ -63,6 +64,8 @@ public class Enemy : MonoBehaviour
     public string _layer;
 
     public bool changeTower;
+    private Vector2 vect;
+    public float speedAttack;
     private void Awake()
     {
         if (max_health <= 0) max_health = health;
@@ -82,6 +85,7 @@ public class Enemy : MonoBehaviour
     }
     private void Start()
     {
+        vect = Vector2.left;
         _speed = speed;
 
         _enemyInvisible = enemyInvisible;
@@ -90,169 +94,229 @@ public class Enemy : MonoBehaviour
         numLater = gameObject.layer;
         _layer = LayerMask.LayerToName(numLater);
 
-        InvokeRepeating("fire", 0, damageRetryTime);
+        InvokeRepeating("fire", 0.0f, damageRetryTime);
         InvokeRepeating("poison", 0.0f, timeBetweenDamage);
+        InvokeRepeating("BattleEnemy", 0.0f, speedAttack);
+
     }
     private void Update()
     {
-        if (dbHp != gameObject.GetComponent<Debuff>().dbHp) dbHp = gameObject.GetComponent<Debuff>().dbHp;
-        if (poisonDamage != gameObject.GetComponent<Debuff>().poisonDamage) poisonDamage = gameObject.GetComponent<Debuff>().poisonDamage;
-        // (timeBetweenDamage != gameObject.GetComponent<Debuff>().timeBetweenDamage) timeBetweenDamage = gameObject.GetComponent<Debuff>().timeBetweenDamage;
-        if (dbSpeed != gameObject.GetComponent<Debuff>().dbSpeed) dbSpeed = gameObject.GetComponent<Debuff>().dbSpeed;
-        if (x3Damage != gameObject.GetComponent<Debuff>().x3Damage) x3Damage = gameObject.GetComponent<Debuff>().x3Damage;
-        if (besiege != gameObject.GetComponent<Debuff>().besiege) besiege = gameObject.GetComponent<Debuff>().besiege;
+
+        if (change && changeTower)
+        {
+            gameObject.layer = LayerMask.NameToLayer("EnemyTower");
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            vect = Vector2.right;
+        }
+
         if (change != gameObject.GetComponent<Debuff>().change) change = gameObject.GetComponent<Debuff>().change;
 
-        if (dbHp != nowDbHp)
+        if (!changeTower)
         {
-            _dbHp = nowDbHp - dbHp;
-            nowDbHp = dbHp;
-            health += _dbHp;
-        }
-        if (dbSpeed != nowDbSpeed)
-        {
-            _dbSpeed = nowDbSpeed - dbSpeed;
-            nowDbSpeed = dbSpeed;
-            _speed += _dbSpeed;
-            speed += _dbSpeed;
-        }
-        if(besiege)
-        {
-            enemyInvisible = false;
-            enemyPVO = false;
-            enemyStrong = false;
-            gameObject.layer = LayerMask.NameToLayer("Enemy");
-        }
-        else
-        {
-            enemyInvisible = _enemyInvisible;
-            enemyPVO = _enemyPVO;
-            enemyStrong = _enemyStrong;
-            gameObject.layer = LayerMask.NameToLayer(_layer);
-        }
-        if(change && changeTower)
-        {
-            Debug.Log("3");
-        }
+            if (dbHp != gameObject.GetComponent<Debuff>().dbHp) dbHp = gameObject.GetComponent<Debuff>().dbHp;
+            if (poisonDamage != gameObject.GetComponent<Debuff>().poisonDamage) poisonDamage = gameObject.GetComponent<Debuff>().poisonDamage;
+            // (timeBetweenDamage != gameObject.GetComponent<Debuff>().timeBetweenDamage) timeBetweenDamage = gameObject.GetComponent<Debuff>().timeBetweenDamage;
+            if (dbSpeed != gameObject.GetComponent<Debuff>().dbSpeed) dbSpeed = gameObject.GetComponent<Debuff>().dbSpeed;
+            if (x3Damage != gameObject.GetComponent<Debuff>().x3Damage) x3Damage = gameObject.GetComponent<Debuff>().x3Damage;
+            if (besiege != gameObject.GetComponent<Debuff>().besiege) besiege = gameObject.GetComponent<Debuff>().besiege;
 
-
-        HPBar.SetPosition(1, new Vector3(-0.5f + health / max_health, 0.8f));
-        if (cold && _speed == speed)
-        {
-            _speed /= decelerationIn;
-            timeCold = Time.time + freezeTime;
-            cold = false;
-        }
-        if (Time.time > timeCold && !stop)
-        {
-            _speed = speed;
-        }
-        if (health <= 0)
-        {
-            gold = gold + ((gold / 100) * (percentOfEnemy * gm.gold5B));
-            gm.gold += gold;
-            Destroy(gameObject);
-        }
-        if (Fire)
-        {
-            if (xtime < Time.time)
+            if (dbHp != nowDbHp)
             {
-                Fire = false;
+                _dbHp = nowDbHp - dbHp;
+                nowDbHp = dbHp;
+                health += _dbHp;
+            }
+            if (dbSpeed != nowDbSpeed)
+            {
+                _dbSpeed = nowDbSpeed - dbSpeed;
+                nowDbSpeed = dbSpeed;
+                _speed += _dbSpeed;
+                speed += _dbSpeed;
+            }
+            if (besiege)
+            {
+                enemyInvisible = false;
+                enemyPVO = false;
+                enemyStrong = false;
+                gameObject.layer = LayerMask.NameToLayer("Enemy");
+            }
+            else
+            {
+                enemyInvisible = _enemyInvisible;
+                enemyPVO = _enemyPVO;
+                enemyStrong = _enemyStrong;
+                gameObject.layer = LayerMask.NameToLayer(_layer);
+            }
 
+
+            HPBar.SetPosition(1, new Vector3(-0.5f + health / max_health, 0.8f));
+            if (cold && _speed == speed)
+            {
+                _speed /= decelerationIn;
+                timeCold = Time.time + freezeTime;
+                cold = false;
+            }
+            if (Time.time > timeCold && !stop && _damageEnemy == 0)
+            {
+                _speed = speed;
+            }
+            if (health <= 0)
+            {
+                gold = gold + ((gold / 100) * (percentOfEnemy * gm.gold5B));
+                gm.gold += gold;
+                Destroy(gameObject);
+            }
+            if (Fire)
+            {
+                if (xtime < Time.time)
+                {
+                    Fire = false;
+                }
             }
         }
 
     }
     private void LateUpdate()
     {
-        transform.Translate(Vector2.left * _speed * Time.deltaTime);
+        transform.Translate(vect * _speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Castle")
+        if (!changeTower)
         {
-            Destroy(gameObject);
+            if (collision.gameObject.tag == "Castle")
+            {
+                Destroy(gameObject);
+            }
+            if (!enemyPVO)
+            {
+                stop = true;
+                _speed = 0;
+            }
+            if (collision.gameObject.layer == 11)
+            {
+                float __damageEnemy = collision.gameObject.GetComponent<Enemy>().damageEnemy;
+                _damageEnemy += __damageEnemy;
+                if (_damageEnemy > 0)
+                {
+                    _speed = 0;
+                }
+            }
         }
-        if (!enemyPVO)
+        if(changeTower)
         {
-            stop = true;
-            _speed = 0;
+            if ((collision.gameObject.layer == 6 || collision.gameObject.layer == 9) || collision.gameObject.layer == 10)
+            {
+                float __damageEnemy = collision.gameObject.GetComponent<Enemy>().damageEnemy;
+                _damageEnemy += __damageEnemy;
+                if (_damageEnemy > 0)
+                {
+                    _speed = 0;
+                }
+            }
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (!enemyPVO)
+        if (!changeTower)
         {
-            stop = false;
-            _speed = speed;
+            if (!enemyPVO)
+            {
+                stop = false;
+                _speed = speed;
+            }
+            if (collision.gameObject.layer == 11)
+            {
+                float __damageEnemy = collision.gameObject.GetComponent<Enemy>().damageEnemy;
+                _damageEnemy -= __damageEnemy;
+                if (_damageEnemy == 0)
+                {
+                    _speed = speed;
+                }
+            }
+        }
+        if (changeTower)
+        {
+            if ((collision.gameObject.layer == 6 || collision.gameObject.layer == 9) || collision.gameObject.layer == 10)
+            {
+                float __damageEnemy = collision.gameObject.GetComponent<Enemy>().damageEnemy;
+                _damageEnemy -= __damageEnemy;
+                if (_damageEnemy == 0)
+                {
+                    _speed = speed;
+                }
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<MoveBullet>())
+        if (!changeTower)
         {
-            Freeze = collision.gameObject.GetComponent<MoveBullet>().Freeze;
-            Invisible = collision.gameObject.GetComponent<MoveBullet>().Invisible;
-            PVO = collision.gameObject.GetComponent<MoveBullet>().PVO;
-            Strong = collision.gameObject.GetComponent<MoveBullet>().Strong;
-            Normal = collision.gameObject.GetComponent<MoveBullet>().Normal;
-            Splash = collision.gameObject.GetComponent<MoveBullet>().Splash;
-            SplashFreeze = collision.gameObject.GetComponent<MoveBullet>().SplashFreeze;
-            damageTower = collision.gameObject.GetComponent<MoveBullet>().damageTower;
-        }
+            if (collision.gameObject.GetComponent<MoveBullet>())
+            {
+                Freeze = collision.gameObject.GetComponent<MoveBullet>().Freeze;
+                Invisible = collision.gameObject.GetComponent<MoveBullet>().Invisible;
+                PVO = collision.gameObject.GetComponent<MoveBullet>().PVO;
+                Strong = collision.gameObject.GetComponent<MoveBullet>().Strong;
+                Normal = collision.gameObject.GetComponent<MoveBullet>().Normal;
+                Splash = collision.gameObject.GetComponent<MoveBullet>().Splash;
+                SplashFreeze = collision.gameObject.GetComponent<MoveBullet>().SplashFreeze;
+                damageTower = collision.gameObject.GetComponent<MoveBullet>().damageTower;
+            }
 
 
-        if (x3Damage)
-        {
-            damageTower *= 3;
-        }
-        if (collision.tag == "Fire")
-        {
-            Fire = true;
-            xtime = Time.time + timeFire;
-        }
+            if (x3Damage)
+            {
+                damageTower *= 3;
+            }
+            if (collision.tag == "Fire")
+            {
+                Fire = true;
+                xtime = Time.time + timeFire;
+            }
 
-        if (Freeze)
-        {
-            freezeTime = collision.gameObject.GetComponent<MoveBullet>().freezeTime;
-            decelerationIn = collision.gameObject.GetComponent<MoveBullet>().decelerationIn;
-        }
+            if (Freeze)
+            {
+                freezeTime = collision.gameObject.GetComponent<MoveBullet>().freezeTime;
+                decelerationIn = collision.gameObject.GetComponent<MoveBullet>().decelerationIn;
+            }
 
 
 
-        if (!Invisible && !Freeze && !enemyPVO && !enemyInvisible)
-        {
-            if (!enemyStrong && (Normal || (Splash && !PVO))) health -= damageTower;
-            else if (Normal && Strong) health -= damageTower;
-        }
-        if (PVO && enemyPVO && !enemyInvisible)
-        {
-            if (!enemyStrong) health -= damageTower;
-            else if (Strong && enemyStrong) health -= damageTower;
-        }
-        if (!Invisible && Freeze && !enemyPVO && !enemyInvisible)
-        {
-            if (!enemyStrong && !SplashFreeze)
+            if (!Invisible && !Freeze && !enemyPVO && !enemyInvisible)
+            {
+                if (!enemyStrong && (Normal || (Splash && !PVO))) health -= damageTower;
+                else if (Normal && Strong) health -= damageTower;
+            }
+            if (PVO && enemyPVO && !enemyInvisible)
+            {
+                if (!enemyStrong) health -= damageTower;
+                else if (Strong && enemyStrong) health -= damageTower;
+            }
+            if (!Invisible && Freeze && !enemyPVO && !enemyInvisible)
+            {
+                if (!enemyStrong && !SplashFreeze)
+                {
+                    health -= damageTower;
+                    cold = true;
+                }
+                else cold = true;
+            }
+            if (Invisible && !Freeze && (!PVO || (PVO && Normal)) && !enemyStrong && !enemyPVO)
             {
                 health -= damageTower;
-                cold = true;
             }
-            else cold = true;
-        }
-        if (Invisible && !Freeze && (!PVO || (PVO && Normal)) && !enemyStrong && !enemyPVO)
-        {
-            health -= damageTower;
-        }
-        if (Invisible && Freeze && !enemyPVO)
-        {
-            if (!enemyStrong && !SplashFreeze)
+            if (Invisible && Freeze && !enemyPVO)
             {
-                health -= damageTower;
-                cold = true;
+                if (!enemyStrong && !SplashFreeze)
+                {
+                    health -= damageTower;
+                    cold = true;
+                }
+                else cold = true;
             }
-            else cold = true;
         }
     }
     private void fire()
@@ -265,6 +329,10 @@ public class Enemy : MonoBehaviour
     private void poison()
     {
         health -= poisonDamage;
+    }
+    void BattleEnemy()
+    {
+        health -= _damageEnemy;
     }
 
 

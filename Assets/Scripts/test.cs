@@ -54,6 +54,10 @@ public class test : MonoBehaviour
                         {
                             tower[i].GetComponent<Tower>().price = int.Parse(Tower.Attributes.GetNamedItem("Price").Value);
                             tower[i].GetComponent<Tower>().health = int.Parse(Tower.Attributes.GetNamedItem("Health").Value);
+                            if (Tower.Attributes.GetNamedItem("Damage") != null)
+                            {
+                                tower[i].GetComponent<Tower>().damageTower = float.Parse(Tower.Attributes.GetNamedItem("Damage").Value);
+                            }
                             if (Tower.Attributes.GetNamedItem("Range") != null)
                             {
                                 tower[i].GetComponent<Tower>().range = int.Parse(Tower.Attributes.GetNamedItem("Range").Value);
@@ -138,6 +142,11 @@ public class test : MonoBehaviour
         }
         for (int i = 0; i < enemy.Length; i++)
         {
+
+            foreach (XmlNode speedAttack in xmlDoc.SelectNodes("root/Enemy"))
+            {
+                enemy[i].GetComponent<Enemy>().speedAttack = float.Parse(speedAttack.Attributes.GetNamedItem("SpeedAttack").Value);
+            }
             foreach (XmlNode SpashFire in xmlDoc.SelectNodes("root/Tower/Splash/Lvl5B"))
             {
                 enemy[i].GetComponent<Enemy>().fireDamage = float.Parse(SpashFire.Attributes.GetNamedItem("FireDamage").Value);
@@ -203,6 +212,7 @@ public class test : MonoBehaviour
                             enemy[i].GetComponent<Enemy>().health = float.Parse(Enemy.Attributes.GetNamedItem("Health").Value);
                             enemy[i].GetComponent<Enemy>().speed = float.Parse(Enemy.Attributes.GetNamedItem("Speed").Value);
                             enemy[i].GetComponent<Enemy>().gold = int.Parse(Enemy.Attributes.GetNamedItem("Gold").Value);
+                            enemy[i].GetComponent<Enemy>().damageEnemy = int.Parse(Enemy.Attributes.GetNamedItem("Damage").Value);
                         }
                     }
                 }

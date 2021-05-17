@@ -697,36 +697,42 @@
 		</Tank>
 	</Tower>
 
-	<Enemy>
+	<Enemy
+		SpeedAttack="2">
 		<Normal>
 			<Lvl1
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl1>
 
 			<Lvl2
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "2">
 			</Lvl2>
 
 			<Lvl3
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl3>
 
 			<Lvl4
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl4>
 
 			<Lvl5
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl5>
 		</Normal>
 
@@ -734,31 +740,36 @@
 			<Lvl1
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl1>
 
 			<Lvl2
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl2>
 
 			<Lvl3
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl3>
 
 			<Lvl4
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl4>
 
 			<Lvl5
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl5>
 		</Fly>
 
@@ -766,31 +777,36 @@
 			<Lvl1
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl1>
 
 			<Lvl2
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl2>
 
 			<Lvl3
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl3>
 
 			<Lvl4
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl4>
 
 			<Lvl5
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl5>
 		</Speed>
 
@@ -798,31 +814,36 @@
 			<Lvl1
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl1>
 
 			<Lvl2
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl2>
 
 			<Lvl3
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl3>
 
 			<Lvl4
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl4>
 
 			<Lvl5
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl5>
 		</Strong>
 
@@ -830,31 +851,36 @@
 			<Lvl1
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl1>
 
 			<Lvl2
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl2>
 
 			<Lvl3
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl3>
 
 			<Lvl4
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl4>
 
 			<Lvl5
 				Health = "10"
 				Speed = "0.2"
-				Gold = "50">
+				Gold = "50"
+				Damage = "1">
 			</Lvl5>
 		</Invisible>
 	</Enemy>
