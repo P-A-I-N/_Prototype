@@ -575,31 +575,45 @@
 			<Lvl2
 				Health = "100"
 				Price = "200"
-				DebuffHp = "10">
+				DebuffHp = "10"
+				PoisonDamage = "2"
+                TimeBetweenDamage = "2">
 			</Lvl2>
 
 			<Lvl3
 				Health = "100"
 				Price = "500"
-				DebuffHp = "50">
+				DebuffHp = "50"
+				PoisonDamage = "3"
+                TimeBetweenDamage = "3"
+				DbSpeed = "3">
 			</Lvl3>
 
 			<Lvl4
 				Health = "100"
 				Price = "1000"
-				DebuffHp = "200">
+				DebuffHp = "200"
+				PoisonDamage = "4"
+                TimeBetweenDamage = "4"
+				DbSpeed = "4">
 			</Lvl4>
 
 			<Lvl5A
 				Health = "100"
 				Price = "2000"
-				DebuffHp = "500">
+				DebuffHp = "500"
+				PoisonDamage = "5"
+                TimeBetweenDamage = "5"
+				DbSpeed = "5">
 			</Lvl5A>
 
 			<Lvl5B
 				Health = "100"
 				Price = "2000"
-				DebuffHp = "1000">
+				DebuffHp = "1000"
+				PoisonDamage = "6"
+                TimeBetweenDamage = "6"
+				DbSpeed = "6">
 			</Lvl5B>
 		</Debuff>
 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7355902170317140391}
   - component: {fileID: 3434025404165784811}
   - component: {fileID: 4759890369020374057}
+  - component: {fileID: 5525830846006618138}
   m_Layer: 9
   m_Name: Fat_Fly_Lvl_5
   m_TagString: Untagged
@@ -118,7 +119,6 @@ MonoBehaviour:
   health: 10
   freezeTime: 3
   decelerationIn: 2
-  debuffHp: 3
   gold: 20
   max_health: 0
   damageTower: 0
@@ -126,12 +126,25 @@ MonoBehaviour:
   enemyStrong: 0
   enemyPVO: 1
   enemyInvisible: 0
+  _enemyStrong: 0
+  _enemyPVO: 0
+  _enemyInvisible: 0
   tipe: Fly
   lvl: 5
   fireDamage: 0
   timeFire: 0
   damageRetryTime: 0
   percentOfEnemy: 0
+  dbHp: 0
+  poisonDamage: 0
+  timeBetweenDamage: 0
+  dbSpeed: 0
+  x3Damage: 0
+  besiege: 0
+  change: 0
+  numLater: 0
+  _layer: 
+  changeTower: 0
 --- !u!50 &3434025404165784811
 Rigidbody2D:
   serializedVersion: 4
@@ -251,3 +264,48 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &5525830846006618138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8764735807233861961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb6358415493304ca47f6e17958cce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dbHp1Lvl: 0
+  dbHp2Lvl: 0
+  dbHp3Lvl: 0
+  dbHp4Lvl: 0
+  dbHp5aLvl: 0
+  dbHp5bLvl: 0
+  poisonDamage2Lvl: 0
+  timeBetweenDamage2Lvl: 0
+  poisonDamage3Lvl: 0
+  timeBetweenDamage3Lvl: 0
+  poisonDamage4Lvl: 0
+  timeBetweenDamage4Lvl: 0
+  poisonDamage5aLvl: 0
+  timeBetweenDamage5aLvl: 0
+  poisonDamage5bLvl: 0
+  timeBetweenDamage5bLvl: 0
+  dbSpeed3Lvl: 0
+  dbSpeed4Lvl: 0
+  dbSpeed5aLvl: 0
+  dbSpeed5bLvl: 0
+  dbHp: 0
+  poisonDamage: 0
+  timeBetweenDamage: 0
+  dbSpeed: 0
+  x3Damage: 0
+  besiege: 0
+  change: 0
+  Db1: 0
+  Db2: 0
+  Db3: 0
+  Db4: 0
+  Db5a: 0
+  Db5b: 0
