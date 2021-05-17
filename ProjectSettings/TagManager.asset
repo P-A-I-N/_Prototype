@@ -19,12 +19,6 @@ TagManager:
   - TowerGold
   - TankBuff
   - Fire
-  - Buff 1
-  - Buff 2
-  - Buff 3
-  - Buff 4
-  - Buff 5A
-  - Buff 5B
   layers:
   - Default
   - TransparentFX

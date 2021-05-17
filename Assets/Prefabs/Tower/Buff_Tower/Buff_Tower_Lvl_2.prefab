@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2229949473758259416}
   m_Layer: 2
   m_Name: Range
-  m_TagString: Buff 2
+  m_TagString: TankBuff
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

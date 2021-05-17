@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 
@@ -31,21 +29,33 @@ public class test : MonoBehaviour
                 {
                     foreach (XmlNode Buff in xmlDoc.SelectNodes("root/Tower/Buff/Lvl" + lvl[e]))
                     {
-                        if (lvl[e] == "2")
+                        if (tower[i].GetComponent<Buff>() != null)
                         {
-                            tower[i].GetComponent<Tower>().multiplyRange = int.Parse(Buff.Attributes.GetNamedItem("MultiplyRange").Value);
-                        }
-                        if (lvl[e] == "3")
-                        {
-                            tower[i].GetComponent<Tower>().multiplyDamage = int.Parse(Buff.Attributes.GetNamedItem("MultiplyDamage").Value);
-                        }
-                        if (lvl[e] == "5A")
-                        {
-                            tower[i].GetComponent<Tower>().multiplySpeed = int.Parse(Buff.Attributes.GetNamedItem("MultiplySpeed").Value);
-                        }
-                        if (lvl[e] == "5B")
-                        {
-                            tower[i].GetComponent<Tower>().multiplyRangeLvl5 = int.Parse(Buff.Attributes.GetNamedItem("MultiplyRange").Value);
+                            if (lvl[e] == "2")
+                            {
+                                tower[i].GetComponent<Buff>().multiplyRangeLvl2 = float.Parse(Buff.Attributes.GetNamedItem("MultiplyRange").Value);
+                            }
+                            if (lvl[e] == "3")
+                            {
+                                tower[i].GetComponent<Buff>().multiplyDamageLvl3 = float.Parse(Buff.Attributes.GetNamedItem("MultiplyDamage").Value);
+                                tower[i].GetComponent<Buff>().multiplyRangeLvl3 = float.Parse(Buff.Attributes.GetNamedItem("MultiplyRange").Value);
+                            }
+                            if (lvl[e] == "4")
+                            {
+                                tower[i].GetComponent<Buff>().multiplyDamageLvl4 = float.Parse(Buff.Attributes.GetNamedItem("MultiplyDamage").Value);
+                                tower[i].GetComponent<Buff>().multiplyRangeLvl4 = float.Parse(Buff.Attributes.GetNamedItem("MultiplyRange").Value);
+                            }
+                            if (lvl[e] == "5A")
+                            {
+                                tower[i].GetComponent<Buff>().multiplySpeedLvl5a = float.Parse(Buff.Attributes.GetNamedItem("MultiplySpeed").Value);
+                                tower[i].GetComponent<Buff>().multiplyDamageLvl5a = float.Parse(Buff.Attributes.GetNamedItem("MultiplyDamage").Value);
+                                tower[i].GetComponent<Buff>().multiplyRangeLvl5a = float.Parse(Buff.Attributes.GetNamedItem("MultiplyRange").Value);
+                            }
+                            if (lvl[e] == "5B")
+                            {
+                                tower[i].GetComponent<Buff>().multiplyRangeLvl5b = float.Parse(Buff.Attributes.GetNamedItem("MultiplyRange").Value);
+                                tower[i].GetComponent<Buff>().multiplyDamageLvl5b = float.Parse(Buff.Attributes.GetNamedItem("MultiplyDamage").Value);
+                            }
                         }
                     }
                     foreach (XmlNode Tower in xmlDoc.SelectNodes("root/Tower/" + tipe[k] + "/Lvl" + lvl[e]))

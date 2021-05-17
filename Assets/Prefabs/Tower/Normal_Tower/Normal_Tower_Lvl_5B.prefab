@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 309760098625038580}
   - component: {fileID: 540859869751013922}
   - component: {fileID: -8084795791391789935}
+  - component: {fileID: -8579919697079403884}
   m_Layer: 8
   m_Name: Normal_Tower_Lvl_5B
   m_TagString: Tower
@@ -173,14 +174,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  range: 5
-  rateOfFire: 3
-  price: 100
+  price: 200
   fullprice: 0
   bullet: {fileID: 9130870781651923518, guid: 0a7cb840d0f376e4d86e69a76bac6a15, type: 3}
   invisibleBullet: {fileID: 5024834314885986411, guid: 7c207ec2725fc9343bd857778ebc513c, type: 3}
   levelUp: {fileID: 0}
   nameTower: {fileID: 309760098625038580}
+  hpTankBuff: 1000
+  _health: 0
+  damageEnemy: 0
+  invisible: 0
+  strongBuff: 0
+  range: 15
+  rateOfFire: 3
+  damageTower: 10
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
@@ -191,6 +198,13 @@ MonoBehaviour:
   PNO: 1
   tipe: Normal
   lvl: 5B
+  percentOfGold: 0
+  debuffHp: 0
+  multiplyRange: 2
+  multiplyRangeLvl5: 6
+  multiplyDamage: 3
+  multiplySpeed: 5
+  parent: {fileID: 0}
 --- !u!50 &-8084795791391789935
 Rigidbody2D:
   serializedVersion: 4
@@ -212,3 +226,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8579919697079403884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117819293085753521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2423c6811930c141a3044ea8ad9c0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1967732178381951021}
   - component: {fileID: -7840849708919829438}
   - component: {fileID: -3263359156736032848}
+  - component: {fileID: 5297070203798728217}
   m_Layer: 8
   m_Name: Freeze_Tower_Lvl_5B
   m_TagString: TowerFreeze
@@ -173,16 +174,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  range: 5
-  rateOfFire: 3
-  price: 100
+  price: 200
   fullprice: 0
   bullet: {fileID: 8811029717210337052, guid: 259024e58d104dd4f910dbce047ec785, type: 3}
   invisibleBullet: {fileID: 6115813776678188055, guid: a006c1d166823244c9e8a7eb71c02e11, type: 3}
   levelUp: {fileID: 0}
   nameTower: {fileID: 1967732178381951021}
-  hpTankBuff: 0
+  hpTankBuff: 1000
   _health: 0
+  damageEnemy: 0
+  invisible: 0
+  strongBuff: 0
+  range: 5
+  rateOfFire: 3
+  damageTower: 1
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
@@ -193,6 +198,13 @@ MonoBehaviour:
   PNO: 1
   tipe: Freeze
   lvl: 5B
+  percentOfGold: 0
+  debuffHp: 0
+  multiplyRange: 2
+  multiplyRangeLvl5: 6
+  multiplyDamage: 3
+  multiplySpeed: 5
+  parent: {fileID: 0}
 --- !u!50 &-3263359156736032848
 Rigidbody2D:
   serializedVersion: 4
@@ -214,3 +226,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5297070203798728217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4583781615001532060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2423c6811930c141a3044ea8ad9c0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

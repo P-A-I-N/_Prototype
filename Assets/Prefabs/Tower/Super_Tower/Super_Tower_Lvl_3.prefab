@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4827827770286745637}
   - component: {fileID: 252111858146526673}
   - component: {fileID: 389887131930825139}
+  - component: {fileID: -5584160199236956094}
   m_Layer: 8
   m_Name: Super_Tower_Lvl_3
   m_TagString: Tower
@@ -173,17 +174,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  range: 5
-  rateOfFire: 3
-  price: 100
+  price: 5000
   fullprice: 0
   bullet: {fileID: 6613268909414559021, guid: 7845ef8cd3e47fd448cbed52fc6d7140, type: 3}
   invisibleBullet: {fileID: 5024834314885986411, guid: c983a72b9a1ab1647b2a0b399f656919, type: 3}
   levelUp: {fileID: 75817332968836646, guid: 0c4943bb1051cc0488f32c9bbb1e637e, type: 3}
   nameTower: {fileID: 4827827770286745637}
-  hpTankBuff: 0
+  hpTankBuff: 1000
   _health: 0
   damageEnemy: 0
+  invisible: 0
+  strongBuff: 0
+  range: 5
+  rateOfFire: 10
+  damageTower: 2000
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
@@ -195,6 +199,12 @@ MonoBehaviour:
   tipe: Super
   lvl: 3
   percentOfGold: 0
+  debuffHp: 0
+  multiplyRange: 2
+  multiplyRangeLvl5: 6
+  multiplyDamage: 3
+  multiplySpeed: 5
+  parent: {fileID: 0}
 --- !u!50 &389887131930825139
 Rigidbody2D:
   serializedVersion: 4
@@ -216,3 +226,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-5584160199236956094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986614373658165757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2423c6811930c141a3044ea8ad9c0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -519,12 +519,14 @@
 		<Buff>
 			<Lvl1
 				Health = "100"
-				Price = "100">
+				Price = "100"
+				Invisible = "true">
 			</Lvl1>
 
 			<Lvl2
 				Health = "100"
 				Price = "200"
+				Invisible = "true"
 				MultiplyRange = "2">
 			</Lvl2>
 

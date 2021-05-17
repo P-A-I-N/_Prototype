@@ -115,7 +115,6 @@ public class Enemy : MonoBehaviour
         {
             if (dbHp != gameObject.GetComponent<Debuff>().dbHp) dbHp = gameObject.GetComponent<Debuff>().dbHp;
             if (poisonDamage != gameObject.GetComponent<Debuff>().poisonDamage) poisonDamage = gameObject.GetComponent<Debuff>().poisonDamage;
-            // (timeBetweenDamage != gameObject.GetComponent<Debuff>().timeBetweenDamage) timeBetweenDamage = gameObject.GetComponent<Debuff>().timeBetweenDamage;
             if (dbSpeed != gameObject.GetComponent<Debuff>().dbSpeed) dbSpeed = gameObject.GetComponent<Debuff>().dbSpeed;
             if (x3Damage != gameObject.GetComponent<Debuff>().x3Damage) x3Damage = gameObject.GetComponent<Debuff>().x3Damage;
             if (besiege != gameObject.GetComponent<Debuff>().besiege) besiege = gameObject.GetComponent<Debuff>().besiege;
@@ -288,7 +287,7 @@ public class Enemy : MonoBehaviour
             if (!Invisible && !Freeze && !enemyPVO && !enemyInvisible)
             {
                 if (!enemyStrong && (Normal || (Splash && !PVO))) health -= damageTower;
-                else if (Normal && Strong) health -= damageTower;
+                else if ((Normal || Splash) && Strong) health -= damageTower;
             }
             if (PVO && enemyPVO && !enemyInvisible)
             {
@@ -304,9 +303,10 @@ public class Enemy : MonoBehaviour
                 }
                 else cold = true;
             }
-            if (Invisible && !Freeze && (!PVO || (PVO && Normal)) && !enemyStrong && !enemyPVO)
+            if (Invisible && !Freeze && !enemyPVO)
             {
-                health -= damageTower;
+                if((!PVO || (PVO && Normal)) && !enemyStrong) health -= damageTower;
+                else if ((Normal || Splash) && Strong) health -= damageTower;
             }
             if (Invisible && Freeze && !enemyPVO)
             {

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2229949473758259416}
   m_Layer: 2
   m_Name: Range
-  m_TagString: Buff 5B
+  m_TagString: TowerBuff
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,8 +236,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  range: 0
-  rateOfFire: 0
   price: 2
   fullprice: 0
   bullet: {fileID: 0}
@@ -247,6 +245,11 @@ MonoBehaviour:
   hpTankBuff: 0
   _health: 0
   damageEnemy: 0
+  invisible: 0
+  strongBuff: 0
+  range: 0
+  rateOfFire: 0
+  damageTower: 0
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
@@ -259,12 +262,11 @@ MonoBehaviour:
   lvl: 5B
   percentOfGold: 0
   debuffHp: 0
-  lvlBuff: 
-  invisibleBuff: 0
   multiplyRange: 0
+  multiplyRangeLvl5: 0
   multiplyDamage: 0
-  multiplySpeedBullet: 0
-  strongBuff: 0
+  multiplySpeed: 0
+  parent: {fileID: 0}
 --- !u!50 &1797290714665816508
 Rigidbody2D:
   serializedVersion: 4

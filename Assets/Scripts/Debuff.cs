@@ -40,7 +40,6 @@ public class Debuff : MonoBehaviour
     public int Db5a;
     public int Db5b;
 
-    float timeRefresh;
     private void Update()
     {
         if (Db1 + Db2 + Db3 + Db4 + Db5a + Db5b == 0)

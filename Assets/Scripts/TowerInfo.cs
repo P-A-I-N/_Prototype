@@ -18,11 +18,11 @@ public class TowerInfo : MonoBehaviour
     public GameObject target;
     public GameObject levelUp;
     int nowHealth;
-    int nowRate;
-    int nowRange;
+    float nowRate;
+    float nowRange;
     int upHealth;
-    int upRate;
-    int upRange;
+    float upRate;
+    float upRange;
     int nowGoldGet;
     int nowGoldDelay;
     int upGoldGet;
