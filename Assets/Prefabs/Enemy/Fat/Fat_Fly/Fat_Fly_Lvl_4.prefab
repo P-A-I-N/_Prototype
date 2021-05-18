@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3434025404165784811}
   - component: {fileID: 3001771242220753724}
   - component: {fileID: -6429793941879517247}
-  - component: {fileID: 2083944101426953603}
+  - component: {fileID: -8698220934847341270}
   m_Layer: 9
   m_Name: Fat_Fly_Lvl_4
   m_TagString: Untagged
@@ -312,7 +312,7 @@ MonoBehaviour:
   Db4: 0
   Db5a: 0
   Db5b: 0
---- !u!95 &2083944101426953603
+--- !u!95 &-8698220934847341270
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

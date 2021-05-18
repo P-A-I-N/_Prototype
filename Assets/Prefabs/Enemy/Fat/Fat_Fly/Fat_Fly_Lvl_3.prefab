@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3434025404165784811}
   - component: {fileID: -3410941512149691480}
   - component: {fileID: 7402095680770871269}
-  - component: {fileID: 7379420407671441258}
+  - component: {fileID: -227513026895767517}
   m_Layer: 9
   m_Name: Fat_Fly_Lvl_3
   m_TagString: Untagged
@@ -312,7 +312,7 @@ MonoBehaviour:
   Db4: 0
   Db5a: 0
   Db5b: 0
---- !u!95 &7379420407671441258
+--- !u!95 &-227513026895767517
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ Animator:
   m_GameObject: {fileID: 8764735807233861961}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6175c7b733530b244acd8807e7cff8ac, type: 2}
+  m_Controller: {fileID: 9100000, guid: cfc84e710c9c8c341b01459f7c6b9234, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
