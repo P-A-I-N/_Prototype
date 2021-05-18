@@ -19,12 +19,11 @@ public class SpawnEnemy : MonoBehaviour
     public UnityEngine.UI.Text WaveText;
     bool waveTextPrint = false;
     float timeTextPrint;
-    //float[] timeWaves = new float[26] {100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
+    float[] timeWaves = new float[26] {100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
     float endWaveTime;
     bool waveIsActive = true;
     public GameObject waveScreen;
-    int[] enemiesCount = new int[5];
-    public int firstEncounterWave;
+    int[] enemiesCount = new int[5] { 2,2,2,2,2 };
 
     void Start()
     {
@@ -32,9 +31,9 @@ public class SpawnEnemy : MonoBehaviour
         WaveText.text = "Wave " + current_wave;
         waveTextPrint = true;
         timeTextPrint = Time.time + 5; 
-        //endWaveTime = Time.time + timeWaves[0];
+        endWaveTime = Time.time + timeWaves[0];
         string [] waves = wavesTable.text.Split ('\n');
-        SettingWave(waves[0]);
+        SettingWave(waves [0]);
     }
     void Update()
     {
@@ -45,7 +44,7 @@ public class SpawnEnemy : MonoBehaviour
         }
         if (endOfTheWave && current_wave < num_waves)
         {
-            //endWaveTime = Time.time + timeWaves[current_wave];
+            endWaveTime = Time.time + timeWaves[current_wave];
             current_wave++;
             endOfTheWave = false;
             string[] waves = wavesTable.text.Split('\n');
@@ -69,14 +68,13 @@ public class SpawnEnemy : MonoBehaviour
 
     void SettingWave (string wave)
     {
-        string[] parametrs = wave.Split(' ');
-        if (current_wave < firstEncounterWave)
+        if (wave == "n")
         {
-            endWaveTime = Time.time + Convert.ToInt32 (parametrs[8]);
             waveIsActive = false;
             return;
         }
-        else waveIsActive = true; 
+        else waveIsActive = true;
+        string[] parametrs = wave.Split(' ');
         enemiesCount[0] = Convert.ToInt32 (parametrs[0]);
         enemiesCount[1] = Convert.ToInt32 (parametrs[1]);
         enemiesCount[2] = Convert.ToInt32 (parametrs[2]);
@@ -85,7 +83,6 @@ public class SpawnEnemy : MonoBehaviour
         numberOfEnemies = Convert.ToInt32 (parametrs[5]);
         minTimeSpawn = Convert.ToInt32 (parametrs[6]);
         maxTimeSpawn = Convert.ToInt32 (parametrs[7]);
-        endWaveTime = Time.time + Convert.ToInt32 (parametrs[8]);
     }
 
     void CreateEnemy()
