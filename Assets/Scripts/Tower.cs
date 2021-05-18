@@ -179,7 +179,7 @@ public class Tower : MonoBehaviour
     {
         if (damage)
         {
-            _health -= damageEnemy;
+            _health -= damageEnemy * Time.deltaTime;
         }
 
         if (_health <= 0)

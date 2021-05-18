@@ -132,40 +132,46 @@ public class Buff : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Enemy>() == null)
+        if (collision.gameObject.tag == "TowerBuff")
         {
             if (collision.GetComponentInParent<Tower>().tipe == "Buff")
             {
                 if (collision.GetComponentInParent<Tower>().lvl == "1")
                 {
                     B1++;
+                    Debug.Log("+1");
                 }
                 if (collision.GetComponentInParent<Tower>().lvl == "2")
                 {
                     B2++;
+                    Debug.Log("+2");
                 }
                 if (collision.GetComponentInParent<Tower>().lvl == "3")
                 {
                     B3++;
+                    Debug.Log("+3");
                 }
                 if (collision.GetComponentInParent<Tower>().lvl == "4")
                 {
                     B4++;
+                    Debug.Log("+4");
                 }
                 if (collision.GetComponentInParent<Tower>().lvl == "5A")
                 {
                     B5a++;
+                    Debug.Log("+5");
                 }
                 if (collision.GetComponentInParent<Tower>().lvl == "5B")
                 {
                     B5b++;
+                    Debug.Log("+6");
                 }
             }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Enemy>() == null)
+        if (collision.gameObject.tag == "TowerBuff")
         {
             if (collision.GetComponentInParent<Tower>().tipe == "Buff")
             {

@@ -130,3 +130,5 @@ MonoBehaviour:
   tipe: PVO
   lvl: 2
   numSplashFreeze: 0
+  freezeTime: 0
+  decelerationIn: 0

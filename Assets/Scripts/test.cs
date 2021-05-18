@@ -112,7 +112,6 @@ public class test : MonoBehaviour
                         if (bullet[i].GetComponent<MoveBullet>().tipe == tipe[k] && bullet[i].GetComponent<MoveBullet>().lvl == lvl[e])
                         {
                             bullet[i].GetComponent<MoveBullet>().speed = float.Parse(MoveBullet.Attributes.GetNamedItem("SpeedBullet").Value);
-                            bullet[i].GetComponent<MoveBullet>().damageTower = float.Parse(MoveBullet.Attributes.GetNamedItem("Damage").Value);
                             if (MoveBullet.Attributes.GetNamedItem("RangeSplash") != null)
                             {
                                 bullet[i].GetComponent<MoveBullet>().rangeSplash = int.Parse(MoveBullet.Attributes.GetNamedItem("RangeSplash").Value);

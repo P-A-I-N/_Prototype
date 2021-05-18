@@ -101,7 +101,7 @@ MonoBehaviour:
   parentPos: 0
   pos: 0
   x: 0
-  rangeSplash: 0
+  rangeSplash: 4
   damageTower: 0
   Fire: 0
   SplashFreeze: 0
@@ -114,6 +114,8 @@ MonoBehaviour:
   tipe: Super
   lvl: 5A
   numSplashFreeze: 0
+  freezeTime: 0
+  decelerationIn: 0
 --- !u!70 &3179718110231270722
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

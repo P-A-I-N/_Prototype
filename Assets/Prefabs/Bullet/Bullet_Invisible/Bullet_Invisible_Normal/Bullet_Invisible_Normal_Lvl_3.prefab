@@ -102,6 +102,9 @@ MonoBehaviour:
   pos: 0
   x: 0
   rangeSplash: 0
+  damageTower: 0
+  Fire: 0
+  SplashFreeze: 0
   Splash: 0
   Freeze: 0
   Invisible: 1
@@ -110,6 +113,9 @@ MonoBehaviour:
   Normal: 1
   tipe: Normal
   lvl: 3
+  numSplashFreeze: 0
+  freezeTime: 0
+  decelerationIn: 0
 --- !u!70 &3179718110231270722
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

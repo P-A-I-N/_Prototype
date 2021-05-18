@@ -130,3 +130,5 @@ MonoBehaviour:
   tipe: Freeze
   lvl: 4
   numSplashFreeze: 0
+  freezeTime: 4
+  decelerationIn: 8

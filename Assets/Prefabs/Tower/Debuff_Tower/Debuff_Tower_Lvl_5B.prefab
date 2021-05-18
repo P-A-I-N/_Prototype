@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395eae9dacec3b1449f6ec8a567ed858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeChange: 20
+  timeChange: 30
   timeX: 0
   changeok: 1
 --- !u!1 &4672662006099410413
@@ -261,10 +261,9 @@ MonoBehaviour:
   hpTankBuff: 0
   _health: 0
   damageEnemy: 0
-  invisible: 0
-  strongBuff: 0
   range: 0
   rateOfFire: 0
+  _rateOfFire: 0
   damageTower: 0
   lvl4: 0
   lvl5a: {fileID: 0}
@@ -278,11 +277,18 @@ MonoBehaviour:
   lvl: 5B
   percentOfGold: 0
   debuffHp: 0
+  invisible: 0
+  strongBuff: 0
   multiplyRange: 0
-  multiplyRangeLvl5: 0
   multiplyDamage: 0
   multiplySpeed: 0
   parent: {fileID: 0}
+  _multiplyRange: 0
+  _multiplyDamage: 0
+  _multiplySpeed: 0
+  nowMultiplyRange: 0
+  nowMultiplyDamage: 0
+  nowMultiplySpeed: 0
 --- !u!50 &4693938655645398695
 Rigidbody2D:
   serializedVersion: 4

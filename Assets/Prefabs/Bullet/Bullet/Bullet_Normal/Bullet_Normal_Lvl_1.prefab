@@ -102,7 +102,7 @@ MonoBehaviour:
   pos: 0
   x: 0
   rangeSplash: 0
-  damageTower: 1
+  damageTower: 0
   Fire: 0
   SplashFreeze: 0
   Splash: 0

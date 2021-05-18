@@ -117,7 +117,7 @@ MonoBehaviour:
   parentPos: 30
   pos: 0
   x: 0
-  rangeSplash: 1
+  rangeSplash: 4
   damageTower: 0
   Fire: 0
   SplashFreeze: 0
@@ -130,3 +130,5 @@ MonoBehaviour:
   tipe: Splash
   lvl: 2
   numSplashFreeze: 0
+  freezeTime: 0
+  decelerationIn: 0

@@ -114,6 +114,8 @@ MonoBehaviour:
   tipe: Super
   lvl: 2
   numSplashFreeze: 0
+  freezeTime: 0
+  decelerationIn: 0
 --- !u!70 &499822314783425514
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

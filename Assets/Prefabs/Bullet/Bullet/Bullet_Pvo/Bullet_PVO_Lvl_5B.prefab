@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c81641d28da8b4886f25f85c75c3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   parent: {fileID: 0}
   parentPos: 0
   pos: 0
@@ -130,3 +130,5 @@ MonoBehaviour:
   tipe: PVO
   lvl: 5B
   numSplashFreeze: 0
+  freezeTime: 0
+  decelerationIn: 0
