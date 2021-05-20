@@ -3533,20 +3533,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 605465056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba424d8cd86410540b46585d9d992af5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8de70fb0c7b16b34cbe560a6cef12fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
   - {fileID: 377946998869243335, guid: bf609548db88fc34ab1403e72389bd10, type: 3}
+  - {fileID: 377946998869243335, guid: 511504f45117fd845b5d09dced5a70e8, type: 3}
+  - {fileID: 377946998869243335, guid: a00f2972d0e541549a1d8b84816659e5, type: 3}
+  - {fileID: 377946998869243335, guid: c848edc23288afe4293e21a52e79d468, type: 3}
+  - {fileID: 377946998869243335, guid: bcec13760ee01fa45b196e4a64a857eb, type: 3}
   - {fileID: 3957342895764858181, guid: b21a9c06e230e834eafe1178756f1416, type: 3}
+  - {fileID: 3957342895764858181, guid: 80f3a51cc653e0241ba0eed068f8d680, type: 3}
+  - {fileID: 3957342895764858181, guid: babe0e5209f7a0a41b559a24bdeca0f2, type: 3}
+  - {fileID: 3957342895764858181, guid: c3e39500dbe04b142a55efff7a08713a, type: 3}
+  - {fileID: 3957342895764858181, guid: e3e0d0863073070408dc3443b3e8a778, type: 3}
   - {fileID: 8764735807233861961, guid: fb1854a5fe4540a4f83366b36a16e75f, type: 3}
+  - {fileID: 8764735807233861961, guid: 241e85b1716c3f147a6da593f7a1a862, type: 3}
+  - {fileID: 8764735807233861961, guid: b4b3e88d9ea4d684e834e820deb92b66, type: 3}
+  - {fileID: 8764735807233861961, guid: b2dcc6fc07d5c0149bf3b86002ba91b0, type: 3}
+  - {fileID: 8764735807233861961, guid: 9bd55ceddd1aa0641a20dc951d667afc, type: 3}
   - {fileID: 1798383013457134003, guid: 89e707dcd16f719499001a6e372bcc03, type: 3}
+  - {fileID: 1798383013457134003, guid: 238119afd6dc9db459f91d3904065aa3, type: 3}
+  - {fileID: 1798383013457134003, guid: 544db374799d78147a6005deec2f5ebe, type: 3}
+  - {fileID: 1798383013457134003, guid: bf5df06c2672d9348b3a1336142f11cb, type: 3}
+  - {fileID: 1798383013457134003, guid: 336cb2093eb73a74c84184b29ca09fac, type: 3}
   - {fileID: 1515413737831354820, guid: ee69bf91639cab14ebaab58c0079f87d, type: 3}
+  - {fileID: 1515413737831354820, guid: df7a527ee61b354488f46c84558380d7, type: 3}
+  - {fileID: 1515413737831354820, guid: 22c34dda8d444ab43bf3d89c260387f4, type: 3}
+  - {fileID: 1515413737831354820, guid: 0e78d4ed9ba7618488cacdf280bba2c2, type: 3}
+  - {fileID: 1515413737831354820, guid: 5077709911da8524da3c19224c8b7f43, type: 3}
   endOfTheWave: 0
   parent: {fileID: 563002988}
-  wavesTable: {fileID: 4900000, guid: d65bece13137817428fde597586f27fd, type: 3}
+  wavesTable: {fileID: 4900000, guid: ae37ff0230c2784438f6d015a0c8a45e, type: 3}
   WaveText: {fileID: 853664514}
   waveScreen: {fileID: 853664512}
+  firstEncounterWave: 2
+  waveForm: {fileID: 1590925524}
 --- !u!1 &605737298
 GameObject:
   m_ObjectHideFlags: 0
@@ -3587,20 +3609,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 605737298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba424d8cd86410540b46585d9d992af5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8de70fb0c7b16b34cbe560a6cef12fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
   - {fileID: 377946998869243335, guid: bf609548db88fc34ab1403e72389bd10, type: 3}
+  - {fileID: 377946998869243335, guid: 511504f45117fd845b5d09dced5a70e8, type: 3}
+  - {fileID: 377946998869243335, guid: a00f2972d0e541549a1d8b84816659e5, type: 3}
+  - {fileID: 377946998869243335, guid: c848edc23288afe4293e21a52e79d468, type: 3}
+  - {fileID: 377946998869243335, guid: bcec13760ee01fa45b196e4a64a857eb, type: 3}
   - {fileID: 3957342895764858181, guid: b21a9c06e230e834eafe1178756f1416, type: 3}
+  - {fileID: 3957342895764858181, guid: 80f3a51cc653e0241ba0eed068f8d680, type: 3}
+  - {fileID: 3957342895764858181, guid: babe0e5209f7a0a41b559a24bdeca0f2, type: 3}
+  - {fileID: 3957342895764858181, guid: c3e39500dbe04b142a55efff7a08713a, type: 3}
+  - {fileID: 3957342895764858181, guid: e3e0d0863073070408dc3443b3e8a778, type: 3}
   - {fileID: 8764735807233861961, guid: fb1854a5fe4540a4f83366b36a16e75f, type: 3}
+  - {fileID: 8764735807233861961, guid: 241e85b1716c3f147a6da593f7a1a862, type: 3}
+  - {fileID: 8764735807233861961, guid: b4b3e88d9ea4d684e834e820deb92b66, type: 3}
+  - {fileID: 8764735807233861961, guid: b2dcc6fc07d5c0149bf3b86002ba91b0, type: 3}
+  - {fileID: 8764735807233861961, guid: 9bd55ceddd1aa0641a20dc951d667afc, type: 3}
   - {fileID: 1798383013457134003, guid: 89e707dcd16f719499001a6e372bcc03, type: 3}
+  - {fileID: 1798383013457134003, guid: 238119afd6dc9db459f91d3904065aa3, type: 3}
+  - {fileID: 1798383013457134003, guid: 544db374799d78147a6005deec2f5ebe, type: 3}
+  - {fileID: 1798383013457134003, guid: bf5df06c2672d9348b3a1336142f11cb, type: 3}
+  - {fileID: 1798383013457134003, guid: 336cb2093eb73a74c84184b29ca09fac, type: 3}
   - {fileID: 1515413737831354820, guid: ee69bf91639cab14ebaab58c0079f87d, type: 3}
+  - {fileID: 1515413737831354820, guid: df7a527ee61b354488f46c84558380d7, type: 3}
+  - {fileID: 1515413737831354820, guid: 22c34dda8d444ab43bf3d89c260387f4, type: 3}
+  - {fileID: 1515413737831354820, guid: 0e78d4ed9ba7618488cacdf280bba2c2, type: 3}
+  - {fileID: 1515413737831354820, guid: 5077709911da8524da3c19224c8b7f43, type: 3}
   endOfTheWave: 0
   parent: {fileID: 563002988}
-  wavesTable: {fileID: 4900000, guid: fcd44aa075bae96429c091534f4304d3, type: 3}
+  wavesTable: {fileID: 4900000, guid: ae37ff0230c2784438f6d015a0c8a45e, type: 3}
   WaveText: {fileID: 853664514}
   waveScreen: {fileID: 853664512}
+  firstEncounterWave: 1
+  waveForm: {fileID: 1590925524}
 --- !u!1 &658959783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4280,20 +4324,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 820231159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba424d8cd86410540b46585d9d992af5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8de70fb0c7b16b34cbe560a6cef12fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
   - {fileID: 377946998869243335, guid: bf609548db88fc34ab1403e72389bd10, type: 3}
+  - {fileID: 377946998869243335, guid: 511504f45117fd845b5d09dced5a70e8, type: 3}
+  - {fileID: 377946998869243335, guid: a00f2972d0e541549a1d8b84816659e5, type: 3}
+  - {fileID: 377946998869243335, guid: c848edc23288afe4293e21a52e79d468, type: 3}
+  - {fileID: 377946998869243335, guid: bcec13760ee01fa45b196e4a64a857eb, type: 3}
   - {fileID: 3957342895764858181, guid: b21a9c06e230e834eafe1178756f1416, type: 3}
+  - {fileID: 3957342895764858181, guid: 80f3a51cc653e0241ba0eed068f8d680, type: 3}
+  - {fileID: 3957342895764858181, guid: babe0e5209f7a0a41b559a24bdeca0f2, type: 3}
+  - {fileID: 3957342895764858181, guid: c3e39500dbe04b142a55efff7a08713a, type: 3}
+  - {fileID: 3957342895764858181, guid: e3e0d0863073070408dc3443b3e8a778, type: 3}
   - {fileID: 8764735807233861961, guid: fb1854a5fe4540a4f83366b36a16e75f, type: 3}
+  - {fileID: 8764735807233861961, guid: 241e85b1716c3f147a6da593f7a1a862, type: 3}
+  - {fileID: 8764735807233861961, guid: b4b3e88d9ea4d684e834e820deb92b66, type: 3}
+  - {fileID: 8764735807233861961, guid: b2dcc6fc07d5c0149bf3b86002ba91b0, type: 3}
+  - {fileID: 8764735807233861961, guid: 9bd55ceddd1aa0641a20dc951d667afc, type: 3}
   - {fileID: 1798383013457134003, guid: 89e707dcd16f719499001a6e372bcc03, type: 3}
+  - {fileID: 1798383013457134003, guid: 238119afd6dc9db459f91d3904065aa3, type: 3}
+  - {fileID: 1798383013457134003, guid: 544db374799d78147a6005deec2f5ebe, type: 3}
+  - {fileID: 1798383013457134003, guid: bf5df06c2672d9348b3a1336142f11cb, type: 3}
+  - {fileID: 1798383013457134003, guid: 336cb2093eb73a74c84184b29ca09fac, type: 3}
   - {fileID: 1515413737831354820, guid: ee69bf91639cab14ebaab58c0079f87d, type: 3}
+  - {fileID: 1515413737831354820, guid: df7a527ee61b354488f46c84558380d7, type: 3}
+  - {fileID: 1515413737831354820, guid: 22c34dda8d444ab43bf3d89c260387f4, type: 3}
+  - {fileID: 1515413737831354820, guid: 0e78d4ed9ba7618488cacdf280bba2c2, type: 3}
+  - {fileID: 1515413737831354820, guid: 5077709911da8524da3c19224c8b7f43, type: 3}
   endOfTheWave: 0
   parent: {fileID: 563002988}
-  wavesTable: {fileID: 4900000, guid: dd86c0bcd27aee842a1f827e47739b6b, type: 3}
+  wavesTable: {fileID: 4900000, guid: ae37ff0230c2784438f6d015a0c8a45e, type: 3}
   WaveText: {fileID: 853664514}
   waveScreen: {fileID: 853664512}
+  firstEncounterWave: 5
+  waveForm: {fileID: 1590925524}
 --- !u!1 &830852135
 GameObject:
   m_ObjectHideFlags: 0
@@ -4565,7 +4631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &850919879
 Transform:
   m_ObjectHideFlags: 0
@@ -5712,20 +5778,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1077296915}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba424d8cd86410540b46585d9d992af5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8de70fb0c7b16b34cbe560a6cef12fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
   - {fileID: 377946998869243335, guid: bf609548db88fc34ab1403e72389bd10, type: 3}
+  - {fileID: 377946998869243335, guid: 511504f45117fd845b5d09dced5a70e8, type: 3}
+  - {fileID: 377946998869243335, guid: a00f2972d0e541549a1d8b84816659e5, type: 3}
+  - {fileID: 377946998869243335, guid: c848edc23288afe4293e21a52e79d468, type: 3}
+  - {fileID: 377946998869243335, guid: bcec13760ee01fa45b196e4a64a857eb, type: 3}
   - {fileID: 3957342895764858181, guid: b21a9c06e230e834eafe1178756f1416, type: 3}
+  - {fileID: 3957342895764858181, guid: 80f3a51cc653e0241ba0eed068f8d680, type: 3}
+  - {fileID: 3957342895764858181, guid: babe0e5209f7a0a41b559a24bdeca0f2, type: 3}
+  - {fileID: 3957342895764858181, guid: c3e39500dbe04b142a55efff7a08713a, type: 3}
+  - {fileID: 3957342895764858181, guid: e3e0d0863073070408dc3443b3e8a778, type: 3}
   - {fileID: 8764735807233861961, guid: fb1854a5fe4540a4f83366b36a16e75f, type: 3}
+  - {fileID: 8764735807233861961, guid: 241e85b1716c3f147a6da593f7a1a862, type: 3}
+  - {fileID: 8764735807233861961, guid: b4b3e88d9ea4d684e834e820deb92b66, type: 3}
+  - {fileID: 8764735807233861961, guid: b2dcc6fc07d5c0149bf3b86002ba91b0, type: 3}
+  - {fileID: 8764735807233861961, guid: 9bd55ceddd1aa0641a20dc951d667afc, type: 3}
   - {fileID: 1798383013457134003, guid: 89e707dcd16f719499001a6e372bcc03, type: 3}
+  - {fileID: 1798383013457134003, guid: 238119afd6dc9db459f91d3904065aa3, type: 3}
+  - {fileID: 1798383013457134003, guid: 544db374799d78147a6005deec2f5ebe, type: 3}
+  - {fileID: 1798383013457134003, guid: bf5df06c2672d9348b3a1336142f11cb, type: 3}
+  - {fileID: 1798383013457134003, guid: 336cb2093eb73a74c84184b29ca09fac, type: 3}
   - {fileID: 1515413737831354820, guid: ee69bf91639cab14ebaab58c0079f87d, type: 3}
+  - {fileID: 1515413737831354820, guid: df7a527ee61b354488f46c84558380d7, type: 3}
+  - {fileID: 1515413737831354820, guid: 22c34dda8d444ab43bf3d89c260387f4, type: 3}
+  - {fileID: 1515413737831354820, guid: 0e78d4ed9ba7618488cacdf280bba2c2, type: 3}
+  - {fileID: 1515413737831354820, guid: 5077709911da8524da3c19224c8b7f43, type: 3}
   endOfTheWave: 0
   parent: {fileID: 563002988}
-  wavesTable: {fileID: 4900000, guid: c41559853171f76458c0e19bcc19a195, type: 3}
+  wavesTable: {fileID: 4900000, guid: ae37ff0230c2784438f6d015a0c8a45e, type: 3}
   WaveText: {fileID: 853664514}
   waveScreen: {fileID: 853664512}
+  firstEncounterWave: 3
+  waveForm: {fileID: 1590925524}
 --- !u!1 &1111246595
 GameObject:
   m_ObjectHideFlags: 0
@@ -7787,6 +7875,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!1 &1590925523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1590925525}
+  - component: {fileID: 1590925524}
+  m_Layer: 0
+  m_Name: WaveForm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1590925524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590925523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea333a3ac82e69479d99b0c541a03e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wavesTable: {fileID: 4900000, guid: ae37ff0230c2784438f6d015a0c8a45e, type: 3}
+  numberOfEnemies: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  minTimeSpawn: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  maxTimeSpawn: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  timeWave: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  sum: 0
+--- !u!4 &1590925525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590925523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.930849, y: 2.0870657, z: -6.323918}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1605479002
 GameObject:
   m_ObjectHideFlags: 0
@@ -8404,20 +8541,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1693828228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba424d8cd86410540b46585d9d992af5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8de70fb0c7b16b34cbe560a6cef12fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
   - {fileID: 377946998869243335, guid: bf609548db88fc34ab1403e72389bd10, type: 3}
+  - {fileID: 377946998869243335, guid: 511504f45117fd845b5d09dced5a70e8, type: 3}
+  - {fileID: 377946998869243335, guid: a00f2972d0e541549a1d8b84816659e5, type: 3}
+  - {fileID: 377946998869243335, guid: c848edc23288afe4293e21a52e79d468, type: 3}
+  - {fileID: 377946998869243335, guid: bcec13760ee01fa45b196e4a64a857eb, type: 3}
   - {fileID: 3957342895764858181, guid: b21a9c06e230e834eafe1178756f1416, type: 3}
+  - {fileID: 3957342895764858181, guid: 80f3a51cc653e0241ba0eed068f8d680, type: 3}
+  - {fileID: 3957342895764858181, guid: babe0e5209f7a0a41b559a24bdeca0f2, type: 3}
+  - {fileID: 3957342895764858181, guid: c3e39500dbe04b142a55efff7a08713a, type: 3}
+  - {fileID: 3957342895764858181, guid: e3e0d0863073070408dc3443b3e8a778, type: 3}
   - {fileID: 8764735807233861961, guid: fb1854a5fe4540a4f83366b36a16e75f, type: 3}
+  - {fileID: 8764735807233861961, guid: 241e85b1716c3f147a6da593f7a1a862, type: 3}
+  - {fileID: 8764735807233861961, guid: b4b3e88d9ea4d684e834e820deb92b66, type: 3}
+  - {fileID: 8764735807233861961, guid: b2dcc6fc07d5c0149bf3b86002ba91b0, type: 3}
+  - {fileID: 8764735807233861961, guid: 9bd55ceddd1aa0641a20dc951d667afc, type: 3}
   - {fileID: 1798383013457134003, guid: 89e707dcd16f719499001a6e372bcc03, type: 3}
+  - {fileID: 1798383013457134003, guid: 238119afd6dc9db459f91d3904065aa3, type: 3}
+  - {fileID: 1798383013457134003, guid: 544db374799d78147a6005deec2f5ebe, type: 3}
+  - {fileID: 1798383013457134003, guid: bf5df06c2672d9348b3a1336142f11cb, type: 3}
+  - {fileID: 1798383013457134003, guid: 336cb2093eb73a74c84184b29ca09fac, type: 3}
   - {fileID: 1515413737831354820, guid: ee69bf91639cab14ebaab58c0079f87d, type: 3}
+  - {fileID: 1515413737831354820, guid: df7a527ee61b354488f46c84558380d7, type: 3}
+  - {fileID: 1515413737831354820, guid: 22c34dda8d444ab43bf3d89c260387f4, type: 3}
+  - {fileID: 1515413737831354820, guid: 0e78d4ed9ba7618488cacdf280bba2c2, type: 3}
+  - {fileID: 1515413737831354820, guid: 5077709911da8524da3c19224c8b7f43, type: 3}
   endOfTheWave: 0
   parent: {fileID: 563002988}
-  wavesTable: {fileID: 4900000, guid: 6f59657f824958244842fce5e41b6429, type: 3}
+  wavesTable: {fileID: 4900000, guid: ae37ff0230c2784438f6d015a0c8a45e, type: 3}
   WaveText: {fileID: 853664514}
   waveScreen: {fileID: 853664512}
+  firstEncounterWave: 4
+  waveForm: {fileID: 1590925524}
 --- !u!1 &1702143651
 GameObject:
   m_ObjectHideFlags: 0
