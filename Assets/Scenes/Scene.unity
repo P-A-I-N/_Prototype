@@ -3219,7 +3219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efccb6081c121f943902f6505da4bbed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 500
+  gold: 50
   InfoBar: {fileID: 1813443810}
   gold5B: 0
   wave: 1
