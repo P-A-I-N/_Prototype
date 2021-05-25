@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 487661388840527556}
   - component: {fileID: 1569807511432885691}
   - component: {fileID: 8890501677561355476}
+  - component: {fileID: -1607839446369538972}
   m_Layer: 8
   m_Name: Gold_Tower_Lvl_4
   m_TagString: TowerGold
@@ -185,25 +186,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  range: 0
-  rateOfFire: 0
-  price: 100
+  health: 100
+  price: 1000
   fullprice: 0
   bullet: {fileID: 0}
   invisibleBullet: {fileID: 0}
   levelUp: {fileID: 0}
   nameTower: {fileID: 8749915973639064247}
+  hpTankBuff: 1000
+  _health: 0
+  damageEnemy: 0
+  range: 0
+  rateOfFire: 0
+  _rateOfFire: 0
+  damageTower: 0
   lvl4: 1
   lvl5a: {fileID: 2509314456873090153, guid: cc14801f7c2465641aa1edbcfba613c4, type: 3}
   lvl5b: {fileID: 2509314456873090153, guid: 03cb947226a2dee4d8d0ff55c487fea8, type: 3}
   goldTower: 1
-  goldGet: 100
+  goldGet: 10
   goldDelay: 1
   PVO: 0
   PNO: 0
   tipe: Gold
   lvl: 4
+  percentOfGold: 0
+  debuffHp: 0
+  invisible: 0
+  strongBuff: 0
+  multiplyRange: 0
+  multiplyDamage: 0
+  multiplySpeed: 0
+  parent: {fileID: 0}
+  _multiplyRange: 0
+  _multiplyDamage: 0
+  _multiplySpeed: 0
+  nowMultiplyRange: 0
+  nowMultiplyDamage: 0
+  nowMultiplySpeed: 0
 --- !u!50 &8890501677561355476
 Rigidbody2D:
   serializedVersion: 4
@@ -225,3 +245,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &-1607839446369538972
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509314456873090153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b182470129128914a91a7503d3cbd2b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8749915973639064247}
   - component: {fileID: -6874800234426090944}
   - component: {fileID: 6656162599628807591}
+  - component: {fileID: 1590356342066320790}
   m_Layer: 8
   m_Name: Gold_Tower_Lvl_5A
   m_TagString: TowerGold
@@ -172,17 +173,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  range: 0
-  rateOfFire: 0
-  price: 100
+  health: 100
+  price: 10000
   fullprice: 0
   bullet: {fileID: 0}
   invisibleBullet: {fileID: 0}
   levelUp: {fileID: 0}
   nameTower: {fileID: 8749915973639064247}
-  hpTankBuff: 0
+  hpTankBuff: 1000
   _health: 0
+  damageEnemy: 0
+  range: 0
+  rateOfFire: 0
+  _rateOfFire: 0
+  damageTower: 0
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
@@ -193,7 +197,20 @@ MonoBehaviour:
   PNO: 0
   tipe: Gold
   lvl: 5A
-  percentOfGold: 2
+  percentOfGold: 10
+  debuffHp: 0
+  invisible: 0
+  strongBuff: 0
+  multiplyRange: 0
+  multiplyDamage: 0
+  multiplySpeed: 0
+  parent: {fileID: 0}
+  _multiplyRange: 0
+  _multiplyDamage: 0
+  _multiplySpeed: 0
+  nowMultiplyRange: 0
+  nowMultiplyDamage: 0
+  nowMultiplySpeed: 0
 --- !u!50 &6656162599628807591
 Rigidbody2D:
   serializedVersion: 4
@@ -215,3 +232,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1590356342066320790
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509314456873090153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb0be8f9666741847b84c38147b93353, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

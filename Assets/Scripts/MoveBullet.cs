@@ -61,7 +61,10 @@ public class MoveBullet : MonoBehaviour
         bool enemyPVO = collision.gameObject.GetComponent<Enemy>().enemyPVO;
         bool enemyInvisible = collision.gameObject.GetComponent<Enemy>().enemyInvisible;
 
-
+        if (collision.tag == "Border")
+        {
+            Destroy(gameObject);
+        }
 
         if ((!PVO || (Normal && PVO)) && !Splash && !enemyPVO && !enemyInvisible)
         {
