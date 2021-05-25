@@ -3283,6 +3283,9 @@ MonoBehaviour:
   gold: 500
   InfoBar: {fileID: 1813443810}
   gold5B: 0
+  wave: 1
+  killedEnemies: 0
+  totalEnemies: 0
 --- !u!4 &563002988
 Transform:
   m_ObjectHideFlags: 0
@@ -3666,6 +3669,7 @@ MonoBehaviour:
   waveScreen: {fileID: 853664512}
   firstEncounterWave: 2
   waveForm: {fileID: 1590925524}
+  gm: {fileID: 563002987}
 --- !u!1 &605737298
 GameObject:
   m_ObjectHideFlags: 0
@@ -3742,6 +3746,7 @@ MonoBehaviour:
   waveScreen: {fileID: 853664512}
   firstEncounterWave: 1
   waveForm: {fileID: 1590925524}
+  gm: {fileID: 563002987}
 --- !u!1 &658959783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4554,6 +4559,7 @@ MonoBehaviour:
   waveScreen: {fileID: 853664512}
   firstEncounterWave: 5
   waveForm: {fileID: 1590925524}
+  gm: {fileID: 563002987}
 --- !u!1 &830852135
 GameObject:
   m_ObjectHideFlags: 0
@@ -6008,6 +6014,7 @@ MonoBehaviour:
   waveScreen: {fileID: 853664512}
   firstEncounterWave: 3
   waveForm: {fileID: 1590925524}
+  gm: {fileID: 563002987}
 --- !u!1001 &1110379570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8965,6 +8972,7 @@ MonoBehaviour:
   waveScreen: {fileID: 853664512}
   firstEncounterWave: 4
   waveForm: {fileID: 1590925524}
+  gm: {fileID: 563002987}
 --- !u!1 &1702143651
 GameObject:
   m_ObjectHideFlags: 0

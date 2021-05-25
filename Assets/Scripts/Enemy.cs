@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public float decelerationIn;
     public float gold;
     public float max_health;
+    public int wave;
     private float _speed;
     GameMap gm;
     bool cold;
@@ -163,6 +164,7 @@ public class Enemy : MonoBehaviour
             {
                 gold = gold + ((gold / 100) * (percentOfEnemy * gm.gold5B));
                 gm.gold += gold;
+                gm.killedEnemies++;
                 Destroy(gameObject);
             }
             if (Fire)
@@ -186,6 +188,7 @@ public class Enemy : MonoBehaviour
         {
             if (collision.gameObject.tag == "Castle")
             {
+                gm.killedEnemies++;
                 Destroy(gameObject);
             }
             if (!enemyPVO)

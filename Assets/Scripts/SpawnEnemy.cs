@@ -22,6 +22,7 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject waveScreen;
     public int firstEncounterWave;
     public WaveForm waveForm;
+    public GameMap gm;
 
     void Start()
     {
@@ -30,6 +31,9 @@ public class SpawnEnemy : MonoBehaviour
         waveTextPrint = true;
         timeTextPrint = Time.time + 5; 
         string [] waves = wavesTable.text.Split ('\n');
+        gm.wave = current_wave;
+        gm.killedEnemies = 0;
+        gm.totalEnemies = waveForm.numberOfEnemies[current_wave - 1];
         SettingWave(waves[0]);
     }
     void Update()
@@ -42,6 +46,16 @@ public class SpawnEnemy : MonoBehaviour
         if (endOfTheWave && current_wave < num_waves)
         {
             current_wave++;
+            gm.wave = current_wave;
+            if (gm.killedEnemies == gm.totalEnemies)
+            {
+                gm.killedEnemies = 0;
+                gm.totalEnemies = waveForm.numberOfEnemies[current_wave - 1];
+            }
+            else if (gameObject.name == "Spawn 1")
+            {
+                gm.totalEnemies += waveForm.numberOfEnemies[current_wave - 1];
+            }
             endOfTheWave = false;
             string[] waves = wavesTable.text.Split('\n');
             SettingWave( waves[current_wave - 1]) ;
@@ -101,6 +115,7 @@ public class SpawnEnemy : MonoBehaviour
             return; 
         }
         e = Instantiate(enemy[enemyIndex], transform.position, transform.rotation);
+        e.GetComponent<Enemy>().wave = current_wave;
         e.transform.SetParent(parent);
         spawnTimeRND = UnityEngine.Random.Range (minTimeSpawn, maxTimeSpawn);
         exit_time = Time.time + spawnTimeRND;
