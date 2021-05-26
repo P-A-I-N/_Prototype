@@ -160,7 +160,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Burger, restrains enemy attacks
 --- !u!114 &-8992518236791918740
 MonoBehaviour:
   m_ObjectHideFlags: 0

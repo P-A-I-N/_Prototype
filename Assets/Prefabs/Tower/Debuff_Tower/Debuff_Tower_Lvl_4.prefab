@@ -224,7 +224,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Alkagol, in a 5x3 radius, degrades the characteristics of enemies, from
+    this level enemies take x3 damage
 --- !u!114 &-184006997990161017
 MonoBehaviour:
   m_ObjectHideFlags: 0

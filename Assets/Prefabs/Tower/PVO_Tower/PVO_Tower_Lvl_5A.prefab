@@ -161,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Potato, attacks multiple flying enemies
 --- !u!114 &-2288643598088241710
 MonoBehaviour:
   m_ObjectHideFlags: 0

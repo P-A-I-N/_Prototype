@@ -52,7 +52,7 @@ public class TowerInfo : MonoBehaviour
                 range.text = "" + target.GetComponent<Tower>().range + "➜" + target.GetComponent<Tower>().lvl5a.GetComponent<Tower>().range + "/" + target.GetComponent<Tower>().lvl5b.GetComponent<Tower>().range;
                 health.text = "" + target.GetComponent<Tower>().health + "➜" + target.GetComponent<Tower>().lvl5a.GetComponent<Tower>().health + "/" + target.GetComponent<Tower>().lvl5b.GetComponent<Tower>().health;
                 price.text = "" + target.GetComponent<Tower>().price + "➜" + target.GetComponent<Tower>().lvl5a.GetComponent<Tower>().price + "/" + target.GetComponent<Tower>().lvl5b.GetComponent<Tower>().price;
-                speed.text = "" + target.GetComponent<Tower>().rateOfFire + "➜" + target.GetComponent<Tower>().lvl5a.GetComponent<Tower>().rateOfFire + "/" + target.GetComponent<Tower>().lvl5b.GetComponent<Tower>().rateOfFire;
+                speed.text = "" + target.GetComponent<Tower>()._rateOfFire + "➜" + target.GetComponent<Tower>().lvl5a.GetComponent<Tower>().rateOfFire + "/" + target.GetComponent<Tower>().lvl5b.GetComponent<Tower>().rateOfFire;
                 effect.text = target.GetComponent<Tower>().lvl5a.GetComponent<Tower>().nameTower.text + "/" + target.GetComponent<Tower>().lvl5b.GetComponent<Tower>().nameTower.text;
 
             }
@@ -69,7 +69,7 @@ public class TowerInfo : MonoBehaviour
                     range.text = "" + target.GetComponent<Tower>().range + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().range;
                     health.text = "" + target.GetComponent<Tower>().health + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().health;
                     price.text = "" + target.GetComponent<Tower>().price + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().price;
-                    speed.text = "" + target.GetComponent<Tower>().rateOfFire + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().rateOfFire;
+                    speed.text = "" + target.GetComponent<Tower>()._rateOfFire + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().rateOfFire;
                     effect.text = "" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().nameTower.text;
                 }
                 else
@@ -81,7 +81,7 @@ public class TowerInfo : MonoBehaviour
                     range.text = "" + target.GetComponent<Tower>().range;
                     health.text = "" + target.GetComponent<Tower>().health;
                     price.text = "" + target.GetComponent<Tower>().price;
-                    speed.text = "" + target.GetComponent<Tower>().rateOfFire;
+                    speed.text = "" + target.GetComponent<Tower>()._rateOfFire;
                     effect.text = "" + target.GetComponent<Tower>().nameTower.text;
                 }
             }

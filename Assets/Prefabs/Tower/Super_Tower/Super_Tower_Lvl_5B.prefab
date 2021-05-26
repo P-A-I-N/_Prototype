@@ -161,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: The strongest and most delicious cake
 --- !u!114 &2860196080269062667
 MonoBehaviour:
   m_ObjectHideFlags: 0

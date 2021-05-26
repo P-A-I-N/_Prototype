@@ -223,7 +223,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Alkagol, in a 5x3 radius, degrades the characteristics of enemies, removes
+    shields, flight and invisibility from enemies
 --- !u!114 &-5569291083647525240
 MonoBehaviour:
   m_ObjectHideFlags: 0
