@@ -159,17 +159,13 @@ public class RayCast : MonoBehaviour
 
     public void lvl5a()
     {
-        if (target.GetComponent<Tower>().lvl4)
-        {
-            target.GetComponent<Tower>().levelUp = target.GetComponent<Tower>().lvl5a;
-        }
+        target.GetComponent<Tower>().levelUp = target.GetComponent<Tower>().lvl5a;
+        lvlUp();
     }
     public void lvl5b()
     {
-        if (target.GetComponent<Tower>().lvl4)
-        {
-            target.GetComponent<Tower>().levelUp = target.GetComponent<Tower>().lvl5b;
-        }
+        target.GetComponent<Tower>().levelUp = target.GetComponent<Tower>().lvl5b;
+        lvlUp();
     }
 }
 

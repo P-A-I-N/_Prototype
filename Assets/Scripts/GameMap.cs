@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class GameMap : MonoBehaviour
 {
-    public float gold = 1000;
-    public UnityEngine.UI.Text InfoBar;
+    public float gold = 50;
+    public UnityEngine.UI.Text price;
+    public UnityEngine.UI.Text Hp;
+    public UnityEngine.UI.Text _wave;
     public int gold5B;
     public int wave = 1;
     public int killedEnemies = 0;
@@ -20,6 +22,11 @@ public class GameMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dc != null) InfoBar.text = dc.health + "/50 HP Gold:" + gold + " Wave:" + wave + " Enemies: " + killedEnemies + "/" + totalEnemies;
+        if (dc != null)
+        {
+            price.text = "" + gold;
+            Hp.text = dc.health + "/50 HP";
+            _wave.text = "Wave: " + wave + " Enemies: " + killedEnemies + "/" + totalEnemies;
+        }
     }
 }
