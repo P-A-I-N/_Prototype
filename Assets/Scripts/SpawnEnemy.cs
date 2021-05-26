@@ -37,7 +37,6 @@ public class SpawnEnemy : MonoBehaviour
         gm.killedEnemies = 0;
         gm.totalEnemies = waveForm.numberOfEnemies[current_wave - 1];
         num_waves = waveForm.numberOfEnemies.Length;
-        print(num_waves);
         SettingWave(waves[0]);
     }
     void Update()
