@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 712444382164881681}
   - component: {fileID: 8261375614378736495}
   - component: {fileID: 204249975237497013}
+  - component: {fileID: 1990533075657276512}
   m_Layer: 8
   m_Name: Tank_Tower_Lvl_3
   m_TagString: TowerTank
@@ -31,7 +32,7 @@ RectTransform:
   m_GameObject: {fileID: 7644471715059071606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.17, y: 0.17, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,12 +82,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 041659526a757d54e8ca7880625f4d79, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4730c52d3fd8a384eb5c7dc65c04e43e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 6.19, y: 6.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -105,18 +106,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.3109622, y: -0.0051413774}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.66, y: 0.61}
-    newSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 6.19, y: 6.52}
+    newSize: {x: 6.19, y: 6.52}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 1}
+  m_Size: {x: 5.044655, y: 4.999797}
   m_EdgeRadius: 0
 --- !u!222 &3231844967421358206
 CanvasRenderer:
@@ -172,15 +173,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171ced5164ed0ef4f877412f162168c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
-  range: 0
-  rateOfFire: 0
-  price: 2
+  health: 5000
+  price: 50
   fullprice: 0
   bullet: {fileID: 0}
   invisibleBullet: {fileID: 0}
   levelUp: {fileID: 7644471715059071606, guid: bb42f35c9753a0a4581c367da21869dc, type: 3}
   nameTower: {fileID: 712444382164881681}
+  hpTankBuff: 1000
+  _health: 0
+  damageEnemy: 0
+  range: 0
+  rateOfFire: 0
+  _rateOfFire: 0
+  damageTower: 0
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
@@ -191,6 +197,20 @@ MonoBehaviour:
   PNO: 0
   tipe: Tank
   lvl: 3
+  percentOfGold: 0
+  debuffHp: 0
+  invisible: 0
+  strongBuff: 0
+  multiplyRange: 0
+  multiplyDamage: 0
+  multiplySpeed: 0
+  parent: {fileID: 0}
+  _multiplyRange: 0
+  _multiplyDamage: 0
+  _multiplySpeed: 0
+  nowMultiplyRange: 0
+  nowMultiplyDamage: 0
+  nowMultiplySpeed: 0
 --- !u!50 &204249975237497013
 Rigidbody2D:
   serializedVersion: 4
@@ -212,3 +232,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1990533075657276512
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644471715059071606}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b4db15936e40b748b45474f23b9662c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2860196080269062667}
   - component: {fileID: -89763988944189187}
   - component: {fileID: -1584660856546727644}
+  - component: {fileID: 6436392511372065610}
   m_Layer: 8
   m_Name: Super_Tower_Lvl_5B
   m_TagString: Tower
@@ -32,7 +33,7 @@ RectTransform:
   m_GameObject: {fileID: 7117819293085753521}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.18, y: 0.18, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,12 +83,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 31bf5e7deac9d024fb42a64bf8433526, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d37f83974a3ffe4f9ba391b4f0c85a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.15, y: 0.8}
+  m_Size: {x: 8.46, y: 9.63}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -106,18 +107,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00000035762787, y: -0.044799805}
+  m_Offset: {x: 0.60630465, y: -0.50628805}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1, y: 1.48}
-    newSize: {x: 1.15, y: 0.8}
+    oldSize: {x: 8.46, y: 9.63}
+    newSize: {x: 8.46, y: 9.63}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9942391, y: 0.34350586}
+  m_Size: {x: 6.1014833, y: 6.7436895}
   m_EdgeRadius: 0
 --- !u!222 &2375144565254793383
 CanvasRenderer:
@@ -183,10 +184,9 @@ MonoBehaviour:
   hpTankBuff: 1000
   _health: 0
   damageEnemy: 0
-  invisible: 0
-  strongBuff: 0
   range: 20
   rateOfFire: 100
+  _rateOfFire: 0
   damageTower: 2000
   lvl4: 0
   lvl5a: {fileID: 0}
@@ -200,11 +200,18 @@ MonoBehaviour:
   lvl: 5B
   percentOfGold: 0
   debuffHp: 0
+  invisible: 0
+  strongBuff: 0
   multiplyRange: 2
-  multiplyRangeLvl5: 6
   multiplyDamage: 3
   multiplySpeed: 5
   parent: {fileID: 0}
+  _multiplyRange: 0
+  _multiplyDamage: 0
+  _multiplySpeed: 0
+  nowMultiplyRange: 0
+  nowMultiplyDamage: 0
+  nowMultiplySpeed: 0
 --- !u!50 &-89763988944189187
 Rigidbody2D:
   serializedVersion: 4
@@ -238,3 +245,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2423c6811930c141a3044ea8ad9c0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplyRangeLvl2: 2
+  multiplyRangeLvl3: 3
+  multiplyRangeLvl4: 4
+  multiplyRangeLvl5a: 5
+  multiplyRangeLvl5b: 6
+  multiplyDamageLvl3: 3
+  multiplyDamageLvl4: 4
+  multiplyDamageLvl5a: 5
+  multiplyDamageLvl5b: 6
+  multiplySpeedLvl5a: 5
+  invisible: 0
+  multiplyRange: 0
+  multiplyDamage: 0
+  strong: 0
+  multiplySpeed: 0
+  B1: 0
+  B2: 0
+  B3: 0
+  B4: 0
+  B5a: 0
+  B5b: 0
+--- !u!95 &6436392511372065610
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117819293085753521}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f21c47bdb900ee447b21154f6df3d792, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

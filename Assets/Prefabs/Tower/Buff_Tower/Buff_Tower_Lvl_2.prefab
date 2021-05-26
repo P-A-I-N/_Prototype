@@ -60,7 +60,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 5}
+  m_Size: {x: 60, y: 48}
   m_EdgeRadius: 0
 --- !u!1 &5356287445821558334
 GameObject:
@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 2999636960632431961}
   - component: {fileID: -7902302562564571644}
   - component: {fileID: 5485174897570377845}
+  - component: {fileID: 4767921449938589442}
   m_Layer: 8
   m_Name: Buff_Tower_Lvl_2
   m_TagString: TowerBuff
@@ -93,7 +94,7 @@ RectTransform:
   m_GameObject: {fileID: 5356287445821558334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_Children:
   - {fileID: 3963574731719013591}
   m_Father: {fileID: 0}
@@ -144,12 +145,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: a9fbda167c5b4d541a07c057e0717af9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 471b8da220f11ae4bb74ac10c7fca659, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 4.94, y: 9.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -168,18 +169,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.5574918, y: -0.4267273}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.38, y: 0.7}
-    newSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 4.94, y: 9.77}
+    newSize: {x: 4.94, y: 9.77}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 1}
+  m_Size: {x: 2.6891248, y: 6.4051723}
   m_EdgeRadius: 0
 --- !u!222 &908060641460306998
 CanvasRenderer:
@@ -236,19 +237,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  price: 2
+  price: 200
   fullprice: 0
   bullet: {fileID: 0}
   invisibleBullet: {fileID: 0}
   levelUp: {fileID: 5356287445821558334, guid: a08095e079129b64cb8cbd120abe0895, type: 3}
   nameTower: {fileID: 2999636960632431961}
-  hpTankBuff: 0
+  hpTankBuff: 1000
   _health: 0
   damageEnemy: 0
-  invisible: 0
-  strongBuff: 0
   range: 0
   rateOfFire: 0
+  _rateOfFire: 0
   damageTower: 0
   lvl4: 0
   lvl5a: {fileID: 0}
@@ -262,11 +262,18 @@ MonoBehaviour:
   lvl: 2
   percentOfGold: 0
   debuffHp: 0
+  invisible: 0
+  strongBuff: 0
   multiplyRange: 0
-  multiplyRangeLvl5: 0
   multiplyDamage: 0
   multiplySpeed: 0
   parent: {fileID: 0}
+  _multiplyRange: 0
+  _multiplyDamage: 0
+  _multiplySpeed: 0
+  nowMultiplyRange: 0
+  nowMultiplyDamage: 0
+  nowMultiplySpeed: 0
 --- !u!50 &5485174897570377845
 Rigidbody2D:
   serializedVersion: 4
@@ -288,3 +295,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &4767921449938589442
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5356287445821558334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 66e8412762cf5ee4e9ab5ad61cb9b0b3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
