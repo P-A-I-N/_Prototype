@@ -161,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ice cream, slows down the enemy by 70%
+  m_Text: 
 --- !u!114 &2392140038995544013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   invisibleBullet: {fileID: 6115813776678188055, guid: 2f7d64448a5e2a344b00f5f917367bd6, type: 3}
   levelUp: {fileID: 4583781615001532060, guid: 25ff62137a4fc3a45868538774ec4c1b, type: 3}
   nameTower: {fileID: 1967732178381951021}
-  hpTankBuff: 1000
+  hpTankBuff: 0
   _health: 0
   damageEnemy: 0
   range: 5

@@ -162,7 +162,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Paste, shoots multiple targets
+  m_Text: 
 --- !u!114 &-1313385045494291753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
   invisibleBullet: {fileID: 6303204925174716766, guid: ff00e47123f20964fa6ef07409279639, type: 3}
   levelUp: {fileID: 0}
   nameTower: {fileID: 7738167142773398050}
-  hpTankBuff: 1000
+  hpTankBuff: 0
   _health: 0
   damageEnemy: 0
   range: 5

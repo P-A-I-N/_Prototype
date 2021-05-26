@@ -161,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The strongest and most delicious cake
+  m_Text: 
 --- !u!114 &252111858146526673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   invisibleBullet: {fileID: 5024834314885986411, guid: c983a72b9a1ab1647b2a0b399f656919, type: 3}
   levelUp: {fileID: 75817332968836646, guid: 0c4943bb1051cc0488f32c9bbb1e637e, type: 3}
   nameTower: {fileID: 4827827770286745637}
-  hpTankBuff: 1000
+  hpTankBuff: 0
   _health: 0
   damageEnemy: 0
   range: 5

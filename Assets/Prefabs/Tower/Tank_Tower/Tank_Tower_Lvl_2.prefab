@@ -160,7 +160,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Burger, restrains the attacks of enemies
+  m_Text: 
 --- !u!114 &3323473750414432139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
   invisibleBullet: {fileID: 0}
   levelUp: {fileID: 7644471715059071606, guid: 27e8246bee99985419bf08982e282be5, type: 3}
   nameTower: {fileID: 712444382164881681}
-  hpTankBuff: 1000
+  hpTankBuff: 0
   _health: 0
   damageEnemy: 0
   range: 0

@@ -161,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0421lassic bread"
+  m_Text: 
 --- !u!114 &-2597358034536094493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   invisibleBullet: {fileID: 5024834314885986411, guid: 518524bc76b9b81478ad582404fd7b86, type: 3}
   levelUp: {fileID: 2171621869778484781, guid: 102355e5ae1a4e54c92a12e1228d7214, type: 3}
   nameTower: {fileID: 2729532451177159709}
-  hpTankBuff: 1000
+  hpTankBuff: 0
   _health: 0
   damageEnemy: 0
   range: 5

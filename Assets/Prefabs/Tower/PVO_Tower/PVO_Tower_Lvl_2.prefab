@@ -161,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Potatoes, shoots at flying enemies
+  m_Text: 
 --- !u!114 &-8681052341051873003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   invisibleBullet: {fileID: 8055456500217538808, guid: fefb8682e93a67c4b9d52df40cc462d6, type: 3}
   levelUp: {fileID: 5838607118407362590, guid: c3137ba6a03440640a592d8cdfbf5354, type: 3}
   nameTower: {fileID: 4094121401848907638}
-  hpTankBuff: 1000
+  hpTankBuff: 0
   _health: 0
   damageEnemy: 0
   range: 5

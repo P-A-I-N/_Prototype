@@ -21,8 +21,11 @@ public class test : MonoBehaviour
         {
             foreach (XmlNode TankBuff in xmlDoc.SelectNodes("root/Tower/Tank/Lvl5B"))
             {
-                tower[i].GetComponent<Tower>().hpTankBuff = int.Parse(TankBuff.Attributes.GetNamedItem("HpTankBuff").Value);
-                tower[i].GetComponent<Tower>().nameTower.text = "Burger, restrains enemy attacks and increases the health of allies within a 3x3 radius by " + int.Parse(TankBuff.Attributes.GetNamedItem("HpTankBuff").Value);
+                if (tower[i].GetComponent<Tower>().tipe == "Tank" && tower[i].GetComponent<Tower>().tipe == "5B")
+                {
+                    tower[i].GetComponent<Tower>().hpTankBuff = int.Parse(TankBuff.Attributes.GetNamedItem("HpTankBuff").Value);
+                    tower[i].GetComponent<Tower>().nameTower.text = "Burger, restrains enemy attacks and increases the health of allies within a 3x3 radius by " + int.Parse(TankBuff.Attributes.GetNamedItem("HpTankBuff").Value);
+                }
             }
             for (int k = 0; k < tipe.Length; k++)
             {
@@ -30,7 +33,7 @@ public class test : MonoBehaviour
                 {
                     foreach (XmlNode GoldT in xmlDoc.SelectNodes("root/Tower/Gold/Lvl" + lvl[e]))
                     {
-                        if (tower[i].GetComponent<Tower>() != null)
+                        if (tower[i].GetComponent<Tower>() != null && tower[i].GetComponent<Tower>().tipe == "Gold")
                         {
                             if (lvl[e] == "1")
                             {
