@@ -11,7 +11,7 @@ public class SpawnEnemy : MonoBehaviour
     float exit_time;
     public Transform parent;
     GameObject e;
-    int num_waves = 24;
+    int num_waves = 50;
     int current_wave = 1;
     public TextAsset wavesTable;
     public UnityEngine.UI.Text WaveText;
@@ -36,6 +36,8 @@ public class SpawnEnemy : MonoBehaviour
         gm.wave = current_wave;
         gm.killedEnemies = 0;
         gm.totalEnemies = waveForm.numberOfEnemies[current_wave - 1];
+        num_waves = waveForm.numberOfEnemies.Length;
+        print(num_waves);
         SettingWave(waves[0]);
     }
     void Update()
