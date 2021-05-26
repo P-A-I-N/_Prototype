@@ -101,8 +101,7 @@ public class Enemy : MonoBehaviour
 
     }
     private void Update()
-    {
-
+    {     
         if (change && changeTower)
         {
             gameObject.layer = LayerMask.NameToLayer("EnemyTower");
