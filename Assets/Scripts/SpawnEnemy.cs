@@ -11,7 +11,7 @@ public class SpawnEnemy : MonoBehaviour
     float exit_time;
     public Transform parent;
     GameObject e;
-    int num_waves = 9;
+    int num_waves = 24;
     int current_wave = 1;
     public TextAsset wavesTable;
     public UnityEngine.UI.Text WaveText;
@@ -23,6 +23,8 @@ public class SpawnEnemy : MonoBehaviour
     public int firstEncounterWave;
     public WaveForm waveForm;
     public GameMap gm;
+    bool fastStopEnable = true;
+    float fastStopTimer;
 
     void Start()
     {
@@ -45,16 +47,20 @@ public class SpawnEnemy : MonoBehaviour
         }
         if (endOfTheWave && current_wave < num_waves)
         {
+            print("Ending " +gameObject.name);
             current_wave++;
             gm.wave = current_wave;
-            if (gm.killedEnemies == gm.totalEnemies)
+            if (gm.killedEnemies == gm.totalEnemies && gameObject.name == "Spawn 1")
             {
                 gm.killedEnemies = 0;
                 gm.totalEnemies = waveForm.numberOfEnemies[current_wave - 1];
             }
-            else if (gameObject.name == "Spawn 1")
-            {
-                gm.totalEnemies += waveForm.numberOfEnemies[current_wave - 1];
+            else
+            { 
+                if (gameObject.name == "Spawn 1")
+                {
+                    gm.totalEnemies += waveForm.numberOfEnemies[current_wave - 1];
+                }    
             }
             endOfTheWave = false;
             string[] waves = wavesTable.text.Split('\n');
@@ -73,6 +79,18 @@ public class SpawnEnemy : MonoBehaviour
         if (Time.time > endWaveTime)
         {
             endOfTheWave = true;
+        }
+        if (gm.killedEnemies == gm.totalEnemies && fastStopEnable)
+        {
+            print (gameObject.name);
+            //endWaveTime = Time.time;
+            endOfTheWave = true;
+            fastStopEnable = false;
+            fastStopTimer = Time.time + 1f;
+        }
+        if (!fastStopEnable && Time.time > fastStopTimer)
+        {
+            fastStopEnable = true;
         }
     }
 
