@@ -223,7 +223,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Cocktail, in a 3x3 radius, improves the characteristics of allies, at this
+    level it gives the opportunity to attack invisible enemies
 --- !u!114 &5927684391851811058
 MonoBehaviour:
   m_ObjectHideFlags: 0

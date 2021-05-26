@@ -223,7 +223,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Cocktail, in a 3x3 radius, improves the characteristics of allies, at this
+    level increases the attack range of allies
 --- !u!114 &2114693070552104768
 MonoBehaviour:
   m_ObjectHideFlags: 0

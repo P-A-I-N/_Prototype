@@ -21,7 +21,7 @@ public class test : MonoBehaviour
         {
             foreach (XmlNode TankBuff in xmlDoc.SelectNodes("root/Tower/Tank/Lvl5B"))
             {
-                if (tower[i].GetComponent<Tower>().tipe == "Tank" && tower[i].GetComponent<Tower>().tipe == "5B")
+                if (tower[i].GetComponent<Tower>().tipe == "Tank" && tower[i].GetComponent<Tower>().lvl == "5B")
                 {
                     tower[i].GetComponent<Tower>().hpTankBuff = int.Parse(TankBuff.Attributes.GetNamedItem("HpTankBuff").Value);
                     tower[i].GetComponent<Tower>().nameTower.text = "Burger, restrains enemy attacks and increases the health of allies within a 3x3 radius by " + int.Parse(TankBuff.Attributes.GetNamedItem("HpTankBuff").Value);
@@ -35,32 +35,33 @@ public class test : MonoBehaviour
                     {
                         if (tower[i].GetComponent<Tower>() != null && tower[i].GetComponent<Tower>().tipe == "Gold")
                         {
-                            if (lvl[e] == "1")
+                            if (lvl[e] == "1" && tower[i].GetComponent<Tower>().lvl == "1")
                             {
                                 tower[i].GetComponent<Tower>().nameTower.text = "Cabbage, brings " + float.Parse(GoldT.Attributes.GetNamedItem("GoldGet").Value) + " extra gold per second";
                             }
-                            if (lvl[e] == "2")
+                            if (lvl[e] == "2" && tower[i].GetComponent<Tower>().lvl == "2")
                             {
                                 tower[i].GetComponent<Tower>().nameTower.text = "Cabbage, brings " + float.Parse(GoldT.Attributes.GetNamedItem("GoldGet").Value) + " extra gold per second";
                             }
-                            if (lvl[e] == "3")
+                            if (lvl[e] == "3" && tower[i].GetComponent<Tower>().lvl == "3")
                             {
                                 tower[i].GetComponent<Tower>().nameTower.text = "Cabbage, brings " + float.Parse(GoldT.Attributes.GetNamedItem("GoldGet").Value) + " extra gold per second";
                             }
-                            if (lvl[e] == "4")
+                            if (lvl[e] == "4" && tower[i].GetComponent<Tower>().lvl == "4")
                             {
                                 tower[i].GetComponent<Tower>().nameTower.text = "Cabbage, brings " + float.Parse(GoldT.Attributes.GetNamedItem("GoldGet").Value) + " extra gold per second";
                             }
-                            if (lvl[e] == "5A")
+                            if (lvl[e] == "5A" && tower[i].GetComponent<Tower>().lvl == "5A")
                             {
                                 tower[i].GetComponent<Tower>().nameTower.text = "Cabbage, gives " + float.Parse(GoldT.Attributes.GetNamedItem("PercentOfGold").Value) + "% of the current gold";
                             }
-                            if (lvl[e] == "5B")
+                            if (lvl[e] == "5B" && tower[i].GetComponent<Tower>().lvl == "5B")
                             {
                                 tower[i].GetComponent<Tower>().nameTower.text = "Cabbage, gives " + float.Parse(GoldT.Attributes.GetNamedItem("PercentOfEnemy").Value) + "% gold for killing an enemy";
                             }
                         }
                     }
+                    
 
                     foreach (XmlNode Buff in xmlDoc.SelectNodes("root/Tower/Buff/Lvl" + lvl[e]))
                     {

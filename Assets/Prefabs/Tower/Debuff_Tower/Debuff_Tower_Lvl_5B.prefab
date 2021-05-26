@@ -239,7 +239,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Alkagol, in a 5x3 radius, degrades the characteristics of enemies, lures
+    the enemy to our side
 --- !u!114 &9110462738322862024
 MonoBehaviour:
   m_ObjectHideFlags: 0

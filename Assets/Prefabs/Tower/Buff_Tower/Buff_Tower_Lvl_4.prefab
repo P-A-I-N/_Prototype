@@ -224,7 +224,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\rCocktail, in a 3x3 radius, improves the characteristics of allies, at
+    this level it makes it possible to break through shields"
 --- !u!114 &-5731292395401986685
 MonoBehaviour:
   m_ObjectHideFlags: 0

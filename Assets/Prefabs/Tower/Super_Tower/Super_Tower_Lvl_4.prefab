@@ -162,7 +162,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "The strongest and most delicious cake, \r\ncan attack flying enemies from
+    this level"
 --- !u!114 &5103483959453046892
 MonoBehaviour:
   m_ObjectHideFlags: 0
