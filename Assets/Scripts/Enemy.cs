@@ -2,6 +2,7 @@
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField]
     public float speed;
     public float health;
     public float freezeTime;
@@ -9,7 +10,7 @@ public class Enemy : MonoBehaviour
     public float gold;
     public float max_health;
     public int wave;
-    private float _speed;
+    public float _speed;
     GameMap gm;
     bool cold;
     float timeCold;
@@ -69,6 +70,7 @@ public class Enemy : MonoBehaviour
     public float speedAttack;
     private void Awake()
     {
+        _speed = speed;
         if (max_health <= 0) max_health = health;
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
         GetComponent<SpriteRenderer>().sortingLayerName = "Enemy";
@@ -86,7 +88,6 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         vect = Vector2.left;
-        _speed = speed;
 
         _enemyInvisible = enemyInvisible;
         _enemyPVO = enemyPVO;
