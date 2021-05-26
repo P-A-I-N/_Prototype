@@ -47,7 +47,6 @@ public class SpawnEnemy : MonoBehaviour
         }
         if (endOfTheWave && current_wave < num_waves)
         {
-            print("Ending " +gameObject.name);
             current_wave++;
             gm.wave = current_wave;
             if (gm.killedEnemies == gm.totalEnemies && gameObject.name == "Spawn 1")
@@ -82,7 +81,6 @@ public class SpawnEnemy : MonoBehaviour
         }
         if (gm.killedEnemies == gm.totalEnemies && fastStopEnable)
         {
-            print (gameObject.name);
             //endWaveTime = Time.time;
             endOfTheWave = true;
             fastStopEnable = false;
