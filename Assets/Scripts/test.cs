@@ -22,11 +22,43 @@ public class test : MonoBehaviour
             foreach (XmlNode TankBuff in xmlDoc.SelectNodes("root/Tower/Tank/Lvl5B"))
             {
                 tower[i].GetComponent<Tower>().hpTankBuff = int.Parse(TankBuff.Attributes.GetNamedItem("HpTankBuff").Value);
+                tower[i].GetComponent<Tower>().nameTower.text = "Burger, restrains enemy attacks and increases the health of allies within a 3x3 radius by " + int.Parse(TankBuff.Attributes.GetNamedItem("HpTankBuff").Value);
             }
             for (int k = 0; k < tipe.Length; k++)
             {
                 for (int e = 0; e < lvl.Length; e++)
                 {
+                    foreach (XmlNode GoldT in xmlDoc.SelectNodes("root/Tower/Gold/Lvl" + lvl[e]))
+                    {
+                        if (tower[i].GetComponent<Tower>() != null)
+                        {
+                            if (lvl[e] == "1")
+                            {
+                                tower[i].GetComponent<Tower>().nameTower.text = "Cabbage, brings " + float.Parse(GoldT.Attributes.GetNamedItem("GoldGet").Value) + " extra gold per second";
+                            }
+                            if (lvl[e] == "2")
+                            {
+                                tower[i].GetComponent<Tower>().nameTower.text = "Cabbage, brings " + float.Parse(GoldT.Attributes.GetNamedItem("GoldGet").Value) + " extra gold per second";
+                            }
+                            if (lvl[e] == "3")
+                            {
+                                tower[i].GetComponent<Tower>().nameTower.text = "Cabbage, brings " + float.Parse(GoldT.Attributes.GetNamedItem("GoldGet").Value) + " extra gold per second";
+                            }
+                            if (lvl[e] == "4")
+                            {
+                                tower[i].GetComponent<Tower>().nameTower.text = "Cabbage, brings " + float.Parse(GoldT.Attributes.GetNamedItem("GoldGet").Value) + " extra gold per second";
+                            }
+                            if (lvl[e] == "5A")
+                            {
+                                tower[i].GetComponent<Tower>().nameTower.text = "Cabbage, gives " + float.Parse(GoldT.Attributes.GetNamedItem("PercentOfGold").Value) + "% of the current gold";
+                            }
+                            if (lvl[e] == "5B")
+                            {
+                                tower[i].GetComponent<Tower>().nameTower.text = "Cabbage, gives " + float.Parse(GoldT.Attributes.GetNamedItem("PercentOfEnemy").Value) + "% gold for killing an enemy";
+                            }
+                        }
+                    }
+
                     foreach (XmlNode Buff in xmlDoc.SelectNodes("root/Tower/Buff/Lvl" + lvl[e]))
                     {
                         if (tower[i].GetComponent<Buff>() != null)
@@ -172,45 +204,45 @@ public class test : MonoBehaviour
                 {
                     for (int f = 0; f < lvl.Length; f++)
                     {
-                        foreach (XmlNode Debuff in xmlDoc.SelectNodes("root/Tower/Debuff/Lvl" + lvl[f]))
+                        foreach (XmlNode DebuffEnemy in xmlDoc.SelectNodes("root/Tower/Debuff/Lvl" + lvl[f]))
                         {
                             if (lvl[f] == "1")
                             {
-                                enemy[i].GetComponent<Debuff>().dbHp1Lvl = float.Parse(Debuff.Attributes.GetNamedItem("DebuffHp").Value);
+                                enemy[i].GetComponent<Debuff>().dbHp1Lvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("DebuffHp").Value);
                             }
                             if (lvl[f] == "2")
                             {
-                                enemy[i].GetComponent<Debuff>().dbHp2Lvl = float.Parse(Debuff.Attributes.GetNamedItem("DebuffHp").Value);
-                                enemy[i].GetComponent<Debuff>().poisonDamage2Lvl = float.Parse(Debuff.Attributes.GetNamedItem("PoisonDamage").Value);
-                                enemy[i].GetComponent<Enemy>().timeBetweenDamage = float.Parse(Debuff.Attributes.GetNamedItem("TimeBetweenDamage").Value);
+                                enemy[i].GetComponent<Debuff>().dbHp2Lvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("DebuffHp").Value);
+                                enemy[i].GetComponent<Debuff>().poisonDamage2Lvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("PoisonDamage").Value);
+                                enemy[i].GetComponent<Enemy>().timeBetweenDamage = float.Parse(DebuffEnemy.Attributes.GetNamedItem("TimeBetweenDamage").Value);
                             }
                             if (lvl[f] == "3")
                             {
-                                enemy[i].GetComponent<Debuff>().dbHp3Lvl = float.Parse(Debuff.Attributes.GetNamedItem("DebuffHp").Value);
-                                enemy[i].GetComponent<Debuff>().poisonDamage3Lvl = float.Parse(Debuff.Attributes.GetNamedItem("PoisonDamage").Value);
-                                enemy[i].GetComponent<Debuff>().timeBetweenDamage3Lvl = float.Parse(Debuff.Attributes.GetNamedItem("TimeBetweenDamage").Value);
-                                enemy[i].GetComponent<Debuff>().dbSpeed3Lvl = float.Parse(Debuff.Attributes.GetNamedItem("DbSpeed").Value);
+                                enemy[i].GetComponent<Debuff>().dbHp3Lvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("DebuffHp").Value);
+                                enemy[i].GetComponent<Debuff>().poisonDamage3Lvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("PoisonDamage").Value);
+                                enemy[i].GetComponent<Debuff>().timeBetweenDamage3Lvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("TimeBetweenDamage").Value);
+                                enemy[i].GetComponent<Debuff>().dbSpeed3Lvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("DbSpeed").Value);
                             }
                             if (lvl[f] == "4")
                             {
-                                enemy[i].GetComponent<Debuff>().dbHp4Lvl = float.Parse(Debuff.Attributes.GetNamedItem("DebuffHp").Value);
-                                enemy[i].GetComponent<Debuff>().poisonDamage4Lvl = float.Parse(Debuff.Attributes.GetNamedItem("PoisonDamage").Value);
-                                enemy[i].GetComponent<Debuff>().timeBetweenDamage4Lvl = float.Parse(Debuff.Attributes.GetNamedItem("TimeBetweenDamage").Value);
-                                enemy[i].GetComponent<Debuff>().dbSpeed4Lvl = float.Parse(Debuff.Attributes.GetNamedItem("DbSpeed").Value);
+                                enemy[i].GetComponent<Debuff>().dbHp4Lvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("DebuffHp").Value);
+                                enemy[i].GetComponent<Debuff>().poisonDamage4Lvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("PoisonDamage").Value);
+                                enemy[i].GetComponent<Debuff>().timeBetweenDamage4Lvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("TimeBetweenDamage").Value);
+                                enemy[i].GetComponent<Debuff>().dbSpeed4Lvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("DbSpeed").Value);
                             }
                             if (lvl[f] == "5A")
                             {
-                                enemy[i].GetComponent<Debuff>().dbHp5aLvl = float.Parse(Debuff.Attributes.GetNamedItem("DebuffHp").Value);
-                                enemy[i].GetComponent<Debuff>().poisonDamage5aLvl = float.Parse(Debuff.Attributes.GetNamedItem("PoisonDamage").Value);
-                                enemy[i].GetComponent<Debuff>().timeBetweenDamage5aLvl = float.Parse(Debuff.Attributes.GetNamedItem("TimeBetweenDamage").Value);
-                                enemy[i].GetComponent<Debuff>().dbSpeed5aLvl = float.Parse(Debuff.Attributes.GetNamedItem("DbSpeed").Value);
+                                enemy[i].GetComponent<Debuff>().dbHp5aLvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("DebuffHp").Value);
+                                enemy[i].GetComponent<Debuff>().poisonDamage5aLvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("PoisonDamage").Value);
+                                enemy[i].GetComponent<Debuff>().timeBetweenDamage5aLvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("TimeBetweenDamage").Value);
+                                enemy[i].GetComponent<Debuff>().dbSpeed5aLvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("DbSpeed").Value);
                             }
                             if (lvl[f] == "5B")
                             {
-                                enemy[i].GetComponent<Debuff>().dbHp5bLvl = float.Parse(Debuff.Attributes.GetNamedItem("DebuffHp").Value);
-                                enemy[i].GetComponent<Debuff>().poisonDamage5bLvl = float.Parse(Debuff.Attributes.GetNamedItem("PoisonDamage").Value);
-                                enemy[i].GetComponent<Debuff>().timeBetweenDamage5bLvl = float.Parse(Debuff.Attributes.GetNamedItem("TimeBetweenDamage").Value);
-                                enemy[i].GetComponent<Debuff>().dbSpeed5bLvl = float.Parse(Debuff.Attributes.GetNamedItem("DbSpeed").Value);
+                                enemy[i].GetComponent<Debuff>().dbHp5bLvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("DebuffHp").Value);
+                                enemy[i].GetComponent<Debuff>().poisonDamage5bLvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("PoisonDamage").Value);
+                                enemy[i].GetComponent<Debuff>().timeBetweenDamage5bLvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("TimeBetweenDamage").Value);
+                                enemy[i].GetComponent<Debuff>().dbSpeed5bLvl = float.Parse(DebuffEnemy.Attributes.GetNamedItem("DbSpeed").Value);
                             }
                         }
                     }

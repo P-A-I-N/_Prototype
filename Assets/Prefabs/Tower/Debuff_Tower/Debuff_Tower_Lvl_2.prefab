@@ -223,7 +223,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Debuff lvl 2
+  m_Text: "Alcohol that worsens enemy stats within a 5x3 radius + effect lvl1 + lvl2-
+    \rpoisons enemies"
 --- !u!114 &5503438892613769232
 MonoBehaviour:
   m_ObjectHideFlags: 0

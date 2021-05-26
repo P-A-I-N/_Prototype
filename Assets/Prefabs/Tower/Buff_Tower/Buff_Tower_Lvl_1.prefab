@@ -223,7 +223,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buff lvl 1
+  m_Text: cocktail, improves allies within a 3x3 radius + effect lvl1-can attack
+    invisible enemies
 --- !u!114 &5927684391851811058
 MonoBehaviour:
   m_ObjectHideFlags: 0

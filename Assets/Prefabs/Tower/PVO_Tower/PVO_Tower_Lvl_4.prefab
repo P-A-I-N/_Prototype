@@ -162,7 +162,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PVO lvl 4
+  m_Text: Potatoes, shoots at flying enemies
 --- !u!114 &-9096363336733730720
 MonoBehaviour:
   m_ObjectHideFlags: 0

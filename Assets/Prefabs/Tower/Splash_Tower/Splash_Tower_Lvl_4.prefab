@@ -162,7 +162,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Splash lvl 4
+  m_Text: Paste, shoots multiple targets
 --- !u!114 &-1313385045494291753
 MonoBehaviour:
   m_ObjectHideFlags: 0

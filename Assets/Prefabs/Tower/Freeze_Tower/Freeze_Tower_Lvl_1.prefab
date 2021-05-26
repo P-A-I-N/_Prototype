@@ -161,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Freeze lvl 1
+  m_Text: Ice cream, slows down the enemy by 30%
 --- !u!114 &-6098305499257788809
 MonoBehaviour:
   m_ObjectHideFlags: 0

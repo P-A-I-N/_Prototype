@@ -161,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Splash lvl 5B
+  m_Text: Paste, shoots multiple targets and also sets the target on fire
 --- !u!114 &4863438181463716425
 MonoBehaviour:
   m_ObjectHideFlags: 0

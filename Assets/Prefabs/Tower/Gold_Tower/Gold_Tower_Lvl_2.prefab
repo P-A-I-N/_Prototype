@@ -160,7 +160,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gold lvl 2
+  m_Text: Cabbage, brings extra gold
 --- !u!114 &-5811144427909218676
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -160,7 +160,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tank lvl 3
+  m_Text: Burger, restrains the attacks of enemies
 --- !u!114 &8261375614378736495
 MonoBehaviour:
   m_ObjectHideFlags: 0

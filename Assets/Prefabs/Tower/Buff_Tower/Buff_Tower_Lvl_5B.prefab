@@ -223,7 +223,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buff lvl 5B
+  m_Text: cocktail, improves allies within a 3x3 radius + effect lvl1+ lvl2 + lvl3
+    + lvl4 + lvl5b-Increases attack range
 --- !u!114 &2114693070552104768
 MonoBehaviour:
   m_ObjectHideFlags: 0

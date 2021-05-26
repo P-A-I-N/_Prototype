@@ -161,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PVO lvl 3
+  m_Text: Potatoes, shoots at flying enemies and breaks through shields
 --- !u!114 &-3321316591301857537
 MonoBehaviour:
   m_ObjectHideFlags: 0

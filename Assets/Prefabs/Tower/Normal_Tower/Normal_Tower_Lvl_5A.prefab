@@ -161,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Normal lvl 5A
+  m_Text: "\u0421lassic bread, and also attacks flying enemies"
 --- !u!114 &-8472095373032939158
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -161,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Normal lvl 5B
+  m_Text: "\u0421lassic bread"
 --- !u!114 &540859869751013922
 MonoBehaviour:
   m_ObjectHideFlags: 0
