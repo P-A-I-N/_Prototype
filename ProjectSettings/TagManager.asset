@@ -19,6 +19,7 @@ TagManager:
   - TowerGold
   - TankBuff
   - Fire
+  - Border
   layers:
   - Default
   - TransparentFX

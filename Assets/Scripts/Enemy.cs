@@ -67,6 +67,8 @@ public class Enemy : MonoBehaviour
     public bool changeTower;
     private Vector2 vect;
     public float speedAttack;
+
+    public Animator anim;
     private void Awake()
     {
         _speed = speed;
@@ -156,14 +158,13 @@ public class Enemy : MonoBehaviour
             }
             if (Time.time > timeCold && !stop && _damageEnemy == 0)
             {
-                _speed = speed;
+                _speed = speed; 
             }
             if (health <= 0)
             {
-                gold = gold + ((gold / 100) * (percentOfEnemy * gm.gold5B));
-                gm.gold += gold;
-                gm.killedEnemies++;
-                Destroy(gameObject);
+                GetComponent<LineRenderer>().Equals(false);
+                anim.SetInteger("state", 2);
+
             }
             if (Fire)
             {
@@ -336,7 +337,13 @@ public class Enemy : MonoBehaviour
         health -= _damageEnemy;
     }
 
-
+    public void die()
+    {
+        gold = gold + ((gold / 100) * (percentOfEnemy * gm.gold5B));
+        gm.gold += gold;
+        gm.killedEnemies++;
+        Destroy(gameObject);
+    }
 
 
 

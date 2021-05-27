@@ -27,6 +27,9 @@ public class MoveBullet : MonoBehaviour
     public float freezeTime;
     public float decelerationIn;
 
+    bool enemyStrong;
+    bool enemyPVO;
+    bool enemyInvisible;
 
     private void Start()
     {
@@ -57,9 +60,12 @@ public class MoveBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        bool enemyStrong = collision.gameObject.GetComponent<Enemy>().enemyStrong;
-        bool enemyPVO = collision.gameObject.GetComponent<Enemy>().enemyPVO;
-        bool enemyInvisible = collision.gameObject.GetComponent<Enemy>().enemyInvisible;
+        if (collision.gameObject.GetComponent<Enemy>())
+        {
+            enemyStrong = collision.gameObject.GetComponent<Enemy>().enemyStrong;
+            enemyPVO = collision.gameObject.GetComponent<Enemy>().enemyPVO;
+            enemyInvisible = collision.gameObject.GetComponent<Enemy>().enemyInvisible;
+        }
 
         if (collision.tag == "Border")
         {

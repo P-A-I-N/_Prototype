@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42437ad50aa4c54f907e305449a3820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 0
   speed: 0.2
   health: 30
   freezeTime: 3
@@ -149,6 +150,7 @@ MonoBehaviour:
   _layer: 
   changeTower: 0
   speedAttack: 2
+  anim: {fileID: -7512263183155031602}
 --- !u!50 &3434025404165784811
 Rigidbody2D:
   serializedVersion: 4

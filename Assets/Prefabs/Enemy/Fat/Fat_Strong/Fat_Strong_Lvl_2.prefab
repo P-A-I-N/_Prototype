@@ -150,6 +150,7 @@ MonoBehaviour:
   _layer: 
   changeTower: 0
   speedAttack: 2
+  anim: {fileID: -7923395000735681670}
 --- !u!50 &8040580312286416888
 Rigidbody2D:
   serializedVersion: 4
