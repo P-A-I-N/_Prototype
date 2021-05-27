@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Pauze : MonoBehaviour
 {
+    public int speed = 3;
     public GameObject panel;
     void Update()
     {
@@ -41,7 +42,7 @@ public class Pauze : MonoBehaviour
     }
     public void speedtime()
     {
-        Time.timeScale = 3;
+        Time.timeScale = speed;
     }
     public void pausetime()
     {

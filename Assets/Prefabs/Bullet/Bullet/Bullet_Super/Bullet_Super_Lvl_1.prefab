@@ -110,7 +110,7 @@ MonoBehaviour:
   Invisible: 0
   PVO: 0
   Strong: 0
-  Normal: 1
+  Normal: 0
   tipe: Super
   lvl: 1
   numSplashFreeze: 0

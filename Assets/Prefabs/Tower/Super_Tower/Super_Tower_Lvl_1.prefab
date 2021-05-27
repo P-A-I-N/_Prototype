@@ -185,7 +185,7 @@ MonoBehaviour:
   _health: 0
   damageEnemy: 0
   range: 5
-  rateOfFire: 3
+  rateOfFire: 10
   _rateOfFire: 0
   damageTower: 500
   lvl4: 0

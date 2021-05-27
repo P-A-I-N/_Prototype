@@ -8,6 +8,7 @@ public class GameMap : MonoBehaviour
     public UnityEngine.UI.Text price;
     public UnityEngine.UI.Text Hp;
     public UnityEngine.UI.Text _wave;
+    public GameObject win;
     public int gold5B;
     public int wave = 1;
     public int killedEnemies = 0;
@@ -28,6 +29,11 @@ public class GameMap : MonoBehaviour
             price.text = "" + nowGold;
             Hp.text = dc.health + "/50 HP";
             _wave.text = "Wave: " + wave + " Enemies: " + killedEnemies + "/" + totalEnemies;
+        }
+        if(wave == 50 && (killedEnemies == totalEnemies))
+        {
+            win.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
