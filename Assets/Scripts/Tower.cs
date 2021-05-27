@@ -29,7 +29,8 @@ public class Tower : MonoBehaviour
     public bool goldTower;
 
     GameMap gm;
-    public float goldGet, goldDelay;
+    public float goldGet;
+    public float goldDelay;
 
     public bool PVO;
     public bool PNO;
@@ -76,7 +77,7 @@ public class Tower : MonoBehaviour
 
     protected void Update()
     {
-        if(rateOfFire < Time.time && target)
+        if (rateOfFire < Time.time && target)
         {
             criateBullet();
         }
@@ -107,7 +108,7 @@ public class Tower : MonoBehaviour
         {
             _multiplySpeed = nowMultiplySpeed - multiplySpeed;
             nowMultiplySpeed = multiplySpeed;
-            if(_rateOfFire + _multiplySpeed <= 0.5f)
+            if (_rateOfFire + _multiplySpeed <= 0.5f)
             {
                 _rateOfFire = 0.5f;
             }
@@ -116,11 +117,7 @@ public class Tower : MonoBehaviour
 
 
 
-        if (tipe == "Gold" && lvl == "5A")
-        {
-            float nowGold = gm.gold;
-            goldGet = (nowGold / 100) * percentOfGold;
-        }
+        
 
 
         if (PNO)
@@ -192,6 +189,12 @@ public class Tower : MonoBehaviour
         {
             anim.SetInteger("state", 2);
         }
+
+        if (tipe == "Gold" && lvl == "5A")
+        {
+            float nowGold = gm.gold;
+            goldGet = (nowGold / 100) * percentOfGold;
+        }
     }
     protected void OnCollisionEnter2D(Collision2D collision)
     {
@@ -216,6 +219,10 @@ public class Tower : MonoBehaviour
         rateOfFire = _rateOfFire;
         rateOfFire += Time.time;
     }
+    void GetGold()
+    {
+        gm.gold += goldGet;
+    }
 
     public void lvl5A()
     {
@@ -225,10 +232,6 @@ public class Tower : MonoBehaviour
     public void lvl5B()
     {
         levelUp = lvl5b;
-    }
-    void GetGold()
-    {
-        gm.gold += goldGet;
     }
     public void die()
     {

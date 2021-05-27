@@ -191,7 +191,7 @@ MonoBehaviour:
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
   goldTower: 1
-  goldGet: 10
+  goldGet: 0
   goldDelay: 1
   PVO: 0
   PNO: 0
