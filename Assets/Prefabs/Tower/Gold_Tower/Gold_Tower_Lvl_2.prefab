@@ -160,7 +160,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cabbage, gives 10% gold for killing an enemy
+  m_Text: Cabbage, brings 2 extra gold per second
 --- !u!114 &-5811144427909218676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +232,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 3
 --- !u!95 &-7868784992453402641
 Animator:
   serializedVersion: 3

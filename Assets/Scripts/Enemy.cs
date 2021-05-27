@@ -192,6 +192,7 @@ public class Enemy : MonoBehaviour
             }
             if (!enemyPVO)
             {
+                GetComponent<Animator>().SetInteger("state", 1);
                 stop = true;
                 _speed = 0;
             }
@@ -201,6 +202,7 @@ public class Enemy : MonoBehaviour
                 _damageEnemy += __damageEnemy;
                 if (_damageEnemy > 0)
                 {
+                    GetComponent<Animator>().SetInteger("state", 1);
                     _speed = 0;
                 }
             }
@@ -213,6 +215,7 @@ public class Enemy : MonoBehaviour
                 _damageEnemy += __damageEnemy;
                 if (_damageEnemy > 0)
                 {
+                    GetComponent<Animator>().SetInteger("state", 1);
                     _speed = 0;
                 }
             }
@@ -224,6 +227,7 @@ public class Enemy : MonoBehaviour
         {
             if (!enemyPVO)
             {
+                GetComponent<Animator>().SetInteger("state", 0);
                 stop = false;
                 _speed = speed;
             }
@@ -233,6 +237,7 @@ public class Enemy : MonoBehaviour
                 _damageEnemy -= __damageEnemy;
                 if (_damageEnemy == 0)
                 {
+                    GetComponent<Animator>().SetInteger("state", 0);
                     _speed = speed;
                 }
             }
@@ -245,6 +250,7 @@ public class Enemy : MonoBehaviour
                 _damageEnemy -= __damageEnemy;
                 if (_damageEnemy == 0)
                 {
+                    GetComponent<Animator>().SetInteger("state", 0);
                     _speed = speed;
                 }
             }
