@@ -55,6 +55,8 @@ public class Tower : MonoBehaviour
     public float nowMultiplyRange;
     public float nowMultiplyDamage;
     public float nowMultiplySpeed;
+
+    public Animator anim;
     protected void Start()
     {
         parent = gameObject.transform;
@@ -184,11 +186,7 @@ public class Tower : MonoBehaviour
 
         if (_health <= 0)
         {
-            if (tipe == "Gold" && lvl == "5B")
-            {
-                gm.gold5B--;
-            }
-            Destroy(gameObject);
+            anim.SetInteger("state", 2);
         }
     }
     protected void OnCollisionEnter2D(Collision2D collision)
@@ -227,6 +225,14 @@ public class Tower : MonoBehaviour
     void GetGold()
     {
         gm.gold += goldGet;
+    }
+    public void die()
+    {
+        if (tipe == "Gold" && lvl == "5B")
+        {
+            gm.gold5B--;
+        }
+        Destroy(gameObject);
     }
 }
 

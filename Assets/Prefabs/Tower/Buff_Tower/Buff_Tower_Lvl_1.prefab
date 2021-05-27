@@ -275,6 +275,7 @@ MonoBehaviour:
   nowMultiplyRange: 0
   nowMultiplyDamage: 0
   nowMultiplySpeed: 0
+  anim: {fileID: 6879016912668305635}
 --- !u!50 &-8335282193494516080
 Rigidbody2D:
   serializedVersion: 4
