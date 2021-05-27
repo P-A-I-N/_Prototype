@@ -107,7 +107,11 @@ public class Tower : MonoBehaviour
         {
             _multiplySpeed = nowMultiplySpeed - multiplySpeed;
             nowMultiplySpeed = multiplySpeed;
-            _rateOfFire += _multiplySpeed;
+            if(_rateOfFire + _multiplySpeed <= 0.5f)
+            {
+                _rateOfFire = 0.5f;
+            }
+            else _rateOfFire += _multiplySpeed;
         }
 
 

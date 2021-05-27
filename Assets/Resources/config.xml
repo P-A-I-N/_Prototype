@@ -167,7 +167,7 @@
 				PVO = "false"
 				Freeze = "true"
 				Strong = "false"
-				PVOEnemy = "false"
+				PVOEnemy = "true"
 				Splash = "false"
 				Fire = "false">
 			</Lvl4>
@@ -175,17 +175,17 @@
 			<Lvl5A
 				Health = "100"
 				Range = "20"
-				RateOfFire = "3"
+				RateOfFire = "1"
 				Price = "200"
 				Damage = "1"
 				FreezeTime = "5"
 				DecelerationIn = "10"
 				SpeedBullet = "5"
 				PNO = "true"
-				PVO = "false"
+				PVO = "true"
 				Freeze = "true"
 				Strong = "false"
-				PVOEnemy = "false"
+				PVOEnemy = "true"
 				Splash = "false"
 				Fire = "false">
 			</Lvl5A>
@@ -201,10 +201,10 @@
 				RangeSplash = "4"
 				SpeedBullet = "5"
 				PNO = "true"
-				PVO = "false"
+				PVO = "true"
 				Freeze = "true"
 				Strong = "false"
-				PVOEnemy = "false"
+				PVOEnemy = "true"
 				Splash = "true"
 				Fire = "false">
 			</Lvl5B>
@@ -214,7 +214,7 @@
 			<Lvl1
 				Health = "100"
 				Range = "5"
-				RateOfFire = "3"
+				RateOfFire = "10"
 				Price = "1000"
 				Damage = "500"
 				SpeedBullet = "5"
@@ -230,7 +230,7 @@
 			<Lvl2
 				Health = "100"
 				Range = "5"
-				RateOfFire = "10"
+				RateOfFire = "3"
 				Price = "2000"
 				Damage = "500"
 				SpeedBullet = "5"
@@ -246,7 +246,7 @@
 			<Lvl3
 				Health = "100"
 				Range = "5"
-				RateOfFire = "10"
+				RateOfFire = "3"
 				Price = "5000"
 				Damage = "2000"
 				SpeedBullet = "5"
@@ -262,7 +262,7 @@
 			<Lvl4
 				Health = "100"
 				Range = "20"
-				RateOfFire = "10"
+				RateOfFire = "3"
 				Price = "10000"
 				Damage = "2000"
 				SpeedBullet = "5"
@@ -278,7 +278,7 @@
 			<Lvl5A
 				Health = "100"
 				Range = "20"
-				RateOfFire = "10"
+				RateOfFire = "3"
 				Price = "100000"
 				RangeSplash = "4"
 				Damage = "20000"
@@ -295,7 +295,7 @@
 			<Lvl5B
 				Health = "10000"
 				Range = "20"
-				RateOfFire = "100"
+				RateOfFire = "1"
 				Price = "50000"
 				Damage = "2000"
 				SpeedBullet = "5"
@@ -313,7 +313,7 @@
 			<Lvl1
 				Health = "100"
 				Range = "5"
-				RateOfFire = "1"
+				RateOfFire = "9"
 				Price = "10"
 				Damage = "3"
 				RangeSplash = "4"
@@ -330,7 +330,7 @@
 			<Lvl2
 				Health = "100"
 				Range = "5"
-				RateOfFire = "1"
+				RateOfFire = "9"
 				Price = "20"
 				Damage = "6"
 				RangeSplash = "4"
@@ -452,7 +452,7 @@
 			<Lvl3
 				Health = "100"
 				Range = "5"
-				RateOfFire = "7"
+				RateOfFire = "1"
 				Price = "50"
 				Damage = "5"
 				RangeSplash = "4"
@@ -469,9 +469,9 @@
 			<Lvl4
 				Health = "100"
 				Range = "5"
-				RateOfFire = "15"
+				RateOfFire = "1"
 				Price = "100"
-				Damage = "5"
+				Damage = "10"
 				SpeedBullet = "5"
 				PNO = "false"
 				PVO = "true"
@@ -485,9 +485,9 @@
 			<Lvl5A
 				Health = "100"
 				Range = "5"
-				RateOfFire = "15"
+				RateOfFire = "1"
 				Price = "200"
-				Damage = "5"
+				Damage = "10"
 				RangeSplash = "4"
 				SpeedBullet = "5"
 				PNO = "false"
@@ -502,9 +502,9 @@
 			<Lvl5B
 				Health = "100"
 				Range = "20"
-				RateOfFire = "15"
+				RateOfFire = "1"
 				Price = "200"
-				Damage = "10"
+				Damage = "20"
 				SpeedBullet = "10"
 				PNO = "false"
 				PVO = "true"
@@ -577,7 +577,7 @@
 				Price = "200"
 				DebuffHp = "10"
 				PoisonDamage = "2"
-                TimeBetweenDamage = "2">
+                TimeBetweenDamage = "10">
 			</Lvl2>
 
 			<Lvl3
@@ -585,8 +585,8 @@
 				Price = "500"
 				DebuffHp = "50"
 				PoisonDamage = "3"
-                TimeBetweenDamage = "3"
-				DbSpeed = "3">
+                TimeBetweenDamage = "8"
+				DbSpeed = "20">
 			</Lvl3>
 
 			<Lvl4
@@ -594,8 +594,8 @@
 				Price = "1000"
 				DebuffHp = "200"
 				PoisonDamage = "4"
-                TimeBetweenDamage = "4"
-				DbSpeed = "4">
+                TimeBetweenDamage = "6"
+				DbSpeed = "20">
 			</Lvl4>
 
 			<Lvl5A
@@ -603,8 +603,8 @@
 				Price = "2000"
 				DebuffHp = "500"
 				PoisonDamage = "5"
-                TimeBetweenDamage = "5"
-				DbSpeed = "5">
+                TimeBetweenDamage = "4"
+				DbSpeed = "20">
 			</Lvl5A>
 
 			<Lvl5B
@@ -612,8 +612,8 @@
 				Price = "2000"
 				DebuffHp = "1000"
 				PoisonDamage = "6"
-                TimeBetweenDamage = "6"
-				DbSpeed = "6">
+                TimeBetweenDamage = "4"
+				DbSpeed = "20">
 			</Lvl5B>
 		</Debuff>
 
@@ -649,7 +649,7 @@
 			<Lvl5A
 				Health = "100"
 				Price = "10000"
-				GoldGet = "10"
+				GoldGet = "100"
 				PercentOfGold ="10"
 				GoldDelay = "1">
 			</Lvl5A>
@@ -785,28 +785,28 @@
 				Health = "30"
 				Speed = "1.2"
 				Gold = "15"
-				Damage = "1">
+				Damage = "3">
 			</Lvl2>
 
 			<Lvl3
 				Health = "100"
 				Speed = "1.2"
 				Gold = "20"
-				Damage = "1">
+				Damage = "10">
 			</Lvl3>
 
 			<Lvl4
 				Health = "330"
 				Speed = "1.2"
 				Gold = "25"
-				Damage = "1">
+				Damage = "30">
 			</Lvl4>
 
 			<Lvl5
 				Health = "1000"
 				Speed = "1.2"
 				Gold = "50"
-				Damage = "1">
+				Damage = "100">
 			</Lvl5>
 		</Speed>
 
@@ -822,28 +822,28 @@
 				Health = "30"
 				Speed = "0.2"
 				Gold = "15"
-				Damage = "1">
+				Damage = "10">
 			</Lvl2>
 
 			<Lvl3
 				Health = "100"
 				Speed = "0.2"
 				Gold = "20"
-				Damage = "1">
+				Damage = "10">
 			</Lvl3>
 
 			<Lvl4
 				Health = "330"
 				Speed = "0.2"
 				Gold = "25"
-				Damage = "1">
+				Damage = "30">
 			</Lvl4>
 
 			<Lvl5
 				Health = "1000"
 				Speed = "0.2"
 				Gold = "50"
-				Damage = "1">
+				Damage = "100">
 			</Lvl5>
 		</Strong>
 
@@ -859,28 +859,28 @@
 				Health = "30"
 				Speed = "0.2"
 				Gold = "15"
-				Damage = "1">
+				Damage = "3">
 			</Lvl2>
 
 			<Lvl3
 				Health = "100"
 				Speed = "0.2"
 				Gold = "20"
-				Damage = "1">
+				Damage = "10">
 			</Lvl3>
 
 			<Lvl4
 				Health = "330"
 				Speed = "0.2"
 				Gold = "25"
-				Damage = "1">
+				Damage = "30">
 			</Lvl4>
 
 			<Lvl5
 				Health = "1000"
 				Speed = "0.2"
 				Gold = "50"
-				Damage = "1">
+				Damage = "100">
 			</Lvl5>
 		</Invisible>
 	</Enemy>

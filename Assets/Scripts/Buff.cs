@@ -34,7 +34,7 @@ public class Buff : MonoBehaviour
         {
             NoBuff();
         }
-        if (B1 > 0 && B2 + B3 + B4 + B5a + B5b == 0)
+        else if (B1 > 0 && B2 + B3 + B4 + B5a + B5b == 0)
         {
             Buff1();
         }
