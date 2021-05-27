@@ -2,7 +2,7 @@
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField]
+    public float _speed;
     public float speed;
     public float health;
     public float freezeTime;
@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     public float gold;
     public float max_health;
     public int wave;
-    public float _speed;
     GameMap gm;
     bool cold;
     float timeCold;
