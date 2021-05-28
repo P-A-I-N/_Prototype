@@ -70,6 +70,7 @@ public class Enemy : MonoBehaviour
     public float speedAttack;
 
     public Animator anim;
+    AudioSource eating, drinking;
 
     private void Awake()
     {
@@ -90,6 +91,14 @@ public class Enemy : MonoBehaviour
     }
     private void Start()
     {
+        eating = gameObject.AddComponent<AudioSource>();
+        eating.playOnAwake = false;
+        eating.loop = true;
+        eating.clip = gm.audio[6].clip;
+        drinking = gameObject.AddComponent<AudioSource>();
+        drinking.clip = gm.audio[5].clip;
+        drinking.playOnAwake = false;
+        drinking.loop = true;
         vect = Vector2.left;
 
         _enemyInvisible = enemyInvisible;
@@ -207,9 +216,9 @@ public class Enemy : MonoBehaviour
                 stop = true;
                 if (collision.gameObject.tag == "TowerBuff" || collision.gameObject.tag == "TowerFreeze" || collision.gameObject.tag == "TowerDebuff")
                 {
-                    gm.audio[5].Play();
+                    drinking.Play();
                 }
-                else gm.audio[6].Play();
+                else eating.Play();
                 _speed = 0;
             }
             if (collision.gameObject.layer == 11)
@@ -247,9 +256,9 @@ public class Enemy : MonoBehaviour
                 stop = false;
                 if (collision.gameObject.tag == "TowerBuff" || collision.gameObject.tag == "TowerFreeze" || collision.gameObject.tag == "TowerDebuff")
                 {
-                    gm.audio[5].Stop();
+                    drinking.Stop();
                 }
-                else gm.audio[6].Stop();
+                else eating.Stop();
                 _speed = speed;
             }
             if (collision.gameObject.layer == 11)
