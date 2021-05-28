@@ -70,6 +70,7 @@ public class Enemy : MonoBehaviour
     public float speedAttack;
 
     public Animator anim;
+
     private void Awake()
     {
         _speed = speed;
@@ -115,9 +116,9 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            gm.audio[0].Play();
             GetComponent<LineRenderer>().Equals(false);
-            anim.SetInteger("state", 2);
-
+            anim.SetInteger("state", 2);   
         }
 
         if (!changeTower)

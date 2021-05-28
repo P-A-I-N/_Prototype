@@ -14,10 +14,12 @@ public class GameMap : MonoBehaviour
     public int killedEnemies = 0;
     public int totalEnemies = 0;
     DamageCastle dc;
+    public AudioSource[] audio = new AudioSource[10];
     // Start is called before the first frame update
     void Start()
     {
         dc = GetComponentInChildren<DamageCastle>();
+        audio = GameObject.FindGameObjectsWithTag("Audio")[0].GetComponents<AudioSource>();
     }
 
     // Update is called once per frame

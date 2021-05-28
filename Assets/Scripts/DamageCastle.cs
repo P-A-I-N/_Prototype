@@ -3,12 +3,18 @@
 public class DamageCastle : MonoBehaviour
 {
     public float health = 10;
-    public GameObject gameOver; 
+    public GameObject gameOver;
+    GameMap gm;
 
-    void LateUpdate()
+    private void Awake()
+    {
+        gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
+    }
+        void LateUpdate()
     {
         if (health <= 0)
         {
+            gm.audio[4].Play();
             gameOver.SetActive(true);
             Time.timeScale = 0;
             Destroy(gameObject);

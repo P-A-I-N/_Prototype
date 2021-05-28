@@ -47,11 +47,12 @@ public class SpawnEnemy : MonoBehaviour
             waveForm.sum++;
         }
         if (endOfTheWave && current_wave < num_waves)
-        {
+        {     
             current_wave++;
             gm.wave = current_wave;
             if (gm.killedEnemies == gm.totalEnemies && gameObject.name == "Spawn 1")
             {
+                gm.audio[1].Play();
                 gm.killedEnemies = 0;
                 gm.totalEnemies = waveForm.numberOfEnemies[current_wave - 1];
             }
@@ -82,7 +83,6 @@ public class SpawnEnemy : MonoBehaviour
         }
         if (gm.killedEnemies == gm.totalEnemies && fastStopEnable)
         {
-            //endWaveTime = Time.time;
             endOfTheWave = true;
             fastStopEnable = false;
             fastStopTimer = Time.time + 1f;
