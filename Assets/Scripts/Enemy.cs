@@ -70,6 +70,7 @@ public class Enemy : MonoBehaviour
     public float speedAttack;
 
     public Animator anim;
+    AudioSource eating, drinking;
 
     private void Awake()
     {
@@ -90,6 +91,14 @@ public class Enemy : MonoBehaviour
     }
     private void Start()
     {
+        eating = gameObject.AddComponent<AudioSource>();
+        eating.playOnAwake = false;
+        eating.loop = true;
+        eating.clip = gm.audio[6].clip;
+        drinking = gameObject.AddComponent<AudioSource>();
+        drinking.clip = gm.audio[5].clip;
+        drinking.playOnAwake = false;
+        drinking.loop = true;
         vect = Vector2.left;
 
         _enemyInvisible = enemyInvisible;
@@ -205,6 +214,11 @@ public class Enemy : MonoBehaviour
             {
                 GetComponent<Animator>().SetInteger("state", 1);
                 stop = true;
+                if (collision.gameObject.tag == "TowerBuff" || collision.gameObject.tag == "TowerFreeze" || collision.gameObject.tag == "TowerDebuff")
+                {
+                    drinking.Play();
+                }
+                else eating.Play();
                 _speed = 0;
             }
             if (collision.gameObject.layer == 11)
@@ -240,6 +254,11 @@ public class Enemy : MonoBehaviour
             {
                 GetComponent<Animator>().SetInteger("state", 0);
                 stop = false;
+                if (collision.gameObject.tag == "TowerBuff" || collision.gameObject.tag == "TowerFreeze" || collision.gameObject.tag == "TowerDebuff")
+                {
+                    drinking.Stop();
+                }
+                else eating.Stop();
                 _speed = speed;
             }
             if (collision.gameObject.layer == 11)
@@ -283,8 +302,8 @@ public class Enemy : MonoBehaviour
                 SplashFreeze = collision.gameObject.GetComponent<MoveBullet>().SplashFreeze;
                 damageTower = collision.gameObject.GetComponent<MoveBullet>().damageTower;
             }
-
-
+            
+            
             if (x3Damage)
             {
                 damageTower *= 3;
