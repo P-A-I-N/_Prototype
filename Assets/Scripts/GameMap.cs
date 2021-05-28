@@ -34,6 +34,7 @@ public class GameMap : MonoBehaviour
         }
         if(wave == 50 && (killedEnemies == totalEnemies))
         {
+            audio[2].Play();
             win.SetActive(true);
             Time.timeScale = 0;
         }
