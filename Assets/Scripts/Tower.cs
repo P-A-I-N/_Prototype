@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-[SerializeField]
+
 public class Tower : MonoBehaviour
 {
     public int health;

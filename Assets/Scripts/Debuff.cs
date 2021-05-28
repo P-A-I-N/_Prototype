@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[SerializeField]
+
 public class Debuff : MonoBehaviour
 {
     public float dbHp1Lvl;
