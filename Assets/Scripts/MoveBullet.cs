@@ -97,7 +97,7 @@ public class MoveBullet : MonoBehaviour
                     gameObject.GetComponent<SpriteRenderer>().enabled = false;
                     parent = collision.transform;
                     parentPos = parent.position.x;
-                    speed *= 10;
+                    speed *= 2;
                 }
             }
             if (enemyPVO && PVO)
@@ -111,7 +111,7 @@ public class MoveBullet : MonoBehaviour
                     gameObject.GetComponent<SpriteRenderer>().enabled = false;
                     parent = collision.transform;
                     parentPos = parent.position.x;
-                    speed *= 10;
+                    speed *= 2;
                 }
             }
             if (!enemyPVO && !enemyInvisible && !Invisible && !Freeze)
@@ -125,7 +125,7 @@ public class MoveBullet : MonoBehaviour
                     gameObject.GetComponent<SpriteRenderer>().enabled = false;
                     parent = collision.transform;
                     parentPos = parent.position.x;
-                    speed *= 10;
+                    speed *= 2;
                 }
             }
             if (!enemyPVO && Invisible)
@@ -139,7 +139,7 @@ public class MoveBullet : MonoBehaviour
                     gameObject.GetComponent<SpriteRenderer>().enabled = false;
                     parent = collision.transform;
                     parentPos = parent.position.x;
-                    speed *= 10;
+                    speed *= 2;
                 }
             }
         }

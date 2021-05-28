@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+[SerializeField]
 public class Tower : MonoBehaviour
 {
     public int health;
@@ -38,7 +39,7 @@ public class Tower : MonoBehaviour
     public string tipe;
     public string lvl;
 
-    public int percentOfGold;
+    public float percentOfGold;
 
     public int debuffHp;
 

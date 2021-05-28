@@ -295,7 +295,7 @@
 			<Lvl5B
 				Health = "10000"
 				Range = "20"
-				RateOfFire = "1"
+				RateOfFire = "0.1"
 				Price = "50000"
 				Damage = "2000"
 				SpeedBullet = "5"
@@ -547,7 +547,7 @@
 
 			<Lvl5A
 				Health = "100"
-				Price = "2000"
+				Price = "10000"
 				Invisible = "true"
 				MultiplyRange = "5"
 				MultiplyDamage = "5"
@@ -557,10 +557,10 @@
 
 			<Lvl5B
 				Health = "100"
-				Price = "2000"
+				Price = "5000"
 				Invisible = "true"
-				MultiplyRange = "6"
-				MultiplyDamage = "6"
+				MultiplyRange = "10"
+				MultiplyDamage = "10"
 				Strong = "true">
 			</Lvl5B>
 		</Buff>
@@ -577,7 +577,7 @@
 				Price = "200"
 				DebuffHp = "10"
 				PoisonDamage = "2"
-                TimeBetweenDamage = "10">
+				TimeBetweenDamage = "10">
 			</Lvl2>
 
 			<Lvl3
@@ -586,7 +586,7 @@
 				DebuffHp = "50"
 				PoisonDamage = "3"
                 TimeBetweenDamage = "8"
-				DbSpeed = "20">
+				DbSpeed = "100">
 			</Lvl3>
 
 			<Lvl4
@@ -595,7 +595,7 @@
 				DebuffHp = "200"
 				PoisonDamage = "4"
                 TimeBetweenDamage = "6"
-				DbSpeed = "20">
+				DbSpeed = "100">
 			</Lvl4>
 
 			<Lvl5A
@@ -603,17 +603,17 @@
 				Price = "2000"
 				DebuffHp = "500"
 				PoisonDamage = "5"
-                TimeBetweenDamage = "4"
-				DbSpeed = "20">
+                TimeBetweenDamage = "2"
+				DbSpeed = "100">
 			</Lvl5A>
 
 			<Lvl5B
 				Health = "100"
-				Price = "2000"
+				Price = "5000"
 				DebuffHp = "1000"
-				PoisonDamage = "6"
-                TimeBetweenDamage = "4"
-				DbSpeed = "20">
+				PoisonDamage = "5"
+                TimeBetweenDamage = "2"
+				DbSpeed = "100">
 			</Lvl5B>
 		</Debuff>
 
@@ -649,8 +649,8 @@
 			<Lvl5A
 				Health = "100"
 				Price = "10000"
-				GoldGet = "100"
-				PercentOfGold ="10"
+				GoldGet = "10"
+				PercentOfGold ="0.1"
 				GoldDelay = "1">
 			</Lvl5A>
 
@@ -658,7 +658,7 @@
 				Health = "100"
 				Price = "5000"
 				GoldGet = "10"
-				PercentOfEnemy ="10"
+				PercentOfEnemy ="20"
 				GoldDelay = "1">
 			</Lvl5B>
 		</Gold>
@@ -724,14 +724,14 @@
 			<Lvl4
 				Health = "330"
 				Speed = "0.2"
-				Gold = "25"
+				Gold = "5"
 				Damage = "33">
 			</Lvl4>
 
 			<Lvl5
 				Health = "1000"
 				Speed = "0.2"
-				Gold = "50"
+				Gold = "1"
 				Damage = "100">
 			</Lvl5>
 		</Normal>
@@ -759,17 +759,17 @@
 			</Lvl3>
 
 			<Lvl4
-				Health = "330"
+				Health = "1000"
 				Speed = "0.2"
-				Gold = "25"
-				Damage = "30">
+				Gold = "5"
+				Damage = "100">
 			</Lvl4>
 
 			<Lvl5
-				Health = "1000"
+				Health = "50000"
 				Speed = "0.2"
-				Gold = "50"
-				Damage = "100">
+				Gold = "1"
+				Damage = "1000">
 			</Lvl5>
 		</Fly>
 
@@ -796,17 +796,17 @@
 			</Lvl3>
 
 			<Lvl4
-				Health = "330"
-				Speed = "1.2"
-				Gold = "25"
-				Damage = "30">
+				Health = "1000"
+				Speed = "0.2"
+				Gold = "5"
+				Damage = "100">
 			</Lvl4>
 
 			<Lvl5
-				Health = "1000"
-				Speed = "1.2"
-				Gold = "50"
-				Damage = "100">
+				Health = "50000"
+				Speed = "0.2"
+				Gold = "1"
+				Damage = "1000">
 			</Lvl5>
 		</Speed>
 
@@ -833,17 +833,17 @@
 			</Lvl3>
 
 			<Lvl4
-				Health = "330"
+				Health = "1000"
 				Speed = "0.2"
-				Gold = "25"
-				Damage = "30">
+				Gold = "5"
+				Damage = "100">
 			</Lvl4>
 
 			<Lvl5
-				Health = "1000"
+				Health = "100000"
 				Speed = "0.2"
-				Gold = "50"
-				Damage = "100">
+				Gold = "1"
+				Damage = "1000">
 			</Lvl5>
 		</Strong>
 
@@ -870,17 +870,17 @@
 			</Lvl3>
 
 			<Lvl4
-				Health = "330"
+				Health = "1000"
 				Speed = "0.2"
-				Gold = "25"
-				Damage = "30">
+				Gold = "5"
+				Damage = "100">
 			</Lvl4>
 
 			<Lvl5
-				Health = "1000"
+				Health = "100000"
 				Speed = "0.2"
-				Gold = "50"
-				Damage = "100">
+				Gold = "1"
+				Damage = "1000">
 			</Lvl5>
 		</Invisible>
 	</Enemy>

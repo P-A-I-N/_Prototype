@@ -110,7 +110,7 @@ public class test : MonoBehaviour
                             }
                             if (Tower.Attributes.GetNamedItem("RateOfFire") != null)
                             {
-                                tower[i].GetComponent<Tower>().rateOfFire = int.Parse(Tower.Attributes.GetNamedItem("RateOfFire").Value);
+                                tower[i].GetComponent<Tower>().rateOfFire = float.Parse(Tower.Attributes.GetNamedItem("RateOfFire").Value);
                             }
                             if (Tower.Attributes.GetNamedItem("GoldGet") != null)
                             {
@@ -122,7 +122,7 @@ public class test : MonoBehaviour
                             }
                             if (Tower.Attributes.GetNamedItem("PercentOfGold") != null)
                             {
-                                tower[i].GetComponent<Tower>().percentOfGold = int.Parse(Tower.Attributes.GetNamedItem("PercentOfGold").Value);
+                                tower[i].GetComponent<Tower>().percentOfGold = float.Parse(Tower.Attributes.GetNamedItem("PercentOfGold").Value);
                             }
                             if (Tower.Attributes.GetNamedItem("PVO") != null)
                             {

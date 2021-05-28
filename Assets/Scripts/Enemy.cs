@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[SerializeField]
 public class Enemy : MonoBehaviour
 {
     public float _speed;
@@ -102,7 +103,7 @@ public class Enemy : MonoBehaviour
 
     }
     private void Update()
-    {     
+    {
         if (change && changeTower)
         {
             gameObject.layer = LayerMask.NameToLayer("EnemyTower");
@@ -111,6 +112,13 @@ public class Enemy : MonoBehaviour
         }
 
         if (change != gameObject.GetComponent<Debuff>().change) change = gameObject.GetComponent<Debuff>().change;
+
+        if (health <= 0)
+        {
+            GetComponent<LineRenderer>().Equals(false);
+            anim.SetInteger("state", 2);
+
+        }
 
         if (!changeTower)
         {
@@ -130,8 +138,16 @@ public class Enemy : MonoBehaviour
             {
                 _dbSpeed = nowDbSpeed - dbSpeed;
                 nowDbSpeed = dbSpeed;
-                _speed += _dbSpeed;
-                speed += _dbSpeed;
+                if (_speed + _dbSpeed <= 0)
+                {
+                    _speed = 0;
+                    speed = 0;
+                }
+                else
+                {
+                    _speed += _dbSpeed;
+                    speed += _dbSpeed;
+                }
             }
             if (besiege)
             {
@@ -158,13 +174,7 @@ public class Enemy : MonoBehaviour
             }
             if (Time.time > timeCold && !stop && _damageEnemy == 0)
             {
-                _speed = speed; 
-            }
-            if (health <= 0)
-            {
-                GetComponent<LineRenderer>().Equals(false);
-                anim.SetInteger("state", 2);
-
+                _speed = speed;
             }
             if (Fire)
             {
@@ -207,7 +217,7 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
-        if(changeTower)
+        if (changeTower)
         {
             if ((collision.gameObject.layer == 6 || collision.gameObject.layer == 9) || collision.gameObject.layer == 10)
             {
@@ -313,7 +323,7 @@ public class Enemy : MonoBehaviour
             }
             if (Invisible && !Freeze && !enemyPVO)
             {
-                if((!PVO || (PVO && Normal)) && !enemyStrong) health -= damageTower;
+                if ((!PVO || (PVO && Normal)) && !enemyStrong) health -= damageTower;
                 else if ((Normal || Splash) && Strong) health -= damageTower;
             }
             if (Invisible && Freeze && !enemyPVO)

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[SerializeField]
 public class Debuff : MonoBehaviour
 {
     public float dbHp1Lvl;
@@ -40,6 +41,12 @@ public class Debuff : MonoBehaviour
     public int Db5a;
     public int Db5b;
 
+    GameMap gm;
+
+    private void Awake()
+    {
+        gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
+    }
     private void Update()
     {
         if (Db1 + Db2 + Db3 + Db4 + Db5a + Db5b == 0)
@@ -162,7 +169,12 @@ public class Debuff : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponentInParent<Tower>().tipe == "Debuff")
+        if(collision.gameObject.tag == "Border" && gameObject.layer ==  LayerMask.NameToLayer("EnemyTower"))
+        {
+            gm.killedEnemies++;
+            Destroy(gameObject);
+        }
+        if (collision.GetComponentInParent<Tower>() && collision.GetComponentInParent<Tower>().tipe == "Debuff")
         {
             if (collision.GetComponentInParent<Tower>().lvl == "1")
             {
@@ -192,8 +204,7 @@ public class Debuff : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-
-        if (collision.GetComponentInParent<Tower>().tipe == "Debuff")
+        if (collision.gameObject.GetComponentInParent<Tower>() && collision.GetComponentInParent<Tower>().tipe == "Debuff")
         {
             if (collision.GetComponentInParent<Tower>().lvl == "1")
             {
