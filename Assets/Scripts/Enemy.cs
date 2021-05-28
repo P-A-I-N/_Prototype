@@ -205,6 +205,11 @@ public class Enemy : MonoBehaviour
             {
                 GetComponent<Animator>().SetInteger("state", 1);
                 stop = true;
+                if (collision.gameObject.tag == "TowerBuff" || collision.gameObject.tag == "TowerFreeze" || collision.gameObject.tag == "TowerDebuff")
+                {
+                    gm.audio[5].Play();
+                }
+                else gm.audio[6].Play();
                 _speed = 0;
             }
             if (collision.gameObject.layer == 11)
@@ -240,6 +245,11 @@ public class Enemy : MonoBehaviour
             {
                 GetComponent<Animator>().SetInteger("state", 0);
                 stop = false;
+                if (collision.gameObject.tag == "TowerBuff" || collision.gameObject.tag == "TowerFreeze" || collision.gameObject.tag == "TowerDebuff")
+                {
+                    gm.audio[5].Stop();
+                }
+                else gm.audio[6].Stop();
                 _speed = speed;
             }
             if (collision.gameObject.layer == 11)
@@ -283,8 +293,8 @@ public class Enemy : MonoBehaviour
                 SplashFreeze = collision.gameObject.GetComponent<MoveBullet>().SplashFreeze;
                 damageTower = collision.gameObject.GetComponent<MoveBullet>().damageTower;
             }
-
-
+            
+            
             if (x3Damage)
             {
                 damageTower *= 3;
