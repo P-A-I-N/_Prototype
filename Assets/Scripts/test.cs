@@ -263,18 +263,18 @@ public class test : MonoBehaviour
                 }
             }
         }
-        for (int i = 0; i < tower.Length; i++)
-        {
-            EditorUtility.SetDirty(tower[i]);
-        }
-        for (int i = 0; i < bullet.Length; i++)
-        {
-            EditorUtility.SetDirty(bullet[i]);
-        }
-        for (int i = 0; i < enemy.Length; i++)
-        {
-            EditorUtility.SetDirty(enemy[i]);
-        }
+        //for (int i = 0; i < tower.Length; i++)
+        //{
+        //    EditorUtility.SetDirty(tower[i]);
+        //}
+        //for (int i = 0; i < bullet.Length; i++)
+        //{
+        //    EditorUtility.SetDirty(bullet[i]);
+        //}
+        //for (int i = 0; i < enemy.Length; i++)
+        //{
+        //    EditorUtility.SetDirty(enemy[i]);
+        //}
     }
     
 }
