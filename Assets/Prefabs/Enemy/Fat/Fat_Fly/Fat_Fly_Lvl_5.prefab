@@ -118,14 +118,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 0
   speed: 0.2
-  health: 1000
+  health: 50000
   freezeTime: 3
   decelerationIn: 2
-  gold: 50
+  gold: 1
   max_health: 0
   wave: 0
   damageTower: 0
-  damageEnemy: 100
+  damageEnemy: 1000
   _damageEnemy: 0
   enemyStrong: 0
   enemyPVO: 1
@@ -138,10 +138,10 @@ MonoBehaviour:
   fireDamage: 10
   timeFire: 2
   damageRetryTime: 2
-  percentOfEnemy: 10
+  percentOfEnemy: 25
   dbHp: 0
   poisonDamage: 0
-  timeBetweenDamage: 2
+  timeBetweenDamage: 10
   dbSpeed: 0
   x3Damage: 0
   besiege: 0
@@ -291,17 +291,17 @@ MonoBehaviour:
   poisonDamage2Lvl: 2
   timeBetweenDamage2Lvl: 0
   poisonDamage3Lvl: 3
-  timeBetweenDamage3Lvl: 3
+  timeBetweenDamage3Lvl: 8
   poisonDamage4Lvl: 4
-  timeBetweenDamage4Lvl: 4
+  timeBetweenDamage4Lvl: 6
   poisonDamage5aLvl: 5
-  timeBetweenDamage5aLvl: 5
-  poisonDamage5bLvl: 6
-  timeBetweenDamage5bLvl: 6
-  dbSpeed3Lvl: 3
-  dbSpeed4Lvl: 4
-  dbSpeed5aLvl: 5
-  dbSpeed5bLvl: 6
+  timeBetweenDamage5aLvl: 2
+  poisonDamage5bLvl: 5
+  timeBetweenDamage5bLvl: 2
+  dbSpeed3Lvl: 1
+  dbSpeed4Lvl: 1
+  dbSpeed5aLvl: 1
+  dbSpeed5bLvl: 1
   dbHp: 0
   poisonDamage: 0
   timeBetweenDamage: 0

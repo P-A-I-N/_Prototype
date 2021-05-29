@@ -125,7 +125,7 @@ MonoBehaviour:
   max_health: 0
   wave: 0
   damageTower: 0
-  damageEnemy: 100
+  damageEnemy: 1000
   _damageEnemy: 0
   enemyStrong: 0
   enemyPVO: 0
