@@ -188,24 +188,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10000
   price: 100
-  fullprice: 0
   bullet: {fileID: 0}
   invisibleBullet: {fileID: 0}
   levelUp: {fileID: 0}
   nameTower: {fileID: 712444382164881681}
   hpTankBuff: 0
-  _health: 0
-  damageEnemy: 0
   range: 0
   rateOfFire: 0
-  _rateOfFire: 0
   damageTower: 0
+  goldGet: 0
+  goldDelay: 0
+  goldTower: 0
+  fullprice: 0
+  damageEnemy: 0
+  _health: 0
+  _rateOfFire: 0
   lvl4: 1
   lvl5a: {fileID: 7644471715059071606, guid: 7722da51b5d8d7c49befdbc621d56617, type: 3}
   lvl5b: {fileID: 7644471715059071606, guid: 2809025b15fd4864c8337038ceffacec, type: 3}
-  goldTower: 0
-  goldGet: 0
-  goldDelay: 0
   PVO: 0
   PNO: 0
   tipe: Tank

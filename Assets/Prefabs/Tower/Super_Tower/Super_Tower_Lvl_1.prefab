@@ -176,24 +176,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   price: 1000
-  fullprice: 0
   bullet: {fileID: 8275965266506968804, guid: 2f1564f428aee68469a53bef999476dc, type: 3}
   invisibleBullet: {fileID: 5024834314885986411, guid: 90f4da4f6cfdf344580ae2fa66ffcefc, type: 3}
   levelUp: {fileID: 2171621869778484781, guid: 1648c55572801a44b84ba603d149d800, type: 3}
   nameTower: {fileID: 2729532451177159709}
   hpTankBuff: 0
-  _health: 0
-  damageEnemy: 0
   range: 5
   rateOfFire: 10
-  _rateOfFire: 0
   damageTower: 500
+  goldGet: 0
+  goldDelay: 0
+  goldTower: 0
+  fullprice: 0
+  damageEnemy: 0
+  _health: 0
+  _rateOfFire: 0
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
-  goldTower: 0
-  goldGet: 0
-  goldDelay: 0
   PVO: 0
   PNO: 1
   tipe: Super
@@ -250,11 +250,11 @@ MonoBehaviour:
   multiplyRangeLvl3: 3
   multiplyRangeLvl4: 4
   multiplyRangeLvl5a: 5
-  multiplyRangeLvl5b: 6
+  multiplyRangeLvl5b: 10
   multiplyDamageLvl3: 3
   multiplyDamageLvl4: 4
   multiplyDamageLvl5a: 5
-  multiplyDamageLvl5b: 6
+  multiplyDamageLvl5b: 10
   multiplySpeedLvl5a: 5
   invisible: 0
   multiplyRange: 0

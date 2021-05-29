@@ -1,36 +1,37 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Tower : MonoBehaviour
 {
     public int health;
     public int price;
-    public int fullprice;
     public GameObject bullet;
     public GameObject invisibleBullet;
     public GameObject levelUp;
     public Text nameTower;
     private LayerMask layerMask;
     public int hpTankBuff;
-    public float _health;
     private bool damage;
     private bool target;
-    public float damageEnemy = 0;
-
     public float range;
     public float rateOfFire;
-    public float _rateOfFire;
     public float damageTower;
+GameMap gm;
+    public float goldGet;
+    public float goldDelay;
 
+    public bool goldTower;
+    public int fullprice;
+    public float damageEnemy = 0;
+    public float _health;
+    public float _rateOfFire;
     public bool lvl4;
     public GameObject lvl5a;
     public GameObject lvl5b;
 
-    public bool goldTower;
 
-    GameMap gm;
-    public float goldGet;
-    public float goldDelay;
+    
 
     public bool PVO;
     public bool PNO;
@@ -74,6 +75,7 @@ public class Tower : MonoBehaviour
         {
             gm.gold5B++;
         }
+        
     }
 
     protected void Update()

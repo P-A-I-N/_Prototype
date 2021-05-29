@@ -160,7 +160,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cabbage, gives 10% gold for killing an enemy
+  m_Text: Cabbage, gives 25% gold for killing an enemy
 --- !u!114 &6958757231810681411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,24 +175,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   price: 5000
-  fullprice: 0
   bullet: {fileID: 0}
   invisibleBullet: {fileID: 0}
   levelUp: {fileID: 0}
   nameTower: {fileID: 8749915973639064247}
   hpTankBuff: 0
-  _health: 0
-  damageEnemy: 0
   range: 0
   rateOfFire: 0
-  _rateOfFire: 0
   damageTower: 0
+  goldGet: 10
+  goldDelay: 1
+  goldTower: 1
+  fullprice: 0
+  damageEnemy: 0
+  _health: 0
+  _rateOfFire: 0
   lvl4: 0
   lvl5a: {fileID: 0}
   lvl5b: {fileID: 0}
-  goldTower: 1
-  goldGet: 10
-  goldDelay: 1
   PVO: 0
   PNO: 0
   tipe: Gold
