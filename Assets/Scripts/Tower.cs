@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-
 public class Tower : MonoBehaviour
 {
     public int health;
@@ -38,7 +37,6 @@ public class Tower : MonoBehaviour
 
     public string tipe;
     public string lvl;
-
     public float percentOfGold;
 
     public int debuffHp;
@@ -59,6 +57,8 @@ public class Tower : MonoBehaviour
     public float nowMultiplySpeed;
 
     public Animator anim;
+
+    
     protected void Start()
     {
         parent = gameObject.transform;

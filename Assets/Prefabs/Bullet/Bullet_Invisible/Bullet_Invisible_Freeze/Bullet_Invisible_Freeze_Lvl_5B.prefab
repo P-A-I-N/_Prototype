@@ -124,7 +124,7 @@ MonoBehaviour:
   Splash: 1
   Freeze: 1
   Invisible: 1
-  PVO: 0
+  PVO: 1
   Strong: 0
   Normal: 0
   tipe: Freeze

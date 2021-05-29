@@ -74,6 +74,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+
         _speed = speed;
         if (max_health <= 0) max_health = health;
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();

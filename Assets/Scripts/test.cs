@@ -1,6 +1,5 @@
 using System.Xml;
 using UnityEngine;
-
 public class test : MonoBehaviour
 {
     public GameObject[] tower;
@@ -12,7 +11,7 @@ public class test : MonoBehaviour
     public string[] lvlEnemy;
     private XmlDocument xmlDoc;
 
-    private void Start()
+    private void Awake()
     {
         TextAsset xmlAsset = (TextAsset)Resources.Load("config");
         xmlDoc = new XmlDocument();
