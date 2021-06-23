@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float _speed;
     public float speed;
     public float health;
+    public float health_m = 1;
     public float freezeTime;
     public float decelerationIn;
     public float gold;
@@ -20,6 +21,7 @@ public class Enemy : MonoBehaviour
     public float damageTower;
     public float damageEnemy;
     public float _damageEnemy;
+    public float damage_m = 1;
 
     public bool enemyStrong;
     public bool enemyPVO;
@@ -72,6 +74,7 @@ public class Enemy : MonoBehaviour
 
     public Animator anim;
     AudioSource eating, drinking;
+    bool change_params = true;
 
     private void Awake()
     {
@@ -116,6 +119,13 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
+        if (change_params)
+        {
+            max_health *= health_m;
+            health = max_health;
+            damageEnemy *= damage_m;
+            change_params = false;
+        }
         if (change && changeTower)
         {
             gameObject.layer = LayerMask.NameToLayer("EnemyTower");

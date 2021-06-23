@@ -25,6 +25,8 @@ public class SpawnEnemy : MonoBehaviour
     public GameMap gm;
     bool fastStopEnable = true;
     float fastStopTimer;
+    float health_m;
+    float damage_m;
 
     void Start()
     {
@@ -98,14 +100,19 @@ public class SpawnEnemy : MonoBehaviour
         string[] parametrs = wave.Split(' ');
         if (current_wave < firstEncounterWave)
         {
-            endWaveTime = Time.time + Convert.ToInt32 (parametrs[27]);
+            endWaveTime = Time.time + (waveForm.numberOfEnemies[current_wave - 1] * maxTimeSpawn / 5) + 100;
+            //endWaveTime = Time.time + Convert.ToInt32 (parametrs[27]);
             waveIsActive = false;
             return;
         }
         else waveIsActive = true; 
         minTimeSpawn = Convert.ToInt32 (parametrs[25]);
         maxTimeSpawn = Convert.ToInt32 (parametrs[26]);
-        endWaveTime = Time.time + Convert.ToInt32 (parametrs[27]);
+        //endWaveTime = Time.time + Convert.ToInt32 (parametrs[27]);
+        health_m = Convert.ToInt32(parametrs[28]);
+        damage_m = Convert.ToInt32(parametrs[29]);
+        endWaveTime = Time.time + (waveForm.numberOfEnemies[current_wave - 1] * maxTimeSpawn / 5) + 100;
+        //print(endWaveTime);
         spawnTimeRND = UnityEngine.Random.Range(minTimeSpawn, maxTimeSpawn);
         exit_time = Time.time + spawnTimeRND;
     }
@@ -132,7 +139,10 @@ public class SpawnEnemy : MonoBehaviour
             return; 
         }
         e = Instantiate(enemy[enemyIndex], transform.position, transform.rotation);
-        e.GetComponent<Enemy>().wave = current_wave;
+        Enemy spawned_enemy = e.GetComponent<Enemy>();
+        spawned_enemy.wave = current_wave;
+        spawned_enemy.health_m = health_m;
+        spawned_enemy.damage_m = damage_m;
         e.transform.SetParent(parent);
         spawnTimeRND = UnityEngine.Random.Range (minTimeSpawn, maxTimeSpawn);
         exit_time = Time.time + spawnTimeRND;
