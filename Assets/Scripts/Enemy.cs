@@ -78,10 +78,11 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-
         _speed = speed;
         if (max_health <= 0) max_health = health;
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
+        gm.layerEnemy ++;
+        GetComponent<SpriteRenderer>().sortingOrder = gm.layerEnemy;
         GetComponent<SpriteRenderer>().sortingLayerName = "Enemy";
         HPBar = GetComponent<LineRenderer>();
         HPBar.useWorldSpace = false;

@@ -13,6 +13,7 @@ public class GameMap : MonoBehaviour
     public int wave = 1;
     public int killedEnemies = 0;
     public int totalEnemies = 0;
+    public int layerEnemy = 2;
     int z = 0;
     float x = 150;
     float timex;
