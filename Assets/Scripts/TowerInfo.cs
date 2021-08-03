@@ -18,10 +18,11 @@ public class TowerInfo : MonoBehaviour
     public GameObject target;
     public GameObject levelUp;
     public GameObject del;
+    public GameObject _camera;
     private void Update()
     {
-        target = GetComponentInChildren<RayCast>().target;
-        targetI = GetComponentInChildren<RayCast>().infoTarget;
+        target = _camera.GetComponent<RayCast>().target;
+        targetI = _camera.GetComponent<RayCast>().infoTarget;
         if (targetI != null)
         {
             panel.SetActive(true);
