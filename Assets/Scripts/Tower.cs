@@ -58,7 +58,7 @@ GameMap gm;
     public float nowMultiplySpeed;
 
     public Animator anim;
-
+    public GameObject icon_delete, icon_levelup;
     
     protected void Start()
     {
@@ -70,12 +70,23 @@ GameMap gm;
         //if (PNO || PVO) InvokeRepeating("criateBullet", 0, rateOfFire);
 
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
+
+        icon_delete = Instantiate (GameObject.FindGameObjectsWithTag("delete")[0]);
+        icon_delete.transform.position = transform.position + Vector3.right / 2 + Vector3.down / 2;
+        icon_delete.transform.SetParent(transform);
+        icon_levelup = Instantiate (GameObject.FindGameObjectsWithTag("levelup")[0]);
+        icon_levelup.transform.position = transform.position + Vector3.left / 2 + Vector3.down / 2;
+        icon_levelup.transform.SetParent(transform);
+        icon_levelup.SetActive(false);
+        icon_delete.SetActive(false);
+
         if (goldTower) InvokeRepeating("GetGold", 0, goldDelay);
         if (tipe == "Gold" && lvl == "5B")
         {
             gm.gold5B++;
         }
-        
+        //GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
+        //GetComponent<BoxCollider2D>().size = new Vector2(2.7f, 2.2f);
     }
 
     protected void Update()
@@ -201,13 +212,19 @@ GameMap gm;
     }
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-        damageEnemy += collision.gameObject.GetComponent<Enemy>().damageEnemy;
-        damage = true;
+        if (collision.gameObject.GetComponent<Enemy>() != null)
+        {
+            damageEnemy += collision.gameObject.GetComponent<Enemy>().damageEnemy;
+            damage = true;
+        }
     }
     protected void OnCollisionExit2D(Collision2D collision)
     {
-        damageEnemy -= collision.gameObject.GetComponent<Enemy>().damageEnemy;
-        if (damageEnemy <= 0) damage = false;
+        if (collision.gameObject.GetComponent<Enemy>() != null)
+        {
+            damageEnemy -= collision.gameObject.GetComponent<Enemy>().damageEnemy;
+            if (damageEnemy <= 0) damage = false;
+        }
     }
     protected void criateBullet()
     {
@@ -243,6 +260,31 @@ GameMap gm;
             gm.gold5B--;
         }
         Destroy(gameObject);
+    }
+    public void Level_up()
+    {
+        if (levelUp.GetComponent<Tower>().price <= gm.gold)
+        {
+            Instantiate(levelUp, transform.position, transform.rotation);
+            Destroy(gameObject);
+            gm.gold -= price;
+        }
+    }
+    private void OnMouseOver()
+    {
+        if (icon_levelup != null)
+        {
+            icon_levelup.SetActive(true);
+            icon_delete.SetActive(true);
+        }
+    }
+    private void OnMouseExit()
+    {
+        if (icon_levelup != null)
+        {
+            icon_levelup.SetActive(false);
+            icon_delete.SetActive(false);
+        }
     }
 }
 

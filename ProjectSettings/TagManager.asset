@@ -21,6 +21,9 @@ TagManager:
   - Fire
   - Border
   - Audio
+  - Sprites
+  - delete
+  - levelup
   layers:
   - Default
   - TransparentFX
