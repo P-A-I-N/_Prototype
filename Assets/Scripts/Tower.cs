@@ -58,8 +58,9 @@ GameMap gm;
     public float nowMultiplySpeed;
 
     public Animator anim;
-    public GameObject icon_delete, icon_levelup;
-    
+    public GameObject Splash_menu, icon_delete, icon_levelup;
+    public bool mouse_over;
+
     protected void Start()
     {
         parent = gameObject.transform;
@@ -71,11 +72,16 @@ GameMap gm;
 
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
 
+        Splash_menu = Instantiate(GameObject.FindGameObjectsWithTag("Splash_menu")[0]);
+        Splash_menu.SetActive(false);
+        Splash_menu.transform.position = transform.position;
+        Splash_menu.transform.SetParent(transform);
+
         icon_delete = Instantiate (GameObject.FindGameObjectsWithTag("delete")[0]);
-        icon_delete.transform.position = transform.position + Vector3.right / 2 + Vector3.down / 2;
+        icon_delete.transform.position = transform.position + Vector3.right + Vector3.up / 2;
         icon_delete.transform.SetParent(transform);
         icon_levelup = Instantiate (GameObject.FindGameObjectsWithTag("levelup")[0]);
-        icon_levelup.transform.position = transform.position + Vector3.left / 2 + Vector3.down / 2;
+        icon_levelup.transform.position = transform.position + Vector3.left + Vector3.up / 1.8f;
         icon_levelup.transform.SetParent(transform);
         icon_levelup.SetActive(false);
         icon_delete.SetActive(false);
@@ -274,6 +280,8 @@ GameMap gm;
     {
         if (icon_levelup != null)
         {
+            mouse_over = true;
+            Splash_menu.SetActive(true);
             icon_levelup.SetActive(true);
             icon_delete.SetActive(true);
         }
@@ -282,8 +290,13 @@ GameMap gm;
     {
         if (icon_levelup != null)
         {
-            icon_levelup.SetActive(false);
-            icon_delete.SetActive(false);
+            mouse_over = false;
+            if (!Splash_menu.GetComponent<Splash_menu>().mouse_over && !transform.parent.gameObject.GetComponent<BlockPointer>().mouse_over && !icon_levelup.GetComponent<levelup>().mouse_over && !icon_delete.GetComponent<delete>().mouse_over)
+            {
+                Splash_menu.SetActive(false);
+                icon_levelup.SetActive(false);
+                icon_delete.SetActive(false);
+            }
         }
     }
 }

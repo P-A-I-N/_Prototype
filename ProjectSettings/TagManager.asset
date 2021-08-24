@@ -24,6 +24,7 @@ TagManager:
   - Sprites
   - delete
   - levelup
+  - Splash_menu
   layers:
   - Default
   - TransparentFX
