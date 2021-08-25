@@ -60,9 +60,8 @@ public class Tower : MonoBehaviour
     public Animator anim;
     public GameObject icon_delete, icon_levelup;
 
-    [SerializeField] private Aura aura;
+    [SerializeField] public Aura aura;
     [SerializeField] private NameAura numAura;
-    [SerializeField] private Aura thisAura;
     public enum NameAura
     {
         Buff = 1,
@@ -72,9 +71,7 @@ public class Tower : MonoBehaviour
 
     private void SetAura()
     {
-        Instantiate(aura.gameObject, transform);
         aura.SetTypeAura((int)numAura);
-        thisAura =  gameObject.GetComponentInChildren<Aura>();
     }
 
     protected void Start()
@@ -97,6 +94,7 @@ public class Tower : MonoBehaviour
         icon_levelup.SetActive(false);
         icon_delete.SetActive(false);
 
+        Instantiate(aura.gameObject, transform);
         SetAura();
 
         if (goldTower) InvokeRepeating("GetGold", 0, goldDelay);
