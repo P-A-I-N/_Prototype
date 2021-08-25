@@ -28,10 +28,7 @@ public class Tower : MonoBehaviour
     public float _rateOfFire;
     public bool lvl4;
     public GameObject lvl5a;
-    public GameObject lvl5b;
-
-
-
+    public GameObject lvl5b; 
 
     public bool PVO;
     public bool PNO;
