@@ -71,7 +71,7 @@ public class Tower : MonoBehaviour
 
     private void SetAura()
     {
-        aura.SetTypeAura((int)numAura);
+        aura.SetTypeAura((int)numAura, range);
     }
 
     protected void Start()
@@ -94,8 +94,7 @@ public class Tower : MonoBehaviour
         icon_levelup.SetActive(false);
         icon_delete.SetActive(false);
 
-        Instantiate(aura.gameObject, transform);
-        SetAura();
+        if (aura != null) SetAura();
 
         if (goldTower) InvokeRepeating("GetGold", 0, goldDelay);
         if (tipe == "Gold" && lvl == "5B")
@@ -295,7 +294,7 @@ public class Tower : MonoBehaviour
             icon_delete.SetActive(true);
         }
 
-        aura.gameObject.SetActive(true);
+        if (aura != null) aura.gameObject.SetActive(true);
     }
     private void OnMouseExit()
     {
@@ -305,7 +304,7 @@ public class Tower : MonoBehaviour
             icon_delete.SetActive(false);
         }
 
-        aura.gameObject.SetActive(false);
+        if (aura != null) aura.gameObject.SetActive(false);
     }
 }
 
