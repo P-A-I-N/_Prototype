@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-using UnityEditor;
-
+using Unity;
 
 public class Enemy : MonoBehaviour
 {
@@ -88,8 +87,8 @@ public class Enemy : MonoBehaviour
         HPBar.useWorldSpace = false;
         HPBar.startWidth = 0.1f;
         HPBar.endWidth = 0.1f;
-        HPBar.SetPosition(0, new Vector3(-0.5f, 0.8f));
-        HPBar.SetPosition(1, new Vector3(0.5f, 0.8f));
+        HPBar.SetPosition(0, new Vector3(0, 1));
+        HPBar.SetPosition(1, new Vector3(1, 1));
         HPBar.sortingLayerName = "Enemy";
         HPBar.startColor = Color.red;
         HPBar.endColor = Color.red;
@@ -113,13 +112,13 @@ public class Enemy : MonoBehaviour
         numLater = gameObject.layer;
         _layer = LayerMask.LayerToName(numLater);
 
-        InvokeRepeating("fire", 0.0f, damageRetryTime);
-        InvokeRepeating("poison", 0.0f, timeBetweenDamage);
-        InvokeRepeating("BattleEnemy", 0.0f, speedAttack);
-
+        InvokeRepeating(nameof(fire), 0.0f, damageRetryTime);
+        InvokeRepeating(nameof(poison), 0.0f, timeBetweenDamage);
+        InvokeRepeating(nameof(BattleEnemy), 0.0f, speedAttack);
     }
     private void Update()
     {
+
         if (change_params)
         {
             max_health *= health_m;
@@ -187,8 +186,9 @@ public class Enemy : MonoBehaviour
                 gameObject.layer = LayerMask.NameToLayer(_layer);
             }
 
+            if (health <= 0) health = 0;
 
-            HPBar.SetPosition(1, new Vector3(-0.5f + health / max_health, 0.8f));
+            HPBar.SetPosition(1, new Vector3(health / max_health, 1));
             if (cold && _speed == speed)
             {
                 _speed /= decelerationIn;
@@ -240,6 +240,7 @@ public class Enemy : MonoBehaviour
                 _damageEnemy += __damageEnemy;
                 if (_damageEnemy > 0)
                 {
+                    HPBar.enabled = false;
                     GetComponent<Animator>().SetInteger("state", 1);
                     _speed = 0;
                 }
@@ -253,6 +254,7 @@ public class Enemy : MonoBehaviour
                 _damageEnemy += __damageEnemy;
                 if (_damageEnemy > 0)
                 {
+                    HPBar.enabled = false;
                     GetComponent<Animator>().SetInteger("state", 1);
                     _speed = 0;
                 }

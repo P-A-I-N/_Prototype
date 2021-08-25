@@ -17,7 +17,7 @@ public class Tower : MonoBehaviour
     public float range;
     public float rateOfFire;
     public float damageTower;
-GameMap gm;
+    GameMap gm;
     public float goldGet;
     public float goldDelay;
 
@@ -31,7 +31,7 @@ GameMap gm;
     public GameObject lvl5b;
 
 
-    
+
 
     public bool PVO;
     public bool PNO;
@@ -59,7 +59,24 @@ GameMap gm;
 
     public Animator anim;
     public GameObject icon_delete, icon_levelup;
-    
+
+    [SerializeField] private Aura aura;
+    [SerializeField] private NameAura numAura;
+    [SerializeField] private Aura thisAura;
+    public enum NameAura
+    {
+        Buff = 1,
+        Deuff = 2,
+        Attack = 3
+    }
+
+    private void SetAura()
+    {
+        Instantiate(aura.gameObject, transform);
+        aura.SetTypeAura((int)numAura);
+        thisAura =  gameObject.GetComponentInChildren<Aura>();
+    }
+
     protected void Start()
     {
         parent = gameObject.transform;
@@ -71,14 +88,16 @@ GameMap gm;
 
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
 
-        icon_delete = Instantiate (GameObject.FindGameObjectsWithTag("delete")[0]);
+        icon_delete = Instantiate(GameObject.FindGameObjectsWithTag("delete")[0]);
         icon_delete.transform.position = transform.position + Vector3.right / 2 + Vector3.down / 2;
         icon_delete.transform.SetParent(transform);
-        icon_levelup = Instantiate (GameObject.FindGameObjectsWithTag("levelup")[0]);
+        icon_levelup = Instantiate(GameObject.FindGameObjectsWithTag("levelup")[0]);
         icon_levelup.transform.position = transform.position + Vector3.left / 2 + Vector3.down / 2;
         icon_levelup.transform.SetParent(transform);
         icon_levelup.SetActive(false);
         icon_delete.SetActive(false);
+
+        SetAura();
 
         if (goldTower) InvokeRepeating("GetGold", 0, goldDelay);
         if (tipe == "Gold" && lvl == "5B")
@@ -131,7 +150,7 @@ GameMap gm;
 
 
 
-        
+
 
 
         if (PNO)
@@ -277,6 +296,8 @@ GameMap gm;
             icon_levelup.SetActive(true);
             icon_delete.SetActive(true);
         }
+
+        aura.gameObject.SetActive(true);
     }
     private void OnMouseExit()
     {
@@ -285,6 +306,8 @@ GameMap gm;
             icon_levelup.SetActive(false);
             icon_delete.SetActive(false);
         }
+
+        aura.gameObject.SetActive(false);
     }
 }
 

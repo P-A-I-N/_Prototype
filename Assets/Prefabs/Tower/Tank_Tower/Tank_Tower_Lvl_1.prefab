@@ -212,6 +212,10 @@ MonoBehaviour:
   nowMultiplyDamage: 0
   nowMultiplySpeed: 0
   anim: {fileID: 5837698769091111693}
+  icon_delete: {fileID: 0}
+  icon_levelup: {fileID: 0}
+  aura: {fileID: 3032441284384923686, guid: 3afcd343c119ae748be24b1bf614ea7d, type: 3}
+  numAura: 0
 --- !u!50 &1877650760970689411
 Rigidbody2D:
   serializedVersion: 4
