@@ -5,6 +5,7 @@ using UnityEngine;
 public class delete : MonoBehaviour
 {
     GameMap gm;
+    public bool mouse_over;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +21,13 @@ public class delete : MonoBehaviour
     {
         gm.gold += transform.parent.gameObject.GetComponent<Tower>().fullprice / 2;
         Destroy(transform.parent.gameObject);
+    }
+    private void OnMouseOver()
+    {
+        mouse_over = true;
+    }
+    private void OnMouseExit()
+    {
+        mouse_over = false;
     }
 }

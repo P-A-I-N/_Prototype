@@ -58,7 +58,9 @@ public class Tower : MonoBehaviour
     public float nowMultiplySpeed;
 
     public Animator anim;
-    public GameObject icon_delete, icon_levelup;
+
+    public GameObject Splash_menu, icon_delete, icon_levelup;
+    public bool mouse_over;
 
     [SerializeField] public Aura aura;
     [SerializeField] private NameAura numAura;
@@ -85,11 +87,17 @@ public class Tower : MonoBehaviour
 
         gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
 
-        icon_delete = Instantiate(GameObject.FindGameObjectsWithTag("delete")[0]);
-        icon_delete.transform.position = transform.position + Vector3.right / 2 + Vector3.down / 2;
+        Splash_menu = Instantiate(GameObject.FindGameObjectsWithTag("Splash_menu")[0]);
+        Splash_menu.SetActive(false);
+        Splash_menu.transform.position = transform.position;
+        Splash_menu.transform.SetParent(transform);
+
+        icon_delete = Instantiate (GameObject.FindGameObjectsWithTag("delete")[0]);
+        icon_delete.transform.position = transform.position + Vector3.right + Vector3.up / 2;
         icon_delete.transform.SetParent(transform);
-        icon_levelup = Instantiate(GameObject.FindGameObjectsWithTag("levelup")[0]);
-        icon_levelup.transform.position = transform.position + Vector3.left / 2 + Vector3.down / 2;
+        icon_levelup = Instantiate (GameObject.FindGameObjectsWithTag("levelup")[0]);
+        icon_levelup.transform.position = transform.position + Vector3.left + Vector3.up / 1.8f;
+
         icon_levelup.transform.SetParent(transform);
         icon_levelup.SetActive(false);
         icon_delete.SetActive(false);
@@ -144,12 +152,7 @@ public class Tower : MonoBehaviour
             }
             else _rateOfFire += _multiplySpeed;
         }
-
-
-
-
-
-
+         
         if (PNO)
         {
             int enemyLayer = LayerMask.NameToLayer("Enemy");
@@ -226,6 +229,7 @@ public class Tower : MonoBehaviour
             goldGet = (nowGold / 100) * percentOfGold;
         }
     }
+
     protected void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<Enemy>() != null)
@@ -234,6 +238,7 @@ public class Tower : MonoBehaviour
             damage = true;
         }
     }
+
     protected void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<Enemy>() != null)
@@ -242,6 +247,7 @@ public class Tower : MonoBehaviour
             if (damageEnemy <= 0) damage = false;
         }
     }
+
     protected void criateBullet()
     {
         if (target && !invisible)
@@ -255,6 +261,7 @@ public class Tower : MonoBehaviour
         rateOfFire = _rateOfFire;
         rateOfFire += Time.time;
     }
+
     void GetGold()
     {
         gm.gold += goldGet;
@@ -269,6 +276,7 @@ public class Tower : MonoBehaviour
     {
         levelUp = lvl5b;
     }
+
     public void die()
     {
         if (tipe == "Gold" && lvl == "5B")
@@ -277,6 +285,7 @@ public class Tower : MonoBehaviour
         }
         Destroy(gameObject);
     }
+
     public void Level_up()
     {
         if (levelUp.GetComponent<Tower>().price <= gm.gold)
@@ -286,22 +295,31 @@ public class Tower : MonoBehaviour
             gm.gold -= price;
         }
     }
+
     private void OnMouseOver()
     {
         if (icon_levelup != null)
         {
+            mouse_over = true;
+            Splash_menu.SetActive(true);
             icon_levelup.SetActive(true);
             icon_delete.SetActive(true);
         }
 
         if (aura != null) aura.gameObject.SetActive(true);
     }
+
     private void OnMouseExit()
     {
         if (icon_levelup != null)
         {
-            icon_levelup.SetActive(false);
-            icon_delete.SetActive(false);
+            mouse_over = false;
+            if (!Splash_menu.GetComponent<Splash_menu>().mouse_over && !transform.parent.gameObject.GetComponent<BlockPointer>().mouse_over && !icon_levelup.GetComponent<levelup>().mouse_over && !icon_delete.GetComponent<delete>().mouse_over)
+            {
+                Splash_menu.SetActive(false);
+                icon_levelup.SetActive(false);
+                icon_delete.SetActive(false);
+            }
         }
 
         if (aura != null) aura.gameObject.SetActive(false);
