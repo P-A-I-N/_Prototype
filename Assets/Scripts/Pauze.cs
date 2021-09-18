@@ -34,31 +34,31 @@ public class Pauze : MonoBehaviour
     public void stop()
     {
         panel.SetActive(true);
-        Time.timeScale = 0;
+        PauseTime();
     }
     public void start()
     {
         panel.SetActive(false);
-        Time.timeScale = 1;
+        NormalTime();
     }
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
-        Time.timeScale = 1;
+        NormalTime();
     }
     public void menu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
-    public void speedtime()
+    public void SpeedTime()
     {
         Time.timeScale = speed;
     }
-    public void pausetime()
+    public void PauseTime()
     {
         Time.timeScale = 0;
     }
-    public void normaltime()
+    public void NormalTime()
     {
         Time.timeScale = 1;
     }
