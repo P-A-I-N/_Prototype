@@ -3,6 +3,7 @@ using System;
 
 public class SpawnEnemy : MonoBehaviour
 {
+    public int maxWave;
     public GameObject[] enemy;
     int minTimeSpawn = 10;
     int maxTimeSpawn = 10;
@@ -30,6 +31,7 @@ public class SpawnEnemy : MonoBehaviour
 
     void Start()
     {
+        maxWave = PlayerPrefs.GetInt("maxWave", 0);
         waveScreen.SetActive(true);
         WaveText.text = "Wave " + current_wave;
         waveTextPrint = true;
@@ -51,6 +53,12 @@ public class SpawnEnemy : MonoBehaviour
         if (endOfTheWave && current_wave < num_waves)
         {     
             current_wave++;
+            if (current_wave > maxWave)
+            {
+                maxWave++;
+                PlayerPrefs.SetInt("maxWave", maxWave);
+                PlayerPrefs.Save();
+            }
             gm.wave = current_wave;
             if (gm.killedEnemies == gm.totalEnemies && gameObject.name == "Spawn 1")
             {

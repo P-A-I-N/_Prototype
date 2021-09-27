@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameMap : MonoBehaviour
 {
     public float gold;
+    public int gems;
     public UnityEngine.UI.Text price;
     public UnityEngine.UI.Text Hp;
     public UnityEngine.UI.Text _wave;
@@ -22,6 +23,8 @@ public class GameMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //PlayerPrefs.SetInt("gems", 50);
+        gems = PlayerPrefs.GetInt("gems", 0);
         dc = GetComponentInChildren<DamageCastle>();
         audio = GameObject.FindGameObjectsWithTag("Audio")[0].GetComponents<AudioSource>();
     }
@@ -29,6 +32,8 @@ public class GameMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerPrefs.SetInt("gems", gems);
+        PlayerPrefs.Save();
         if (gold >= 999999) gold = 999999;
         int nowGold = (int)gold;
         if (dc != null)
