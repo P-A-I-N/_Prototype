@@ -7,9 +7,9 @@ using TMPro;
 public class CityTowns : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMoney;
-    private List<Town> towns = new List<Town>();
 
-    [SerializeField] private int money;
+    private List<Town> towns = new List<Town>();
+    private int money;
 
     private void Start()
     {
@@ -19,6 +19,23 @@ public class CityTowns : MonoBehaviour
         {
             towns.Add(town);
         }
-        Debug.Log(towns.Count.ToString());
+
+        foreach (Town town in towns)
+        {
+            if (town.GetComponent<Locker>() != null)
+            {
+                town.OnClick += ClickOnTown;
+            }
+        }
+    }
+
+    private void ClickOnTown(bool loced, int price, Town town)
+    {
+        if (loced == true && price <= money)
+        {
+            town.OnClick -= ClickOnTown;
+            money -= price;
+            town.Unloced();
+        }
     }
 }
