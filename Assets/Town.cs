@@ -6,20 +6,19 @@ using TMPro;
 
 public class Town : MonoBehaviour
 {
-    public Action<bool, int, Town> OnClick;
+    public Action<bool, int, Town, int> OnClick;
 
     [SerializeField] private Locker locerTown;
     [SerializeField] private Button buttonTown;
     [SerializeField] private TextMeshProUGUI textPrice;
+    [SerializeField] private int price;
+    [SerializeField] private int numScene;
 
-    private int price;
-
-    private void Start()
+    private void Awake()
     {
         if (textPrice != null)
         {
-            buttonTown.onClick.AddListener(() => actionOnClick());
-            price = int.Parse(textPrice.text.ToString());
+            textPrice.text = price.ToString();
         }
     }
 
@@ -30,8 +29,8 @@ public class Town : MonoBehaviour
         buttonTown.onClick.RemoveListener(() => actionOnClick());
     }
 
-    private void actionOnClick()
+    public void actionOnClick()
     {
-        OnClick(locerTown.locke, price, this);
+        OnClick(locerTown.locke, price, this, numScene);
     }
 }

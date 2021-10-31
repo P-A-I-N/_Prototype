@@ -1,20 +1,29 @@
 
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+using UnityEngine.SceneManagement;
 
 public class CityTowns : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMoney;
+    [SerializeField] private int money;
 
     private List<Town> towns = new List<Town>();
-    private int money;
+
+    private void Awake()
+    {
+        UpdateContent();
+    }
+
+    private void UpdateContent()
+    {
+        textMoney.text = money.ToString();
+    }
 
     private void Start()
     {
-        money = int.Parse(textMoney.text.ToString());
-
         foreach (Town town in gameObject.GetComponentsInChildren<Town>())
         {
             towns.Add(town);
@@ -29,13 +38,20 @@ public class CityTowns : MonoBehaviour
         }
     }
 
-    private void ClickOnTown(bool loced, int price, Town town)
+    private void ClickOnTown(bool loced, int price, Town town, int numScene)
     {
-        if (loced == true && price <= money)
+        if (loced == false)
         {
-            town.OnClick -= ClickOnTown;
-            money -= price;
-            town.Unloced();
+            if (price <= money)
+            {
+                money -= price;
+                UpdateContent();
+                town.Unloced();
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene(numScene);//do it SceneManager
         }
     }
 }
