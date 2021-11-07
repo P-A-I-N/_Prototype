@@ -324,6 +324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8081867335319489199, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
+      propertyPath: price
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
 --- !u!224 &164158135 stripped
@@ -730,6 +734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lot (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8081867335319489199, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
+      propertyPath: price
+      value: 400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
 --- !u!224 &541192336 stripped
@@ -798,7 +806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2632669524264135650, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 270
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2632669524264135650, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
       propertyPath: m_SizeDelta.y
@@ -861,6 +869,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3551513571551946969, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551513571551946969, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -875,6 +887,10 @@ PrefabInstance:
     - target: {fileID: 6616318982593167462, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
       propertyPath: m_Name
       value: Lot (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081867335319489199, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
+      propertyPath: price
+      value: 800
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
@@ -935,7 +951,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 2
+  m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1086,6 +1102,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8857424652117849041, guid: 145e656ca7bef8d42b13ed94e41f3770, type: 3}
   m_PrefabInstance: {fileID: 894396796}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &894396798 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8857424651133464152, guid: 145e656ca7bef8d42b13ed94e41f3770, type: 3}
+  m_PrefabInstance: {fileID: 894396796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963571149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,6 +1122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 963571150}
+  - component: {fileID: 963571151}
   m_Layer: 5
   m_Name: PriceBoard
   m_TagString: Untagged
@@ -1127,6 +1155,18 @@ RectTransform:
   m_AnchoredPosition: {x: 510, y: 145}
   m_SizeDelta: {x: -1090, y: -595}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &963571151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963571149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b6a10012d8b841a4bdb123008feef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1276925198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1303,9 +1343,9 @@ RectTransform:
   m_Father: {fileID: 1843227927}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 77}
   m_SizeDelta: {x: 240, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1727499071
@@ -1482,6 +1522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1843227927}
+  - component: {fileID: 1843227928}
   m_Layer: 5
   m_Name: Cashbox
   m_TagString: Untagged
@@ -1505,11 +1546,25 @@ RectTransform:
   m_Father: {fileID: 2009784545}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -420, y: -95}
-  m_SizeDelta: {x: -1680, y: -870}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -420, y: -93.28}
+  m_SizeDelta: {x: 240, y: 219.08002}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1843227928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843227926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf64b15e197906449d6aad4805ed2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPrice: {fileID: 2102785110}
+  buttonCashbox: {fileID: 1727499071}
 --- !u!1 &2009784544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,6 +1574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2009784545}
+  - component: {fileID: 2009784546}
   m_Layer: 5
   m_Name: GradeWindow
   m_TagString: Untagged
@@ -1549,6 +1605,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2009784546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009784544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157dc4b19f0a685408c020755588d00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 10000
+  Lot: {fileID: 963571151}
+  textMoney: {fileID: 894396798}
+  cashbox: {fileID: 1843227928}
 --- !u!1 &2102785108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,10 +1653,10 @@ RectTransform:
   m_Father: {fileID: 1843227927}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.84, y: 85.08}
-  m_SizeDelta: {x: 56.13, y: 22.49}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 40, y: -26}
+  m_SizeDelta: {x: 50, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2102785110
 MonoBehaviour:
@@ -1633,7 +1705,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.1
+  m_fontSize: 17.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1744,7 +1816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2632669524264135650, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 270
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2632669524264135650, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1807,6 +1879,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3551513571551946969, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551513571551946969, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -1821,6 +1897,10 @@ PrefabInstance:
     - target: {fileID: 6616318982593167462, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
       propertyPath: m_Name
       value: Lot (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081867335319489199, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
+      propertyPath: price
+      value: 2000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
@@ -1963,6 +2043,10 @@ PrefabInstance:
     - target: {fileID: 6616318982593167462, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
       propertyPath: m_Name
       value: Lot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081867335319489199, guid: 9de771eb9048194419485526fe7e75a3, type: 3}
+      propertyPath: price
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de771eb9048194419485526fe7e75a3, type: 3}

@@ -31,6 +31,6 @@ public class Town : MonoBehaviour
 
     public void actionOnClick()
     {
-        OnClick(locerTown.locke, price, this, numScene);
+        OnClick(locerTown.unlocked, price, this, numScene);
     }
 }
