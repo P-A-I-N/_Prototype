@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Pauze : MonoBehaviour
 {
     public int speed = 3;
-    public GameObject panel;
+    public GameObject[] root;
     public GameObject bmuz;
     public GameObject bsound;
     bool actmuz = false;
@@ -33,12 +33,18 @@ public class Pauze : MonoBehaviour
     }
     public void stop()
     {
-        panel.SetActive(true);
+        for (int i = 0; i < root.Length; i++)
+        {
+            root[i].SetActive(true);
+        }
         PauseTime();
     }
     public void start()
     {
-        panel.SetActive(false);
+        for (int i = 0; i < root.Length; i++)
+        {
+            root[i].SetActive(false);
+        }
         NormalTime();
     }
     public void restart()
@@ -85,7 +91,7 @@ public class Pauze : MonoBehaviour
             for (int i = 0; i < gm.audio.Length; i++)
             {
 
-                if(i != 3)gm.audio[i].mute = true;
+                if (i != 3) gm.audio[i].mute = true;
             }
             bsound.GetComponent<Image>().color = Color.gray;
             actsound = true;
