@@ -214,7 +214,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 23736594}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1451,7 +1451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMoney: {fileID: 1630461486}
-  money: 10000
+  money: 1000000
 --- !u!1001 &1226138138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2488,6 +2488,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 995436434}
     m_Modifications:
+    - target: {fileID: 8857424651133464152, guid: 145e656ca7bef8d42b13ed94e41f3770, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857424651133464155, guid: 145e656ca7bef8d42b13ed94e41f3770, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 271.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857424651133464155, guid: 145e656ca7bef8d42b13ed94e41f3770, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 75.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857424651133464155, guid: 145e656ca7bef8d42b13ed94e41f3770, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857424651133464155, guid: 145e656ca7bef8d42b13ed94e41f3770, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.46
+      objectReference: {fileID: 0}
     - target: {fileID: 8857424652117849040, guid: 145e656ca7bef8d42b13ed94e41f3770, type: 3}
       propertyPath: m_Name
       value: Money

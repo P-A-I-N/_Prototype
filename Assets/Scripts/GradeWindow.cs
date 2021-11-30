@@ -1,4 +1,5 @@
 
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,12 +16,30 @@ public class GradeWindow : MonoBehaviour
     [SerializeField] private Image bgWindow;
 
     public int[] prises;
-    public bool[] unlockStates;
+    private bool[] unlockStates = new bool[6];
 
     private void Awake()
     {
+        money = PlayerPrefs.GetInt("Money");
+
+        if (PlayerPrefs.HasKey(PlayerPrefs.GetInt(BackGrounds.key).ToString() + "Lvl"))
+        {
+            for (int i = 0; i < unlockStates.Length; i++)
+            {
+                if (i <= PlayerPrefs.GetInt(PlayerPrefs.GetInt(BackGrounds.key).ToString() + "Lvl"))
+                {
+                    unlockStates[i] = true;
+                }
+            }
+        }
+
         artForGradeWindow.artWindow += SetWindowArt;
         cashbox.OnClickCashbox += TryBuyGrade;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("Money", money);
     }
 
     private void SetWindowArt(ArtForGradeWindow.ArtWindow artWindow)
@@ -40,6 +59,7 @@ public class GradeWindow : MonoBehaviour
         }
         else
         {
+            cashbox.SetPrice(0);
             cashbox.OnClickCashbox -= TryBuyGrade;
         }
     }

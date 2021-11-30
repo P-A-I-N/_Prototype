@@ -17,6 +17,6 @@ namespace System
             Pizzeria,
         };
 
-        public static string key = "BgWindow";
+        public static string key = "Window";
     }
 }

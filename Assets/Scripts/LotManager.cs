@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,12 +27,16 @@ public class LotManager : MonoBehaviour
     {
         currentLot = null;
 
-        foreach (LotInfo lot in lotsInfo)
+        for (int i = 0; i < lotsInfo.Count; i++)
         {
-            if (lot.unlockState == false)
+            if (lotsInfo[i].unlockState == false)
             {
-                currentLot = lot;
+                currentLot = lotsInfo[i];
                 break;
+            }
+            else
+            {
+                PlayerPrefs.SetInt(PlayerPrefs.GetInt(BackGrounds.key).ToString()  + "Lvl", i);
             }
         }
     }

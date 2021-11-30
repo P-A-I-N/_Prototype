@@ -24,11 +24,19 @@ public class LotInfo : MonoBehaviour
 
     private void SetTextPrice()
     {
-        textPrice.text = "..." + price.ToString();
+        if (unlockState)
+        {
+            textPrice.text = "X";
+        }
+        else
+        {
+            textPrice.text = "..." + price.ToString();
+        }
     }
 
     public void InstallAsPurchased()
     {
         locker.SetUnlockState(true);
+        SetTextPrice();
     }
 }

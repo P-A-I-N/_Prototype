@@ -14,6 +14,10 @@ public class CityTowns : MonoBehaviour
 
     private void Awake()
     {
+        if (PlayerPrefs.HasKey("Money"))
+        {
+            money = PlayerPrefs.GetInt("Money");
+        }
         UpdateContent();
     }
 
@@ -47,11 +51,13 @@ public class CityTowns : MonoBehaviour
                 money -= price;
                 UpdateContent();
                 town.Unloced();
+                PlayerPrefs.SetString(BackGrounds.key + bgWindows.ToString(), "true");
             }
         }
         else
         {
             PlayerPrefs.SetInt(BackGrounds.key, bgWindows);
+            PlayerPrefs.SetInt("Money", money);
             SceneManager.LoadScene(numScene);
         }
     }

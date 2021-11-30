@@ -17,17 +17,25 @@ public class Town : MonoBehaviour
 
     private void Awake()
     {
+        buttonTown.onClick.AddListener(actionOnClick);
+        buttonTown.onClick.AddListener(Unloced);
+
         if (textPrice != null)
         {
             textPrice.text = price.ToString();
+        }
+
+        if (PlayerPrefs.HasKey(BackGrounds.key + ((int)bgWindows).ToString()))
+        {
+            Unloced();
         }
     }
 
     public void Unloced()
     {
-        locerTown.SetUnlockStateWithButton(true, buttonTown);
+        locerTown.SetUnlockState(true);
         textPrice.enabled = false;
-        buttonTown.onClick.RemoveListener(() => actionOnClick());
+        buttonTown.onClick.RemoveListener(Unloced);
     }
 
     public void actionOnClick()
