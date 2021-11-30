@@ -6,25 +6,14 @@ public class Locker : MonoBehaviour
 {
     public bool unlocked;
 
-    public void Locked()
+    public void SetUnlockState(bool unlock)
     {
-        unlocked = false;
+        unlocked = unlock;
     }
 
-    public void Unlocked()
+    public void SetUnlockStateWithButton(bool unlock, Button button)
     {
-        unlocked = true;
-    }
-
-    public void Locked(Button button)
-    {
-        button.enabled = false;
-        Locked();
-    }
-
-    public void Unlocked(Button button)
-    {
-        button.enabled = true;
-        Unlocked();
+        button.enabled = unlock;
+        SetUnlockState(unlock);
     }
 }

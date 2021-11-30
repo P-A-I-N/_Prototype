@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class CityTowns : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class CityTowns : MonoBehaviour
         }
     }
 
-    private void ClickOnTown(bool loced, int price, Town town, int numScene)
+    private void ClickOnTown(bool loced, int price, Town town, int numScene, int bgWindows)
     {
         if (loced == false)
         {
@@ -50,7 +51,8 @@ public class CityTowns : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(numScene);//do it SceneManager
+            PlayerPrefs.SetInt(BackGrounds.key, bgWindows);
+            SceneManager.LoadScene(numScene);
         }
     }
 }
