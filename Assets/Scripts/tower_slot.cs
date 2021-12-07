@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class tower_slot : MonoBehaviour
 {
+    [SerializeField]
+    int index;
     public bool active;
     SpriteRenderer sp;
     selected Tower;
@@ -13,6 +15,7 @@ public class tower_slot : MonoBehaviour
     {
         sp = GetComponent<SpriteRenderer>();
         Tower = GetComponentInParent<selected>();
+        if (!active) PlayerPrefs.SetString("Tower slot " + index, "empty");
     }
 
     // Update is called once per frame
@@ -33,6 +36,8 @@ public class tower_slot : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = Tower.tower_selected.GetComponent<SpriteRenderer>().sprite;
             transform.localScale = Tower.tower_selected.transform.localScale;
+            PlayerPrefs.SetString ("Tower slot " + index, Tower.tower_selected.name);
+            //print(PlayerPrefs.GetString("Tower slot " + index));
         }
     }
 }

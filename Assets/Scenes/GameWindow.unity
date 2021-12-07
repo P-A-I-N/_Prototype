@@ -468,7 +468,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152162694}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6aff34dbfacede41a89d6a9c070ce84, type: 3}
   m_Name: 
@@ -1035,6 +1035,7 @@ GameObject:
   - component: {fileID: 328594715}
   - component: {fileID: 328594717}
   - component: {fileID: 328594716}
+  - component: {fileID: 328594718}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1100,6 +1101,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328594714}
   m_CullTransparentMesh: 1
+--- !u!212 &328594718
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328594714}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &329222252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,7 +1489,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364576105}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6aff34dbfacede41a89d6a9c070ce84, type: 3}
   m_Name: 
@@ -1498,8 +1550,10 @@ GameObject:
   - component: {fileID: 369241982}
   - component: {fileID: 369241981}
   - component: {fileID: 369241980}
+  - component: {fileID: 369241983}
+  - component: {fileID: 369241984}
   m_Layer: 5
-  m_Name: Normal
+  m_Name: Tower slot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1570,9 +1624,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: RayCast, Assembly-CSharp
-        m_MethodName: tower1
+      - m_Target: {fileID: 369241983}
+        m_TargetAssemblyTypeName: TowerSlotGameBoard, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1620,6 +1674,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369241978}
   m_CullTransparentMesh: 1
+--- !u!114 &369241983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369241978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d567be35affd13441a54f7e4aef07f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 977980690}
+  price: {fileID: 328594714}
+  towers:
+  - {fileID: 21300000, guid: 99ac924c357d1f145a19953265b8ab5f, type: 3}
+  - {fileID: 21300000, guid: 6a8b7a9c99c38d343a2211535e54a03d, type: 3}
+  - {fileID: 21300000, guid: 269d109da24369e4cbd7b6b1047109fa, type: 3}
+  - {fileID: 21300000, guid: e214e2deb05a50045a48303697360f68, type: 3}
+  - {fileID: 21300000, guid: 1ed7dfb8962bd224e8d12c1b2ff16964, type: 3}
+  - {fileID: 21300000, guid: d06f9eb8bba297f42b2cadd4330f54ee, type: 3}
+  - {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+  - {fileID: 21300000, guid: 8bba03e5f5d4d4b44a6a9d4f3c54e052, type: 3}
+  - {fileID: 21300000, guid: 2fde099ea1241c1408c5e72a4876ae5c, type: 3}
+  towers_build:
+  - {fileID: 5356287445821558334, guid: 1ee8db99ce4e7384d9125b93a15fc4a4, type: 3}
+  - {fileID: 4672662006099410413, guid: 9e59ba1981ee8774e8c026e0a65f0cc7, type: 3}
+  - {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
+  - {fileID: 2509314456873090153, guid: c7cea27fabc12184689185d317edcf3f, type: 3}
+  - {fileID: 3091822445127741013, guid: 8e7ec31602edaba479e6b09ab24634d2, type: 3}
+  - {fileID: 5838607118407362590, guid: f3137c05c6af0da4db282cb5339c0239, type: 3}
+  - {fileID: 6250856000326230027, guid: 971b893a58331fa4b98bda6a97942a8d, type: 3}
+  - {fileID: 3091822445127741013, guid: 6f02e79e978d7674eb4d29b7ec1c5276, type: 3}
+  - {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
+  builder: {fileID: 519420030}
+--- !u!61 &369241984
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369241978}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &373001405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,8 +2162,10 @@ GameObject:
   - component: {fileID: 437543659}
   - component: {fileID: 437543658}
   - component: {fileID: 437543657}
+  - component: {fileID: 437543660}
+  - component: {fileID: 437543661}
   m_Layer: 5
-  m_Name: PVO
+  m_Name: Tower slot 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2068,7 +2185,7 @@ RectTransform:
   - {fileID: 993330263}
   - {fileID: 362198495}
   m_Father: {fileID: 663343862}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2119,9 +2236,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: RayCast, Assembly-CSharp
-        m_MethodName: tower9
+      - m_Target: {fileID: 437543661}
+        m_TargetAssemblyTypeName: TowerSlotGameBoard, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2169,6 +2286,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437543655}
   m_CullTransparentMesh: 1
+--- !u!65 &437543660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437543655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &437543661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437543655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d567be35affd13441a54f7e4aef07f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 993330262}
+  price: {fileID: 362198494}
+  towers:
+  - {fileID: 21300000, guid: 99ac924c357d1f145a19953265b8ab5f, type: 3}
+  - {fileID: 21300000, guid: 6a8b7a9c99c38d343a2211535e54a03d, type: 3}
+  - {fileID: 21300000, guid: 269d109da24369e4cbd7b6b1047109fa, type: 3}
+  - {fileID: 21300000, guid: e214e2deb05a50045a48303697360f68, type: 3}
+  - {fileID: 21300000, guid: 1ed7dfb8962bd224e8d12c1b2ff16964, type: 3}
+  - {fileID: 21300000, guid: d06f9eb8bba297f42b2cadd4330f54ee, type: 3}
+  - {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+  - {fileID: 21300000, guid: 8bba03e5f5d4d4b44a6a9d4f3c54e052, type: 3}
+  - {fileID: 21300000, guid: 2fde099ea1241c1408c5e72a4876ae5c, type: 3}
+  towers_build:
+  - {fileID: 5356287445821558334, guid: 1ee8db99ce4e7384d9125b93a15fc4a4, type: 3}
+  - {fileID: 4672662006099410413, guid: 9e59ba1981ee8774e8c026e0a65f0cc7, type: 3}
+  - {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
+  - {fileID: 2509314456873090153, guid: c7cea27fabc12184689185d317edcf3f, type: 3}
+  - {fileID: 3091822445127741013, guid: 8e7ec31602edaba479e6b09ab24634d2, type: 3}
+  - {fileID: 5838607118407362590, guid: f3137c05c6af0da4db282cb5339c0239, type: 3}
+  - {fileID: 6250856000326230027, guid: 971b893a58331fa4b98bda6a97942a8d, type: 3}
+  - {fileID: 3091822445127741013, guid: 6f02e79e978d7674eb4d29b7ec1c5276, type: 3}
+  - {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
+  builder: {fileID: 519420030}
 --- !u!1 &445509330
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,7 +3158,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e214e2deb05a50045a48303697360f68, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3274,14 +3439,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 369241979}
-  - {fileID: 1353114402}
   - {fileID: 2105628623}
-  - {fileID: 1771785264}
   - {fileID: 1353392061}
-  - {fileID: 2032189815}
   - {fileID: 1129657748}
-  - {fileID: 1702143652}
   - {fileID: 437543656}
+  - {fileID: 1702143652}
+  - {fileID: 2032189815}
+  - {fileID: 1771785264}
+  - {fileID: 1353114402}
   m_Father: {fileID: 447465359}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4600,7 +4765,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883311917}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6aff34dbfacede41a89d6a9c070ce84, type: 3}
   m_Name: 
@@ -5023,6 +5188,7 @@ GameObject:
   - component: {fileID: 977980691}
   - component: {fileID: 977980693}
   - component: {fileID: 977980692}
+  - component: {fileID: 977980694}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -5069,7 +5235,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1ed7dfb8962bd224e8d12c1b2ff16964, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5087,6 +5253,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977980690}
   m_CullTransparentMesh: 1
+--- !u!212 &977980694
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977980690}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 2052298357
+  m_SortingLayer: 1
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &993330262
 GameObject:
   m_ObjectHideFlags: 0
@@ -5144,7 +5361,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d06f9eb8bba297f42b2cadd4330f54ee, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5219,7 +5436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 269d109da24369e4cbd7b6b1047109fa, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6568,7 +6785,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2fde099ea1241c1408c5e72a4876ae5c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6923,7 +7140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6953,8 +7170,10 @@ GameObject:
   - component: {fileID: 1129657751}
   - component: {fileID: 1129657750}
   - component: {fileID: 1129657749}
+  - component: {fileID: 1129657752}
+  - component: {fileID: 1129657753}
   m_Layer: 5
-  m_Name: Freeze
+  m_Name: Tower slot 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6974,7 +7193,7 @@ RectTransform:
   - {fileID: 993766657}
   - {fileID: 827867784}
   m_Father: {fileID: 663343862}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7025,9 +7244,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: RayCast, Assembly-CSharp
-        m_MethodName: tower7
+      - m_Target: {fileID: 1129657753}
+        m_TargetAssemblyTypeName: TowerSlotGameBoard, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7075,6 +7294,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129657747}
   m_CullTransparentMesh: 1
+--- !u!65 &1129657752
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129657747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1129657753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129657747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d567be35affd13441a54f7e4aef07f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 993766656}
+  price: {fileID: 827867783}
+  towers:
+  - {fileID: 21300000, guid: 99ac924c357d1f145a19953265b8ab5f, type: 3}
+  - {fileID: 21300000, guid: 6a8b7a9c99c38d343a2211535e54a03d, type: 3}
+  - {fileID: 21300000, guid: 269d109da24369e4cbd7b6b1047109fa, type: 3}
+  - {fileID: 21300000, guid: e214e2deb05a50045a48303697360f68, type: 3}
+  - {fileID: 21300000, guid: 1ed7dfb8962bd224e8d12c1b2ff16964, type: 3}
+  - {fileID: 21300000, guid: d06f9eb8bba297f42b2cadd4330f54ee, type: 3}
+  - {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+  - {fileID: 21300000, guid: 8bba03e5f5d4d4b44a6a9d4f3c54e052, type: 3}
+  - {fileID: 21300000, guid: 2fde099ea1241c1408c5e72a4876ae5c, type: 3}
+  towers_build:
+  - {fileID: 5356287445821558334, guid: 1ee8db99ce4e7384d9125b93a15fc4a4, type: 3}
+  - {fileID: 4672662006099410413, guid: 9e59ba1981ee8774e8c026e0a65f0cc7, type: 3}
+  - {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
+  - {fileID: 2509314456873090153, guid: c7cea27fabc12184689185d317edcf3f, type: 3}
+  - {fileID: 3091822445127741013, guid: 8e7ec31602edaba479e6b09ab24634d2, type: 3}
+  - {fileID: 5838607118407362590, guid: f3137c05c6af0da4db282cb5339c0239, type: 3}
+  - {fileID: 6250856000326230027, guid: 971b893a58331fa4b98bda6a97942a8d, type: 3}
+  - {fileID: 3091822445127741013, guid: 6f02e79e978d7674eb4d29b7ec1c5276, type: 3}
+  - {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
+  builder: {fileID: 519420030}
 --- !u!1 &1204104320
 GameObject:
   m_ObjectHideFlags: 0
@@ -7207,7 +7474,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 99ac924c357d1f145a19953265b8ab5f, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7300,6 +7567,88 @@ MonoBehaviour:
   icon_delete: {fileID: 0}
   Splash_menu: {fileID: 0}
   mouse_over: 0
+--- !u!1 &1246310105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1246310107}
+  - component: {fileID: 1246310106}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1246310106
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246310105}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 6a8b7a9c99c38d343a2211535e54a03d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.31, y: 0.42}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1246310107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246310105}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.28, y: -2.39, z: -36.283546}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280499811
 GameObject:
   m_ObjectHideFlags: 0
@@ -7617,8 +7966,10 @@ GameObject:
   - component: {fileID: 1353114405}
   - component: {fileID: 1353114404}
   - component: {fileID: 1353114403}
+  - component: {fileID: 1353114406}
+  - component: {fileID: 1353114407}
   m_Layer: 5
-  m_Name: Super
+  m_Name: Tower slot 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7638,7 +7989,7 @@ RectTransform:
   - {fileID: 1635841851}
   - {fileID: 711722824}
   m_Father: {fileID: 663343862}
-  m_RootOrder: 1
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7689,9 +8040,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: RayCast, Assembly-CSharp
-        m_MethodName: tower2
+      - m_Target: {fileID: 1353114407}
+        m_TargetAssemblyTypeName: TowerSlotGameBoard, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7739,6 +8090,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353114401}
   m_CullTransparentMesh: 1
+--- !u!65 &1353114406
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353114401}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1353114407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353114401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d567be35affd13441a54f7e4aef07f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1635841850}
+  price: {fileID: 711722823}
+  towers:
+  - {fileID: 21300000, guid: 99ac924c357d1f145a19953265b8ab5f, type: 3}
+  - {fileID: 21300000, guid: 6a8b7a9c99c38d343a2211535e54a03d, type: 3}
+  - {fileID: 21300000, guid: 269d109da24369e4cbd7b6b1047109fa, type: 3}
+  - {fileID: 21300000, guid: e214e2deb05a50045a48303697360f68, type: 3}
+  - {fileID: 21300000, guid: 1ed7dfb8962bd224e8d12c1b2ff16964, type: 3}
+  - {fileID: 21300000, guid: d06f9eb8bba297f42b2cadd4330f54ee, type: 3}
+  - {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+  - {fileID: 21300000, guid: 8bba03e5f5d4d4b44a6a9d4f3c54e052, type: 3}
+  - {fileID: 21300000, guid: 2fde099ea1241c1408c5e72a4876ae5c, type: 3}
+  towers_build:
+  - {fileID: 5356287445821558334, guid: 1ee8db99ce4e7384d9125b93a15fc4a4, type: 3}
+  - {fileID: 4672662006099410413, guid: 9e59ba1981ee8774e8c026e0a65f0cc7, type: 3}
+  - {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
+  - {fileID: 2509314456873090153, guid: c7cea27fabc12184689185d317edcf3f, type: 3}
+  - {fileID: 3091822445127741013, guid: 8e7ec31602edaba479e6b09ab24634d2, type: 3}
+  - {fileID: 5838607118407362590, guid: f3137c05c6af0da4db282cb5339c0239, type: 3}
+  - {fileID: 6250856000326230027, guid: 971b893a58331fa4b98bda6a97942a8d, type: 3}
+  - {fileID: 3091822445127741013, guid: 6f02e79e978d7674eb4d29b7ec1c5276, type: 3}
+  - {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
+  builder: {fileID: 519420030}
 --- !u!1 &1353392060
 GameObject:
   m_ObjectHideFlags: 0
@@ -7751,8 +8150,10 @@ GameObject:
   - component: {fileID: 1353392064}
   - component: {fileID: 1353392063}
   - component: {fileID: 1353392062}
+  - component: {fileID: 1353392065}
+  - component: {fileID: 1353392066}
   m_Layer: 5
-  m_Name: Buff
+  m_Name: Tower slot 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7772,7 +8173,7 @@ RectTransform:
   - {fileID: 1221533875}
   - {fileID: 513292768}
   m_Father: {fileID: 663343862}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7823,9 +8224,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: RayCast, Assembly-CSharp
-        m_MethodName: tower5
+      - m_Target: {fileID: 1353392066}
+        m_TargetAssemblyTypeName: TowerSlotGameBoard, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7873,6 +8274,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353392060}
   m_CullTransparentMesh: 1
+--- !u!65 &1353392065
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353392060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1353392066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353392060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d567be35affd13441a54f7e4aef07f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1221533874}
+  price: {fileID: 513292767}
+  towers:
+  - {fileID: 21300000, guid: 99ac924c357d1f145a19953265b8ab5f, type: 3}
+  - {fileID: 21300000, guid: 6a8b7a9c99c38d343a2211535e54a03d, type: 3}
+  - {fileID: 21300000, guid: 269d109da24369e4cbd7b6b1047109fa, type: 3}
+  - {fileID: 21300000, guid: e214e2deb05a50045a48303697360f68, type: 3}
+  - {fileID: 21300000, guid: 1ed7dfb8962bd224e8d12c1b2ff16964, type: 3}
+  - {fileID: 21300000, guid: d06f9eb8bba297f42b2cadd4330f54ee, type: 3}
+  - {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+  - {fileID: 21300000, guid: 8bba03e5f5d4d4b44a6a9d4f3c54e052, type: 3}
+  - {fileID: 21300000, guid: 2fde099ea1241c1408c5e72a4876ae5c, type: 3}
+  towers_build:
+  - {fileID: 5356287445821558334, guid: 1ee8db99ce4e7384d9125b93a15fc4a4, type: 3}
+  - {fileID: 4672662006099410413, guid: 9e59ba1981ee8774e8c026e0a65f0cc7, type: 3}
+  - {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
+  - {fileID: 2509314456873090153, guid: c7cea27fabc12184689185d317edcf3f, type: 3}
+  - {fileID: 3091822445127741013, guid: 8e7ec31602edaba479e6b09ab24634d2, type: 3}
+  - {fileID: 5838607118407362590, guid: f3137c05c6af0da4db282cb5339c0239, type: 3}
+  - {fileID: 6250856000326230027, guid: 971b893a58331fa4b98bda6a97942a8d, type: 3}
+  - {fileID: 3091822445127741013, guid: 6f02e79e978d7674eb4d29b7ec1c5276, type: 3}
+  - {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
+  builder: {fileID: 519420030}
 --- !u!1 &1370379396
 GameObject:
   m_ObjectHideFlags: 0
@@ -7918,7 +8367,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370379396}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6aff34dbfacede41a89d6a9c070ce84, type: 3}
   m_Name: 
@@ -8599,7 +9048,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6a8b7a9c99c38d343a2211535e54a03d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8949,7 +9398,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8bba03e5f5d4d4b44a6a9d4f3c54e052, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9012,7 +9461,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637547690}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6aff34dbfacede41a89d6a9c070ce84, type: 3}
   m_Name: 
@@ -9376,8 +9825,10 @@ GameObject:
   - component: {fileID: 1702143655}
   - component: {fileID: 1702143654}
   - component: {fileID: 1702143653}
+  - component: {fileID: 1702143656}
+  - component: {fileID: 1702143657}
   m_Layer: 5
-  m_Name: Splash
+  m_Name: Tower slot 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9397,7 +9848,7 @@ RectTransform:
   - {fileID: 1124303173}
   - {fileID: 541707632}
   m_Father: {fileID: 663343862}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9448,9 +9899,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: RayCast, Assembly-CSharp
-        m_MethodName: tower8
+      - m_Target: {fileID: 1702143657}
+        m_TargetAssemblyTypeName: TowerSlotGameBoard, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9498,6 +9949,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702143651}
   m_CullTransparentMesh: 1
+--- !u!65 &1702143656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702143651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1702143657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702143651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d567be35affd13441a54f7e4aef07f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1124303172}
+  price: {fileID: 541707631}
+  towers:
+  - {fileID: 21300000, guid: 99ac924c357d1f145a19953265b8ab5f, type: 3}
+  - {fileID: 21300000, guid: 6a8b7a9c99c38d343a2211535e54a03d, type: 3}
+  - {fileID: 21300000, guid: 269d109da24369e4cbd7b6b1047109fa, type: 3}
+  - {fileID: 21300000, guid: e214e2deb05a50045a48303697360f68, type: 3}
+  - {fileID: 21300000, guid: 1ed7dfb8962bd224e8d12c1b2ff16964, type: 3}
+  - {fileID: 21300000, guid: d06f9eb8bba297f42b2cadd4330f54ee, type: 3}
+  - {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+  - {fileID: 21300000, guid: 8bba03e5f5d4d4b44a6a9d4f3c54e052, type: 3}
+  - {fileID: 21300000, guid: 2fde099ea1241c1408c5e72a4876ae5c, type: 3}
+  towers_build:
+  - {fileID: 5356287445821558334, guid: 1ee8db99ce4e7384d9125b93a15fc4a4, type: 3}
+  - {fileID: 4672662006099410413, guid: 9e59ba1981ee8774e8c026e0a65f0cc7, type: 3}
+  - {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
+  - {fileID: 2509314456873090153, guid: c7cea27fabc12184689185d317edcf3f, type: 3}
+  - {fileID: 3091822445127741013, guid: 8e7ec31602edaba479e6b09ab24634d2, type: 3}
+  - {fileID: 5838607118407362590, guid: f3137c05c6af0da4db282cb5339c0239, type: 3}
+  - {fileID: 6250856000326230027, guid: 971b893a58331fa4b98bda6a97942a8d, type: 3}
+  - {fileID: 3091822445127741013, guid: 6f02e79e978d7674eb4d29b7ec1c5276, type: 3}
+  - {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
+  builder: {fileID: 519420030}
 --- !u!1 &1727203666
 GameObject:
   m_ObjectHideFlags: 0
@@ -9755,8 +10254,10 @@ GameObject:
   - component: {fileID: 1771785267}
   - component: {fileID: 1771785266}
   - component: {fileID: 1771785265}
+  - component: {fileID: 1771785268}
+  - component: {fileID: 1771785269}
   m_Layer: 5
-  m_Name: Debuff
+  m_Name: Tower slot 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9776,7 +10277,7 @@ RectTransform:
   - {fileID: 1578892361}
   - {fileID: 1299184750}
   m_Father: {fileID: 663343862}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9827,9 +10328,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: RayCast, Assembly-CSharp
-        m_MethodName: tower4
+      - m_Target: {fileID: 1771785269}
+        m_TargetAssemblyTypeName: TowerSlotGameBoard, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9877,6 +10378,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771785263}
   m_CullTransparentMesh: 1
+--- !u!65 &1771785268
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771785263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1771785269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771785263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d567be35affd13441a54f7e4aef07f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1578892360}
+  price: {fileID: 1299184749}
+  towers:
+  - {fileID: 21300000, guid: 99ac924c357d1f145a19953265b8ab5f, type: 3}
+  - {fileID: 21300000, guid: 6a8b7a9c99c38d343a2211535e54a03d, type: 3}
+  - {fileID: 21300000, guid: 269d109da24369e4cbd7b6b1047109fa, type: 3}
+  - {fileID: 21300000, guid: e214e2deb05a50045a48303697360f68, type: 3}
+  - {fileID: 21300000, guid: 1ed7dfb8962bd224e8d12c1b2ff16964, type: 3}
+  - {fileID: 21300000, guid: d06f9eb8bba297f42b2cadd4330f54ee, type: 3}
+  - {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+  - {fileID: 21300000, guid: 8bba03e5f5d4d4b44a6a9d4f3c54e052, type: 3}
+  - {fileID: 21300000, guid: 2fde099ea1241c1408c5e72a4876ae5c, type: 3}
+  towers_build:
+  - {fileID: 5356287445821558334, guid: 1ee8db99ce4e7384d9125b93a15fc4a4, type: 3}
+  - {fileID: 4672662006099410413, guid: 9e59ba1981ee8774e8c026e0a65f0cc7, type: 3}
+  - {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
+  - {fileID: 2509314456873090153, guid: c7cea27fabc12184689185d317edcf3f, type: 3}
+  - {fileID: 3091822445127741013, guid: 8e7ec31602edaba479e6b09ab24634d2, type: 3}
+  - {fileID: 5838607118407362590, guid: f3137c05c6af0da4db282cb5339c0239, type: 3}
+  - {fileID: 6250856000326230027, guid: 971b893a58331fa4b98bda6a97942a8d, type: 3}
+  - {fileID: 3091822445127741013, guid: 6f02e79e978d7674eb4d29b7ec1c5276, type: 3}
+  - {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
+  builder: {fileID: 519420030}
 --- !u!1 &1774352985
 GameObject:
   m_ObjectHideFlags: 0
@@ -10147,7 +10696,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810584338}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6aff34dbfacede41a89d6a9c070ce84, type: 3}
   m_Name: 
@@ -10624,7 +11173,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973280552}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6aff34dbfacede41a89d6a9c070ce84, type: 3}
   m_Name: 
@@ -10954,7 +11503,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983005769}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6aff34dbfacede41a89d6a9c070ce84, type: 3}
   m_Name: 
@@ -11250,8 +11799,10 @@ GameObject:
   - component: {fileID: 2032189818}
   - component: {fileID: 2032189817}
   - component: {fileID: 2032189816}
+  - component: {fileID: 2032189819}
+  - component: {fileID: 2032189820}
   m_Layer: 5
-  m_Name: Tank
+  m_Name: Tower slot 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11271,7 +11822,7 @@ RectTransform:
   - {fileID: 1063822515}
   - {fileID: 902353383}
   m_Father: {fileID: 663343862}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11322,9 +11873,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: RayCast, Assembly-CSharp
-        m_MethodName: tower6
+      - m_Target: {fileID: 2032189820}
+        m_TargetAssemblyTypeName: TowerSlotGameBoard, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11372,6 +11923,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032189814}
   m_CullTransparentMesh: 1
+--- !u!65 &2032189819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032189814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2032189820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032189814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d567be35affd13441a54f7e4aef07f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1063822514}
+  price: {fileID: 902353382}
+  towers:
+  - {fileID: 21300000, guid: 99ac924c357d1f145a19953265b8ab5f, type: 3}
+  - {fileID: 21300000, guid: 6a8b7a9c99c38d343a2211535e54a03d, type: 3}
+  - {fileID: 21300000, guid: 269d109da24369e4cbd7b6b1047109fa, type: 3}
+  - {fileID: 21300000, guid: e214e2deb05a50045a48303697360f68, type: 3}
+  - {fileID: 21300000, guid: 1ed7dfb8962bd224e8d12c1b2ff16964, type: 3}
+  - {fileID: 21300000, guid: d06f9eb8bba297f42b2cadd4330f54ee, type: 3}
+  - {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+  - {fileID: 21300000, guid: 8bba03e5f5d4d4b44a6a9d4f3c54e052, type: 3}
+  - {fileID: 21300000, guid: 2fde099ea1241c1408c5e72a4876ae5c, type: 3}
+  towers_build:
+  - {fileID: 5356287445821558334, guid: 1ee8db99ce4e7384d9125b93a15fc4a4, type: 3}
+  - {fileID: 4672662006099410413, guid: 9e59ba1981ee8774e8c026e0a65f0cc7, type: 3}
+  - {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
+  - {fileID: 2509314456873090153, guid: c7cea27fabc12184689185d317edcf3f, type: 3}
+  - {fileID: 3091822445127741013, guid: 8e7ec31602edaba479e6b09ab24634d2, type: 3}
+  - {fileID: 5838607118407362590, guid: f3137c05c6af0da4db282cb5339c0239, type: 3}
+  - {fileID: 6250856000326230027, guid: 971b893a58331fa4b98bda6a97942a8d, type: 3}
+  - {fileID: 3091822445127741013, guid: 6f02e79e978d7674eb4d29b7ec1c5276, type: 3}
+  - {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
+  builder: {fileID: 519420030}
 --- !u!1 &2047007396
 GameObject:
   m_ObjectHideFlags: 0
@@ -11567,7 +12166,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102928238}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6aff34dbfacede41a89d6a9c070ce84, type: 3}
   m_Name: 
@@ -11628,8 +12227,10 @@ GameObject:
   - component: {fileID: 2105628626}
   - component: {fileID: 2105628625}
   - component: {fileID: 2105628624}
+  - component: {fileID: 2105628627}
+  - component: {fileID: 2105628628}
   m_Layer: 5
-  m_Name: Gold
+  m_Name: Tower slot 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11649,7 +12250,7 @@ RectTransform:
   - {fileID: 577736545}
   - {fileID: 1616027653}
   m_Father: {fileID: 663343862}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11700,9 +12301,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: RayCast, Assembly-CSharp
-        m_MethodName: tower3
+      - m_Target: {fileID: 2105628628}
+        m_TargetAssemblyTypeName: TowerSlotGameBoard, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11750,6 +12351,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105628622}
   m_CullTransparentMesh: 1
+--- !u!65 &2105628627
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105628622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2105628628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105628622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d567be35affd13441a54f7e4aef07f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 577736544}
+  price: {fileID: 1616027652}
+  towers:
+  - {fileID: 21300000, guid: 99ac924c357d1f145a19953265b8ab5f, type: 3}
+  - {fileID: 21300000, guid: 6a8b7a9c99c38d343a2211535e54a03d, type: 3}
+  - {fileID: 21300000, guid: 269d109da24369e4cbd7b6b1047109fa, type: 3}
+  - {fileID: 21300000, guid: e214e2deb05a50045a48303697360f68, type: 3}
+  - {fileID: 21300000, guid: 1ed7dfb8962bd224e8d12c1b2ff16964, type: 3}
+  - {fileID: 21300000, guid: d06f9eb8bba297f42b2cadd4330f54ee, type: 3}
+  - {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+  - {fileID: 21300000, guid: 8bba03e5f5d4d4b44a6a9d4f3c54e052, type: 3}
+  - {fileID: 21300000, guid: 2fde099ea1241c1408c5e72a4876ae5c, type: 3}
+  towers_build:
+  - {fileID: 5356287445821558334, guid: 1ee8db99ce4e7384d9125b93a15fc4a4, type: 3}
+  - {fileID: 4672662006099410413, guid: 9e59ba1981ee8774e8c026e0a65f0cc7, type: 3}
+  - {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
+  - {fileID: 2509314456873090153, guid: c7cea27fabc12184689185d317edcf3f, type: 3}
+  - {fileID: 3091822445127741013, guid: 8e7ec31602edaba479e6b09ab24634d2, type: 3}
+  - {fileID: 5838607118407362590, guid: f3137c05c6af0da4db282cb5339c0239, type: 3}
+  - {fileID: 6250856000326230027, guid: 971b893a58331fa4b98bda6a97942a8d, type: 3}
+  - {fileID: 3091822445127741013, guid: 6f02e79e978d7674eb4d29b7ec1c5276, type: 3}
+  - {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
+  builder: {fileID: 519420030}
 --- !u!1 &2105903830
 GameObject:
   m_ObjectHideFlags: 0
