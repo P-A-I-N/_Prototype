@@ -15,6 +15,7 @@ namespace System
             MilkShake,
             Potato,
             Pizzeria,
+            Ogorod,
         };
 
         public static string key = "Window";
