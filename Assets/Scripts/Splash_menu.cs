@@ -29,17 +29,17 @@ public class Splash_menu : MonoBehaviour
             icon_delete.SetActive(true);
         }
     }
-    private void OnMouseExit()
-    {
-        if (icon_levelup != null)
-        {
-            mouse_over = false;
-            if (!transform.parent.GetComponent<Tower>().mouse_over && !transform.parent.parent.GetComponent<BlockPointer>().mouse_over && !icon_levelup.GetComponent<levelup>().mouse_over && !icon_delete.GetComponent<delete>().mouse_over)
-            {
-                menu.SetActive(false);
-                icon_levelup.SetActive(false);
-                icon_delete.SetActive(false);
-            }
-        }
-    }
+    //private void OnMouseExit()
+    //{
+    //    if (icon_levelup != null)
+    //    {
+    //        mouse_over = false;
+    //        if (!transform.parent.GetComponent<Tower>().mouse_over && !transform.parent.parent.GetComponent<BlockPointer>().mouse_over && !icon_levelup.GetComponent<levelup>().mouse_over && !icon_delete.GetComponent<delete>().mouse_over)
+    //        {
+    //            menu.SetActive(false);
+    //            icon_levelup.SetActive(false);
+    //            icon_delete.SetActive(false);
+    //        }
+    //    }
+    //}
 }

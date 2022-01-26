@@ -20,7 +20,7 @@ public class RayCast : MonoBehaviour
 
     private void Awake()
     {
-        gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
+        //gm = GameObject.FindGameObjectsWithTag("Map")[0].GetComponent<GameMap>();
     }
 
     void Update()

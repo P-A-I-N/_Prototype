@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a3a12db641eaa4f8f5d249199946e0, type: 3}
+  m_Name: Splash
+  m_EditorClassIdentifier: 
+  towerGrades:
+  - tower: {fileID: 6250856000326230027, guid: 971b893a58331fa4b98bda6a97942a8d, type: 3}
+    icon: {fileID: 21300000, guid: 66853ed125b3f384c886ad4a2768d4c3, type: 3}
+    price: 1
+  - tower: {fileID: 6250856000326230027, guid: 5e5c6fe4c679b0b40a7ef24cb4121967, type: 3}
+    icon: {fileID: 21300000, guid: 4c0a4fc00e921984f94eeb7630a6fd8c, type: 3}
+    price: 2
+  - tower: {fileID: 6250856000326230027, guid: 0a5a6a50956b835408a42d81355db109, type: 3}
+    icon: {fileID: 21300000, guid: 9b9d1dab321f8284a99cd30dc03384c6, type: 3}
+    price: 3
+  - tower: {fileID: 6250856000326230027, guid: 0a5a6a50956b835408a42d81355db109, type: 3}
+    icon: {fileID: 21300000, guid: a76015164cb3bf442a69add964476b55, type: 3}
+    price: 4
+  - tower: {fileID: 6250856000326230027, guid: 37e964a597bdd6e409d7108c292cfa97, type: 3}
+    icon: {fileID: 21300000, guid: b3043dc6f313a414ab2ad8d76cd472ee, type: 3}
+    price: 5
+  - tower: {fileID: 6250856000326230027, guid: 6ffaa69d6055a3442ac59df6455ed8d3, type: 3}
+    icon: {fileID: 21300000, guid: b2053ea29d6f0ed4f9cfefd810120cdc, type: 3}
+    price: 5
+  name: 

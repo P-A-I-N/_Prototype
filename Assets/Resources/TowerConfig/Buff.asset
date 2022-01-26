@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a3a12db641eaa4f8f5d249199946e0, type: 3}
+  m_Name: Buff
+  m_EditorClassIdentifier: 
+  towerGrades:
+  - tower: {fileID: 5356287445821558334, guid: 1ee8db99ce4e7384d9125b93a15fc4a4, type: 3}
+    icon: {fileID: 21300000, guid: 99ac924c357d1f145a19953265b8ab5f, type: 3}
+    price: 1
+  - tower: {fileID: 5356287445821558334, guid: e368665832eb2704cb6d8c553c5d7b99, type: 3}
+    icon: {fileID: 21300000, guid: a9fbda167c5b4d541a07c057e0717af9, type: 3}
+    price: 2
+  - tower: {fileID: 5356287445821558334, guid: a08095e079129b64cb8cbd120abe0895, type: 3}
+    icon: {fileID: 21300000, guid: fc1dda2129711404fb145ddcb59aab9e, type: 3}
+    price: 3
+  - tower: {fileID: 5356287445821558334, guid: 515b471c2426a7d4aafc5dd99b99d89a, type: 3}
+    icon: {fileID: 21300000, guid: 00c9b0a9f7714b846b5e1927f599aad1, type: 3}
+    price: 4
+  - tower: {fileID: 5356287445821558334, guid: 4c2e893aadc70cb4b85dccc670235052, type: 3}
+    icon: {fileID: 21300000, guid: ad2df2b555877ea44bf5b1ede26c96f4, type: 3}
+    price: 5
+  - tower: {fileID: 5356287445821558334, guid: 3a2f7e8781430ca449aab3765bfe4f3a, type: 3}
+    icon: {fileID: 21300000, guid: 8f44f7df5dac3f34296ddf86b4ed7b16, type: 3}
+    price: 5
+  nameTower: Buff

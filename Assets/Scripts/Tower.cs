@@ -306,20 +306,20 @@ public class Tower : MonoBehaviour
         if (aura != null) aura.gameObject.SetActive(true);
     }
 
-    private void OnMouseExit()
-    {
-        if (icon_levelup != null)
-        {
-            mouse_over = false;
-            if (!Splash_menu.GetComponent<Splash_menu>().mouse_over && !transform.parent.gameObject.GetComponent<BlockPointer>().mouse_over && !icon_levelup.GetComponent<levelup>().mouse_over && !icon_delete.GetComponent<delete>().mouse_over)
-            {
-                Splash_menu.SetActive(false);
-                icon_levelup.SetActive(false);
-                icon_delete.SetActive(false);
-            }
-        }
+    //private void OnMouseExit()
+    //{
+    //    if (icon_levelup != null)
+    //    {
+    //        mouse_over = false;
+    //        if (!Splash_menu.GetComponent<Splash_menu>().mouse_over && !transform.parent.gameObject.GetComponent<BlockPointer>().mouse_over && !icon_levelup.GetComponent<levelup>().mouse_over && !icon_delete.GetComponent<delete>().mouse_over)
+    //        {
+    //            Splash_menu.SetActive(false);
+    //            icon_levelup.SetActive(false);
+    //            icon_delete.SetActive(false);
+    //        }
+    //    }
 
-        if (aura != null) aura.gameObject.SetActive(false);
-    }
+    //    if (aura != null) aura.gameObject.SetActive(false);
+    //}
 }
 

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a3a12db641eaa4f8f5d249199946e0, type: 3}
+  m_Name: Tank
+  m_EditorClassIdentifier: 
+  towerGrades:
+  - tower: {fileID: 7644471715059071606, guid: bcc767555c37d4448af504d98dd44170, type: 3}
+    icon: {fileID: 21300000, guid: 2fde099ea1241c1408c5e72a4876ae5c, type: 3}
+    price: 1
+  - tower: {fileID: 7644471715059071606, guid: 8605a9bfa1e64b743850a013f1f387c7, type: 3}
+    icon: {fileID: 21300000, guid: ef0b29a2c4d6a88449f4c4587135a9ea, type: 3}
+    price: 2
+  - tower: {fileID: 7644471715059071606, guid: 27e8246bee99985419bf08982e282be5, type: 3}
+    icon: {fileID: 21300000, guid: 041659526a757d54e8ca7880625f4d79, type: 3}
+    price: 3
+  - tower: {fileID: 7644471715059071606, guid: bb42f35c9753a0a4581c367da21869dc, type: 3}
+    icon: {fileID: 21300000, guid: a7b12761c013d1e439badce246c37612, type: 3}
+    price: 4
+  - tower: {fileID: 7644471715059071606, guid: 7722da51b5d8d7c49befdbc621d56617, type: 3}
+    icon: {fileID: 21300000, guid: a4cd269f0223b3645b0f5cbe585a61b7, type: 3}
+    price: 5
+  - tower: {fileID: 7644471715059071606, guid: 2809025b15fd4864c8337038ceffacec, type: 3}
+    icon: {fileID: 21300000, guid: 5cd95447656727d409c58717df5b714f, type: 3}
+    price: 5
+  name: 

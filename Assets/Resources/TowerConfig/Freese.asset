@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a3a12db641eaa4f8f5d249199946e0, type: 3}
+  m_Name: Freese
+  m_EditorClassIdentifier: 
+  towerGrades:
+  - tower: {fileID: 4583781615001532060, guid: fda192e130426bf4295dc2936c76d29e, type: 3}
+    icon: {fileID: 21300000, guid: 269d109da24369e4cbd7b6b1047109fa, type: 3}
+    price: 1
+  - tower: {fileID: 4583781615001532060, guid: 78fe43947eb982d45b61e41b2f59ed6f, type: 3}
+    icon: {fileID: 21300000, guid: 1bffa60eb09baf246a7f22896ba14ecc, type: 3}
+    price: 2
+  - tower: {fileID: 4583781615001532060, guid: 4ae17cec4f1321745a2f3ef896944196, type: 3}
+    icon: {fileID: 21300000, guid: a1f56246d62198e41ab5c93cc180118e, type: 3}
+    price: 3
+  - tower: {fileID: 4583781615001532060, guid: 25ff62137a4fc3a45868538774ec4c1b, type: 3}
+    icon: {fileID: 21300000, guid: 90ead31fb2b39304dbd40f5d5556c4d9, type: 3}
+    price: 4
+  - tower: {fileID: 4583781615001532060, guid: 0adf1a5c16f32794eaee3103e1196742, type: 3}
+    icon: {fileID: 21300000, guid: 1d8d4ebeadf32d34db903e9e6798932a, type: 3}
+    price: 5
+  - tower: {fileID: 4583781615001532060, guid: 724c839d0f50e1148b143149f2de3bd2, type: 3}
+    icon: {fileID: 21300000, guid: 28f3ff4ed263d7f488ce53c2545483c5, type: 3}
+    price: 5
+  name: 
