@@ -26,9 +26,9 @@ namespace Stayhome.Windows
 
         }
 
-        private void TowerSelected(TowerInfo towerInfo)
+        private void TowerSelected(TowerInfo towerInfo, Enum.EventType eventType)
         {
-            dragTower.Drag(towerInfo);
+            dragTower.Drag(towerInfo, eventType);
         }
     }
 }

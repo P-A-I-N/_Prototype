@@ -19,7 +19,7 @@ namespace Stayhome.Helper
 
         public void SetAnimation(TowerType type)
         {
-            animator.runtimeAnimatorController
+            //animator.
         }
     }
 }

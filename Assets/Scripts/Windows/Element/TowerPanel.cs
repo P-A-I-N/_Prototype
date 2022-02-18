@@ -6,7 +6,7 @@ namespace Stayhome.Windows.Element
 {
     public class TowerPanel : MonoBehaviour
     {
-        public event Action<TowerInfo> onTowerSelected = Tower => { };
+        public event Action<TowerInfo, Enum.EventType> onTowerSelected = (tower, eventType) => { };
 
         [SerializeField] private GameObject rootTowerButton;
 
@@ -17,13 +17,13 @@ namespace Stayhome.Windows.Element
                 GameObject tower = Instantiate(rootTowerButton, gameObject.transform);
                 TowerSlot towerSlot = tower.GetComponent<TowerSlot>();
                 towerSlot.Init(gameDate.towerInfos[i]);
-                towerSlot.onButtonClick += OnTowerSelected;
+                towerSlot.OnButtonEvent += OnTowerSelected;
             }
         }
 
-        public void OnTowerSelected(TowerInfo towerInfo)
+        public void OnTowerSelected(TowerInfo towerInfo, Enum.EventType eventType)
         {
-            onTowerSelected(towerInfo);
+            onTowerSelected(towerInfo, eventType);
         }
     }
 }
