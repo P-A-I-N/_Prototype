@@ -1,4 +1,5 @@
 
+using Stayhome.Config;
 using System;
 using TMPro;
 using UnityEngine;
@@ -9,33 +10,69 @@ namespace Stayhome.Windows.Element
 {
     public class TowerSlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
     {
-        public event Action<TowerInfo, Enum.EventType> OnButtonEvent = (towerInfo, EventType) => { };
+        public event Action<Tower, EventType> OnButtonEvent = (towerInfo, EventType) => { };
 
         [SerializeField] private Image icon;
         [SerializeField] private TMP_Text text;
 
-        private TowerInfo towerInfo;
+        private Tower towerInfo;
 
-        public void Init(TowerInfo towerInfo)//todo
+        public void Init(Tower towerInfo)
         {
             this.towerInfo = towerInfo;
-            icon.sprite = towerInfo.towerGrades[0].icon;
-            text.text = towerInfo.towerGrades[0].price.ToString();
+            icon.sprite = towerInfo.levelTowerIcon[0];
+            switch (towerInfo.data.type)
+            {
+                case TowerType.Normal:
+                    text.text = towerInfo.data.normal[0].price.ToString();
+                    break;
+
+                case TowerType.Freeze:
+                    text.text = towerInfo.data.freeze[0].price.ToString();
+                    break;
+
+                case TowerType.Pvo:
+                    text.text = towerInfo.data.pvo[0].price.ToString();
+                    break;
+
+                case TowerType.Splash:
+                    text.text = towerInfo.data.splash[0].price.ToString();
+                    break;
+
+                case TowerType.Tank:
+                    text.text = towerInfo.data.tank[0].price.ToString();
+                    break;
+
+                case TowerType.Buff:
+                    text.text = towerInfo.data.buff[0].price.ToString();
+                    break;
+                case TowerType.Debuff:
+                    text.text = towerInfo.data.debuff[0].price.ToString();
+                    break;
+
+                case TowerType.Super:
+                    text.text = towerInfo.data.super[0].price.ToString();
+                    break;
+
+                case TowerType.Money:
+                    text.text = towerInfo.data.money[0].price.ToString();
+                    break;
+            }
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            OnButtonEvent(towerInfo, Enum.EventType.BeginDrag);
+            OnButtonEvent(towerInfo, EventType.BeginDrag);
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            OnButtonEvent(towerInfo, Enum.EventType.Drag);
+            OnButtonEvent(towerInfo, EventType.Drag);
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            OnButtonEvent(towerInfo, Enum.EventType.EndDrag);
+            OnButtonEvent(towerInfo, EventType.EndDrag);
         }
     }
 }

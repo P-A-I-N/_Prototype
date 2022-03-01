@@ -27,8 +27,8 @@ public class RayCast : MonoBehaviour
     {
         if (target != null && towerUp)
         {
-            price = target.GetComponent<Tower>().levelUp.GetComponent<Tower>().price;
-            levelUp = target.GetComponent<Tower>().levelUp;
+            price = target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().price;
+            levelUp = target.GetComponent<Tower_old>().levelUp;
             lvlUp();
             towerUp = false;
         }
@@ -54,7 +54,7 @@ public class RayCast : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && hitTower.collider == null && hitPoint.collider != null && tower != null && infoTarget != null)
         {
-            price = tower.GetComponent<Tower>().price;
+            price = tower.GetComponent<Tower_old>().price;
             craeteTower();
         }
 
@@ -152,18 +152,18 @@ public class RayCast : MonoBehaviour
     }
     public void deleteTower()
     {
-        price = target.GetComponent<Tower>().price;
-        gm.gold += target.GetComponent<Tower>().fullprice / 2;
+        price = target.GetComponent<Tower_old>().price;
+        gm.gold += target.GetComponent<Tower_old>().fullprice / 2;
         Destroy(target);
     }
 
     public void lvl5a()
     {
-        target.GetComponent<Tower>().levelUp = target.GetComponent<Tower>().lvl5a;
+        target.GetComponent<Tower_old>().levelUp = target.GetComponent<Tower_old>().lvl5a;
     }
     public void lvl5b()
     {
-        target.GetComponent<Tower>().levelUp = target.GetComponent<Tower>().lvl5b;
+        target.GetComponent<Tower_old>().levelUp = target.GetComponent<Tower_old>().lvl5b;
     }
 }
 

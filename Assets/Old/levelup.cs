@@ -19,7 +19,7 @@ public class levelup : MonoBehaviour
 
     private void OnMouseUpAsButton()
     {
-        transform.parent.gameObject.GetComponent<Tower>().Level_up();
+        transform.parent.gameObject.GetComponent<Tower_old>().Level_up();
     }
     private void OnMouseOver()
     {

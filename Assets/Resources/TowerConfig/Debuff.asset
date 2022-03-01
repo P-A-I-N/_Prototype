@@ -9,26 +9,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a3a12db641eaa4f8f5d249199946e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5315241b9f79aa147852147b1bd8e534, type: 3}
   m_Name: Debuff
   m_EditorClassIdentifier: 
-  towerGrades:
-  - tower: {fileID: 4672662006099410413, guid: 9e59ba1981ee8774e8c026e0a65f0cc7, type: 3}
-    icon: {fileID: 21300000, guid: 6a8b7a9c99c38d343a2211535e54a03d, type: 3}
-    price: 1
-  - tower: {fileID: 4672662006099410413, guid: 34ca00bae117f7748b0e5aa652083602, type: 3}
-    icon: {fileID: 21300000, guid: 040c3262e7170d24db7781805fdd4e31, type: 3}
-    price: 2
-  - tower: {fileID: 4672662006099410413, guid: f06cba3878a6af94d9668bb5294371b6, type: 3}
-    icon: {fileID: 21300000, guid: 735f9f36818ff884a8ef9143a22a0753, type: 3}
-    price: 3
-  - tower: {fileID: 4672662006099410413, guid: 44f22b3e110043547a7e73f750edc4d3, type: 3}
-    icon: {fileID: 21300000, guid: a3d7c72f1c047384da6aff10ecb36774, type: 3}
-    price: 4
-  - tower: {fileID: 4672662006099410413, guid: 7b0ef74d1a080d64a87f227d1eb57a7d, type: 3}
-    icon: {fileID: 21300000, guid: 61e095edb84b2c7438decc85a6408597, type: 3}
-    price: 5
-  - tower: {fileID: 4672662006099410413, guid: 0fb5d2f37f55e914da24d868e3d05b3a, type: 3}
-    icon: {fileID: 21300000, guid: cf787899d0346db4388380fffd1bc960, type: 3}
-    price: 5
-  name: 
+  levelTowerIcon:
+  - {fileID: 21300000, guid: 244fbdc1453117440bc2fe3e997d1558, type: 3}
+  - {fileID: 21300000, guid: 0bb7a83a2dce76b479ede497f76ad786, type: 3}
+  - {fileID: 21300000, guid: b41aec9350ddc6846b300f3b192f5364, type: 3}
+  - {fileID: 21300000, guid: 80b0184f14249f94b9cc1a541bd99ba3, type: 3}
+  - {fileID: 21300000, guid: 2bf09a10a200f1c41ac94e73d06086f6, type: 3}
+  - {fileID: 21300000, guid: 31d426c1e19eed24c9851daabc33c20b, type: 3}
+  data:
+    type: 7
+    normal: []
+    freeze: []
+    pVO: []
+    splash: []
+    tank: []
+    buff: []
+    debuff:
+    - price: 0
+      helth: 0
+    - price: 0
+      helth: 0
+    - price: 0
+      helth: 0
+    - price: 0
+      helth: 0
+    - price: 0
+      helth: 0
+    - price: 0
+      helth: 0
+    super: []
+    money: []

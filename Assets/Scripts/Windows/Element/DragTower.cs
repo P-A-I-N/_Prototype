@@ -1,4 +1,5 @@
 
+using Stayhome.Config;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,28 +13,28 @@ namespace Stayhome.Windows.Element
         [SerializeField] private Image icon;
 
         private PointerEventData pointer = new PointerEventData(EventSystem.current);
-        private TowerInfo towerInfo;
+        private Tower towerInfo;
 
         private void Awake()
         {
             image.SetActive(false);
         }
 
-        public void Drag(TowerInfo towerInfo, Enum.EventType eventType)
+        public void Drag(Tower towerInfo, EventType eventType)
         {
             switch (eventType)
             {
-                case Enum.EventType.BeginDrag:
+                case EventType.BeginDrag:
                     this.towerInfo = towerInfo;
-                    icon.sprite = towerInfo.towerGrades[0].icon;
+                    icon.sprite = towerInfo.levelTowerIcon[0];
                     SetDragState(true);
                     break;
 
-                case Enum.EventType.Drag:
+                case EventType.Drag:
                     pointer.position = transform.position = Input.mousePosition;
                     break;
 
-                case Enum.EventType.EndDrag:
+                case EventType.EndDrag:
                     SetTower();
                     SetDragState(false);
                     break;
@@ -54,7 +55,7 @@ namespace Stayhome.Windows.Element
             {
                 if(raycastResult.gameObject.GetComponent<TowerCell>())
                 {
-                    raycastResult.gameObject.GetComponent<TowerCell>().SetTower(towerInfo);
+                    raycastResult.gameObject.GetComponent<TowerCell>().TrySetTower(towerInfo);
                 }
             }
         }

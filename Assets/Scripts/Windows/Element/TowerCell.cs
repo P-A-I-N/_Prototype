@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+
+using Stayhome.Config;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,11 +7,18 @@ namespace Stayhome.Windows.Element
 {
     public class TowerCell : MonoBehaviour
     {
-        [SerializeField] private Image icon;
+        [SerializeField] private Button button;
+        [SerializeField] private NewTower tower;
 
-        public void SetTower(TowerInfo towerInfo)
+        private bool isEmptySlot = true;
+
+        public void TrySetTower(Tower towerInfo)
         {
-            icon.sprite = towerInfo.towerGrades[0].icon;
+            if(isEmptySlot)
+            {
+                tower.SetTower(towerInfo);
+                isEmptySlot = false;
+            }
         }
     }
 }

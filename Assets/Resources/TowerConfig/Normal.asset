@@ -9,26 +9,54 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a3a12db641eaa4f8f5d249199946e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5315241b9f79aa147852147b1bd8e534, type: 3}
   m_Name: Normal
   m_EditorClassIdentifier: 
-  towerGrades:
-  - tower: {fileID: 3091822445127741013, guid: 8e7ec31602edaba479e6b09ab24634d2, type: 3}
-    icon: {fileID: 21300000, guid: 1ed7dfb8962bd224e8d12c1b2ff16964, type: 3}
-    price: 1
-  - tower: {fileID: 2171621869778484781, guid: 102355e5ae1a4e54c92a12e1228d7214, type: 3}
-    icon: {fileID: 21300000, guid: 66f5b420dbbc6774aa9b426c314e4d01, type: 3}
-    price: 2
-  - tower: {fileID: 2986614373658165757, guid: 14dfdfb77218c634e9fef68a6e26cbb6, type: 3}
-    icon: {fileID: 21300000, guid: 3c714714c674b5446bef4307ef337e91, type: 3}
-    price: 3
-  - tower: {fileID: 75817332968836646, guid: 536524ca2b005054aa3bffee6aeba4e9, type: 3}
-    icon: {fileID: 21300000, guid: 8e28082d134124148ae37c5af2fd4db1, type: 3}
-    price: 4
-  - tower: {fileID: 3913156428894591619, guid: 956a2522b9d93cc4d81ee5cac284a32f, type: 3}
-    icon: {fileID: 21300000, guid: 2f6c5954a3e409848ae5654ee3101edf, type: 3}
-    price: 5
-  - tower: {fileID: 7117819293085753521, guid: b7129313877139a47be9f9f3cf1c1bf5, type: 3}
-    icon: {fileID: 21300000, guid: 691acb36c727a314cb475c59d553d806, type: 3}
-    price: 5
-  name: 
+  levelTowerIcon:
+  - {fileID: 21300000, guid: 674cd6fb90767194595f177c5d365723, type: 3}
+  - {fileID: 21300000, guid: 0911e8f5189a59546b9415da0e4d03ca, type: 3}
+  - {fileID: 21300000, guid: 4cbfc072249dc0849ae88cbe6f310633, type: 3}
+  - {fileID: 21300000, guid: 1d01df3b713e41142b291a046dec42f6, type: 3}
+  - {fileID: 21300000, guid: a0e5c105884c02e469927673ac4090a9, type: 3}
+  - {fileID: 21300000, guid: 806782faf99cc764e9be7f86928f28c8, type: 3}
+  data:
+    type: 1
+    normal:
+    - price: 0
+      helth: 0
+      damage: 0
+      attackRange: 0
+      attackSpeed: 0
+    - price: 0
+      helth: 0
+      damage: 0
+      attackRange: 0
+      attackSpeed: 0
+    - price: 0
+      helth: 0
+      damage: 0
+      attackRange: 0
+      attackSpeed: 0
+    - price: 0
+      helth: 0
+      damage: 0
+      attackRange: 0
+      attackSpeed: 0
+    - price: 0
+      helth: 0
+      damage: 0
+      attackRange: 0
+      attackSpeed: 0
+    - price: 0
+      helth: 0
+      damage: 0
+      attackRange: 0
+      attackSpeed: 0
+    freeze: []
+    pVO: []
+    splash: []
+    tank: []
+    buff: []
+    debuff: []
+    super: []
+    money: []

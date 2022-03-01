@@ -2674,9 +2674,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerInfos:
-  - {fileID: 11400000, guid: 793a9dda071ea4645b061d0ebdca8f6f, type: 2}
-  - {fileID: 11400000, guid: 05bdc04597dc3b745a67800296228080, type: 2}
-  - {fileID: 11400000, guid: d16f219d8ff4d8b4ca30000094a855e6, type: 2}
+  - {fileID: 11400000, guid: 4ce1355487ace8b4c834c0066d8df39b, type: 2}
+  - {fileID: 11400000, guid: becd1c8c909f6d34f9518a3312c467bd, type: 2}
+  - {fileID: 11400000, guid: 76617f32a053b7e4ebc9cfe5e8a84141, type: 2}
+  - {fileID: 11400000, guid: 2380b294930d8a44e81f31009a4ba0d4, type: 2}
+  - {fileID: 11400000, guid: 81233b4bbe6e62e489c0d946c0572f38, type: 2}
+  - {fileID: 11400000, guid: 4e1632fcccb60a94b9ac24d2ca67578a, type: 2}
+  - {fileID: 11400000, guid: 0051d3782f8273e4791e063320881694, type: 2}
+  - {fileID: 11400000, guid: ad4a33f18142de64691ca073d3ba00c4, type: 2}
+  - {fileID: 11400000, guid: d874447daf6144049b89f9852c5c790f, type: 2}
   towerPanel: {fileID: 663343863}
   dragTower: {fileID: 1562214069}
 --- !u!1 &655126056
