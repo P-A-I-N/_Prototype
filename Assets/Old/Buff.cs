@@ -135,29 +135,29 @@ public class Buff : MonoBehaviour
     {
         if (collision.gameObject.tag == "TowerBuff")
         {
-            if (collision.GetComponentInParent<Tower>().tipe == "Buff")
+            if (collision.GetComponentInParent<Tower_old>().tipe == "Buff")
             {
-                if (collision.GetComponentInParent<Tower>().lvl == "1")
+                if (collision.GetComponentInParent<Tower_old>().lvl == "1")
                 {
                     B1++;
                 }
-                if (collision.GetComponentInParent<Tower>().lvl == "2")
+                if (collision.GetComponentInParent<Tower_old>().lvl == "2")
                 {
                     B2++;
                 }
-                if (collision.GetComponentInParent<Tower>().lvl == "3")
+                if (collision.GetComponentInParent<Tower_old>().lvl == "3")
                 {
                     B3++;
                 }
-                if (collision.GetComponentInParent<Tower>().lvl == "4")
+                if (collision.GetComponentInParent<Tower_old>().lvl == "4")
                 {
                     B4++;
                 }
-                if (collision.GetComponentInParent<Tower>().lvl == "5A")
+                if (collision.GetComponentInParent<Tower_old>().lvl == "5A")
                 {
                     B5a++;
                 }
-                if (collision.GetComponentInParent<Tower>().lvl == "5B")
+                if (collision.GetComponentInParent<Tower_old>().lvl == "5B")
                 {
                     B5b++;
                 }
@@ -168,29 +168,29 @@ public class Buff : MonoBehaviour
     {
         if (collision.gameObject.tag == "TowerBuff")
         {
-            if (collision.GetComponentInParent<Tower>().tipe == "Buff")
+            if (collision.GetComponentInParent<Tower_old>().tipe == "Buff")
             {
-                if (collision.GetComponentInParent<Tower>().lvl == "1")
+                if (collision.GetComponentInParent<Tower_old>().lvl == "1")
                 {
                     B1--;
                 }
-                if (collision.GetComponentInParent<Tower>().lvl == "2")
+                if (collision.GetComponentInParent<Tower_old>().lvl == "2")
                 {
                     B2--;
                 }
-                if (collision.GetComponentInParent<Tower>().lvl == "3")
+                if (collision.GetComponentInParent<Tower_old>().lvl == "3")
                 {
                     B3--;
                 }
-                if (collision.GetComponentInParent<Tower>().lvl == "4")
+                if (collision.GetComponentInParent<Tower_old>().lvl == "4")
                 {
                     B4--;
                 }
-                if (collision.GetComponentInParent<Tower>().lvl == "5A")
+                if (collision.GetComponentInParent<Tower_old>().lvl == "5A")
                 {
                     B5a--;
                 }
-                if (collision.GetComponentInParent<Tower>().lvl == "5B")
+                if (collision.GetComponentInParent<Tower_old>().lvl == "5B")
                 {
                     B5b--;
                 }

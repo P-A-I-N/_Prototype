@@ -1,4 +1,5 @@
 
+using Stayhome.Config;
 using System;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace Stayhome.Windows.Element
 {
     public class TowerPanel : MonoBehaviour
     {
-        public event Action<TowerInfo, Enum.EventType> onTowerSelected = (tower, eventType) => { };
+        public event Action<Tower, EventType> OnTowerSelected = (tower, eventType) => { };
 
         [SerializeField] private GameObject rootTowerButton;
 
@@ -17,13 +18,13 @@ namespace Stayhome.Windows.Element
                 GameObject tower = Instantiate(rootTowerButton, gameObject.transform);
                 TowerSlot towerSlot = tower.GetComponent<TowerSlot>();
                 towerSlot.Init(gameDate.towerInfos[i]);
-                towerSlot.OnButtonEvent += OnTowerSelected;
+                towerSlot.OnButtonEvent += TowerSelected;
             }
         }
 
-        public void OnTowerSelected(TowerInfo towerInfo, Enum.EventType eventType)
+        public void TowerSelected(Tower towerInfo, EventType eventType)
         {
-            onTowerSelected(towerInfo, eventType);
+            OnTowerSelected(towerInfo, eventType);
         }
     }
 }

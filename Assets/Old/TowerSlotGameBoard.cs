@@ -30,55 +30,55 @@ public class TowerSlotGameBoard : MonoBehaviour
             case "Buff_Tower_Lvl_1":
                 index = 5;
                 spr.sprite = towers[0];
-                price_text.text = towers_build[0].GetComponent<Tower>().price.ToString();
+                price_text.text = towers_build[0].GetComponent<Tower_old>().price.ToString();
                 active = true;
                 break;
             case "Debuff_Tower_Lvl_1":
                 index = 4;
                 spr.sprite = towers[1];
-                price_text.text = towers_build[1].GetComponent<Tower>().price.ToString();
+                price_text.text = towers_build[1].GetComponent<Tower_old>().price.ToString();
                 active = true;
                 break;
             case "Freeze_Tower_Lvl_1":
                 index = 7;
                 spr.sprite = towers[2];
-                price_text.text = towers_build[2].GetComponent<Tower>().price.ToString();
+                price_text.text = towers_build[2].GetComponent<Tower_old>().price.ToString();
                 active = true;
                 break;
             case "Gold_Tower_Lvl_1":
                 index = 3;
                 spr.sprite = towers[3];
-                price_text.text = towers_build[3].GetComponent<Tower>().price.ToString();
+                price_text.text = towers_build[3].GetComponent<Tower_old>().price.ToString();
                 active = true;
                 break;
             case "Normal_Tower_Lvl_1":
                 index = 1;
                 spr.sprite = towers[4];
-                price_text.text = towers_build[4].GetComponent<Tower>().price.ToString();
+                price_text.text = towers_build[4].GetComponent<Tower_old>().price.ToString();
                 active = true;
                 break;
             case "PVO_Tower_Lvl_1":
                 index = 9;
                 spr.sprite = towers[5];
-                price_text.text = towers_build[5].GetComponent<Tower>().price.ToString();
+                price_text.text = towers_build[5].GetComponent<Tower_old>().price.ToString();
                 active = true;
                 break;
             case "Splash_Tower_Lvl_1":
                 index = 8;
                 spr.sprite = towers[6];
-                price_text.text = towers_build[6].GetComponent<Tower>().price.ToString();
+                price_text.text = towers_build[6].GetComponent<Tower_old>().price.ToString();
                 active = true;
                 break;
             case "Super_Tower_Lvl_1":
                 index = 2;
                 spr.sprite = towers[7];
-                price_text.text = towers_build[7].GetComponent<Tower>().price.ToString();
+                price_text.text = towers_build[7].GetComponent<Tower_old>().price.ToString();
                 active = true;
                 break;
             case "Tank_Tower_Lvl_1":
                 index = 6;
                 spr.sprite = towers[8];
-                price_text.text = towers_build[8].GetComponent<Tower>().price.ToString();
+                price_text.text = towers_build[8].GetComponent<Tower_old>().price.ToString();
                 active = true;
                 break;
             default:

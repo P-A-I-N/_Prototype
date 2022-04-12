@@ -30,20 +30,20 @@ public class TowerInfo : MonoBehaviour
             del.SetActive(false);
             panel3.SetActive(false);
 
-            damage.text = "" + targetI.GetComponent<Tower>().damageTower;
-            range.text = "" + targetI.GetComponent<Tower>().range;
-            health.text = "" + targetI.GetComponent<Tower>().health;
-            price.text = "" + targetI.GetComponent<Tower>().price;
-            speed.text = "1 in " + targetI.GetComponent<Tower>().rateOfFire + " sec";
-            effect.text = "" + targetI.GetComponent<Tower>().nameTower.text;
+            damage.text = "" + targetI.GetComponent<Tower_old>().damageTower;
+            range.text = "" + targetI.GetComponent<Tower_old>().range;
+            health.text = "" + targetI.GetComponent<Tower_old>().health;
+            price.text = "" + targetI.GetComponent<Tower_old>().price;
+            speed.text = "1 in " + targetI.GetComponent<Tower_old>().rateOfFire + " sec";
+            effect.text = "" + targetI.GetComponent<Tower_old>().nameTower.text;
         }
         else if (target != null)
         {
             panel.SetActive(true);
 
-            if (target.GetComponent<Tower>().lvl4)
+            if (target.GetComponent<Tower_old>().lvl4)
             {
-                if (target.GetComponent<Tower>().levelUp == null)
+                if (target.GetComponent<Tower_old>().levelUp == null)
                 {
                     up.SetActive(false);
                     damage.text = "";
@@ -56,45 +56,45 @@ public class TowerInfo : MonoBehaviour
 
                 panel3.SetActive(true);
 
-                if (target.GetComponent<Tower>().levelUp != null)
+                if (target.GetComponent<Tower_old>().levelUp != null)
                 {
                     up.SetActive(true);
-                    damage.text = "" + target.GetComponent<Tower>().damageTower + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().damageTower;
-                    range.text = "" + target.GetComponent<Tower>().range + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().range;
-                    health.text = "" + target.GetComponent<Tower>().health + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().health;
-                    price.text = "" + target.GetComponent<Tower>().price + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().price;
-                    speed.text = "1 in " + target.GetComponent<Tower>()._rateOfFire + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().rateOfFire + " sec";
-                    effect.text = "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().nameTower.text;
+                    damage.text = "" + target.GetComponent<Tower_old>().damageTower + "➜" + target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().damageTower;
+                    range.text = "" + target.GetComponent<Tower_old>().range + "➜" + target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().range;
+                    health.text = "" + target.GetComponent<Tower_old>().health + "➜" + target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().health;
+                    price.text = "" + target.GetComponent<Tower_old>().price + "➜" + target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().price;
+                    speed.text = "1 in " + target.GetComponent<Tower_old>()._rateOfFire + "➜" + target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().rateOfFire + " sec";
+                    effect.text = "➜" + target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().nameTower.text;
                 }
 
             }
             else
             {
-                if (target.GetComponent<Tower>().levelUp != null)
+                if (target.GetComponent<Tower_old>().levelUp != null)
                 {
 
                     up.SetActive(true);
                     del.SetActive(true);
                     panel3.SetActive(false);
 
-                    damage.text = "" + target.GetComponent<Tower>().damageTower + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().damageTower;
-                    range.text = "" + target.GetComponent<Tower>().range + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().range;
-                    health.text = "" + target.GetComponent<Tower>().health + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().health;
-                    price.text = "" + target.GetComponent<Tower>().price + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().price;
-                    speed.text = "1 in " + target.GetComponent<Tower>()._rateOfFire + "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().rateOfFire + " sec";
-                    effect.text = "➜" + target.GetComponent<Tower>().levelUp.GetComponent<Tower>().nameTower.text;
+                    damage.text = "" + target.GetComponent<Tower_old>().damageTower + "➜" + target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().damageTower;
+                    range.text = "" + target.GetComponent<Tower_old>().range + "➜" + target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().range;
+                    health.text = "" + target.GetComponent<Tower_old>().health + "➜" + target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().health;
+                    price.text = "" + target.GetComponent<Tower_old>().price + "➜" + target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().price;
+                    speed.text = "1 in " + target.GetComponent<Tower_old>()._rateOfFire + "➜" + target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().rateOfFire + " sec";
+                    effect.text = "➜" + target.GetComponent<Tower_old>().levelUp.GetComponent<Tower_old>().nameTower.text;
                 }
                 else
                 {
                     up.SetActive(false);
                     del.SetActive(true);
                     panel3.SetActive(false);
-                    damage.text = "" + target.GetComponent<Tower>().damageTower;
-                    range.text = "" + target.GetComponent<Tower>().range;
-                    health.text = "" + target.GetComponent<Tower>().health;
-                    price.text = "" + target.GetComponent<Tower>().price;
-                    speed.text = "1 in " + target.GetComponent<Tower>()._rateOfFire + " sec";
-                    effect.text = "" + target.GetComponent<Tower>().nameTower.text;
+                    damage.text = "" + target.GetComponent<Tower_old>().damageTower;
+                    range.text = "" + target.GetComponent<Tower_old>().range;
+                    health.text = "" + target.GetComponent<Tower_old>().health;
+                    price.text = "" + target.GetComponent<Tower_old>().price;
+                    speed.text = "1 in " + target.GetComponent<Tower_old>()._rateOfFire + " sec";
+                    effect.text = "" + target.GetComponent<Tower_old>().nameTower.text;
                 }
             }
         }

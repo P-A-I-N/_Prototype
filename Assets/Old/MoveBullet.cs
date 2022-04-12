@@ -34,8 +34,8 @@ public class MoveBullet : MonoBehaviour
 
     private void Start()
     {
-        damageTower += GetComponentInParent<Tower>().damageTower;
-        if (GetComponentInParent<Tower>().strongBuff == true) Strong = true;
+        damageTower += GetComponentInParent<Tower_old>().damageTower;
+        if (GetComponentInParent<Tower_old>().strongBuff == true) Strong = true;
     }
     private void Update()
     {

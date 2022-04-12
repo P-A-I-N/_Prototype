@@ -175,29 +175,29 @@ public class Debuff : MonoBehaviour
             gm.killedEnemies++;
             Destroy(gameObject);
         }
-        if (collision.GetComponentInParent<Tower>() && collision.GetComponentInParent<Tower>().tipe == "Debuff")
+        if (collision.GetComponentInParent<Tower_old>() && collision.GetComponentInParent<Tower_old>().tipe == "Debuff")
         {
-            if (collision.GetComponentInParent<Tower>().lvl == "1")
+            if (collision.GetComponentInParent<Tower_old>().lvl == "1")
             {
                 Db1++;
             }
-            if (collision.GetComponentInParent<Tower>().lvl == "2")
+            if (collision.GetComponentInParent<Tower_old>().lvl == "2")
             {
                 Db2++;
             }
-            if (collision.GetComponentInParent<Tower>().lvl == "3")
+            if (collision.GetComponentInParent<Tower_old>().lvl == "3")
             {
                 Db3++;
             }
-            if (collision.GetComponentInParent<Tower>().lvl == "4")
+            if (collision.GetComponentInParent<Tower_old>().lvl == "4")
             {
                 Db4++;
             }
-            if (collision.GetComponentInParent<Tower>().lvl == "5A")
+            if (collision.GetComponentInParent<Tower_old>().lvl == "5A")
             {
                 Db5a++;
             }
-            if (collision.GetComponentInParent<Tower>().lvl == "5B")
+            if (collision.GetComponentInParent<Tower_old>().lvl == "5B")
             {
                 Db5b++;
             }
@@ -205,29 +205,29 @@ public class Debuff : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponentInParent<Tower>() && collision.GetComponentInParent<Tower>().tipe == "Debuff")
+        if (collision.gameObject.GetComponentInParent<Tower_old>() && collision.GetComponentInParent<Tower_old>().tipe == "Debuff")
         {
-            if (collision.GetComponentInParent<Tower>().lvl == "1")
+            if (collision.GetComponentInParent<Tower_old>().lvl == "1")
             {
                 Db1--;
             }
-            if (collision.GetComponentInParent<Tower>().lvl == "2")
+            if (collision.GetComponentInParent<Tower_old>().lvl == "2")
             {
                 Db2--;
             }
-            if (collision.GetComponentInParent<Tower>().lvl == "3")
+            if (collision.GetComponentInParent<Tower_old>().lvl == "3")
             {
                 Db3--;
             }
-            if (collision.GetComponentInParent<Tower>().lvl == "4")
+            if (collision.GetComponentInParent<Tower_old>().lvl == "4")
             {
                 Db4--;
             }
-            if (collision.GetComponentInParent<Tower>().lvl == "5A")
+            if (collision.GetComponentInParent<Tower_old>().lvl == "5A")
             {
                 Db5a--;
             }
-            if (collision.GetComponentInParent<Tower>().lvl == "5B")
+            if (collision.GetComponentInParent<Tower_old>().lvl == "5B")
             {
                 Db5b--;
             }

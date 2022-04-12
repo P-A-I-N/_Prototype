@@ -1,6 +1,5 @@
 
 using System;
-using Stayhome.Enum;
 using UnityEditor.Animations;
 using UnityEngine;
 

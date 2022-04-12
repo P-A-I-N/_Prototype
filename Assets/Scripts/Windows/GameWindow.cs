@@ -1,4 +1,5 @@
 
+using Stayhome.Config;
 using Stayhome.Windows.Element;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace Stayhome.Windows
 {
     public class GameWindow : MonoBehaviour
     {
-        [SerializeField] private List<TowerInfo> towerInfos;
+        [SerializeField] private List<Tower> towerInfos;
         [SerializeField] private TowerPanel towerPanel;
         [SerializeField] private DragTower dragTower;
 
@@ -15,9 +16,9 @@ namespace Stayhome.Windows
 
         private void Awake()
         {
-            newGameDate.towerInfos = new List<TowerInfo>();
+            newGameDate.towerInfos = new List<Tower>();
             newGameDate.towerInfos.AddRange(towerInfos);
-            towerPanel.onTowerSelected += TowerSelected;
+            towerPanel.OnTowerSelected += TowerSelected;
         }
 
         private void Start()
@@ -26,7 +27,7 @@ namespace Stayhome.Windows
 
         }
 
-        private void TowerSelected(TowerInfo towerInfo, Enum.EventType eventType)
+        private void TowerSelected(Tower towerInfo, EventType eventType)
         {
             dragTower.Drag(towerInfo, eventType);
         }

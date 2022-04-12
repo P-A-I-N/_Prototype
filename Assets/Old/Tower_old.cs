@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tower : MonoBehaviour
+public class Tower_old : MonoBehaviour
 {
     public int health;
     public int price;
@@ -285,7 +285,7 @@ public class Tower : MonoBehaviour
 
     public void Level_up()
     {
-        if (levelUp.GetComponent<Tower>().price <= gm.gold)
+        if (levelUp.GetComponent<Tower_old>().price <= gm.gold)
         {
             Instantiate(levelUp, transform.position, transform.rotation);
             Destroy(gameObject);

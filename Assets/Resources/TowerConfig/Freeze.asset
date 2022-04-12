@@ -10,20 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5315241b9f79aa147852147b1bd8e534, type: 3}
-  m_Name: PVO
+  m_Name: Freeze
   m_EditorClassIdentifier: 
   levelTowerIcon:
-  - {fileID: 21300000, guid: e53eb9f6bb664c942b35b83b2db75213, type: 3}
-  - {fileID: 21300000, guid: 4f03955cbe59a624498dc8527c35d5f5, type: 3}
-  - {fileID: 21300000, guid: a0679b417ce24c8408b05a388e3f94c6, type: 3}
-  - {fileID: 21300000, guid: 5f1328d8b8754144da9abda4430e50db, type: 3}
-  - {fileID: 21300000, guid: 7f8802beb01d320489885f3cfc05aea8, type: 3}
-  - {fileID: 21300000, guid: 7fc5eb147a72fc4429496a69f8d05b13, type: 3}
+  - {fileID: 21300000, guid: c231d8e7ecce9184b94372c1746bed28, type: 3}
+  - {fileID: 21300000, guid: 46a8d29b2fd312b4b858b372ea3c5efb, type: 3}
+  - {fileID: 21300000, guid: 3cade2e36213289479abfa2b2e549374, type: 3}
+  - {fileID: 21300000, guid: eee0e42d83f290040b958eb175d03673, type: 3}
+  - {fileID: 21300000, guid: 4102017881bd47d40881f47f6e3c4d61, type: 3}
+  - {fileID: 21300000, guid: 87eefa84ab42f1743a8f9de0e10be3d7, type: 3}
   data:
-    type: 3
+    type: 2
     normal: []
-    freeze: []
-    pvo:
+    freeze:
     - price: 0
       helth: 0
       damage: 0
@@ -54,6 +53,7 @@ MonoBehaviour:
       damage: 0
       attackRange: 0
       attackSpeed: 0
+    pVO: []
     splash: []
     tank: []
     buff: []

@@ -8,9 +8,9 @@ public class Splash_menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        icon_levelup = transform.parent.gameObject.GetComponent<Tower>().icon_levelup;
-        icon_delete = transform.parent.gameObject.GetComponent<Tower>().icon_delete;
-        menu = transform.parent.gameObject.GetComponent<Tower>().Splash_menu;
+        icon_levelup = transform.parent.gameObject.GetComponent<Tower_old>().icon_levelup;
+        icon_delete = transform.parent.gameObject.GetComponent<Tower_old>().icon_delete;
+        menu = transform.parent.gameObject.GetComponent<Tower_old>().Splash_menu;
     }
 
     // Update is called once per frame

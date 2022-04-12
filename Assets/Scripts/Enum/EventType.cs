@@ -1,5 +1,5 @@
 
-namespace Stayhome.Enum
+namespace Stayhome
 {
     public enum EventType
     {

@@ -19,7 +19,7 @@ public class delete : MonoBehaviour
     }
     private void OnMouseUpAsButton()
     {
-        gm.gold += transform.parent.gameObject.GetComponent<Tower>().fullprice / 2;
+        gm.gold += transform.parent.gameObject.GetComponent<Tower_old>().fullprice / 2;
         Destroy(transform.parent.gameObject);
     }
     private void OnMouseOver()
