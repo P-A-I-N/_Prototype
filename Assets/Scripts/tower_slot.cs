@@ -34,10 +34,27 @@ public class tower_slot : MonoBehaviour
     {
         if (active)
         {
-            GetComponent<SpriteRenderer>().sprite = Tower.tower_selected.GetComponent<SpriteRenderer>().sprite;
-            transform.localScale = Tower.tower_selected.transform.localScale;
-            PlayerPrefs.SetString ("Tower slot " + index, Tower.tower_selected.name);
+            if (CheckTower())
+            {
+                GetComponent<SpriteRenderer>().sprite = Tower.tower_selected.GetComponent<SpriteRenderer>().sprite;
+                transform.localScale = Tower.tower_selected.transform.localScale;
+                PlayerPrefs.SetString("Tower slot " + index, Tower.tower_selected.name);
+            }
             //print(PlayerPrefs.GetString("Tower slot " + index));
         }
+    }
+    bool CheckTower()
+    {
+        bool noRepeat = true;
+        for (int i = 0; i < 8; i++)
+        {
+            if (Tower.tower_selected.name == PlayerPrefs.GetString("Tower slot " + (i + 1)))
+            {
+                //print("this is no no");
+                noRepeat = false;
+                break;
+            }
+        }
+        return noRepeat;
     }
 }
